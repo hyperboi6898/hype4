@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hyperliquid Vietnam</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .blog-header {
+            background: linear-gradient(135deg, var(--background-dark), var(--secondary-color));
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--background-dark);
+            border-color: var(--primary-color);
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-post {
+            background: var(--background-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px var(--shadow-glow);
+        }
+
+        .blog-post:nth-child(1) { animation-delay: 0.1s; }
+        .blog-post:nth-child(2) { animation-delay: 0.2s; }
+        .blog-post:nth-child(3) { animation-delay: 0.3s; }
+        .blog-post:nth-child(4) { animation-delay: 0.4s; }
+        .blog-post:nth-child(5) { animation-delay: 0.5s; }
+        .blog-post:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .post-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .blog-post:hover .post-image::before {
+            left: 100%;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-category {
+            background: rgba(0, 212, 170, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .post-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .post-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .post-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .post-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .post-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .pagination a,
+        .pagination span {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--background-card);
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover,
+        .pagination .current {
+            background: var(--primary-color);
+            color: var(--background-dark);
+            border-color: var(--primary-color);
+        }
+
+        .search-box {
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--background-card);
+            color: var(--text-primary);
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .featured-post {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.05), rgba(0, 212, 170, 0.02));
+            border: 2px solid var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .featured-image {
+            height: 300px;
+        }
+
+        .featured-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            background: var(--primary-color);
+            color: var(--background-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-filters {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Header (same as main site) -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">
+                    <span>🚀</span> HyperVN
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="../index.html#features">Tính năng</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="index.html" class="active">Blog</a></li>
+                <li><a href="../index.html#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>📖 Blog & Hướng dẫn</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Cập nhật tin tức DeFi mới nhất và hướng dẫn trading chi tiết
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <div class="blog-container">
+        <!-- Search -->
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Tìm kiếm bài viết..." id="searchInput">
+            <button class="search-btn">🔍</button>
+        </div>
+
+        <!-- Filters -->
+        <div class="blog-filters">
+            <button class="filter-btn active" data-category="all">Tất cả</button>
+            <button class="filter-btn" data-category="tutorial">Hướng dẫn</button>
+            <button class="filter-btn" data-category="news">Tin tức</button>
+            <button class="filter-btn" data-category="analysis">Phân tích</button>
+            <button class="filter-btn" data-category="airdrop">Airdrop</button>
+        </div>
+
+        <!-- Blog Posts -->
+        <div class="blog-grid" id="blogGrid">
+            <!-- Featured Post -->
+            <article class="blog-post featured-post" data-category="tutorial">
+                <div class="post-image featured-image">📈</div>
+                <div class="featured-content">
+                    <span class="featured-badge">⭐ Nổi bật</span>
+                    <div class="post-category">Hướng dẫn</div>
+                    <h2 class="post-title">
+                        <a href="posts/huong-dan-trading-perpetual.html">
+                            Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid từ A-Z
+                        </a>
+                    </h2>
+                    <p class="post-excerpt">
+                        Bài hướng dẫn chi tiết nhất về cách giao dịch perpetual futures trên Hyperliquid, từ việc setup ví, bridge token, đến các chiến lược trading hiệu quả và quản lý rủi ro.
+                    </p>
+                    <div class="post-meta">
+                        <div class="post-date">
+                            <span>📅</span>
+                            <span>27/05/2025</span>
+                        </div>
+                        <div class="read-time">
+                            <span>⏱️</span>
+                            <span>15 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Regular Posts -->
+            <article class="blog-post" data-category="airdrop">
+                <div class="post-image">🎁</div>
+                <div class="post-content">
+                    <div class="post-category">Airdrop</div>
+                    <h3 class="post-title">
+                        <a href="posts/airdrop-season-2.html">
+                            Cách tối đa hóa airdrop HYPE Season 2
+                        </a>
+                    </h3>
+                    <p class="post-excerpt">
+                        Chiến lược và tips để tăng điểm số airdrop trong Season 2, bao gồm staking, trading volume, referral program và các hoạt động community.
+                    </p>
+                    <div class="post-meta">
+                        <div class="post-date">
+                            <span>📅</span>
+                            <span>25/05/2025</span>
+                        </div>
+                        <div class="read-time">
+                            <span>⏱️</span>
+                            <span>8 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-post" data-category="analysis">
+                <div class="post-image">🔥</div>
+                <div class="post-content">
+                    <div class="post-category">Phân tích</div>
+                    <h3 class="post-title">
+                        <a href="posts/hyperliquid-vs-dex.html">
+                            So sánh Hyperliquid vs các DEX khác: GMX, dYdX, Jupiter
+                        </a>
+                    </h3>
+                    <p class="post-excerpt">
+                        Phân tích chi tiết ưu nhược điểm của Hyperliquid so với các sàn giao dịch phi tập trung phổ biến khác về phí, tốc độ, thanh khoản.
+                    </p>
+                    <div class="post-meta">
+                        <div class="post-date">
+                            <span>📅</span>
+                            <span>23/05/2025</span>
+                        </div>
+                        <div class="read-time">
+                            <span>⏱️</span>
+                            <span>12 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-post" data-category="news">
+                <div class="post-image">⚡</div>
+                <div class="post-content">
+                    <div class="post-category">Tin tức</div>
+                    <h3 class="post-title">
+                        <a href="posts/hype-token-ath.html">
+                            HYPE token đạt ATH $39.83 - Phân tích nguyên nhân và triển vọng
+                        </a>
+                    </h3>
+                    <p class="post-excerpt">
+                        Token HYPE vừa đạt mức cao nhất mọi thời đại. Cùng phân tích những yếu tố thúc đẩy và dự báo xu hướng giá trong thời gian tới.
+                    </p>
+                    <div class="post-meta">
+                        <div class="post-date">
+                            <span>📅</span>
+                            <span>26/05/2025</span>
+                        </div>
+                        <div class="read-time">
+                            <span>⏱️</span>
+                            <span>6 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-post" data-category="tutorial">
+                <div class="post-image">🛡️</div>
+                <div class="post-content">
+                    <div class="post-category">Hướng dẫn</div>
+                    <h3 class="post-title">
+                        <a href="posts/bao-mat-defi.html">
+                            Bảo mật DeFi: Cách protect tài sản crypto của bạn
+                        </a>
+                    </h3>
+                    <p class="post-excerpt">
+                        Hướng dẫn chi tiết về các biện pháp bảo mật khi tham gia DeFi, từ hardware wallet, seed phrase đến cách nhận diện scam và phishing.
+                    </p>
+                    <div class="post-meta">
+                        <div class="post-date">
+                            <span>📅</span>
+                            <span>20/05/2025</span>
+                        </div>
+                        <div class="read-time">
+                            <span>⏱️</span>
+                            <span>10 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-post" data-category="analysis">
+                <div class="post-image">📊</div>
+                <div class="post-content">
+                    <div class="post-category">Phân tích</div>
+                    <h3 class="post-title">
+                        <a href="posts/defi-trends-2025.html">
+                            Top 5 xu hướng DeFi nổi bật năm 2025
+                        </a>
+                    </h3>
+                    <p class="post-excerpt">
+                        Khám phá những xu hướng DeFi được dự báo sẽ bùng nổ trong năm 2025: RWA, LSDfi, Perp DEX, Account Abstraction và AI Trading.
+                    </p>
+                    <div class="post-meta">
+                        <div class="post-date">
+                            <span>📅</span>
+                            <span>18/05/2025</span>
+                        </div>
+                        <div class="read-time">
+                            <span>⏱️</span>
+                            <span>9 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="prev">← Trước</a>
+            <span class="current">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#" class="next">Sau →</a>
+        </div>
+    </div>
+
+    <!-- Footer (same as main site) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🚀 HyperVN Blog</h4>
+                    <p style="color: var(--text-secondary);">
+                        Nơi chia sẻ kiến thức DeFi và cập nhật tin tức Hyperliquid mới nhất.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Danh mục</h4>
+                    <ul>
+                        <li><a href="#" data-category="tutorial">Hướng dẫn</a></li>
+                        <li><a href="#" data-category="news">Tin tức</a></li>
+                        <li><a href="#" data-category="analysis">Phân tích</a></li>
+                        <li><a href="#" data-category="airdrop">Airdrop</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hyperliquid Vietnam Community Blog</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogPosts = document.querySelectorAll('.blog-post');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                blogPosts.forEach(post => {
+                    if (category === 'all' || post.dataset.category === category) {
+                        post.style.display = 'block';
+                        post.style.animation = 'fadeInUp 0.6s ease forwards';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            blogPosts.forEach(post => {
+                const title = post.querySelector('.post-title').textContent.toLowerCase();
+                const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+
+        // Auto-scroll to top when filter changes
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(() => {
+                    document.querySelector('.blog-grid').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

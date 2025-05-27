@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperliquid Vietnam - Cộng đồng DeFi hàng đầu Việt Nam</title>
+    <meta name="description" content="Tham gia Hyperliquid Vietnam - Giao dịch perpetual futures với tốc độ ánh sáng, phí gas 0, thanh khoản vô tận. Nhận airdrop HYPE token và tiết kiệm phí với mã giới thiệu VN84">
+    <meta property="og:title" content="Hyperliquid Vietnam - DeFi Trading Platform">
+    <meta property="og:description" content="Cộng đồng Hyperliquid Vietnam - Giao dịch DeFi hiệu suất cao">
+    <meta property="og:image" content="images/og-hyperliquid-vn.png">
+    <meta property="og:url" content="https://hyperliquid-vietnam.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+    <!-- Price Ticker -->
+    <div class="price-ticker">
+        <div class="ticker-content">
+            <div class="price-item">
+                <span>💎 HYPE:</span>
+                <span id="hype-price">$36.92</span>
+                <span id="hype-change" class="price-change positive">+2.23%</span>
+            </div>
+            <div class="price-item">
+                <span>📊 24h Volume:</span>
+                <span>$438.7M</span>
+            </div>
+            <div class="price-item">
+                <span>🔥 TVL:</span>
+                <span>$12.8B</span>
+            </div>
+            <div class="price-item">
+                <span>⚡ TPS:</span>
+                <span>200,000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span>🚀</span> HyperVN
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#features">Tính năng</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#testimonials">Đánh giá</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                <button class="lang-toggle" onclick="toggleLanguage()">🇻🇳</button>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text slide-in-left">
+                    <h1>Hyperliquid Vietnam</h1>
+                    <p>Tham gia cộng đồng DeFi hàng đầu Việt Nam. Giao dịch perpetual futures với tốc độ ánh sáng, phí gas bằng 0, và thanh khoản vô tận trên blockchain L1 hiệu suất cao nhất.</p>
+                    
+                    <div class="referral-code">
+                        <h3>🎁 Mã giới thiệu đặc biệt</h3>
+                        <div class="code">VN84</div>
+                        <p style="margin-top: 0.5rem; color: rgba(15, 20, 25, 0.8);">Tiết kiệm phí giao dịch khi đăng ký</p>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="https://app.hyperliquid.xyz/join/VN84" target="_blank" class="btn btn-primary">
+                            🚀 Bắt đầu giao dịch
+                        </a>
+                        <a href="#features" class="btn btn-secondary">
+                            📚 Tìm hiểu thêm
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual slide-in-right">
+                    <div class="hero-chart">
+                        <div class="chart-header">
+                            <div>
+                                <div class="live-price" id="live-price">$36.92</div>
+                                <div class="price-change positive" id="live-change">+2.23% (24h)</div>
+                            </div>
+                            <div style="color: var(--text-muted); font-size: 0.9rem;">
+                                <span class="loading"></span> Live
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            <div class="chart-line"></div>
+                            <div style="text-align: center; color: var(--text-muted);">
+                                📈 HYPE/USD Chart
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Tại sao chọn Hyperliquid?</h2>
+                <p>Trải nghiệm DeFi mới với hiệu suất tương đương CEX nhưng vẫn giữ tính phi tập trung</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Tốc độ ánh sáng</h3>
+                    <p>Xử lý 200,000 lệnh/giây với độ trễ dưới 1 giây. Trải nghiệm giao dịch mượt mà như các sàn tập trung hàng đầu.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">💰</span>
+                    <h3>Phí gas bằng 0</h3>
+                    <p>Không phí gas cho mọi giao dịch. Tiết kiệm chi phí tối đa cho traders và investors.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Bảo mật tuyệt đối</h3>
+                    <p>Consensus HyperBFT đảm bảo an toàn tối đa với cơ chế proof-of-stake tiên tiến.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">📊</span>
+                    <h3>Order Book On-chain</h3>
+                    <p>Sổ lệnh hoàn toàn trên blockchain, minh bạch và không thể thao túng.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🌐</span>
+                    <h3>Cộng đồng Việt Nam</h3>
+                    <p>Tham gia cộng đồng trader Việt Nam sôi động với hỗ trợ 24/7 bằng tiếng Việt.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🎁</span>
+                    <h3>Airdrop khủng</h3>
+                    <p>Tham gia để nhận airdrop HYPE token từ những hoạt động trading và staking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <h3 class="counter" data-target="12.8">$0B</h3>
+                    <p>Tổng giá trị locked</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3 class="counter" data-target="200">0K+</h3>
+                    <p>Người dùng hoạt động</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3 class="counter" data-target="100">0+</h3>
+                    <p>Cặp giao dịch</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3 class="counter" data-target="99.9">0%</h3>
+                    <p>Uptime hệ thống</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Câu hỏi thường gặp</h2>
+                <p>Tìm hiểu thêm về Hyperliquid và cách sử dụng nền tảng</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Hyperliquid là gì?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hyperliquid là một blockchain Layer 1 được tối ưu hóa cho giao dịch DeFi, cung cấp sàn giao dịch perpetual futures hoàn toàn phi tập trung với hiệu suất cao và phí gas bằng 0.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Làm sao để bắt đầu?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bạn chỉ cần kết nối ví MetaMask, bridge USDC từ Arbitrum, và sử dụng mã giới thiệu VN84 để tiết kiệm phí khi đăng ký tài khoản.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Có an toàn không?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hyperliquid sử dụng consensus HyperBFT và toàn bộ giao dịch đều on-chain, đảm bảo tính minh bạch và bảo mật cao nhất. Không có rủi ro custody như các sàn tập trung.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>HYPE token có gì đặc biệt?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>HYPE là native token của Hyperliquid, dùng để staking, trả phí giao dịch, và tham gia governance. Token còn được phân phối qua airdrop cho người dùng tích cực.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Người dùng nói gì?</h2>
+                <p>Trải nghiệm thực tế từ cộng đồng trader Việt Nam</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "Từ khi chuyển sang Hyperliquid, tôi tiết kiệm được rất nhiều phí gas. Tốc độ giao dịch nhanh như Binance nhưng lại hoàn toàn phi tập trung."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Anh Minh</h4>
+                            <p>Professional Trader</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "Airdrop HYPE thật sự khủng! Tôi nhận được hơn $50K chỉ từ việc trade thường xuyên. Community Việt Nam rất hỗ trợ."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <h4>Chị Linh</h4>
+                            <p>DeFi Investor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "Order book on-chain thật sự ấn tượng. Không còn lo lắng về front-running hay manipulation như trước kia."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">T</div>
+                        <div class="author-info">
+                            <h4>Anh Tuấn</h4>
+                            <p>Crypto Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Tin tức & Hướng dẫn</h2>
+                <p>Cập nhật xu hướng DeFi mới nhất và tutorial chi tiết</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card fade-in">
+                    <div class="blog-image">📈</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid</h3>
+                        <p class="blog-excerpt">Bài hướng dẫn chi tiết từ A-Z để bắt đầu giao dịch futures với đòn bẩy trên Hyperliquid một cách an toàn và hiệu quả.</p>
+                        <div class="blog-meta">
+                            <span>5 ngày trước</span>
+                            <span>⏱️ 8 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card fade-in">
+                    <div class="blog-image">🎁</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Cách tối đa hóa airdrop HYPE Season 2</h3>
+                        <p class="blog-excerpt">Chiến lược và tips để tăng điểm số airdrop trong Season 2, bao gồm staking, trading volume và referral program.</p>
+                        <div class="blog-meta">
+                            <span>1 tuần trước</span>
+                            <span>⏱️ 6 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card fade-in">
+                    <div class="blog-image">🔥</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">So sánh Hyperliquid vs các DEX khác</h3>
+                        <p class="blog-excerpt">Phân tích chi tiết ưu nhược điểm của Hyperliquid so với GMX, dYdX và các sàn giao dịch phi tập trung phổ biến khác.</p>
+                        <div class="blog-meta">
+                            <span>2 tuần trước</span>
+                            <span>⏱️ 12 phút đọc</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()">💬</button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Hỗ trợ 24/7</span>
+                <button onclick="toggleChat()" style="background: none; border: none; color: var(--text-primary); cursor: pointer;">✕</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot">
+                    Xin chào! Tôi có thể giúp gì cho bạn về Hyperliquid? 😊
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🚀 HyperVN</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Cộng đồng Hyperliquid Vietnam - Nơi kết nối các trader DeFi hàng đầu.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="X (Twitter)">𝕏</a>
+                        <a href="#" class="social-link" title="YouTube">📺</a>
+                        <a href="#" class="social-link" title="Facebook">📘</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Sản phẩm</h4>
+                    <ul>
+                        <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank">Perpetual Futures</a></li>
+                        <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank">Spot Trading</a></li>
+                        <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank">Staking</a></li>
+                        <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank">Vault</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Cộng đồng</h4>
+                    <ul>
+                        <li><a href="#">Telegram Việt Nam</a></li>
+                        <li><a href="#">Discord Global</a></li>
+                        <li><a href="#">X (Twitter)</a></li>
+                        <li><a href="#">YouTube Channel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tài nguyên</h4>
+                    <ul>
+                        <li><a href="https://hyperliquid.gitbook.io/hyperliquid-docs" target="_blank">Documentation</a></li>
+                        <li><a href="https://docs.hyperliquid.xyz/developer" target="_blank">API Docs</a></li>
+                        <li><a href="#blog">Blog & Tutorials</a></li>
+                        <li><a href="#faq">Hỗ trợ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hyperliquid Vietnam Community. Không phải website chính thức của Hyperliquid Labs.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
