@@ -153,31 +153,81 @@ function toggleChat() {
     }
 }
 
-// Real-time price updates (simulated)
-function updatePrices() {
-    const basePrice = 36.92;
-    const variation = (Math.random() - 0.5) * 2; // ±1%
-    const newPrice = basePrice + variation;
-    const change = ((newPrice - basePrice) / basePrice * 100).toFixed(2);
-    
-    document.getElementById('hype-price').textContent = '$' + newPrice.toFixed(2);
-    document.getElementById('live-price').textContent = '$' + newPrice.toFixed(2);
-    
-    const changeElements = [
-        document.getElementById('hype-change'),
-        document.getElementById('live-change')
-    ];
-    
-    changeElements.forEach(el => {
-        if (el) {
-            el.textContent = (change > 0 ? '+' : '') + change + '%' + (el.id === 'live-change' ? ' (24h)' : '');
-            el.className = 'price-change ' + (change > 0 ? 'positive' : 'negative');
+// Real-time price updates using CoinGecko API
+async function fetchTokenPrice() {
+    try {
+        // Tạo loading state
+        document.getElementById('hype-price').innerHTML = '$<span class="loading"></span>';
+        document.getElementById('live-price').innerHTML = '$<span class="loading"></span>';
+
+        // Gọi CoinGecko API (miễn phí, không cần API key)
+        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=hyperliquid&vs_currencies=usd&include_24hr_change=true');
+        
+        if (!response.ok) {
+            throw new Error('Không thể kết nối đến CoinGecko API');
         }
-    });
+        
+        const data = await response.json();
+        
+        // Kiểm tra dữ liệu trả về
+        if (!data.hyperliquid) {
+            throw new Error('Không tìm thấy dữ liệu token HYPE');
+        }
+        
+        // Lấy giá và phần trăm thay đổi
+        const price = data.hyperliquid.usd;
+        const change = data.hyperliquid.usd_24h_change;
+        
+        // Cập nhật UI
+        document.getElementById('hype-price').textContent = '$' + price.toFixed(2);
+        document.getElementById('live-price').textContent = '$' + price.toFixed(2);
+        
+        const changeElements = [
+            document.getElementById('hype-change'),
+            document.getElementById('live-change')
+        ];
+        
+        changeElements.forEach(el => {
+            if (el) {
+                el.textContent = (change > 0 ? '+' : '') + change.toFixed(2) + '%' + (el.id === 'live-change' ? ' (24h)' : '');
+                el.className = 'price-change ' + (change > 0 ? 'positive' : 'negative');
+            }
+        });
+        
+        console.log('Price updated from CoinGecko:', price);
+        return true;
+    } catch (error) {
+        console.error('Error fetching price:', error);
+        
+        // Fallback to simulated data if API fails
+        const basePrice = 36.92;
+        const variation = (Math.random() - 0.5) * 2; // ±1%
+        const newPrice = basePrice + variation;
+        const change = ((newPrice - basePrice) / basePrice * 100).toFixed(2);
+        
+        document.getElementById('hype-price').textContent = '$' + newPrice.toFixed(2);
+        document.getElementById('live-price').textContent = '$' + newPrice.toFixed(2) + ' (est.)';
+        
+        const changeElements = [
+            document.getElementById('hype-change'),
+            document.getElementById('live-change')
+        ];
+        
+        changeElements.forEach(el => {
+            if (el) {
+                el.textContent = (change > 0 ? '+' : '') + change + '%' + (el.id === 'live-change' ? ' (24h est.)' : '');
+                el.className = 'price-change ' + (change > 0 ? 'positive' : 'negative');
+            }
+        });
+        
+        console.log('Using simulated price data as fallback');
+        return false;
+    }
 }
 
-// Update prices every 3 seconds
-setInterval(updatePrices, 3000);
+// Update prices immediately and then every 60 seconds (để tránh rate limit)
+fetchTokenPrice();
+setInterval(fetchTokenPrice, 60000);
 
 // Add some interactive chat responses
 const chatResponses = [
