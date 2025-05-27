@@ -151,6 +151,7 @@
             line-height: 1.6;
             display: -webkit-box;
             -webkit-line-clamp: 3;
+            line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -532,59 +533,67 @@
         </div>
     </footer>
 
+        <!-- Thêm script xử lý Markdown -->
+    <script src="../js/markdown-parser.js"></script>
     <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const blogPosts = document.querySelectorAll('.blog-post');
+        // Giữ lại JavaScript cũ để tương thích
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chỉ sử dụng nếu không có script markdown hoạt động
+            if (typeof blog === 'undefined') {
+                // Filter functionality
+                const filterBtns = document.querySelectorAll('.filter-btn');
+                const blogPosts = document.querySelectorAll('.blog-post');
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remove active class from all buttons
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        // Add active class to clicked button
+                        btn.classList.add('active');
 
-                const category = btn.dataset.category;
+                        const category = btn.dataset.category;
 
-                blogPosts.forEach(post => {
-                    if (category === 'all' || post.dataset.category === category) {
-                        post.style.display = 'block';
-                        post.style.animation = 'fadeInUp 0.6s ease forwards';
-                    } else {
-                        post.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Search functionality
-        const searchInput = document.getElementById('searchInput');
-        
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            
-            blogPosts.forEach(post => {
-                const title = post.querySelector('.post-title').textContent.toLowerCase();
-                const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
-                
-                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
-                    post.style.display = 'block';
-                } else {
-                    post.style.display = 'none';
-                }
-            });
-        });
-
-        // Auto-scroll to top when filter changes
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                setTimeout(() => {
-                    document.querySelector('.blog-grid').scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                        blogPosts.forEach(post => {
+                            if (category === 'all' || post.dataset.category === category) {
+                                post.style.display = 'block';
+                                post.style.animation = 'fadeInUp 0.6s ease forwards';
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        });
                     });
-                }, 100);
-            });
+                });
+
+                // Search functionality
+                const searchInput = document.getElementById('searchInput');
+                
+                searchInput.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    
+                    blogPosts.forEach(post => {
+                        const title = post.querySelector('.post-title').textContent.toLowerCase();
+                        const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+                        
+                        if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                            post.style.display = 'block';
+                        } else {
+                            post.style.display = 'none';
+                        }
+                    });
+                });
+
+                // Auto-scroll to top when filter changes
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        setTimeout(() => {
+                            document.querySelector('.blog-grid').scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 100);
+                    });
+                });
+            }
         });
     </script>
 </body>

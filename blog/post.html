@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Hyperliquid Vietnam</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .post-header {
+            background: linear-gradient(135deg, var(--background-dark), var(--secondary-color));
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .post-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .post-meta-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .post-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        .post-content {
+            background: var(--background-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .post-content h2 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .post-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content ul, .post-content ol {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .post-content code {
+            background: rgba(0, 212, 170, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--primary-color);
+        }
+
+        .post-content pre {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-left: 0;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+        }
+
+        .nav-link {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            background: var(--background-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            width: 48%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--shadow-glow);
+        }
+
+        .nav-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .post-related {
+            margin-top: 3rem;
+        }
+
+        .related-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .related-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-post {
+            background: var(--background-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .related-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--shadow-glow);
+        }
+
+        .related-image {
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .related-content {
+            padding: 1rem;
+        }
+
+        .related-post-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .related-post-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .post-header h1 {
+                font-size: 2rem;
+            }
+            
+            .post-meta-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .post-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-link {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">
+                    <span>🚀</span> HyperVN
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="../index.html#features">Tính năng</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="index.html" class="active">Blog</a></li>
+                <li><a href="../index.html#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Post Header -->
+    <section class="post-header">
+        <div class="container">
+            <h1>Tiêu đề bài viết</h1>
+            <div class="post-meta-header">
+                <div class="post-date"><span>📅</span> 27/05/2025</div>
+                <div class="post-author"><span>👤</span> Team HyperVN</div>
+                <div class="post-readtime"><span>⏱️</span> 15 phút đọc</div>
+                <div class="post-category"><span>🏷️</span> Hướng dẫn</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <div class="post-container">
+        <article class="post-content">
+            <!-- Nội dung bài viết sẽ được render từ Markdown -->
+            <p>Đang tải nội dung bài viết...</p>
+        </article>
+
+        <!-- Post Navigation -->
+        <div class="post-navigation">
+            <a href="#" class="nav-link prev-post" style="display:none;">
+                <span class="nav-label">← Bài trước</span>
+                <span class="nav-title">Tiêu đề bài trước</span>
+            </a>
+            <a href="#" class="nav-link next-post" style="display:none;">
+                <span class="nav-label">Bài tiếp theo →</span>
+                <span class="nav-title">Tiêu đề bài tiếp theo</span>
+            </a>
+        </div>
+
+        <!-- Related Posts -->
+        <div class="post-related">
+            <h3 class="related-title">Bài viết liên quan</h3>
+            <div class="related-posts">
+                <!-- Bài viết liên quan sẽ được render từ JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🚀 HyperVN</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Cộng đồng Hyperliquid Vietnam - Nơi kết nối các trader DeFi hàng đầu.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="X (Twitter)">𝕏</a>
+                        <a href="#" class="social-link" title="YouTube">📺</a>
+                        <a href="#" class="social-link" title="Facebook">📘</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Bài viết nổi bật</h4>
+                    <ul>
+                        <li><a href="post.html?slug=huong-dan-trading">Hướng dẫn Perpetual Futures</a></li>
+                        <li><a href="post.html?slug=airdrop-season-2">Airdrop HYPE Season 2</a></li>
+                        <li><a href="post.html?slug=hyperliquid-vs-dex">So sánh các DEX</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hyperliquid Vietnam Community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Thêm script xử lý Markdown -->
+    <script src="../js/markdown-parser.js"></script>
+</body>
+</html>
