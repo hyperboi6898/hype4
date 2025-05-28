@@ -10,7 +10,7 @@ class MarkdownBlog {
     }
 
     /**
-     * Tải danh sách bài viết bằng cách quét thư mục markdown
+     * Tải danh sách bài viết trực tiếp từ các file markdown
      */
     async loadPostsIndex() {
         // Kiểm tra cache trước
@@ -19,21 +19,30 @@ class MarkdownBlog {
         }
 
         try {
-            // Thử tải index.json trước tiên - cách đáng tin cậy nhất
-            const response = await fetch('/blog/markdown/index.json');
-            if (response.ok) {
-                this.postsIndex = await response.json();
-                return this.postsIndex;
-            }
-
-            // Nếu không có index.json, thử tải trực tiếp các file markdown đã biết
-            const knownSlugs = ['huong-dan-trading', 'airdrop-season-2', 'hyperliquid-vs-dex', 'hype-token-ath'];
+            // Danh sách các file markdown cần tải
+            const markdownFiles = [
+                'huong-dan-trading.md',
+                'airdrop-season-2.md',
+                'hyperliquid-vs-dex.md',
+                'hype-token-ath.md'
+            ];
+            
             const posts = [];
             
             // Tải từng file markdown một
-            for (const slug of knownSlugs) {
+            for (const fileName of markdownFiles) {
                 try {
-                    const postData = await this.getPost(slug);
+                    const slug = fileName.replace('.md', '');
+                    const response = await fetch(`/blog/markdown/${fileName}`);
+                    
+                    if (!response.ok) {
+                        console.warn(`Không thể tải file ${fileName}`);
+                        continue;
+                    }
+                    
+                    const markdown = await response.text();
+                    const postData = this.parseMarkdown(markdown);
+                    
                     if (postData) {
                         posts.push({
                             slug: slug,
@@ -47,7 +56,7 @@ class MarkdownBlog {
                         });
                     }
                 } catch (postError) {
-                    console.warn(`Không thể tải bài viết ${slug}:`, postError);
+                    console.warn(`Lỗi khi xử lý file ${fileName}:`, postError);
                 }
             }
             
@@ -56,7 +65,6 @@ class MarkdownBlog {
             
             this.postsIndex = { posts };
             return this.postsIndex;
-            
         } catch (error) {
             console.error('Lỗi khi tải danh sách bài viết:', error);
             
@@ -129,10 +137,10 @@ class MarkdownBlog {
     }
 
     /**
-     * Tải nội dung markdown của bài viết
+     * Tải nội dung markdown của bài viết trực tiếp từ file
      */
     async getPost(slug) {
-        // Cache bài viết để tránh tải lại nhiều lần
+        // Sử dụng cache để tránh tải lại nhiều lần
         if (!this.postCache) {
             this.postCache = {};
         }
@@ -142,58 +150,13 @@ class MarkdownBlog {
             return this.postCache[slug];
         }
 
-        // Nội dung cứng cho các bài viết để tránh phải fetch
-        const hardcodedPosts = {
-            'huong-dan-trading': {
-                title: 'Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid',
-                excerpt: 'Bài hướng dẫn chi tiết từ A-Z để bắt đầu giao dịch futures với đòn bẩy trên Hyperliquid một cách an toàn và hiệu quả.',
-                category: 'tutorial',
-                date: '2025-05-27',
-                readTime: 15,
-                image: '<img src="/blog/images/trading-guide.webp" alt="Trading Guide" style="width:100%;height:auto;">',
-                content: '<h2>Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid</h2><p>Bài hướng dẫn chi tiết từ A-Z để bắt đầu giao dịch futures với đòn bẩy trên Hyperliquid một cách an toàn và hiệu quả.</p>'
-            },
-            'airdrop-season-2': {
-                title: 'Cách tối đa hóa airdrop HYPE Season 2',
-                excerpt: 'Chiến lược và tips để tăng điểm số airdrop trong Season 2, bao gồm staking, trading volume và referral program.',
-                category: 'airdrop',
-                date: '2025-05-22',
-                readTime: 8,
-                image: '<img src="/blog/images/airdrop.webp" alt="Airdrop Guide" style="width:100%;height:auto;">',
-                content: '<h2>Cách tối đa hóa airdrop HYPE Season 2</h2><p>Chiến lược và tips để tăng điểm số airdrop trong Season 2, bao gồm staking, trading volume và referral program.</p>'
-            },
-            'hyperliquid-vs-dex': {
-                title: 'So sánh Hyperliquid vs các DEX khác',
-                excerpt: 'Phân tích chi tiết ưu nhược điểm của Hyperliquid so với GMX, dYdX và các sàn giao dịch phi tập trung phổ biến khác.',
-                category: 'analysis',
-                date: '2025-05-15',
-                readTime: 12,
-                image: '<img src="/blog/images/comparison.webp" alt="DEX Comparison" style="width:100%;height:auto;">',
-                content: '<h2>So sánh Hyperliquid vs các DEX khác</h2><p>Phân tích chi tiết ưu nhược điểm của Hyperliquid so với GMX, dYdX và các sàn giao dịch phi tập trung phổ biến khác.</p>'
-            },
-            'hype-token-ath': {
-                title: 'HYPE token đạt ATH $39.83 - Phân tích nguyên nhân và triển vọng',
-                excerpt: 'Token HYPE vừa đạt mức cao nhất mọi thời đại. Cùng phân tích những yếu tố thúc đẩy và dự báo xu hướng giá trong thời gian tới.',
-                category: 'news',
-                date: '2025-05-26',
-                readTime: 6,
-                image: '<img src="/blog/images/image.png" alt="HYPE Token" style="width:100%;height:auto;">',
-                content: '<h2>HYPE token đạt ATH $39.83 - Phân tích nguyên nhân và triển vọng</h2><p>Token HYPE vừa đạt mức cao nhất mọi thời đại. Cùng phân tích những yếu tố thúc đẩy và dự báo xu hướng giá trong thời gian tới.</p>'
-            }
-        };
-
-        // Kiểm tra nếu có trong danh sách cứng
-        if (hardcodedPosts[slug]) {
-            this.postCache[slug] = hardcodedPosts[slug];
-            return this.postCache[slug];
-        }
-
-        // Nếu không có trong danh sách cứng, thử tải từ server
         try {
+            // Tải trực tiếp từ file markdown
             const response = await fetch(`/blog/markdown/${slug}.md`);
             if (!response.ok) {
                 throw new Error(`Không thể tải bài viết: ${slug}`);
             }
+            
             const markdown = await response.text();
             const parsed = this.parseMarkdown(markdown);
             
