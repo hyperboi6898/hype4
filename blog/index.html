@@ -414,9 +414,24 @@
         <!-- Thêm script xử lý Markdown -->
     <script src="../js/markdown-parser.js"></script>
     <script>
-        // Giữ lại JavaScript cũ để tương thích
-        document.addEventListener('DOMContentLoaded', function() {
-            // Chỉ sử dụng nếu không có script markdown hoạt động
+        // Xử lý Markdown cho blog
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('Blog page loaded, initializing markdown parser...');
+            
+            // Đảm bảo blog object được khởi tạo
+            if (typeof blog !== 'undefined') {
+                try {
+                    // Render danh sách bài viết
+                    await blog.renderPostsList('all');
+                    console.log('Blog posts loaded successfully');
+                } catch (error) {
+                    console.error('Error loading blog posts:', error);
+                }
+            } else {
+                console.error('Blog object not initialized');
+            }
+            
+            // Fallback JavaScript nếu blog object không hoạt động
             if (typeof blog === 'undefined') {
                 // Filter functionality
                 const filterBtns = document.querySelectorAll('.filter-btn');
