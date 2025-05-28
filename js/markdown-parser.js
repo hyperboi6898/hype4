@@ -18,53 +18,52 @@ class MarkdownBlog {
             return this.postsIndex;
         }
 
-        // Sử dụng danh sách bài viết cứng để tránh phải quét thư mục
-        // Điều này giúp trang blog load nhanh hơn nhiều
-        const hardcodedPosts = [
-            {
-                slug: 'huong-dan-trading',
-                title: 'Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid',
-                excerpt: 'Bài hướng dẫn chi tiết từ A-Z để bắt đầu giao dịch futures với đòn bẩy trên Hyperliquid một cách an toàn và hiệu quả.',
-                category: 'tutorial',
-                date: '2025-05-27',
-                readTime: 15,
-                image: '<img src="/blog/images/trading-guide.webp" alt="Trading Guide" style="width:100%;height:auto;">',
-                featured: false
-            },
-            {
-                slug: 'airdrop-season-2',
-                title: 'Cách tối đa hóa airdrop HYPE Season 2',
-                excerpt: 'Chiến lược và tips để tăng điểm số airdrop trong Season 2, bao gồm staking, trading volume, referral program và các hoạt động community.',
-                category: 'airdrop',
-                date: '2025-05-22',
-                readTime: 8,
-                image: '<img src="/blog/images/airdrop.webp" alt="Airdrop Guide" style="width:100%;height:auto;">',
-                featured: false
-            },
-            {
-                slug: 'hyperliquid-vs-dex',
-                title: 'So sánh Hyperliquid vs các DEX khác: GMX, dYdX, Jupiter',
-                excerpt: 'Phân tích chi tiết ưu nhược điểm của Hyperliquid so với các sàn giao dịch phi tập trung phổ biến khác về phí, tốc độ, thanh khoản.',
-                category: 'analysis',
-                date: '2025-05-15',
-                readTime: 12,
-                image: '<img src="/blog/images/comparison.webp" alt="DEX Comparison" style="width:100%;height:auto;">',
-                featured: false
-            },
-            {
-                slug: 'hype-token-ath',
-                title: 'HYPE token đạt ATH $39.83 - Phân tích nguyên nhân và triển vọng',
-                excerpt: 'Token HYPE vừa đạt mức cao nhất mọi thời đại. Cùng phân tích những yếu tố thúc đẩy và dự báo xu hướng giá trong thời gian tới.',
-                category: 'news',
-                date: '2025-05-26',
-                readTime: 6,
-                image: '<img src="/blog/images/image.png" alt="HYPE Token" style="width:100%;height:auto;">',
-                featured: false
+        try {
+            // Thử tải index.json trước tiên - cách đáng tin cậy nhất
+            const response = await fetch('/blog/markdown/index.json');
+            if (response.ok) {
+                this.postsIndex = await response.json();
+                return this.postsIndex;
             }
-        ];
 
-        this.postsIndex = { posts: hardcodedPosts };
-        return this.postsIndex;
+            // Nếu không có index.json, thử tải trực tiếp các file markdown đã biết
+            const knownSlugs = ['huong-dan-trading', 'airdrop-season-2', 'hyperliquid-vs-dex', 'hype-token-ath'];
+            const posts = [];
+            
+            // Tải từng file markdown một
+            for (const slug of knownSlugs) {
+                try {
+                    const postData = await this.getPost(slug);
+                    if (postData) {
+                        posts.push({
+                            slug: slug,
+                            title: postData.title || 'Untitled',
+                            excerpt: postData.excerpt || '',
+                            category: postData.category || 'uncategorized',
+                            date: postData.date || new Date().toISOString().split('T')[0],
+                            readTime: postData.readTime || 5,
+                            image: postData.image || '📄',
+                            featured: postData.featured || false
+                        });
+                    }
+                } catch (postError) {
+                    console.warn(`Không thể tải bài viết ${slug}:`, postError);
+                }
+            }
+            
+            // Sắp xếp bài viết theo ngày, mới nhất lên đầu
+            posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            this.postsIndex = { posts };
+            return this.postsIndex;
+            
+        } catch (error) {
+            console.error('Lỗi khi tải danh sách bài viết:', error);
+            
+            // Fallback: Trả về mảng rỗng nếu có lỗi
+            this.postsIndex = { posts: [] };
+            return this.postsIndex;
+        }
 
         // Giữ lại code cũ nhưng comment lại để tham khảo sau này
         /*
