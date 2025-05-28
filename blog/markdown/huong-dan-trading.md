@@ -5,7 +5,7 @@ author: Team HyperVN
 category: tutorial
 readTime: 15
 excerpt: Bài hướng dẫn chi tiết từ A-Z để bắt đầu giao dịch futures với đòn bẩy trên Hyperliquid một cách an toàn và hiệu quả.
-image: 📈
+image: <img src="/blog/images/trading-guide.webp" alt="Trading Guide" style="width:100%;height:auto;">
 ---
 
 # Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid

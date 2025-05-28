@@ -229,6 +229,107 @@ async function fetchTokenPrice() {
 fetchTokenPrice();
 setInterval(fetchTokenPrice, 60000);
 
+// Blog Slider Functionality
+function initBlogSlider() {
+    const slider = document.getElementById('blogSlider');
+    if (!slider) return;
+    
+    const slides = slider.querySelectorAll('.blog-slide');
+    const prevBtn = document.getElementById('blogPrev');
+    const nextBtn = document.getElementById('blogNext');
+    const dotsContainer = document.getElementById('blogDots');
+    
+    let currentIndex = 0;
+    let slidesPerView = 1;
+    let autoSlideInterval;
+    
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('slider-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    // Update slides per view based on screen size
+    function updateSlidesPerView() {
+        if (window.innerWidth >= 1200) {
+            slidesPerView = 3;
+        } else if (window.innerWidth >= 768) {
+            slidesPerView = 2;
+        } else {
+            slidesPerView = 1;
+        }
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        if (index < 0) {
+            index = slides.length - slidesPerView;
+        } else if (index > slides.length - slidesPerView) {
+            index = 0;
+        }
+        
+        currentIndex = index;
+        const translateValue = -currentIndex * (100 / slidesPerView) + '%';
+        slider.style.transform = `translateX(${translateValue})`;
+        
+        // Update active dot
+        const dots = dotsContainer.querySelectorAll('.slider-dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+        
+        // Reset auto slide timer
+        resetAutoSlide();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+    
+    // Start auto slide
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    // Reset auto slide
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Responsive handling
+    window.addEventListener('resize', () => {
+        updateSlidesPerView();
+        goToSlide(currentIndex);
+    });
+    
+    // Initialize
+    updateSlidesPerView();
+    startAutoSlide();
+    
+    // Pause auto slide on hover
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    slider.addEventListener('mouseleave', startAutoSlide);
+}
+
+// Initialize blog slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initBlogSlider();
+});
+
 // Add some interactive chat responses
 const chatResponses = [
     "Bạn có thể bắt đầu với $10 để test thử platform nhé! 💰",

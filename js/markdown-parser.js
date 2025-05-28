@@ -10,19 +10,66 @@ class MarkdownBlog {
     }
 
     /**
-     * Tải danh sách bài viết từ file JSON
+     * Tải danh sách bài viết bằng cách quét thư mục markdown
      */
     async loadPostsIndex() {
         try {
-            const response = await fetch('/blog/markdown/index.json');
+            // Sử dụng fetch để gọi API liệt kê các file trong thư mục markdown
+            const response = await fetch('/blog/markdown/?list');
             if (!response.ok) {
-                throw new Error('Không thể tải file index.json');
+                throw new Error('Không thể quét thư mục markdown');
             }
-            this.postsIndex = await response.json();
+            
+            // Giả định response trả về danh sách các file
+            const fileList = await response.text();
+            const markdownFiles = fileList.match(/href="([^"]+\.md)"/g) || [];
+            
+            // Tạo danh sách bài viết từ các file markdown
+            const posts = [];
+            
+            for (const fileMatch of markdownFiles) {
+                const fileName = fileMatch.match(/href="([^"]+)"/)[1];
+                if (fileName === 'index.json') continue; // Bỏ qua file index.json
+                
+                // Lấy slug từ tên file
+                const slug = fileName.replace('.md', '');
+                
+                // Tải nội dung file để đọc frontmatter
+                const postData = await this.getPost(slug);
+                if (postData) {
+                    posts.push({
+                        slug: slug,
+                        title: postData.title || 'Untitled',
+                        excerpt: postData.excerpt || '',
+                        category: postData.category || 'uncategorized',
+                        date: postData.date || new Date().toISOString().split('T')[0],
+                        readTime: postData.readTime || 5,
+                        image: postData.image || '📄',
+                        featured: postData.featured || false
+                    });
+                }
+            }
+            
+            // Sắp xếp bài viết theo ngày, mới nhất lên đầu
+            posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            this.postsIndex = { posts };
             return this.postsIndex;
         } catch (error) {
             console.error('Lỗi khi tải danh sách bài viết:', error);
-            return null;
+            
+            // Fallback: Nếu không quét được thư mục, thử tải file index.json
+            try {
+                const response = await fetch('/blog/markdown/index.json');
+                if (!response.ok) {
+                    throw new Error('Không thể tải file index.json');
+                }
+                this.postsIndex = await response.json();
+                return this.postsIndex;
+            } catch (fallbackError) {
+                console.error('Lỗi khi tải file index.json:', fallbackError);
+                return null;
+            }
         }
     }
 

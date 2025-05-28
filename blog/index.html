@@ -202,6 +202,31 @@
             color: var(--background-dark);
             border-color: var(--primary-color);
         }
+        
+        /* Loading spinner styles */
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 212, 170, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
 
         .search-box {
             max-width: 400px;
@@ -343,158 +368,11 @@
 
         <!-- Blog Posts -->
         <div class="blog-grid" id="blogGrid">
-            <!-- Featured Post -->
-            <article class="blog-post featured-post" data-category="tutorial">
-                <div class="post-image featured-image">📈</div>
-                <div class="featured-content">
-                    <span class="featured-badge">⭐ Nổi bật</span>
-                    <div class="post-category">Hướng dẫn</div>
-                    <h2 class="post-title">
-                        <a href="posts/huong-dan-trading-perpetual.html">
-                            Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid từ A-Z
-                        </a>
-                    </h2>
-                    <p class="post-excerpt">
-                        Bài hướng dẫn chi tiết nhất về cách giao dịch perpetual futures trên Hyperliquid, từ việc setup ví, bridge token, đến các chiến lược trading hiệu quả và quản lý rủi ro.
-                    </p>
-                    <div class="post-meta">
-                        <div class="post-date">
-                            <span>📅</span>
-                            <span>27/05/2025</span>
-                        </div>
-                        <div class="read-time">
-                            <span>⏱️</span>
-                            <span>15 phút đọc</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Regular Posts -->
-            <article class="blog-post" data-category="airdrop">
-                <div class="post-image">🎁</div>
-                <div class="post-content">
-                    <div class="post-category">Airdrop</div>
-                    <h3 class="post-title">
-                        <a href="posts/airdrop-season-2.html">
-                            Cách tối đa hóa airdrop HYPE Season 2
-                        </a>
-                    </h3>
-                    <p class="post-excerpt">
-                        Chiến lược và tips để tăng điểm số airdrop trong Season 2, bao gồm staking, trading volume, referral program và các hoạt động community.
-                    </p>
-                    <div class="post-meta">
-                        <div class="post-date">
-                            <span>📅</span>
-                            <span>25/05/2025</span>
-                        </div>
-                        <div class="read-time">
-                            <span>⏱️</span>
-                            <span>8 phút đọc</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="blog-post" data-category="analysis">
-                <div class="post-image">🔥</div>
-                <div class="post-content">
-                    <div class="post-category">Phân tích</div>
-                    <h3 class="post-title">
-                        <a href="posts/hyperliquid-vs-dex.html">
-                            So sánh Hyperliquid vs các DEX khác: GMX, dYdX, Jupiter
-                        </a>
-                    </h3>
-                    <p class="post-excerpt">
-                        Phân tích chi tiết ưu nhược điểm của Hyperliquid so với các sàn giao dịch phi tập trung phổ biến khác về phí, tốc độ, thanh khoản.
-                    </p>
-                    <div class="post-meta">
-                        <div class="post-date">
-                            <span>📅</span>
-                            <span>23/05/2025</span>
-                        </div>
-                        <div class="read-time">
-                            <span>⏱️</span>
-                            <span>12 phút đọc</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="blog-post" data-category="news">
-                <div class="post-image">⚡</div>
-                <div class="post-content">
-                    <div class="post-category">Tin tức</div>
-                    <h3 class="post-title">
-                        <a href="posts/hype-token-ath.html">
-                            HYPE token đạt ATH $39.83 - Phân tích nguyên nhân và triển vọng
-                        </a>
-                    </h3>
-                    <p class="post-excerpt">
-                        Token HYPE vừa đạt mức cao nhất mọi thời đại. Cùng phân tích những yếu tố thúc đẩy và dự báo xu hướng giá trong thời gian tới.
-                    </p>
-                    <div class="post-meta">
-                        <div class="post-date">
-                            <span>📅</span>
-                            <span>26/05/2025</span>
-                        </div>
-                        <div class="read-time">
-                            <span>⏱️</span>
-                            <span>6 phút đọc</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="blog-post" data-category="tutorial">
-                <div class="post-image">🛡️</div>
-                <div class="post-content">
-                    <div class="post-category">Hướng dẫn</div>
-                    <h3 class="post-title">
-                        <a href="posts/bao-mat-defi.html">
-                            Bảo mật DeFi: Cách protect tài sản crypto của bạn
-                        </a>
-                    </h3>
-                    <p class="post-excerpt">
-                        Hướng dẫn chi tiết về các biện pháp bảo mật khi tham gia DeFi, từ hardware wallet, seed phrase đến cách nhận diện scam và phishing.
-                    </p>
-                    <div class="post-meta">
-                        <div class="post-date">
-                            <span>📅</span>
-                            <span>20/05/2025</span>
-                        </div>
-                        <div class="read-time">
-                            <span>⏱️</span>
-                            <span>10 phút đọc</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="blog-post" data-category="analysis">
-                <div class="post-image">📊</div>
-                <div class="post-content">
-                    <div class="post-category">Phân tích</div>
-                    <h3 class="post-title">
-                        <a href="posts/defi-trends-2025.html">
-                            Top 5 xu hướng DeFi nổi bật năm 2025
-                        </a>
-                    </h3>
-                    <p class="post-excerpt">
-                        Khám phá những xu hướng DeFi được dự báo sẽ bùng nổ trong năm 2025: RWA, LSDfi, Perp DEX, Account Abstraction và AI Trading.
-                    </p>
-                    <div class="post-meta">
-                        <div class="post-date">
-                            <span>📅</span>
-                            <span>18/05/2025</span>
-                        </div>
-                        <div class="read-time">
-                            <span>⏱️</span>
-                            <span>9 phút đọc</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
+            <!-- Posts will be dynamically loaded here by markdown-parser.js -->
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <p>Đang tải bài viết...</p>
+            </div>
         </div>
 
         <!-- Pagination -->

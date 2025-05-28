@@ -462,22 +462,23 @@ nav {
 }
 
 .stat-item p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    font-weight: 500;
+font-size: 1.1rem;
+color: var(--text-secondary);
+font-weight: 500;
 }
 
 /* FAQ Section */
 .faq {
-    padding: 6rem 0;
+padding: 6rem 0;
+background: var(--background-dark);
 }
 
 .faq-item {
-    background: var(--background-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    overflow: hidden;
+background: var(--background-card);
+border: 1px solid var(--border-color);
+border-radius: 12px;
+margin-bottom: 1rem;
+overflow: hidden;
 }
 
 .faq-question {
@@ -582,6 +583,7 @@ nav {
 /* Blog Section */
 .blog {
     padding: 6rem 0;
+    background: linear-gradient(135deg, var(--background-dark), var(--secondary-color));
 }
 
 .blog-grid {
@@ -636,6 +638,9 @@ nav {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
+
+
+
 /* Chat Widget */
 .chat-widget {
     position: fixed;
