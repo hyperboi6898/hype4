@@ -901,6 +901,30 @@ footer {
     .code {
         font-size: 1.2rem;
     }
+    
+    /* Fix for mobile display issues */
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .price-ticker {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .price-item {
+        margin: 0 5px;
+    }
+    
+    .chat-window {
+        width: 90%;
+        right: 5%;
+        bottom: 70px;
+    }
 }
 
 /* Loading Animation */

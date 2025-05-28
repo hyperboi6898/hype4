@@ -73,6 +73,35 @@
     gap: 2rem;
 }
 
+/* Mobile responsive styles for blog */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-grid {
+        gap: 1.5rem;
+    }
+    
+    .blog-card {
+        margin: 0 5px;
+    }
+    
+    .blog-image {
+        height: 180px;
+    }
+    
+    .blog-content {
+        padding: 1rem;
+    }
+    
+    .blog-title {
+        font-size: 1.1rem;
+    }
+}
+
 .blog-card {
     background: var(--background-card);
     border-radius: 16px;
