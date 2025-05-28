@@ -303,5 +303,27 @@
 
     <!-- Thêm script xử lý Markdown -->
     <script src="../js/markdown-parser.js"></script>
+    <script>
+        // Xử lý Markdown cho trang chi tiết bài viết
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('Post page loaded, initializing markdown parser...');
+            
+            try {
+                // Lấy slug từ URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const slug = urlParams.get('slug');
+                
+                if (slug && typeof blog !== 'undefined') {
+                    // Render bài viết
+                    await blog.renderPost(slug);
+                    console.log('Blog post loaded successfully');
+                } else {
+                    console.error('Missing slug parameter or blog object not initialized');
+                }
+            } catch (error) {
+                console.error('Error loading blog post:', error);
+            }
+        });
+    </script>
 </body>
 </html>
