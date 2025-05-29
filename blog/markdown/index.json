@@ -1,19 +1,29 @@
 {
   "posts": [
     {
+      "slug": "hyperliquid-dat-moc-1-nghin-ty-do-la-von-hoa-thi-truong",
+      "title": "Hyperliquid \u0110\u1ea1t M\u1ed1c 1 Ngh\u00ecn T\u1ef7 \u0110\u00f4 La V\u1ed1n H\u00f3a Th\u1ecb Tr\u01b0\u1eddng!",
+      "excerpt": "Tin n\u00f3ng h\u1ed5i! Hyperliquid v\u1eeba c\u00e1n m\u1ed1c v\u1ed1n h\u00f3a th\u1ecb tr\u01b0\u1eddng 1 ngh\u00ecn t\u1ef7 \u0111\u00f4 la. T\u00ecm hi\u1ec3u \u0111i\u1ec1u g\u00ec \u0111\u00e3 gi\u00fap Hyperliquid \u0111\u1ea1t \u0111\u01b0\u1ee3c th\u00e0nh t\u1ef1u \u0111\u00e1ng kinh ng\u1ea1c n\u00e0y v\u00e0 \u00fd ngh\u0129a c\u1ee7a n\u00f3 \u0111\u1ed1i v\u1edbi c\u1ed9ng \u0111\u1ed3ng DeFi Vi\u1ec7t Nam.",
+      "category": "news",
+      "date": "2025-05-29T09:26:16.000Z",
+      "readTime": 2,
+      "image": "<img src=\"/blog/images/hyperliquid-is-now-a-trillion-marketcap-company.webp\" alt=\"Hyperliquid \u0110\u1ea1t M\u1ed1c 1 Ngh\u00ecn T\u1ef7 \u0110\u00f4 La V\u1ed1n H\u00f3a Th\u1ecb Tr\u01b0\u1eddng!\" style=\"width:100%;height:auto;\">",
+      "featured": false
+    },
+    {
       "slug": "hyperliquid-them-tinh-nang-staking-moi",
-      "title": "Hyperliquid Thêm Tính Năng Staking Mới",
-      "excerpt": "Thêm mô tả ngắn về bài viết tại đây.",
+      "title": "Hyperliquid Th\u00eam T\u00ednh N\u0103ng Staking M\u1edbi",
+      "excerpt": "Th\u00eam m\u00f4 t\u1ea3 ng\u1eafn v\u1ec1 b\u00e0i vi\u1ebft t\u1ea1i \u0111\u00e2y.",
       "category": "news",
       "date": "2025-05-29T00:00:00.000Z",
       "readTime": 5,
-      "image": "<img src=\"/blog/images/staking-feature.webp\" alt=\"Hyperliquid Thêm Tính Năng Staking Mới\" style=\"width:100%;height:auto;\">",
+      "image": "<img src=\"/blog/images/staking-feature.webp\" alt=\"Hyperliquid Th\u00eam T\u00ednh N\u0103ng Staking M\u1edbi\" style=\"width:100%;height:auto;\">",
       "featured": false
     },
     {
       "slug": "huong-dan-trading",
-      "title": "Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid",
-      "excerpt": "Bài hướng dẫn chi tiết từ A-Z để bắt đầu giao dịch futures với đòn bẩy trên Hyperliquid một cách an toàn và hiệu quả.",
+      "title": "H\u01b0\u1edbng d\u1eabn giao d\u1ecbch Perpetual Futures tr\u00ean Hyperliquid",
+      "excerpt": "B\u00e0i h\u01b0\u1edbng d\u1eabn chi ti\u1ebft t\u1eeb A-Z \u0111\u1ec3 b\u1eaft \u0111\u1ea7u giao d\u1ecbch futures v\u1edbi \u0111\u00f2n b\u1ea9y tr\u00ean Hyperliquid m\u1ed9t c\u00e1ch an to\u00e0n v\u00e0 hi\u1ec7u qu\u1ea3.",
       "category": "tutorial",
       "date": "2025-05-27T00:00:00.000Z",
       "readTime": 15,
@@ -22,8 +32,8 @@
     },
     {
       "slug": "hype-token-ath",
-      "title": "HYPE token đạt ATH $39.83 - Phân tích nguyên nhân và triển vọng",
-      "excerpt": "Token HYPE vừa đạt mức cao nhất mọi thời đại. Cùng phân tích những yếu tố thúc đẩy và dự báo xu hướng giá trong thời gian tới.",
+      "title": "HYPE token \u0111\u1ea1t ATH $39.83 - Ph\u00e2n t\u00edch nguy\u00ean nh\u00e2n v\u00e0 tri\u1ec3n v\u1ecdng",
+      "excerpt": "Token HYPE v\u1eeba \u0111\u1ea1t m\u1ee9c cao nh\u1ea5t m\u1ecdi th\u1eddi \u0111\u1ea1i. C\u00f9ng ph\u00e2n t\u00edch nh\u1eefng y\u1ebfu t\u1ed1 th\u00fac \u0111\u1ea9y v\u00e0 d\u1ef1 b\u00e1o xu h\u01b0\u1edbng gi\u00e1 trong th\u1eddi gian t\u1edbi.",
       "category": "news",
       "date": "2025-05-26T00:00:00.000Z",
       "readTime": 6,
@@ -32,8 +42,8 @@
     },
     {
       "slug": "airdrop-season-2",
-      "title": "Cách tối đa hóa airdrop HYPE Season 2",
-      "excerpt": "Chiến lược và tips để tăng điểm số airdrop trong Season 2, bao gồm staking, trading volume, referral program và các hoạt động community.",
+      "title": "C\u00e1ch t\u1ed1i \u0111a h\u00f3a airdrop HYPE Season 2",
+      "excerpt": "Chi\u1ebfn l\u01b0\u1ee3c v\u00e0 tips \u0111\u1ec3 t\u0103ng \u0111i\u1ec3m s\u1ed1 airdrop trong Season 2, bao g\u1ed3m staking, trading volume, referral program v\u00e0 c\u00e1c ho\u1ea1t \u0111\u1ed9ng community.",
       "category": "airdrop",
       "date": "2025-05-25T00:00:00.000Z",
       "readTime": 8,
@@ -42,8 +52,8 @@
     },
     {
       "slug": "hyperliquid-vs-dex",
-      "title": "So sánh Hyperliquid vs các DEX khác: GMX, dYdX, Jupiter",
-      "excerpt": "Phân tích chi tiết ưu nhược điểm của Hyperliquid so với các sàn giao dịch phi tập trung phổ biến khác về phí, tốc độ, thanh khoản.",
+      "title": "So s\u00e1nh Hyperliquid vs c\u00e1c DEX kh\u00e1c: GMX, dYdX, Jupiter",
+      "excerpt": "Ph\u00e2n t\u00edch chi ti\u1ebft \u01b0u nh\u01b0\u1ee3c \u0111i\u1ec3m c\u1ee7a Hyperliquid so v\u1edbi c\u00e1c s\u00e0n giao d\u1ecbch phi t\u1eadp trung ph\u1ed5 bi\u1ebfn kh\u00e1c v\u1ec1 ph\u00ed, t\u1ed1c \u0111\u1ed9, thanh kho\u1ea3n.",
       "category": "analysis",
       "date": "2025-05-23T00:00:00.000Z",
       "readTime": 12,
