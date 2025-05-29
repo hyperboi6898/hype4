@@ -10,7 +10,7 @@ class MarkdownBlog {
     }
 
     /**
-     * Tải danh sách bài viết trực tiếp từ các file markdown
+     * Tải danh sách bài viết từ index.json
      */
     async loadPostsIndex() {
         // Kiểm tra cache trước
@@ -19,12 +19,25 @@ class MarkdownBlog {
         }
 
         try {
+            // Tải index.json để lấy danh sách bài viết
+            const response = await fetch('/blog/markdown/index.json');
+            
+            if (response.ok) {
+                this.postsIndex = await response.json();
+                console.log(`Đã tải ${this.postsIndex.posts.length} bài viết từ index.json`);
+                return this.postsIndex;
+            }
+            
+            // Nếu không có index.json, thử tải từng file markdown
+            console.warn('Không tìm thấy index.json, thử tải trực tiếp từ các file markdown');
+            
             // Danh sách các file markdown cần tải
             const markdownFiles = [
                 'huong-dan-trading.md',
                 'airdrop-season-2.md',
                 'hyperliquid-vs-dex.md',
-                'hype-token-ath.md'
+                'hype-token-ath.md',
+                'hyperliquid-dat-cot-moc-100-ty-do-la-khoi-luong-giao-dich.md'
             ];
             
             const posts = [];

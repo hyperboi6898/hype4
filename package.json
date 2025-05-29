@@ -1,0 +1,21 @@
+{
+  "name": "hyperliquid-vietnam",
+  "version": "1.0.0",
+  "description": "Hyperliquid Vietnam Community Website",
+  "main": "index.js",
+  "scripts": {
+    "build-blog-index": "node scripts/new-post.js --md=\"\" --img=\"\"",
+    "new-post": "node scripts/new-post.js"
+  },
+  "keywords": [
+    "hyperliquid",
+    "vietnam",
+    "blog"
+  ],
+  "author": "Hyperliquid Vietnam Community",
+  "license": "MIT",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "slugify": "^1.6.6"
+  }
+}

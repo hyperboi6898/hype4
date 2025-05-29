@@ -1,5 +1,5 @@
 ---
-title: So sánh Hyperliquid vs các DEX khác: GMX, dYdX, Jupiter
+title: "So sánh Hyperliquid vs các DEX khác: GMX, dYdX, Jupiter"
 date: 2025-05-23
 author: Team HyperVN
 category: analysis

@@ -1,0 +1,42 @@
+name: Rebuild blog index
+
+on:
+  push:
+    paths:
+      - "blog/markdown/*.md"          # run only when *.md in this folder changes
+  workflow_dispatch:                 # allow you to trigger it manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣  Check out the repo ­­­(with write-token so we can push later)
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0             # so we can push
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2️⃣  Set up Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 3️⃣  Install deps and (re)generate index.json
+      - run: |
+          npm i gray-matter slugify
+          # Empty args → script scans existing blog/markdown/*.md
+          node scripts/new-post.js --md "" --img "" || true
+
+      # 4️⃣  Commit & push only if index.json is different
+      - run: |
+          git config user.name  "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add blog/markdown/index.json
+          # --quiet → exit code 1 if changes staged
+          if ! git diff --cached --quiet; then
+            git commit -m "CI: update blog index"
+            git push
+          else
+            echo "index.json unchanged — nothing to commit."
+          fi
