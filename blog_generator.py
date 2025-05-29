@@ -627,18 +627,32 @@ if __name__ == "__main__":
             print("\nWaiting 5 seconds before running git pull...")
             time.sleep(5)
             
-            # Run git pull to update local repository
+            # Run git pull --rebase to update local repository without merge conflicts
             try:
-                print("\nRunning git pull to update local repository...")
-                result = subprocess.run(["git", "pull"], cwd=BASE_DIR, capture_output=True, text=True)
+                print("\nRunning git pull --rebase to update local repository...")
+                result = subprocess.run(["git", "pull", "--rebase"], cwd=BASE_DIR, capture_output=True, text=True)
                 print(f"Git pull result: {result.stdout}")
                 if result.stderr:
                     print(f"Git pull errors: {result.stderr}")
-                    
-                print("\nNext steps: Review the .md file, then commit and push to GitHub.")
-                print("Use: git add . && git commit -m \"new commit\" && git push")
+                
+                # Add and commit the new local files
+                print("\nAdding and committing new files...")
+                add_result = subprocess.run(["git", "add", "."], cwd=BASE_DIR, capture_output=True, text=True)
+                commit_result = subprocess.run(["git", "commit", "-m", f"Add blog post: {title}"], cwd=BASE_DIR, capture_output=True, text=True)
+                
+                # Push the changes
+                print("\nPushing changes to GitHub...")
+                push_result = subprocess.run(["git", "push"], cwd=BASE_DIR, capture_output=True, text=True)
+                
+                print(f"Git push result: {push_result.stdout}")
+                if push_result.stderr and "error:" in push_result.stderr:
+                    print(f"Git push errors: {push_result.stderr}")
+                    print("\nNext steps: Resolve any push errors manually.")
+                else:
+                    print("\nBlog post successfully created and all changes pushed to GitHub!")
             except Exception as e:
-                print(f"Error running git pull: {e}")
-                print("\nNext steps: Review the .md file, then commit and push to GitHub.")
+                print(f"Error with Git operations: {e}")
+                print("\nNext steps: Review the .md file, then commit and push to GitHub manually.")
+                print("Use: git add . && git commit -m \"new commit\" && git push")
     else:
         print("Failed to generate content or image. Post not created.")
