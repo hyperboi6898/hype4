@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "slug": "hyperliquid-them-tinh-nang-staking-moi",
+      "title": "Hyperliquid Thêm Tính Năng Staking Mới",
+      "excerpt": "Thêm mô tả ngắn về bài viết tại đây.",
+      "category": "news",
+      "date": "2025-05-29T00:00:00.000Z",
+      "readTime": 5,
+      "image": "<img src=\"/blog/images/staking-feature.webp\" alt=\"Hyperliquid Thêm Tính Năng Staking Mới\" style=\"width:100%;height:auto;\">",
+      "featured": false
+    },
+    {
       "slug": "huong-dan-trading",
       "title": "Hướng dẫn giao dịch Perpetual Futures trên Hyperliquid",
       "excerpt": "Bài hướng dẫn chi tiết từ A-Z để bắt đầu giao dịch futures với đòn bẩy trên Hyperliquid một cách an toàn và hiệu quả.",
