@@ -1,0 +1,11 @@
+.env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+hype4/blog/images/*
+!hype4/blog/images/.gitkeep
+hype4/blog/markdown/*
+!hype4/blog/markdown/.gitkeep
