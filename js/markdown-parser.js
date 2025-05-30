@@ -181,7 +181,18 @@ class MarkdownBlog {
             return null;
         }
     }
-
+        /**
+     * Định dạng ngày thành chuỗi ngày/tháng/năm kiểu Việt Nam
+     */
+        formatDate(dateString) {
+            const date = new Date(dateString);
+            if (isNaN(date)) return dateString;
+            return date.toLocaleDateString('vi-VN', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+        }
     /**
      * Phân tích file Markdown
      */
