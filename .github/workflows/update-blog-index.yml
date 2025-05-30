@@ -13,6 +13,10 @@ on:
       - 'blog/markdown/**'
   workflow_dispatch:  # Allows manual triggering
 
+# Set the permissions for the GITHUB_TOKEN
+permissions:
+  contents: write
+
 jobs:
   update-index:
     runs-on: ubuntu-latest
@@ -21,7 +25,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # No need to specify token here as we're using the default GITHUB_TOKEN
+          fetch-depth: 0  # Fetch all history for proper versioning
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -34,7 +39,7 @@ jobs:
       - name: Run index generator
         run: node scripts/new-post.js
         
-      - name: Commit changes if any
+      - name: Commit and push changes if any
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -47,4 +52,6 @@ jobs:
           
           git add blog/markdown/index.json
           git commit -m "Update blog index.json [automated]"
-          git push
+          
+          # Push using the GITHUB_TOKEN
+          git push "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
