@@ -199,99 +199,13 @@ class MarkdownBlog {
     }
 
     /**
-     * Phân tích phần frontmatter
-     */
-    parseFrontmatter(fm) {
-        const lines = fm.trim().split('\n');
-        const data = {};
-        
-        lines.forEach(line => {
-            const colonIndex = line.indexOf(':');
-            if (colonIndex !== -1) {
-                const key = line.substring(0, colonIndex).trim();
-                const value = line.substring(colonIndex + 1).trim();
-                data[key] = value.replace(/^['"](.*)['"]$/, '$1'); // Loại bỏ dấu ngoặc kép
-            }
-        });
-        
-        return data;
     }
 
-    /**
-     * Chuyển đổi Markdown thành HTML
-     */
-    markdownToHtml(markdown) {
-        // Bắt đầu xử lý headings
-        let html = markdown
-            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-            .replace(/^# (.*$)/gim, '<h1>$1</h1>');
-            
-        // Xử lý đoạn text
-        html = html.replace(/^\s*(\n)?(.+)/gim, function(m) {
-            return /\<(\/)?(h\d|ul|ol|li|blockquote|pre|img|p)/.test(m) ? m : '<p>' + m + '</p>';
-        });
-            
-        // Xử lý bold, italic
-        html = html
-            .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-            .replace(/\*(.*)\*/gim, '<em>$1</em>');
-            
-        // Xử lý links và hình ảnh
-        html = html
-            .replace(/!\[([^\]]*)\]\(([^\)]*)\)/gim, '<img alt="$1" src="$2" />')
-            .replace(/\[([^\]]*)\]\(([^\)]*)\)/gim, '<a href="$2">$1</a>');
-            
-        // Xử lý danh sách
-        html = html
-            .replace(/^\s*\n\* (.*)/gim, '<ul>\n<li>$1</li>')
-            .replace(/^\* (.*)/gim, '<li>$1</li>')
-            .replace(/^\s*\n\d+\. (.*)/gim, '<ol>\n<li>$1</li>')
-            .replace(/^\d+\. (.*)/gim, '<li>$1</li>');
-            
-        // Xử lý blockquote
-        html = html
-            .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>');
-            
-        // Xử lý code
-        html = html
-            .replace(/`([^`]+)`/gim, '<code>$1</code>');
-            
-        // Clean up
-        html = html
-            .replace(/<\/ul>\s*\n<ul>/g, '')
-            .replace(/<\/ol>\s*\n<ol>/g, '')
-            .replace(/\n$/gim, '<br />');
-            
-        return html.trim();
-    }
-
-    /**
-     * Tìm bài viết liên quan
-     */
-    findRelatedPosts(currentSlug, category, count = 3) {
-        if (!this.postsIndex || !this.postsIndex.posts) return [];
-        
-        return this.postsIndex.posts
-            .filter(post => post.slug !== currentSlug && post.category === category)
-            .slice(0, count);
-    }
-
-    /**
-     * Format ngày
-     */
-    formatDate(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('vi-VN', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
-        });
-    }
-
-    /**
-     * Hiển thị bài viết
-     */
+    try {
+        // Tải trực tiếp từ file markdown
+        const response = await fetch(`/blog/markdown/${slug}.md`);
+        if (!response.ok) {
+            throw new Error(`Không thể tải bài viết: ${slug}`);
     async renderPost(slug) {
         if (!this.postsIndex) {
             await this.loadPostsIndex();
