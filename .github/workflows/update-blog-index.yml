@@ -53,5 +53,8 @@ jobs:
           git add blog/markdown/index.json
           git commit -m "Update blog index.json [automated]"
           
+          # Pull changes first to avoid conflicts
+          git pull --rebase origin main
+          
           # Push using the GITHUB_TOKEN
           git push "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
