@@ -11,6 +11,9 @@ from google.genai import types
 from dotenv import load_dotenv # pip install python-dotenv
 # from PIL import Image # pip install Pillow (Optional for more advanced image processing)
 
+# Base directory for all file operations
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # --- Configuration ---
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
@@ -56,31 +59,40 @@ os.makedirs(BLOG_IMAGES_DIR, exist_ok=True)
 # --- GitHub Functions ---
 
 def github_create_file(path, content, commit_message):
-    """Creates or updates a file in the GitHub repository."""
+    """Creates or updates a file locally instead of directly on GitHub.
+    This helps avoid conflicts when multiple processes are updating the repository."""
     try:
-        # Check if file exists
-        try:
-            contents = repo.get_contents(path)
-            # File exists, update it
-            repo.update_file(path, commit_message, content, contents.sha)
-            print(f"Updated file: {path}")
-        except Exception:
-            # File doesn't exist, create it
-            repo.create_file(path, commit_message, content)
-            print(f"Created file: {path}")
+        # Create the full local path
+        full_path = os.path.join(BASE_DIR, path)
+        
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(full_path), exist_ok=True)
+        
+        # Write the file locally
+        with open(full_path, 'w', encoding='utf-8') as f:
+            f.write(content)
+        
+        print(f"Created/Updated file: {path}")
         return True
     except Exception as e:
-        print(f"Error creating/updating file on GitHub: {e}")
+        print(f"Error creating/updating file locally: {e}")
         return False
 
 def get_current_index():
-    """Gets the current index.json file from GitHub or creates a new one if it doesn't exist."""
+    """Gets the current index.json file from the local repository or creates a new one if it doesn't exist."""
     try:
-        contents = repo.get_contents("blog/markdown/index.json")
-        content = contents.decoded_content.decode('utf-8')
-        return json.loads(content)
-    except Exception:
-        # If index.json doesn't exist or has issues
+        index_path = os.path.join(BASE_DIR, "blog/markdown/index.json")
+        
+        if os.path.exists(index_path):
+            with open(index_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            return json.loads(content)
+        else:
+            # If index.json doesn't exist
+            return {"posts": []}
+    except Exception as e:
+        print(f"Error reading index.json: {e}")
+        # If there are issues with the file
         return {"posts": []}
 
 def update_blog_index(title, slug, excerpt, category, image_path, featured=False):
@@ -114,21 +126,29 @@ def update_blog_index(title, slug, excerpt, category, image_path, featured=False
         return False
 
 def upload_image_to_github(local_image_path, github_path):
-    """Uploads an image to GitHub repository."""
+    """Copies an image to the local GitHub repository structure instead of uploading directly.
+    This helps avoid conflicts when multiple processes are updating the repository."""
     try:
-        with open(local_image_path, 'rb') as file:
-            content = file.read()
+        # Create the full destination path
+        full_dest_path = os.path.join(BASE_DIR, github_path)
         
-        try:
-            contents = repo.get_contents(github_path)
-            repo.update_file(github_path, f"Update image: {github_path}", content, contents.sha)
-        except Exception:
-            repo.create_file(github_path, f"Add image: {github_path}", content)
+        # Check if source and destination are the same file
+        if os.path.abspath(local_image_path) == os.path.abspath(full_dest_path):
+            # File is already in the correct location, no need to copy
+            print(f"Image already exists at the correct location: {github_path}")
+            return True
         
-        print(f"Successfully uploaded image to GitHub: {github_path}")
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(full_dest_path), exist_ok=True)
+        
+        # Copy the image file
+        import shutil
+        shutil.copy2(local_image_path, full_dest_path)
+        
+        print(f"Successfully copied image to local repository: {github_path}")
         return True
     except Exception as e:
-        print(f"Error uploading image to GitHub: {e}")
+        print(f"Error copying image to local repository: {e}")
         return False
 
 # --- Helper Functions ---
@@ -618,7 +638,36 @@ if __name__ == "__main__":
             print(f"\nBlog post created successfully on GitHub!")
             print(f"View it at: https://github.com/{GITHUB_REPO}/blob/main/{created_file_path}")
             
-            # Git operations have been removed from the automated process
-            print("\nBlog post created successfully! You can now manually handle git operations.")
+            # Add, commit, and push the new blog post and images to GitHub
+            print("\nBlog post created successfully! Adding and committing to Git...")
+            
+            try:
+                # Add the new files
+                add_result = subprocess.run(["git", "add", created_file_path], cwd=BASE_DIR, capture_output=True, text=True)
+                
+                # Add any new images
+                image_paths = [f"blog/images/{os.path.basename(local_img_path)}"]
+                for img in additional_images:
+                    image_paths.append(img['github_path'])
+                
+                for img_path in image_paths:
+                    add_img_result = subprocess.run(["git", "add", img_path], cwd=BASE_DIR, capture_output=True, text=True)
+                
+                # Commit the changes
+                commit_result = subprocess.run(["git", "commit", "-m", f"Add blog post: {title}"], cwd=BASE_DIR, capture_output=True, text=True)
+                
+                # Push the changes
+                print("\nPushing changes to GitHub...")
+                push_result = subprocess.run(["git", "push"], cwd=BASE_DIR, capture_output=True, text=True)
+                
+                if push_result.returncode == 0:
+                    print("\nBlog post successfully created and all changes pushed to GitHub!")
+                else:
+                    print(f"\nWarning: Push failed with error: {push_result.stderr}")
+                    print("You may need to manually push the changes later.")
+            except Exception as e:
+                print(f"\nError with Git operations: {e}")
+                print("You may need to manually add, commit, and push the changes.")
+                print("Use: git add . && git commit -m \"Add new blog post\" && git push")
     else:
         print("Failed to generate content or image. Post not created.")
