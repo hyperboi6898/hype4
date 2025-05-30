@@ -642,8 +642,9 @@ if __name__ == "__main__":
             print("\nBlog post created successfully! Adding and committing to Git...")
             
             try:
-                # Add the new files
-                add_result = subprocess.run(["git", "add", created_file_path], cwd=BASE_DIR, capture_output=True, text=True)
+                # Always add index.json as well as the new markdown file
+                index_json_path = "blog/markdown/index.json"
+                add_result = subprocess.run(["git", "add", created_file_path, index_json_path], cwd=BASE_DIR, capture_output=True, text=True)
                 
                 # Add any new images
                 image_paths = [f"blog/images/{os.path.basename(local_img_path)}"]
