@@ -1,5 +1,8 @@
 # Hyperliquid Vietnam Landing Page
 
+*Last updated: May 30, 2025*
+
+
 ## 🚀 Features
 - Real-time HYPE price ticker
 - Dark/Light theme toggle
