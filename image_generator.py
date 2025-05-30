@@ -155,8 +155,8 @@ def generate_image_with_gemini(output_path, prompt):
         client = genai.Client(api_key=api_key)
         
         # Prepare the prompt for image generation
-        image_prompt = f"Create a high-quality image of {prompt}. "
-        image_prompt += "Make it visually appealing with clean design and relevant imagery."
+        image_prompt = f"Create a high-quality cryptocurrency image showing: {prompt}. "
+        image_prompt += "Clean, professional design. No text, captions, or watermarks in the image. Suitable for Vietnamese audience."
         
         print(f"Sending prompt to Gemini: {image_prompt}")
         

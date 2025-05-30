@@ -138,25 +138,13 @@ def get_user_input():
     print("--- New Blog Post Creator (GitHub Version) ---")
     idea = input("Enter the main idea/topic for the blog post: ")
     
-    # Default author
+    # Use default author without asking
     author = "Team HyperVN"
-    custom_author = input(f"Enter author name (press Enter for default: '{author}'): ")
-    if custom_author.strip():
-        author = custom_author
     
-    # Default category
+    # Use default category without asking
     categories = ["tutorial", "news", "analysis", "airdrop"]
     default_category = "news"
-    print(f"Available categories: {', '.join(categories)}")
-    category_input = input(f"Enter category (press Enter for default: '{default_category}'): ").lower()
-    
-    if not category_input.strip():
-        category = default_category
-    elif category_input in categories:
-        category = category_input
-    else:
-        print(f"Invalid category '{category_input}'. Using default: '{default_category}'")
-        category = default_category
+    category = default_category
     
     # Auto-generate image prompt based on the blog topic
     image_prompt = f"Cryptocurrency blog header image about {idea}"
@@ -364,11 +352,14 @@ def handle_image(image_path_input, post_slug, image_alt_text):
         
         frontmatter_image_html = f'<img src="{markdown_image_path}" alt="{image_alt_text}" style="width:100%;height:auto;">'
         
+        # Create a short caption (max 5 words)
+        short_caption = ' '.join(image_alt_text.split()[:5])
+        
         # Using single quotes for HTML attributes to avoid backslash issues
         inline_image_html_with_caption = f'''
 <figure style='text-align: center;'>
-  <img src='{markdown_image_path}' alt='{image_alt_text}' style='width:100%;max-width:600px;margin:0 auto;display:block;'>
-  <figcaption style='font-size: 0.9em; color: #555; margin-top: 5px;'>{image_alt_text}</figcaption>
+  <img src='{markdown_image_path}' alt='{short_caption}' style='width:100%;max-width:600px;margin:0 auto;display:block;'>
+  <figcaption style='font-size: 0.9em; color: #555; margin-top: 5px;'>{short_caption}</figcaption>
 </figure>
 '''
         return markdown_image_path, frontmatter_image_html, inline_image_html_with_caption, new_image_path_local
@@ -465,8 +456,8 @@ def generate_additional_images(suggested_image_descriptions):
             import image_generator
             
             # Prepare the prompt for image generation
-            image_prompt = f"Create an image for a cryptocurrency blog: {desc}"
-            image_prompt += ". The image should be suitable for a cryptocurrency/blockchain blog post."
+            image_prompt = f"Create a high-quality cryptocurrency image showing: {desc}"
+            image_prompt += ". Clean, professional design. No text or captions in the image."
             
             print(f"Attempting to generate image with Gemini using prompt: '{image_prompt}'")
             
@@ -476,11 +467,14 @@ def generate_additional_images(suggested_image_descriptions):
             if image_generated:
                 print(f"Successfully generated additional image at: {new_image_path_local}")
                 
-                # Create HTML for the image with caption
+                # Create a short caption (max 5 words)
+                short_caption = ' '.join(desc.split()[:5])
+                
+                # Create HTML for the image with simplified caption
                 image_html = f'''
 <figure style='text-align: center;'>
-  <img src='{markdown_image_path}' alt='{desc}' style='width:100%;max-width:600px;margin:0 auto;display:block;'>
-  <figcaption style='font-size: 0.9em; color: #555; margin-top: 5px;'>{desc}</figcaption>
+  <img src='{markdown_image_path}' alt='{short_caption}' style='width:100%;max-width:600px;margin:0 auto;display:block;'>
+  <figcaption style='font-size: 0.9em; color: #555; margin-top: 5px;'>{short_caption}</figcaption>
 </figure>
 '''
                 
