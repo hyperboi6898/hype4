@@ -20,6 +20,7 @@ if not GEMINI_API_KEY:
 
 # GitHub configuration
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
 GITHUB_REPO = os.getenv("GITHUB_REPO", "hyperboi6898/hype4")
 GITHUB_USERNAME = os.getenv("GITHUB_USERNAME", "hyperboi6898")
 
@@ -623,36 +624,7 @@ if __name__ == "__main__":
             print(f"\nBlog post created successfully on GitHub!")
             print(f"View it at: https://github.com/{GITHUB_REPO}/blob/main/{created_file_path}")
             
-            # Wait 5 seconds then run git pull
-            print("\nWaiting 5 seconds before running git pull...")
-            time.sleep(5)
-            
-            # Run git pull --rebase to update local repository without merge conflicts
-            try:
-                print("\nRunning git pull --rebase to update local repository...")
-                result = subprocess.run(["git", "pull", "--rebase"], cwd=BASE_DIR, capture_output=True, text=True)
-                print(f"Git pull result: {result.stdout}")
-                if result.stderr:
-                    print(f"Git pull errors: {result.stderr}")
-                
-                # Add and commit the new local files
-                print("\nAdding and committing new files...")
-                add_result = subprocess.run(["git", "add", "."], cwd=BASE_DIR, capture_output=True, text=True)
-                commit_result = subprocess.run(["git", "commit", "-m", f"Add blog post: {title}"], cwd=BASE_DIR, capture_output=True, text=True)
-                
-                # Push the changes
-                print("\nPushing changes to GitHub...")
-                push_result = subprocess.run(["git", "push"], cwd=BASE_DIR, capture_output=True, text=True)
-                
-                print(f"Git push result: {push_result.stdout}")
-                if push_result.stderr and "error:" in push_result.stderr:
-                    print(f"Git push errors: {push_result.stderr}")
-                    print("\nNext steps: Resolve any push errors manually.")
-                else:
-                    print("\nBlog post successfully created and all changes pushed to GitHub!")
-            except Exception as e:
-                print(f"Error with Git operations: {e}")
-                print("\nNext steps: Review the .md file, then commit and push to GitHub manually.")
-                print("Use: git add . && git commit -m \"new commit\" && git push")
+            # Git operations have been removed from the automated process
+            print("\nBlog post created successfully! You can now manually handle git operations.")
     else:
         print("Failed to generate content or image. Post not created.")
