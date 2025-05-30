@@ -7,6 +7,7 @@ class MarkdownBlog {
         this.postsIndex = null;
         this.currentPost = null;
         this.relatedPosts = [];
+        this.postCache = {};
     }
 
     /**
@@ -85,79 +86,12 @@ class MarkdownBlog {
             this.postsIndex = { posts: [] };
             return this.postsIndex;
         }
-
-        // Giữ lại code cũ nhưng comment lại để tham khảo sau này
-        /*
-        try {
-            // Sử dụng fetch để gọi API liệt kê các file trong thư mục markdown
-            const response = await fetch('/blog/markdown/?list');
-            if (!response.ok) {
-                throw new Error('Không thể quét thư mục markdown');
-            }
-            
-            // Giả định response trả về danh sách các file
-            const fileList = await response.text();
-            const markdownFiles = fileList.match(/href="([^"]+\.md)"/g) || [];
-            
-            // Tạo danh sách bài viết từ các file markdown
-            const posts = [];
-            
-            for (const fileMatch of markdownFiles) {
-                const fileName = fileMatch.match(/href="([^"]+)"/)[1];
-                if (fileName === 'index.json') continue; // Bỏ qua file index.json
-                
-                // Lấy slug từ tên file
-                const slug = fileName.replace('.md', '');
-                
-                // Tải nội dung file để đọc frontmatter
-                const postData = await this.getPost(slug);
-                if (postData) {
-                    posts.push({
-                        slug: slug,
-                        title: postData.title || 'Untitled',
-                        excerpt: postData.excerpt || '',
-                        category: postData.category || 'uncategorized',
-                        date: postData.date || new Date().toISOString().split('T')[0],
-                        readTime: postData.readTime || 5,
-                        image: postData.image || '📄',
-                        featured: postData.featured || false
-                    });
-                }
-            }
-            
-            // Sắp xếp bài viết theo ngày, mới nhất lên đầu
-            posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-            
-            this.postsIndex = { posts };
-            return this.postsIndex;
-        } catch (error) {
-            console.error('Lỗi khi tải danh sách bài viết:', error);
-            
-            // Fallback: Nếu không quét được thư mục, thử tải file index.json
-            try {
-                const response = await fetch('/blog/markdown/index.json');
-                if (!response.ok) {
-                    throw new Error('Không thể tải file index.json');
-                }
-                this.postsIndex = await response.json();
-                return this.postsIndex;
-            } catch (fallbackError) {
-                console.error('Lỗi khi tải file index.json:', fallbackError);
-                return null;
-            }
-        }
-        */
     }
 
     /**
      * Tải nội dung markdown của bài viết trực tiếp từ file
      */
     async getPost(slug) {
-        // Sử dụng cache để tránh tải lại nhiều lần
-        if (!this.postCache) {
-            this.postCache = {};
-        }
-
         // Nếu đã có trong cache, trả về ngay
         if (this.postCache[slug]) {
             return this.postCache[slug];
@@ -181,18 +115,20 @@ class MarkdownBlog {
             return null;
         }
     }
-        /**
+
+    /**
      * Định dạng ngày thành chuỗi ngày/tháng/năm kiểu Việt Nam
      */
-        formatDate(dateString) {
-            const date = new Date(dateString);
-            if (isNaN(date)) return dateString;
-            return date.toLocaleDateString('vi-VN', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric'
-            });
-        }
+    formatDate(dateString) {
+        const date = new Date(dateString);
+        if (isNaN(date)) return dateString;
+        return date.toLocaleDateString('vi-VN', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+    }
+
     /**
      * Phân tích file Markdown
      */
@@ -210,54 +146,191 @@ class MarkdownBlog {
     }
 
     /**
+     * Phân tích phần frontmatter
+     */
+    parseFrontmatter(fm) {
+        const lines = fm.trim().split('\n');
+        const data = {};
+        lines.forEach(line => {
+            const colonIndex = line.indexOf(':');
+            if (colonIndex !== -1) {
+                const key = line.substring(0, colonIndex).trim();
+                const value = line.substring(colonIndex + 1).trim();
+                data[key] = value.replace(/^['\"](.*)['\"]$/, '$1'); // Loại bỏ dấu ngoặc kép
+            }
+        });
+        return data;
     }
 
-    try {
-        // Tải trực tiếp từ file markdown
-        const response = await fetch(`/blog/markdown/${slug}.md`);
-        if (!response.ok) {
-            throw new Error(`Không thể tải bài viết: ${slug}`);
-    async renderPost(slug) {
-        if (!this.postsIndex) {
-            await this.loadPostsIndex();
-        }
+    /**
+     * Chuyển đổi Markdown thành HTML (hỗ trợ bảng, đoạn, tiêu đề, danh sách, v.v.)
+     */
+    markdownToHtml(markdown) {
+        // Xử lý bảng trước
+        let html = this.processMarkdownTables(markdown);
+        // Headings
+        html = html
+            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+            .replace(/^# (.*$)/gim, '<h1>$1</h1>');
+        // Đoạn văn: chia đoạn bằng 2 dòng xuống
+        const paragraphs = html.split(/\n\n+/);
+        html = paragraphs.map(p => {
+            if (p.trim() === '') return '';
+            if (p.match(/^<(\/)?(h\d|ul|ol|li|blockquote|pre|img|p|table|tr|td|th)/)) return p;
+            return '<p>' + p.replace(/\n/g, ' ') + '</p>';
+        }).join('\n\n');
+        // Bold, Italic
+        html = html
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>');
+        // Links, Images
+        html = html
+            .replace(/!\[([^\]]*)\]\(([^\)]*)\)/g, '<img alt="$1" src="$2" />')
+            .replace(/\[([^\]]*)\]\(([^\)]*)\)/g, '<a href="$2">$1</a>');
+        // Danh sách
+        html = html
+            .replace(/^\s*\n\* (.*)/gim, '<ul>\n<li>$1</li>')
+            .replace(/^\* (.*)/gim, '<li>$1</li>')
+            .replace(/^\s*\n\d+\. (.*)/gim, '<ol>\n<li>$1</li>')
+            .replace(/^\d+\. (.*)/gim, '<li>$1</li>');
+        // Blockquote
+        html = html.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
+        // Inline code
+        html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+        // Clean up
+        html = html
+            .replace(/<\/ul>\s*\n<ul>/g, '')
+            .replace(/<\/ol>\s*\n<ol>/g, '')
+            .replace(/\n$/gim, '<br />');
+        return html.trim();
+    }
 
-        const post = await this.getPost(slug);
-        if (!post) return false;
-
-        // Lưu thông tin bài viết hiện tại
-        this.currentPost = post;
+    /**
+     * Xử lý bảng Markdown thành HTML table
+     */
+    processMarkdownTables(markdown) {
+        const lines = markdown.split('\n');
+        let inTable = false;
+        let tableContent = [];
+        let result = [];
         
-        // Tìm các bài viết liên quan
-        this.relatedPosts = this.findRelatedPosts(slug, post.category);
+        // Process each line
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const trimmedLine = line.trim();
+            
+            // Check if this line is part of a table
+            if (trimmedLine.startsWith('|')) {
+                if (!inTable) {
+                    inTable = true;
+                    tableContent = [];
+                }
+                tableContent.push(line);
+            } else {
+                // Not a table line
+                if (inTable) {
+                    // We were in a table, now we're not - process the table
+                    if (tableContent.length >= 2) { // Allow tables with just header and separator
+                        result.push(this.convertTableToHtml(tableContent));
+                    } else {
+                        // Not enough lines for a valid table, treat as regular text
+                        result = result.concat(tableContent);
+                    }
+                    inTable = false;
+                    tableContent = [];
+                }
+                result.push(line);
+            }
+        }
+        
+        // Handle table at the end of content
+        if (inTable) {
+            if (tableContent.length >= 2) { // Allow tables with just header and separator
+                result.push(this.convertTableToHtml(tableContent));
+            } else {
+                result = result.concat(tableContent);
+            }
+        }
+        
+        return result.join('\n');
+    }
 
-        // Cập nhật tiêu đề trang
-        document.title = post.title + ' - Hyperliquid Vietnam';
+    /**
+     * Chuyển bảng Markdown thành HTML table
+     */
+    convertTableToHtml(tableLines) {
+        const processedLines = tableLines.map(line => {
+            return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(cell => cell.trim());
+        });
+        const headers = processedLines[0];
+        const rows = processedLines.slice(2);
+        let html = '<table class="markdown-table">';
+        html += '<thead><tr>';
+        headers.forEach(header => { html += `<th>${header}</th>`; });
+        html += '</tr></thead>';
+        html += '<tbody>';
+        rows.forEach(row => {
+            html += '<tr>';
+            row.forEach(cell => { html += `<td>${cell}</td>`; });
+            html += '</tr>';
+        });
+        html += '</tbody></table>';
+        return html;
+    }
 
-        // Cập nhật tiêu đề và metadata bài viết
-        const postHeader = document.querySelector('.post-header h1');
-        if (postHeader) postHeader.textContent = post.title;
+    /**
+     * Hiển thị chi tiết bài viết
+     */
+    async renderPost(slug) {
+        try {
+            if (!this.postsIndex) {
+                await this.loadPostsIndex();
+            }
 
-        const postDate = document.querySelector('.post-meta-header .post-date');
-        if (postDate) postDate.textContent = this.formatDate(post.date);
+            const post = await this.getPost(slug);
+            if (!post) {
+                console.error(`Không tìm thấy bài viết với slug: ${slug}`);
+                return false;
+            }
 
-        const postAuthor = document.querySelector('.post-meta-header .post-author');
-        if (postAuthor) postAuthor.textContent = post.author || 'Team HyperVN';
+            // Lưu thông tin bài viết hiện tại
+            this.currentPost = post;
+            
+            // Tìm các bài viết liên quan
+            this.relatedPosts = this.findRelatedPosts(slug, post.category);
 
-        const postReadTime = document.querySelector('.post-meta-header .post-readtime');
-        if (postReadTime) postReadTime.textContent = `${post.readTime} phút đọc`;
+            // Cập nhật tiêu đề trang
+            document.title = post.title + ' - Hyperliquid Vietnam';
 
-        const postCategory = document.querySelector('.post-meta-header .post-category');
-        if (postCategory) postCategory.textContent = this.getCategoryName(post.category);
+            // Cập nhật tiêu đề và metadata bài viết
+            const postHeader = document.querySelector('.post-header h1');
+            if (postHeader) postHeader.textContent = post.title;
 
-        // Cập nhật nội dung bài viết
-        const postContent = document.querySelector('.post-content');
-        if (postContent) postContent.innerHTML = post.content;
+            const postDate = document.querySelector('.post-meta-header .post-date');
+            if (postDate) postDate.textContent = this.formatDate(post.date);
 
-        // Render bài viết liên quan
-        this.renderRelatedPosts();
+            const postAuthor = document.querySelector('.post-meta-header .post-author');
+            if (postAuthor) postAuthor.textContent = post.author || 'Team HyperVN';
 
-        return true;
+            const postReadTime = document.querySelector('.post-meta-header .post-readtime');
+            if (postReadTime) postReadTime.textContent = `${post.readTime} phút đọc`;
+
+            const postCategory = document.querySelector('.post-meta-header .post-category');
+            if (postCategory) postCategory.textContent = this.getCategoryName(post.category);
+
+            // Cập nhật nội dung bài viết
+            const postContent = document.querySelector('.post-content');
+            if (postContent) postContent.innerHTML = post.content;
+
+            // Render bài viết liên quan
+            this.renderRelatedPosts();
+
+            return true;
+        } catch (error) {
+            console.error('Error loading blog post:', error);
+            return false;
+        }
     }
 
     /**
@@ -270,29 +343,33 @@ class MarkdownBlog {
         let html = '';
         this.relatedPosts.forEach(post => {
             html += `
-            <a href="?slug=${post.slug}" class="related-post">
-                <div class="related-image">${post.image || '📄'}</div>
-                <div class="related-content">
-                    <h4 class="related-post-title">${post.title}</h4>
-                    <div class="related-post-meta">${this.formatDate(post.date)} · ${post.readTime} phút đọc</div>
+                <div class="related-post">
+                    <a href="post.html?slug=${post.slug}">
+                        <div class="related-post-image">${post.image}</div>
+                        <div class="related-post-content">
+                            <h3>${post.title}</h3>
+                            <div class="related-post-meta">${this.formatDate(post.date)} · ${post.readTime} phút đọc</div>
+                            <p>${post.excerpt}</p>
+                        </div>
+                    </a>
                 </div>
-            </a>`;
+            `;
         });
 
-        relatedContainer.innerHTML = html;
+        relatedContainer.innerHTML = html || '<p>Không có bài viết liên quan.</p>';
     }
 
     /**
-     * Lấy tên danh mục
+     * Lấy tên danh mục từ mã danh mục
      */
-    getCategoryName(category) {
+    getCategoryName(categoryCode) {
         const categories = {
-            'tutorial': 'Hướng dẫn',
             'news': 'Tin tức',
+            'tutorial': 'Hướng dẫn',
             'analysis': 'Phân tích',
             'airdrop': 'Airdrop'
         };
-        return categories[category] || category;
+        return categories[categoryCode] || 'Chưa phân loại';
     }
 
     /**
@@ -303,104 +380,100 @@ class MarkdownBlog {
             await this.loadPostsIndex();
         }
 
-        const blogGrid = document.getElementById('blogGrid');
-        if (!blogGrid || !this.postsIndex || !this.postsIndex.posts) return false;
-
-        let posts = this.postsIndex.posts;
-        if (category !== 'all') {
-            posts = posts.filter(post => post.category === category);
+        const postsContainer = document.querySelector('#blogGrid') || document.querySelector('.blog-grid');
+        const featuredContainer = document.querySelector('.featured-post');
+        
+        if (!postsContainer) {
+            console.error('Không tìm thấy container cho danh sách bài viết');
+            return;
         }
 
-        // Tìm bài viết nổi bật
-        const featuredPost = posts.find(post => post.featured);
+        // Lọc bài viết theo danh mục nếu cần
+        let filteredPosts = [...this.postsIndex.posts];
+        if (category !== 'all') {
+            filteredPosts = filteredPosts.filter(post => post.category === category);
+        }
+
+        // Nếu không có bài viết
+        if (filteredPosts.length === 0) {
+            postsContainer.innerHTML = '<div class="no-posts">Không có bài viết nào trong danh mục này.</div>';
+            if (featuredContainer) featuredContainer.style.display = 'none';
+            return;
+        }
+
+        // Tìm bài viết nổi bật (featured)
+        const featuredPost = filteredPosts.find(post => post.featured) || filteredPosts[0];
         
-        let html = '';
-        
-        // Render bài viết nổi bật
-        if (featuredPost) {
-            html += `
-            <article class="blog-post featured-post" data-category="${featuredPost.category}">
-                <div class="post-image featured-image">${featuredPost.image || '📄'}</div>
-                <div class="featured-content">
-                    <span class="featured-badge">⭐ Nổi bật</span>
+        // Hiển thị bài viết nổi bật nếu có container
+        if (featuredContainer && featuredPost) {
+            featuredContainer.innerHTML = `
+                <div class="featured-post-image">
+                    ${featuredPost.image}
+                </div>
+                <div class="featured-post-content">
                     <div class="post-category">${this.getCategoryName(featuredPost.category)}</div>
-                    <h2 class="post-title">
-                        <a href="post.html?slug=${featuredPost.slug}">
-                            ${featuredPost.title}
-                        </a>
-                    </h2>
-                    <p class="post-excerpt">
-                        ${featuredPost.excerpt}
-                    </p>
+                    <h2><a href="post.html?slug=${featuredPost.slug}">${featuredPost.title}</a></h2>
                     <div class="post-meta">
                         <div class="post-date">
-                            <span>📅</span>
                             <span>${this.formatDate(featuredPost.date)}</span>
                         </div>
-                        <div class="read-time">
-                            <span>⏱️</span>
+                        <div class="post-readtime">
                             <span>${featuredPost.readTime} phút đọc</span>
                         </div>
                     </div>
+                    <p>${featuredPost.excerpt}</p>
+                    <a href="post.html?slug=${featuredPost.slug}" class="read-more">Đọc tiếp</a>
                 </div>
-            </article>`;
+            `;
         }
 
-        // Render các bài viết khác
-        posts.forEach(post => {
-            if (featuredPost && post.slug === featuredPost.slug) return;
-            
-            html += `
-            <article class="blog-post" data-category="${post.category}">
-                <div class="post-image">${post.image || '📄'}</div>
-                <div class="post-content">
-                    <div class="post-category">${this.getCategoryName(post.category)}</div>
-                    <h3 class="post-title">
+        // Hiển thị các bài viết khác (trừ bài featured)
+        const otherPosts = filteredPosts.filter(post => post !== featuredPost);
+        
+        let postsHtml = '';
+        otherPosts.forEach(post => {
+            postsHtml += `
+                <div class="blog-post">
+                    <div class="post-image">
                         <a href="post.html?slug=${post.slug}">
-                            ${post.title}
+                            ${post.image}
                         </a>
-                    </h3>
-                    <p class="post-excerpt">
-                        ${post.excerpt}
-                    </p>
-                    <div class="post-meta">
-                        <div class="post-date">
-                            <span>📅</span>
-                            <span>${this.formatDate(post.date)}</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-category">${this.getCategoryName(post.category)}</div>
+                        <h3><a href="post.html?slug=${post.slug}">${post.title}</a></h3>
+                        <div class="post-meta">
+                            <div class="post-date">
+                                <span>${this.formatDate(post.date)}</span>
+                            </div>
+                            <div class="post-readtime">
+                                <span>${post.readTime} phút đọc</span>
+                            </div>
                         </div>
-                        <div class="read-time">
-                            <span>⏱️</span>
-                            <span>${post.readTime} phút đọc</span>
-                        </div>
+                        <p>${post.excerpt}</p>
+                        <a href="post.html?slug=${post.slug}" class="read-more">Đọc tiếp</a>
                     </div>
                 </div>
-            </article>`;
+            `;
         });
-
-        blogGrid.innerHTML = html;
-        return true;
+        
+        postsContainer.innerHTML = postsHtml;
     }
 
     /**
-     * Tìm kiếm bài viết
+     * Tìm bài viết liên quan
      */
-    async searchPosts(searchTerm) {
-        if (!this.postsIndex) {
-            await this.loadPostsIndex();
-        }
-
-        if (!searchTerm || !this.postsIndex || !this.postsIndex.posts) return [];
-
-        searchTerm = searchTerm.toLowerCase();
-        return this.postsIndex.posts.filter(post => {
-            return post.title.toLowerCase().includes(searchTerm) || 
-                   post.excerpt.toLowerCase().includes(searchTerm);
-        });
+    findRelatedPosts(currentSlug, category, count = 3) {
+        if (!this.postsIndex || !this.postsIndex.posts) return [];
+        return this.postsIndex.posts
+            .filter(post => post.slug !== currentSlug && post.category === category)
+            .slice(0, count);
     }
 }
 
 // Khởi tạo đối tượng blog
 const blog = new MarkdownBlog();
+window.blog = blog; // Đảm bảo blog là global
 
 // Kiểm tra xem có param slug không để hiển thị chi tiết bài viết
 document.addEventListener('DOMContentLoaded', async function() {
@@ -410,99 +483,61 @@ document.addEventListener('DOMContentLoaded', async function() {
         const slug = urlParams.get('slug');
         
         if (slug) {
-            await blog.renderPost(slug);
+            try {
+                console.log('Loading blog post:', slug);
+                await blog.renderPost(slug);
+            } catch (error) {
+                console.error('Error loading blog post:', error);
+            }
         }
     }
     
     // Xử lý trang danh sách bài viết
-    if (window.location.pathname.includes('index.html') && window.location.pathname.includes('blog')) {
-        // Lấy category từ URL nếu có
+    if (window.location.pathname.includes('blog/index.html') || window.location.pathname.endsWith('/blog/')) {
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('category') || 'all';
         
-        // Render danh sách bài viết
-        await blog.renderPostsList(category);
-        
-        // Đánh dấu filter button active
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(btn => {
-            if (btn.dataset.category === category) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
+        try {
+            await blog.renderPostsList(category);
+            
+            // Xử lý chuyển đổi danh mục
+            const categoryLinks = document.querySelectorAll('.category-filter a');
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', async function(e) {
+                    e.preventDefault();
+                    
+                    // Xóa class active từ tất cả các link
+                    categoryLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Thêm class active cho link được click
+                    this.classList.add('active');
+                    
+                    // Lấy danh mục từ data attribute
+                    const selectedCategory = this.getAttribute('data-category') || 'all';
+                    
+                    // Cập nhật URL
+                    const newUrl = selectedCategory === 'all' 
+                        ? window.location.pathname 
+                        : `${window.location.pathname}?category=${selectedCategory}`;
+                    history.pushState({}, '', newUrl);
+                    
+                    // Render lại danh sách bài viết
+                    await blog.renderPostsList(selectedCategory);
+                });
+            });
+            
+            // Đánh dấu danh mục đang active
+            const activeCategory = category || 'all';
+            const activeCategoryLink = document.querySelector(`.category-filter a[data-category="${activeCategory}"]`);
+            if (activeCategoryLink) {
+                activeCategoryLink.classList.add('active');
             }
-        });
-        
-        // Xử lý filter bài viết
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', async () => {
-                const selectedCategory = btn.dataset.category;
-                
-                // Cập nhật URL với category mới
-                const url = new URL(window.location);
-                url.searchParams.set('category', selectedCategory);
-                window.history.pushState({}, '', url);
-                
-                // Render lại danh sách bài viết
-                await blog.renderPostsList(selectedCategory);
-                
-                // Cập nhật trạng thái active cho buttons
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
-        
-        // Xử lý tìm kiếm
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.addEventListener('input', async (e) => {
-                const searchTerm = e.target.value;
-                if (searchTerm.length > 2) {
-                    const results = await blog.searchPosts(searchTerm);
-                    // Hiển thị kết quả tìm kiếm
-                    const blogGrid = document.getElementById('blogGrid');
-                    if (blogGrid) {
-                        let html = '';
-                        results.forEach(post => {
-                            html += `
-                            <article class="blog-post" data-category="${post.category}">
-                                <div class="post-image">${post.image || '📄'}</div>
-                                <div class="post-content">
-                                    <div class="post-category">${blog.getCategoryName(post.category)}</div>
-                                    <h3 class="post-title">
-                                        <a href="post.html?slug=${post.slug}">
-                                            ${post.title}
-                                        </a>
-                                    </h3>
-                                    <p class="post-excerpt">
-                                        ${post.excerpt}
-                                    </p>
-                                    <div class="post-meta">
-                                        <div class="post-date">
-                                            <span>📅</span>
-                                            <span>${blog.formatDate(post.date)}</span>
-                                        </div>
-                                        <div class="read-time">
-                                            <span>⏱️</span>
-                                            <span>${post.readTime} phút đọc</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>`;
-                        });
-                        
-                        if (results.length === 0) {
-                            html = '<div style="text-align: center; width: 100%; grid-column: 1/-1;"><p>Không tìm thấy kết quả phù hợp</p></div>';
-                        }
-                        
-                        blogGrid.innerHTML = html;
-                    }
-                } else if (searchTerm.length === 0) {
-                    // Nếu xóa hết từ khóa tìm kiếm, render lại tất cả bài viết
-                    const activeCategory = document.querySelector('.filter-btn.active')?.dataset.category || 'all';
-                    await blog.renderPostsList(activeCategory);
-                }
-            });
+        } catch (error) {
+            console.error('Error loading blog posts:', error);
         }
     }
 });
+
+// Debug: Log blog object
+console.log('MarkdownBlog instance initialized:', blog);
+console.log('typeof blog.renderPost:', typeof blog.renderPost);
