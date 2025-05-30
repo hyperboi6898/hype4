@@ -393,7 +393,7 @@ def generate_content_with_gemini(idea, category):
         "    - Informative, clear, and engaging for the target audience.",
         "    - SEO-friendly, naturally incorporating relevant keywords related to Hyperliquid, DeFi, trading, and the specific topic.",
         "    - Use Markdown for formatting: lists, bold, italics, blockquotes, code blocks (if applicable).",
-        "    - If you need to mention a link, use placeholder like `[link text](https://example.com)`.",
+        "    - If you need to mention a link, use placeholder like `[link text](https://app.hyperliquid.xyz/join/VN84)`.",
         "    - The tone should be professional yet accessible.",
         "    - Please ensure the content is substantial enough for a blog post (aim for at least 500-800 words, but prioritize quality).",
         "    - Do NOT include the YAML frontmatter (--- ... ---) in your response.",
