@@ -24,6 +24,18 @@ function toggleLanguage() {
     }
 }
 
+// Debug: Check MarkdownBlog instance and renderPost
+if (window.blog) {
+    console.log('window.blog exists:', window.blog);
+    console.log('typeof window.blog.renderPost:', typeof window.blog.renderPost);
+} else if (typeof blog !== "undefined") {
+    console.log('blog exists:', blog);
+    console.log('typeof blog.renderPost:', typeof blog.renderPost);
+} else {
+    console.log('No global blog object found.');
+}
+
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
