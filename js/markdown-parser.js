@@ -166,44 +166,152 @@ class MarkdownBlog {
      * Chuyển đổi Markdown thành HTML (hỗ trợ bảng, đoạn, tiêu đề, danh sách, v.v.)
      */
     markdownToHtml(markdown) {
-        // Xử lý bảng trước
-        let html = this.processMarkdownTables(markdown);
-        // Headings
-        html = html
-            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-            .replace(/^# (.*$)/gim, '<h1>$1</h1>');
-        // Đoạn văn: chia đoạn bằng 2 dòng xuống
-        const paragraphs = html.split(/\n\n+/);
-        html = paragraphs.map(p => {
-            if (p.trim() === '') return '';
-            if (p.match(/^<(\/)?(h\d|ul|ol|li|blockquote|pre|img|p|table|tr|td|th)/)) return p;
-            return '<p>' + p.replace(/\n/g, ' ') + '</p>';
-        }).join('\n\n');
-        // Bold, Italic
-        html = html
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>');
-        // Links, Images
-        html = html
-            .replace(/!\[([^\]]*)\]\(([^\)]*)\)/g, '<img alt="$1" src="$2" />')
-            .replace(/\[([^\]]*)\]\(([^\)]*)\)/g, '<a href="$2">$1</a>');
-        // Danh sách
-        html = html
-            .replace(/^\s*\n\* (.*)/gim, '<ul>\n<li>$1</li>')
-            .replace(/^\* (.*)/gim, '<li>$1</li>')
-            .replace(/^\s*\n\d+\. (.*)/gim, '<ol>\n<li>$1</li>')
-            .replace(/^\d+\. (.*)/gim, '<li>$1</li>');
-        // Blockquote
-        html = html.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
-        // Inline code
-        html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-        // Clean up
-        html = html
-            .replace(/<\/ul>\s*\n<ul>/g, '')
-            .replace(/<\/ol>\s*\n<ol>/g, '')
-            .replace(/\n$/gim, '<br />');
-        return html.trim();
+        try {
+            // Process tables first (they need special handling)
+            let html = this.processMarkdownTables(markdown);
+            
+            // Process headings
+            html = html
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // Process lists before paragraphs to avoid conflicts
+            // Unordered lists
+            let listMatches = html.match(/^\s*[\*\-] (.+)$/gim);
+            if (listMatches) {
+                let inList = false;
+                let listLines = html.split('\n');
+                let processedLines = [];
+                
+                for (let i = 0; i < listLines.length; i++) {
+                    let line = listLines[i];
+                    if (line.match(/^\s*[\*\-] (.+)$/)) {
+                        if (!inList) {
+                            processedLines.push('<ul>');
+                            inList = true;
+                        }
+                        processedLines.push(`<li>${line.replace(/^\s*[\*\-] /, '')}</li>`);
+                    } else {
+                        if (inList) {
+                            processedLines.push('</ul>');
+                            inList = false;
+                        }
+                        processedLines.push(line);
+                    }
+                }
+                
+                if (inList) {
+                    processedLines.push('</ul>');
+                }
+                
+                html = processedLines.join('\n');
+            }
+            
+            // Ordered lists
+            listMatches = html.match(/^\s*\d+\. (.+)$/gim);
+            if (listMatches) {
+                let inList = false;
+                let listLines = html.split('\n');
+                let processedLines = [];
+                
+                for (let i = 0; i < listLines.length; i++) {
+                    let line = listLines[i];
+                    if (line.match(/^\s*\d+\. (.+)$/)) {
+                        if (!inList) {
+                            processedLines.push('<ol>');
+                            inList = true;
+                        }
+                        processedLines.push(`<li>${line.replace(/^\s*\d+\. /, '')}</li>`);
+                    } else {
+                        if (inList) {
+                            processedLines.push('</ol>');
+                            inList = false;
+                        }
+                        processedLines.push(line);
+                    }
+                }
+                
+                if (inList) {
+                    processedLines.push('</ol>');
+                }
+                
+                html = processedLines.join('\n');
+            }
+            
+            // Process paragraphs (split by double newlines)
+            const paragraphs = html.split(/\n\n+/);
+            html = paragraphs.map(p => {
+                p = p.trim();
+                if (p === '') return '';
+                // Skip already-processed HTML elements
+                if (p.match(/^<(\/)?(h\d|ul|ol|li|blockquote|pre|img|p|table|tr|td|th|tbody|thead)/)) {
+                    return p;
+                }
+                // Wrap in paragraph tags
+                return '<p>' + p.replace(/\n/g, ' ') + '</p>';
+            }).join('\n\n');
+            
+            // Process inline formatting
+            // Bold
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            // Italic
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // Process links and images
+            html = html
+                .replace(/!\[([^\]]*)\]\(([^\)]*)\)/g, '<img alt="$1" src="$2" />')
+                .replace(/\[([^\]]*)\]\(([^\)]*)\)/g, '<a href="$2">$1</a>');
+            
+            // Process blockquotes
+            let blockquoteMatches = html.match(/^\s*> (.+)$/gim);
+            if (blockquoteMatches) {
+                let inBlockquote = false;
+                let blockquoteLines = html.split('\n');
+                let processedLines = [];
+                
+                for (let i = 0; i < blockquoteLines.length; i++) {
+                    let line = blockquoteLines[i];
+                    if (line.match(/^\s*> (.+)$/)) {
+                        if (!inBlockquote) {
+                            processedLines.push('<blockquote>');
+                            inBlockquote = true;
+                        }
+                        processedLines.push(line.replace(/^\s*> /, ''));
+                    } else {
+                        if (inBlockquote) {
+                            processedLines.push('</blockquote>');
+                            inBlockquote = false;
+                        }
+                        processedLines.push(line);
+                    }
+                }
+                
+                if (inBlockquote) {
+                    processedLines.push('</blockquote>');
+                }
+                
+                html = processedLines.join('\n');
+            }
+            
+            // Process inline code
+            html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+            
+            // Clean up
+            html = html
+                .replace(/<\/ul>\s*\n<ul>/g, '')
+                .replace(/<\/ol>\s*\n<ol>/g, '')
+                .replace(/\n$/gim, '<br />');
+            
+            return html.trim();
+        } catch (error) {
+            console.error('Error converting markdown to HTML:', error);
+            // Return a basic HTML version of the markdown as fallback
+            return `<div class="markdown-error">
+                <p>Error rendering markdown. Raw content:</p>
+                <pre>${markdown.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+            </div>`;
+        }
     }
 
     /**
@@ -260,23 +368,55 @@ class MarkdownBlog {
      * Chuyển bảng Markdown thành HTML table
      */
     convertTableToHtml(tableLines) {
-        const processedLines = tableLines.map(line => {
-            return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(cell => cell.trim());
-        });
-        const headers = processedLines[0];
-        const rows = processedLines.slice(2);
-        let html = '<table class="markdown-table">';
-        html += '<thead><tr>';
-        headers.forEach(header => { html += `<th>${header}</th>`; });
-        html += '</tr></thead>';
-        html += '<tbody>';
-        rows.forEach(row => {
-            html += '<tr>';
-            row.forEach(cell => { html += `<td>${cell}</td>`; });
-            html += '</tr>';
-        });
-        html += '</tbody></table>';
-        return html;
+        try {
+            // Ensure we have at least a header row and separator row
+            if (tableLines.length < 2) {
+                console.warn('Table has fewer than 2 lines, cannot render properly');
+                return tableLines.join('\n');
+            }
+
+            // Process each line to extract cells
+            const processedLines = tableLines.map(line => {
+                return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(cell => cell.trim());
+            });
+
+            // Get headers from first row
+            const headers = processedLines[0];
+            
+            // Skip the separator row (row 1) and get data rows
+            const rows = processedLines.slice(2);
+            
+            // Start building HTML table
+            let html = '<table class="markdown-table">';
+            
+            // Add header row
+            html += '<thead><tr>';
+            headers.forEach(header => { 
+                html += `<th>${header}</th>`; 
+            });
+            html += '</tr></thead>';
+            
+            // Add data rows
+            html += '<tbody>';
+            rows.forEach(row => {
+                html += '<tr>';
+                // Make sure we have the right number of cells
+                while (row.length < headers.length) {
+                    row.push(''); // Add empty cells if needed
+                }
+                row.forEach(cell => { 
+                    html += `<td>${cell}</td>`; 
+                });
+                html += '</tr>';
+            });
+            html += '</tbody></table>';
+            
+            return html;
+        } catch (error) {
+            console.error('Error converting table to HTML:', error);
+            // Return original content if conversion fails
+            return tableLines.join('\n');
+        }
     }
 
     /**
