@@ -169,8 +169,16 @@ function toggleChat() {
 async function fetchTokenPrice() {
     try {
         // Tạo loading state
-        document.getElementById('hype-price').innerHTML = '$<span class="loading"></span>';
-        document.getElementById('live-price').innerHTML = '$<span class="loading"></span>';
+        const hypePriceElement = document.getElementById('hype-price');
+        const livePriceElement = document.getElementById('live-price');
+        
+        if (hypePriceElement) {
+            hypePriceElement.innerHTML = '$<span class="loading"></span>';
+        }
+        
+        if (livePriceElement) {
+            livePriceElement.innerHTML = '$<span class="loading"></span>';
+        }
 
         // Gọi CoinGecko API (miễn phí, không cần API key)
         const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=hyperliquid&vs_currencies=usd&include_24hr_change=true');
@@ -191,19 +199,22 @@ async function fetchTokenPrice() {
         const change = data.hyperliquid.usd_24h_change;
         
         // Cập nhật UI
-        document.getElementById('hype-price').textContent = '$' + price.toFixed(2);
-        document.getElementById('live-price').textContent = '$' + price.toFixed(2);
+        if (hypePriceElement) {
+            hypePriceElement.textContent = '$' + price.toFixed(2);
+        }
+        
+        if (livePriceElement) {
+            livePriceElement.textContent = '$' + price.toFixed(2);
+        }
         
         const changeElements = [
             document.getElementById('hype-change'),
             document.getElementById('live-change')
-        ];
+        ].filter(el => el !== null);
         
         changeElements.forEach(el => {
-            if (el) {
-                el.textContent = (change > 0 ? '+' : '') + change.toFixed(2) + '%' + (el.id === 'live-change' ? ' (24h)' : '');
-                el.className = 'price-change ' + (change > 0 ? 'positive' : 'negative');
-            }
+            el.textContent = (change > 0 ? '+' : '') + change.toFixed(2) + '%' + (el.id === 'live-change' ? ' (24h)' : '');
+            el.className = 'price-change ' + (change > 0 ? 'positive' : 'negative');
         });
         
         console.log('Price updated from CoinGecko:', price);
@@ -217,19 +228,22 @@ async function fetchTokenPrice() {
         const newPrice = basePrice + variation;
         const change = ((newPrice - basePrice) / basePrice * 100).toFixed(2);
         
-        document.getElementById('hype-price').textContent = '$' + newPrice.toFixed(2);
-        document.getElementById('live-price').textContent = '$' + newPrice.toFixed(2) + ' (est.)';
+        if (hypePriceElement) {
+            hypePriceElement.textContent = '$' + newPrice.toFixed(2);
+        }
+        
+        if (livePriceElement) {
+            livePriceElement.textContent = '$' + newPrice.toFixed(2) + ' (est.)';
+        }
         
         const changeElements = [
             document.getElementById('hype-change'),
             document.getElementById('live-change')
-        ];
+        ].filter(el => el !== null);
         
         changeElements.forEach(el => {
-            if (el) {
-                el.textContent = (change > 0 ? '+' : '') + change + '%' + (el.id === 'live-change' ? ' (24h est.)' : '');
-                el.className = 'price-change ' + (change > 0 ? 'positive' : 'negative');
-            }
+            el.textContent = (change > 0 ? '+' : '') + change + '%' + (el.id === 'live-change' ? ' (24h est.)' : '');
+            el.className = 'price-change ' + (change > 0 ? 'positive' : 'negative');
         });
         
         console.log('Using simulated price data as fallback');

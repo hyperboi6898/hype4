@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống kê Hyperliquid - Phí giao dịch và giá token</title>
+    <meta name="description" content="Theo dõi phí giao dịch hàng ngày và giá token của Hyperliquid - Cập nhật theo thời gian thực">
+    <meta property="og:title" content="Thống kê Hyperliquid - Phí giao dịch và giá token">
+    <meta property="og:description" content="Theo dõi phí giao dịch hàng ngày và giá token của Hyperliquid - Cập nhật theo thời gian thực">
+    <meta property="og:image" content="blog/images/image.webp">
+    <meta property="og:url" content="https://hyperliquid-vietnam.com/stats.html">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Hyperliquid, HYPE, crypto stats, trading volume, TVL, perpetual exchange, DeFi stats, crypto metrics, decentralized exchange">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thống kê Hyperliquid - Phí giao dịch và giá token">
+    <meta name="twitter:description" content="Theo dõi phí giao dịch hàng ngày và giá token của Hyperliquid - Cập nhật theo thời gian thực">
+    <meta name="twitter:image" content="blog/images/image.webp">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hyperliquid-vietnam.com/stats.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles-part2.css">
+    <link rel="stylesheet" href="css/styles-part3.css">
+    <link rel="stylesheet" href="css/styles-part4.css">
+    <link rel="stylesheet" href="css/styles-part5.css">
+    <link rel="stylesheet" href="css/styles-part6.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-theme="dark">
+    <!-- Price Ticker -->
+    <div class="price-ticker">
+        <div class="ticker-content">
+            <div class="price-item">
+                <span>💎 HYPE:</span>
+                <span id="hype-price">$36.92</span>
+                <span id="hype-change" class="price-change positive">+2.23%</span>
+            </div>
+            <div class="price-item">
+                <span>📊 24h Volume:</span>
+                <span>$438.7M</span>
+            </div>
+            <div class="price-item">
+                <span>🔥 TVL:</span>
+                <span>$12.8B</span>
+            </div>
+            <div class="price-item">
+                <span>⚡ TPS:</span>
+                <span>200,000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                Hyperliquid Vietnam
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html#features">Tính năng</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#testimonials">Đánh giá</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="stats.html" class="active">Thống kê</a></li>
+                <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank" rel="noopener" style="color:#00eaff;font-weight:bold;">Bắt đầu giao dịch</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                <button class="lang-toggle" onclick="toggleLanguage()">🇻🇳</button>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Stats Hero Section -->
+    <section class="stats-hero">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h1>Thống kê Hyperliquid</h1>
+                <p>Theo dõi phí giao dịch và giá token theo thời gian thực</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Dashboard -->
+    <section class="stats-dashboard">
+        <div class="container">
+            <!-- Price Chart Section -->
+            <div class="price-section-title fade-in">
+                <h2>Biểu đồ giá HYPE</h2>
+            </div>
+            
+            <!-- DexScreener Embed (Full Width) -->
+            <div class="dexscreener-container fade-in">
+                <style>
+                    .dexscreener-container {
+                        margin-top: 2rem;
+                        margin-bottom: 3rem;
+                        background: var(--background-card);
+                        border-radius: 16px;
+                        border: 1px solid var(--border-color);
+                        overflow: hidden;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                    }
+                    #dexscreener-embed {
+                        position: relative;
+                        width: 100%;
+                        padding-bottom: 80%;
+                    }
+                    @media(min-width:1400px) {
+                        #dexscreener-embed {
+                            padding-bottom: 50%;
+                        }
+                    }
+                    #dexscreener-embed iframe {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        border: 0;
+                    }
+                </style>
+                <div id="dexscreener-embed">
+                    <iframe src="https://dexscreener.com/hyperliquid/0x13ba5fea7078ab3798fbce53b4d0721c?embed=1&loadChartSettings=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"></iframe>
+                </div>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-overview fade-in">
+                <div class="stats-overview-grid">
+                    <!-- Fee Stats Card -->
+                    <div class="stats-card">
+                        <div class="stats-card-header">
+                            <h2>Phí giao dịch hàng ngày</h2>
+                            <div class="stats-card-actions">
+                                <button class="btn-refresh" onclick="fetchFeeData()">🔄</button>
+                                <button class="btn-timeframe active" data-timeframe="7d">7 ngày</button>
+                                <button class="btn-timeframe" data-timeframe="30d">30 ngày</button>
+                                <button class="btn-timeframe" data-timeframe="90d">90 ngày</button>
+                            </div>
+                        </div>
+                        <div class="stats-card-body">
+                            <div class="stats-highlight">
+                                <div class="stats-value">
+                                    <span id="today-fee">$3,017,044</span>
+                                    <div class="stats-change" id="fee-change">
+                                        <span class="change-value negative">-3.73%</span>
+                                        <span class="change-label">so với hôm qua</span>
+                                    </div>
+                                </div>
+                                <div class="stats-label">Phí giao dịch hôm nay</div>
+                            </div>
+                            <div class="stats-chart-container">
+                                <canvas id="fee-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="stats-card-footer">
+                            <div class="stats-summary">
+                                <div class="stats-summary-item">
+                                    <span class="summary-label">7 ngày</span>
+                                    <span class="summary-value" id="fee-7d">$18,062,999</span>
+                                </div>
+                                <div class="stats-summary-item">
+                                    <span class="summary-label">Tổng phí</span>
+                                    <span class="summary-value" id="fee-total">$383,922,252</span>
+                                </div>
+                            </div>
+                            <div class="stats-source">Nguồn: DeFi Llama API</div>
+                        </div>
+                    </div>
+
+                    <!-- TVL Stats Card -->
+                    <div class="stats-card">
+                        <div class="stats-card-header">
+                            <h2>Tổng giá trị khóa (TVL)</h2>
+                            <div class="stats-card-actions">
+                                <button class="btn-refresh" onclick="fetchTVLData()">🔄</button>
+                            </div>
+                        </div>
+                        <div class="stats-card-body">
+                            <div class="stats-highlight">
+                                <div class="stats-value">
+                                    <span id="current-tvl">$1,758,094,425</span>
+                                    <div class="stats-change" id="tvl-change">
+                                        <span class="change-value positive">+2.15%</span>
+                                        <span class="change-label">7 ngày qua</span>
+                                    </div>
+                                </div>
+                                <div class="stats-label">TVL hiện tại</div>
+                            </div>
+                            <div class="tvl-breakdown">
+                                <h3>Stablecoins trên Hyperliquid L1</h3>
+                                <div class="stablecoin-list">
+                                    <div class="stablecoin-item">
+                                        <div class="stablecoin-name">USDC</div>
+                                        <div class="stablecoin-value">$1,775,483,252</div>
+                                    </div>
+                                    <div class="stablecoin-item">
+                                        <div class="stablecoin-name">USDT</div>
+                                        <div class="stablecoin-value">$13,728,464</div>
+                                    </div>
+                                    <div class="stablecoin-item">
+                                        <div class="stablecoin-name">FEUSD</div>
+                                        <div class="stablecoin-value">$26,850,734</div>
+                                    </div>
+                                    <div class="stablecoin-item">
+                                        <div class="stablecoin-name">USDe</div>
+                                        <div class="stablecoin-value">$7,282,764</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats-card-footer">
+                            <div class="stats-source">Nguồn: DeFi Llama API</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volume Stats Card (Full Width) -->
+                <div class="stats-card volume-card">
+                    <div class="stats-card-header">
+                        <h2>Khối lượng giao dịch Perp</h2>
+                        <div class="stats-card-actions">
+                            <button class="btn-refresh" onclick="fetchVolumeData()">🔄</button>
+                        </div>
+                    </div>
+                    <div class="stats-card-body">
+                        <div class="stats-highlight">
+                            <div class="stats-value">
+                                <span id="current-volume">$11,086,221,730</span>
+                                <div class="stats-change" id="volume-change">
+                                    <span class="change-value positive">+2.72%</span>
+                                    <span class="change-label">so với hôm qua</span>
+                                </div>
+                            </div>
+                            <div class="stats-label">Khối lượng giao dịch hôm nay</div>
+                        </div>
+                    </div>
+                    <div class="stats-card-footer">
+                        <div class="stats-summary">
+                            <div class="stats-summary-item">
+                                <span class="summary-label">7 ngày</span>
+                                <span class="summary-value" id="weekly-volume">$65,560,958,107</span>
+                            </div>
+                            <div class="stats-summary-item">
+                                <span class="summary-label">Tổng khối lượng</span>
+                                <span class="summary-value" id="total-volume">$1,610,642,751,323</span>
+                            </div>
+                            <div class="stats-summary-item">
+                                <span class="summary-label">Thị phần</span>
+                                <span class="summary-value" id="market-share">15.8%</span>
+                            </div>
+                        </div>
+                        <div class="stats-source">Nguồn: DeFi Llama API</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keyword Rich Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-wrapper fade-in">
+                <h2>Thống kê Hyperliquid - Theo dõi dữ liệu thị trường theo thời gian thực</h2>
+                <div class="content-grid">
+                    <div class="content-item">
+                        <h3>Biểu đồ giá Hyperliquid</h3>
+                        <p>Theo dõi biểu đồ giá HYPE theo thời gian thực với các công cụ phân tích kỹ thuật. Biểu đồ Hyperliquid cập nhật liên tục giúp bạn nắm bắt mọi biến động của thị trường.</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>TVL Hyperliquid</h3>
+                        <p>Tổng giá trị khóa (TVL) trên Hyperliquid L1 đạt hơn $1.7 tỷ với các stablecoin chính bao gồm USDC, USDT, FEUSD và USDe. Theo dõi TVL Hyperliquid để đánh giá sự tăng trưởng của hệ sinh thái.</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>Phí giao dịch và Buy Back</h3>
+                        <p>97% phí giao dịch trên Hyperliquid được dùng để buy back token HYPE, tạo áp lực mua liên tục trên thị trường. Theo dõi doanh thu phí giao dịch hàng ngày để dự đoán tác động đến giá token.</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>Khối lượng giao dịch Hyperliquid</h3>
+                        <p>Sàn Hyperliquid đạt khối lượng giao dịch hơn $11 tỷ mỗi ngày, vươn lên vị trí hàng đầu trong các sàn giao dịch phi tập trung. Thống kê volume giao dịch của Hyperliquid cho thấy sự tăng trưởng ổn định.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Bắt đầu giao dịch trên Hyperliquid ngay hôm nay</h2>
+                <p>Trải nghiệm giao dịch Perp với phí thấp, tốc độ nhanh và thanh khoản cao nhất thị trường</p>
+                <div class="cta-buttons">
+                    <a href="https://app.hyperliquid.xyz/join/VN84" class="btn-primary">Đăng ký tài khoản</a>
+                    <a href="https://docs.hyperliquid.xyz/" class="btn-secondary">Tìm hiểu thêm</a>
+                </div>
+                <div class="cta-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-text">
+                            <h3>Phí giao dịch thấp</h3>
+                            <p>Chỉ 0.05% cho maker và 0.07% cho taker, 97% phí được dùng để buy back token</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">
+                            <h3>Tốc độ nhanh</h3>
+                            <p>Xác nhận giao dịch trong vòng 500ms trên Hyperliquid L1</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">
+                            <h3>Thanh khoản cao</h3>
+                            <p>Hơn $11B khối lượng giao dịch hàng ngày trên sàn Hyperliquid</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Hyperliquid Vietnam</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Cộng đồng Hyperliquid Vietnam - Nơi kết nối các trader DeFi hàng đầu.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="X (Twitter)">𝕏</a>
+                        <a href="#" class="social-link" title="YouTube">📺</a>
+                        <a href="#" class="social-link" title="Facebook">📘</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Sản phẩm</h4>
+                    <ul>
+                        <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank">Perpetual Futures</a></li>
+                        <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank">Spot Trading</a></li>
+                        <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank">Staking</a></li>
+                        <li><a href="https://app.hyperliquid.xyz/join/VN84" target="_blank">Vault</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Cộng đồng</h4>
+                    <ul>
+                        <li><a href="#">Telegram Việt Nam</a></li>
+                        <li><a href="#">Discord Global</a></li>
+                        <li><a href="#">X (Twitter)</a></li>
+                        <li><a href="#">YouTube Channel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tài nguyên</h4>
+                    <ul>
+                        <li><a href="https://hyperliquid.gitbook.io/hyperliquid-docs" target="_blank">Documentation</a></li>
+                        <li><a href="https://docs.hyperliquid.xyz/developer" target="_blank">API Docs</a></li>
+                        <li><a href="blog/index.html">Blog & Tutorials</a></li>
+                        <li><a href="index.html#faq">Hỗ trợ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hyperliquid Vietnam Community. Không phải website chính thức của Hyperliquid Labs.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
