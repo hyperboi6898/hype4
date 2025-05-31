@@ -31,10 +31,145 @@
     margin-bottom: 3rem;
 }
 
+/* Comparison Charts Section */
+.comparison-charts-section {
+    padding: 2rem 0 4rem;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.comparison-charts-section .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.comparison-charts-section .section-title h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.comparison-charts-section .section-title h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.comparison-charts-section .stats-overview {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.comparison-charts-section .stats-card {
+    background: var(--background-card-dark);
+    border: 1px solid var(--border-color-dark);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.comparison-charts-section .stats-card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color-dark);
+}
+
+.comparison-charts-section .stats-card-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text-light);
+}
+
+.comparison-charts-section .stats-card-body {
+    padding: 1.5rem;
+}
+
+.comparison-charts-section .stats-chart-container {
+    position: relative;
+    height: 0;
+    padding-bottom: 60%; /* Makes it rectangular and taller */
+    width: 100%;
+}
+
+.comparison-charts-section .stats-chart-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Today's Stats Display */
+.comparison-charts-section .today-stats {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.comparison-charts-section .today-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.comparison-charts-section .today-value span {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.comparison-charts-section .today-comparisons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.comparison-charts-section .today-comparison-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comparison-charts-section .color-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.comparison-charts-section .exchange-name {
+    font-weight: 500;
+    color: #ccc;
+}
+
+.comparison-charts-section .percentage-value {
+    font-weight: 700;
+    color: #fff;
+}
+
 @media (min-width: 992px) {
     .stats-overview-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
+    }
+    
+    /* Charts are now stacked vertically */
+    .comparison-charts-section .stats-overview {
+        grid-template-columns: 1fr;
+        max-width: 900px;
+        margin: 0 auto;
     }
 }
 

@@ -283,6 +283,40 @@
         </div>
     </section>
 
+    <!-- Volume and Open Interest Comparison Charts Section -->
+    <section class="comparison-charts-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>So sánh với các sàn khác</h2>
+            </div>
+            <div class="stats-overview fade-in">
+                <!-- Volume Comparison Chart -->
+                <div class="stats-card volume-comparison-card">
+                    <div class="stats-card-header">
+                        <h2>So sánh khối lượng giao dịch</h2>
+                    </div>
+                    <div class="stats-card-body">
+                        <div class="stats-chart-container">
+                            <canvas id="volumeComparisonChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Open Interest Comparison Chart -->
+                <div class="stats-card open-interest-comparison-card">
+                    <div class="stats-card-header">
+                        <h2>So sánh Open Interest</h2>
+                    </div>
+                    <div class="stats-card-body">
+                        <div class="stats-chart-container">
+                            <canvas id="openInterestComparisonChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Keyword Rich Content Section -->
     <section class="content-section">
         <div class="container">
@@ -398,6 +432,267 @@
 
     <script src="js/main.js"></script>
     <script src="js/stats.js"></script>
+    <script>
+        async function fetchAndRenderComparisonCharts() {
+            try {
+                const volumeResponse = await fetch('data/volume_data.json');
+                const volumeData = await volumeResponse.json();
+
+                const openInterestResponse = await fetch('data/open_interest_data.json');
+                const openInterestData = await openInterestResponse.json();
+
+                // Calculate percentage comparisons
+                const volumePercentages = calculatePercentageComparisons(volumeData);
+                const oiPercentages = calculatePercentageComparisons(openInterestData);
+
+                // Display today's values at the top of each chart
+                displayTodayStats(volumeData, 'volume-today', 'Khối lượng giao dịch');
+                displayTodayStats(openInterestData, 'oi-today', 'Open Interest');
+
+                // Render percentage comparison charts
+                renderPercentageChart(volumePercentages, 'volumeComparisonChart', 'Hyperliquid vs CEXs');
+                renderPercentageChart(oiPercentages, 'openInterestComparisonChart', 'Hyperliquid vs CEXs');
+
+            } catch (error) {
+                console.error('Error fetching comparison data:', error);
+            }
+        }
+
+        function calculatePercentageComparisons(data) {
+            const result = {};
+            const dates = Object.keys(data).sort(); // Sort dates chronologically
+            
+            // Create entries for each date
+            dates.forEach(date => {
+                result[date] = {};
+                const hyperliquidValue = data[date]['HYPERLIQUID'] || 0;
+                
+                // Calculate percentage for each exchange
+                for (const exchange of ['BINANCE', 'BYBIT', 'OKX']) {
+                    const exchangeValue = data[date][exchange] || 0;
+                    if (exchangeValue > 0) {
+                        // Calculate Hyperliquid as percentage of this exchange
+                        result[date][exchange] = (hyperliquidValue / exchangeValue) * 100;
+                    } else {
+                        result[date][exchange] = 0;
+                    }
+                }
+            });
+            
+            return result;
+        }
+
+        function displayTodayStats(data, containerId, title) {
+            // Get the most recent date
+            const dates = Object.keys(data).sort();
+            const latestDate = dates[dates.length - 1];
+            const latestData = data[latestDate];
+            
+            // Format the date for display
+            const displayDate = formatDate(latestDate);
+            
+            // Create or get container
+            let container = document.getElementById(containerId);
+            if (!container) {
+                container = document.createElement('div');
+                container.id = containerId;
+                container.className = 'today-stats';
+                
+                // Find where to insert it
+                const chartId = title.includes('Open Interest') ? 
+                    'openInterestComparisonChart' : 'volumeComparisonChart';
+                const chartContainer = document.getElementById(chartId).parentNode;
+                chartContainer.parentNode.insertBefore(container, chartContainer);
+            }
+            
+            // Hyperliquid value
+            const hyperliquidValue = latestData['HYPERLIQUID'] || 0;
+            const formattedValue = formatLargeNumber(hyperliquidValue);
+            
+            // Create HTML content
+            let html = `<div class="today-value">${title}: <span>${formattedValue}</span></div>`;
+            html += '<div class="today-comparisons">';
+            
+            // Add comparison percentages with colored dots
+            const exchanges = [
+                { name: 'BINANCE', color: '#3366FF' },
+                { name: 'BYBIT', color: '#FF33A8' },
+                { name: 'OKX', color: '#33FF57' }
+            ];
+            
+            exchanges.forEach(exchange => {
+                if (latestData[exchange.name]) {
+                    const percentage = ((hyperliquidValue / latestData[exchange.name]) * 100).toFixed(1);
+                    html += `<div class="today-comparison-item">`;
+                    html += `<span class="color-dot" style="background-color: ${exchange.color}"></span>`;
+                    html += `<span class="exchange-name">${exchange.name}:</span>`;
+                    html += `<span class="percentage-value">${percentage}%</span>`;
+                    html += `</div>`;
+                }
+            });
+            
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        }
+
+        function formatLargeNumber(num) {
+            if (num >= 1e9) {
+                return '$' + (num / 1e9).toFixed(2) + 'B';
+            } else if (num >= 1e6) {
+                return '$' + (num / 1e6).toFixed(2) + 'M';
+            } else if (num >= 1e3) {
+                return '$' + (num / 1e3).toFixed(2) + 'K';
+            } else {
+                return '$' + num.toFixed(2);
+            }
+        }
+
+        function renderPercentageChart(percentageData, chartId, labelPrefix) {
+            const dates = Object.keys(percentageData).sort(); // Sort dates chronologically
+            const exchanges = ['BINANCE', 'BYBIT', 'OKX'];
+            const colors = {
+                'BINANCE': '#3366FF',
+                'BYBIT': '#FF33A8',
+                'OKX': '#33FF57'
+            };
+            
+            const datasets = [];
+            
+            // Create datasets for each exchange comparison
+            exchanges.forEach(exchange => {
+                const values = dates.map(date => percentageData[date][exchange] || 0);
+                
+                // Get the latest value for the legend label
+                const latestValue = values[values.length - 1].toFixed(1);
+                
+                datasets.push({
+                    label: `${exchange}: ${latestValue}%`,
+                    data: values,
+                    borderColor: colors[exchange],
+                    backgroundColor: 'transparent',
+                    fill: false,
+                    tension: 0.4,
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    pointHoverRadius: 5
+                });
+            });
+
+            // Add a watermark to the chart
+            const watermarkPlugin = {
+                id: 'watermark',
+                beforeDraw: function(chart) {
+                    const ctx = chart.ctx;
+                    const width = chart.width;
+                    const height = chart.height;
+                    
+                    ctx.save();
+                    ctx.globalAlpha = 0.1;
+                    ctx.font = '30px Arial';
+                    ctx.fillStyle = '#33FF57';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText('HYPEFLOWS', width / 2, height / 2);
+                    ctx.restore();
+                }
+            };
+
+            new Chart(document.getElementById(chartId).getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                boxWidth: 10,
+                                font: {
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            callbacks: {
+                                label: function(context) {
+                                    const value = context.raw.toFixed(1);
+                                    return `vs ${context.dataset.label.split(':')[0]}: ${value}%`;
+                                },
+                                title: function(tooltipItems) {
+                                    return formatDate(tooltipItems[0].label);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 8,
+                                maxRotation: 0
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: '%'
+                            },
+                            grid: {
+                                color: 'rgba(255,255,255,0.1)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toFixed(1) + '%';
+                                }
+                            }
+                        }
+                    }
+                },
+                plugins: [watermarkPlugin]
+            });
+        }
+
+        // Add some CSS for the stats display
+        const style = document.createElement('style');
+        style.textContent = `
+            .stats-comparisons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-top: 10px;
+            }
+            .stats-comparison-item {
+                background: rgba(0,0,0,0.05);
+                padding: 5px 10px;
+                border-radius: 4px;
+            }
+            .comparison-label {
+                font-size: 0.9em;
+                margin-right: 5px;
+            }
+            .comparison-value {
+                font-weight: bold;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Call the function to fetch and render charts when the page loads
+        document.addEventListener('DOMContentLoaded', fetchAndRenderComparisonCharts);
+    </script>
     <script src="js/animations.js"></script>
 </body>
 </html>
