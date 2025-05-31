@@ -431,16 +431,803 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/stats.js"></script>
     <script>
+        // Fetch fee, TVL, and volume data from JSON files
+        async function fetchFeeData() {
+            try {
+                // Show loading state
+                document.getElementById('today-fee').innerHTML = '$<span class="loading"></span>';
+                document.getElementById('fee-7d').innerHTML = '$<span class="loading"></span>';
+                
+                const response = await fetch('data/fee_data.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch fee data');
+                }
+                
+                const data = await response.json();
+                
+                // Update UI with the latest data
+                updateFeeUI(data);
+                
+                // Initialize or update fee chart
+                initFeeChart(data);
+                
+                return data;
+            } catch (error) {
+                console.error('Error fetching fee data:', error);
+                
+                // Show error state
+                document.getElementById('today-fee').textContent = 'Không thể tải dữ liệu';
+                document.getElementById('fee-7d').textContent = 'Không thể tải dữ liệu';
+                
+                return null;
+            }
+        }
+        
+        function updateFeeUI(data) {
+            if (!data) return;
+            
+            // Get the latest fee data from totalDataChart
+            let todayFee = data.total24h || 0;
+            let yesterdayFee = data.total48hto24h || 0;
+            
+            // Check if totalDataChart exists and has data
+            if (data.totalDataChart && Array.isArray(data.totalDataChart) && data.totalDataChart.length > 1) {
+                // Get the latest entry from totalDataChart
+                const latestEntry = data.totalDataChart[data.totalDataChart.length - 1];
+                if (latestEntry && Array.isArray(latestEntry) && latestEntry.length > 1) {
+                    // Use this value as today's fee
+                    todayFee = latestEntry[1];
+                    
+                    // Get yesterday's fee from the second-to-last entry
+                    const yesterdayEntry = data.totalDataChart[data.totalDataChart.length - 2];
+                    if (yesterdayEntry && Array.isArray(yesterdayEntry) && yesterdayEntry.length > 1) {
+                        yesterdayFee = yesterdayEntry[1];
+                    }
+                }
+            }
+            
+            const weeklyFee = data.total7d || 0;
+            const totalFee = data.totalAllTime || 0;
+            
+            // Calculate change percentage
+            const changePercent = yesterdayFee > 0 ? ((todayFee - yesterdayFee) / yesterdayFee * 100).toFixed(2) : '0.00';
+            const changeClass = parseFloat(changePercent) >= 0 ? 'positive' : 'negative';
+            const changeSign = parseFloat(changePercent) >= 0 ? '+' : '';
+            
+            // Update UI elements
+            document.getElementById('today-fee').textContent = '$' + formatLargeNumber(todayFee);
+            document.getElementById('fee-7d').textContent = '$' + formatLargeNumber(weeklyFee);
+            document.getElementById('fee-total').textContent = '$' + formatLargeNumber(totalFee);
+            
+            document.getElementById('fee-change').innerHTML = `
+                <span class="change-value ${changeClass}">${changeSign}${changePercent}%</span>
+                <span class="change-label">so với hôm qua</span>
+            `;
+            
+            // Log for debugging
+            console.log('Fee data:', {
+                todayFee,
+                yesterdayFee,
+                weeklyFee,
+                totalFee,
+                changePercent
+            });
+        }
+        
+        function initFeeChart(data) {
+            if (!data || !data.totalDataChart || !data.totalDataChart.length) {
+                console.error('Invalid fee data structure for chart');
+                return;
+            }
+            
+            try {
+                // Process the data into the format we need
+                const processedData = processChartData(data.totalDataChart);
+                
+                // Set up the chart
+                const ctx = document.getElementById('fee-chart').getContext('2d');
+                
+                // Check if chart already exists and destroy it
+                if (window.feeChart) {
+                    window.feeChart.destroy();
+                }
+                
+                // Create gradient for the chart
+                const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+                gradient.addColorStop(0, 'rgba(0, 234, 255, 0.5)');
+                gradient.addColorStop(1, 'rgba(0, 234, 255, 0)');
+                
+                // Default to 7 days of data
+                const chartData = getTimeframeData(processedData, '7d');
+                
+                window.feeChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: chartData.dates,
+                        datasets: [{
+                            label: 'Phí giao dịch',
+                            data: chartData.values,
+                            borderColor: '#00eaff',
+                            backgroundColor: gradient,
+                            borderWidth: 2,
+                            pointRadius: 3,
+                            pointBackgroundColor: '#00eaff',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                mode: 'index',
+                                intersect: false,
+                                callbacks: {
+                                    label: function(context) {
+                                        return '$' + formatLargeNumber(context.raw);
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.1)'
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + formatLargeNumber(value);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                // Store the processed data for later use
+                window.feeChartData = processedData;
+                
+                // Add event listeners to timeframe buttons
+                document.querySelectorAll('.btn-timeframe').forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Remove active class from all buttons
+                        document.querySelectorAll('.btn-timeframe').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Update chart based on selected timeframe
+                        updateFeeChart(this.dataset.timeframe);
+                    });
+                });
+                
+                // Set 7d as active by default
+                document.querySelector('.btn-timeframe[data-timeframe="7d"]').classList.add('active');
+            } catch (error) {
+                console.error('Error initializing fee chart:', error);
+            }
+        }
+        
+        // Process the raw chart data from the API into a more usable format
+        function processChartData(chartData) {
+            try {
+                if (!Array.isArray(chartData)) {
+                    console.error('Chart data is not an array');
+                    return [];
+                }
+                
+                // Sort by timestamp (first element in each array)
+                const sortedData = [...chartData].sort((a, b) => a[0] - b[0]);
+                
+                // Convert to our format
+                return sortedData.map(item => {
+                    // Convert timestamp to date string
+                    const date = new Date(item[0] * 1000);
+                    const dateStr = date.toISOString().split('T')[0];
+                    
+                    return {
+                        date: dateStr,
+                        value: item[1] || 0
+                    };
+                });
+            } catch (error) {
+                console.error('Error processing chart data:', error);
+                return [];
+            }
+        }
+        
+        // Get data for a specific timeframe
+        function getTimeframeData(data, timeframe) {
+            if (!Array.isArray(data) || data.length === 0) {
+                return { dates: [], values: [] };
+            }
+            
+            let filteredData;
+            
+            switch(timeframe) {
+                case '7d':
+                    // Last 7 days
+                    filteredData = data.slice(-7);
+                    break;
+                case '30d':
+                    // Last 30 days
+                    filteredData = data.slice(-30);
+                    break;
+                case '90d':
+                    // Last 90 days
+                    filteredData = data.slice(-90);
+                    break;
+                default:
+                    // Default to 7 days
+                    filteredData = data.slice(-7);
+            }
+            
+            return {
+                dates: filteredData.map(item => item.date),
+                values: filteredData.map(item => item.value)
+            };
+        }
+        
+        function updateFeeChart(timeframe) {
+            if (!window.feeChartData || !window.feeChart) {
+                console.error('Fee chart or data not initialized');
+                return;
+            }
+            
+            try {
+                const chartData = getTimeframeData(window.feeChartData, timeframe);
+                
+                // Update the chart with new data
+                window.feeChart.data.labels = chartData.dates;
+                window.feeChart.data.datasets[0].data = chartData.values;
+                window.feeChart.update();
+            } catch (error) {
+                console.error('Error updating fee chart:', error);
+            }
+        }
+        
+        // Functions for TVL data
+        async function fetchTVLData() {
+            try {
+                // Show loading state
+                document.getElementById('current-tvl').innerHTML = '$<span class="loading"></span>';
+                
+                const response = await fetch('data/tvl_data.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch TVL data');
+                }
+                
+                const data = await response.json();
+                
+                // Update UI with the latest data
+                updateTVLUI(data);
+                
+                return data;
+            } catch (error) {
+                console.error('Error fetching TVL data:', error);
+                
+                // Show error state
+                document.getElementById('current-tvl').textContent = 'Không thể tải dữ liệu';
+                
+                return null;
+            }
+        }
+        
+        function updateTVLUI(data) {
+            if (!data || !Array.isArray(data) || data.length === 0) {
+                console.error('Invalid TVL data structure');
+                return;
+            }
+            
+            try {
+                // Get the latest day's TVL
+                const latestDay = data[data.length - 1];
+                
+                // Get the TVL from 7 days ago for comparison
+                const sevenDaysAgo = data.length > 7 ? data[data.length - 8] : data[0];
+                
+                // Calculate change percentage over 7 days
+                const latestTVL = latestDay.totalLiquidityUSD || 0;
+                const sevenDaysAgoTVL = sevenDaysAgo.totalLiquidityUSD || 0;
+                
+                const changePercent = sevenDaysAgoTVL > 0 ? 
+                    ((latestTVL - sevenDaysAgoTVL) / sevenDaysAgoTVL * 100).toFixed(2) : '0.00';
+                const changeClass = parseFloat(changePercent) >= 0 ? 'positive' : 'negative';
+                const changeSign = parseFloat(changePercent) >= 0 ? '+' : '';
+                
+                // Update UI elements
+                document.getElementById('current-tvl').textContent = '$' + formatLargeNumber(latestTVL);
+                
+                document.getElementById('tvl-change').innerHTML = `
+                    <span class="change-value ${changeClass}">${changeSign}${changePercent}%</span>
+                    <span class="change-label">7 ngày qua</span>
+                `;
+            } catch (error) {
+                console.error('Error updating TVL UI:', error);
+                document.getElementById('current-tvl').textContent = 'Lỗi dữ liệu';
+            }
+        }
+        
+        // Functions for Volume data
+        async function fetchVolumeData() {
+            try {
+                // Show loading state
+                document.getElementById('daily-volume').innerHTML = '$<span class="loading"></span>';
+                document.getElementById('weekly-volume').innerHTML = '$<span class="loading"></span>';
+                document.getElementById('total-volume').innerHTML = '$<span class="loading"></span>';
+                
+                // Chỉ sử dụng volume_data.json
+                const response = await fetch('data/volume_data.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch volume_data.json');
+                }
+                
+                const data = await response.json();
+                console.log('Successfully loaded volume_data.json');
+                
+                // Update UI with the latest data
+                updateVolumeUI(data);
+                
+                return data;
+            } catch (error) {
+                console.error('Error fetching volume data:', error);
+                
+                // Show error state
+                document.getElementById('daily-volume').textContent = 'Không thể tải dữ liệu';
+                document.getElementById('weekly-volume').textContent = 'Không thể tải dữ liệu';
+                document.getElementById('total-volume').textContent = 'Không thể tải dữ liệu';
+                
+                return null;
+            }
+        }
+        
+        // Không còn sử dụng hàm updateVolumeUIFallback
+        
+        // For volume_data.json format
+        function updateVolumeUI(data) {
+            if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
+                console.error('Invalid volume data format');
+                return;
+            }
+            
+            try {
+                console.log('Processing volume data:', Object.keys(data).length, 'dates');
+                
+                // Get dates in order to find latest data
+                const dates = Object.keys(data).sort();
+                if (dates.length === 0) {
+                    throw new Error('No dates found in volume data');
+                }
+                
+                // Luôn lấy ngày mới nhất
+                const latestDate = dates[dates.length - 1]; // Latest date
+                console.log('Latest date:', latestDate);
+                
+                // Kiểm tra dữ liệu HYPERLIQUID có tồn tại không
+                if (!data[latestDate] || !data[latestDate].HYPERLIQUID) {
+                    console.error('No HYPERLIQUID data for latest date:', latestDate);
+                    console.log('Available keys:', Object.keys(data[latestDate] || {}));
+                    throw new Error('Missing HYPERLIQUID data for latest date');
+                }
+                
+                // Lấy ngày hôm trước để so sánh
+                const yesterdayDate = dates.length > 1 ? dates[dates.length - 2] : latestDate;
+                
+                // Lấy dữ liệu 7 ngày gần nhất nếu có
+                const weeklyDates = dates.slice(-7);
+                
+                // Lấy giá trị khối lượng giao dịch của HYPERLIQUID
+                const dailyVolume = data[latestDate].HYPERLIQUID || 0;
+                const previousDayVolume = data[yesterdayDate].HYPERLIQUID || 0;
+                
+                // In ra thông tin debug
+                console.log('Latest HYPERLIQUID volume:', dailyVolume);
+                console.log('Previous day HYPERLIQUID volume:', previousDayVolume);
+                
+                // Tính tổng khối lượng giao dịch 7 ngày
+                let weeklyVolume = 0;
+                weeklyDates.forEach(date => {
+                    if (data[date] && data[date].HYPERLIQUID) {
+                        weeklyVolume += data[date].HYPERLIQUID;
+                    }
+                });
+                
+                // Tính tổng khối lượng giao dịch mọi thời điểm
+                let totalVolume = 0;
+                dates.forEach(date => {
+                    if (data[date] && data[date].HYPERLIQUID) {
+                        totalVolume += data[date].HYPERLIQUID;
+                    }
+                });
+                
+                // Tính thị phần so với Binance
+                const binanceVolume = data[latestDate].BINANCE || 0;
+                const marketShare = binanceVolume > 0 ? dailyVolume / binanceVolume : 0;
+                
+                // Tính phần trăm thay đổi
+                const changePercent = previousDayVolume > 0 ? 
+                    ((dailyVolume - previousDayVolume) / previousDayVolume * 100).toFixed(2) : '0.00';
+                const changeClass = parseFloat(changePercent) >= 0 ? 'positive' : 'negative';
+                const changeSign = parseFloat(changePercent) >= 0 ? '+' : '';
+                
+                // Cập nhật giao diện người dùng
+                document.getElementById('daily-volume').textContent = '$' + formatLargeNumber(dailyVolume);
+                document.getElementById('weekly-volume').textContent = '$' + formatLargeNumber(weeklyVolume);
+                document.getElementById('total-volume').textContent = '$' + formatLargeNumber(totalVolume);
+                
+                document.getElementById('volume-change').innerHTML = `
+                    <span class="change-value ${changeClass}">${changeSign}${changePercent}%</span>
+                    <span class="change-label">so với hôm qua</span>
+                `;
+                
+                // Cập nhật thị phần
+                document.getElementById('market-share').textContent = (marketShare * 100).toFixed(2) + '%';
+                
+                console.log('Volume UI updated successfully with:', {
+                    dailyVolume,
+                    weeklyVolume,
+                    totalVolume,
+                    changePercent,
+                    marketShare: (marketShare * 100).toFixed(2) + '%'
+                });
+            } catch (error) {
+                console.error('Error updating volume UI:', error);
+                // Hiển thị thông báo lỗi
+                document.getElementById('daily-volume').textContent = 'Không thể tải dữ liệu';
+                document.getElementById('weekly-volume').textContent = 'Không thể tải dữ liệu';
+                document.getElementById('total-volume').textContent = 'Không thể tải dữ liệu';
+            }
+        }
+        
+        // Không còn sử dụng hàm fetchFallbackVolumeData
+        
+        // Initialize all data on page load
+        async function initAllData() {
+            try {
+                // Fetch all data types in parallel
+                const [feeData, tvlData, volumeData] = await Promise.allSettled([
+                    fetchFeeData(),
+                    fetchTVLData(),
+                    fetchVolumeData()
+                ]);
+                
+                console.log('All data initialized:', {
+                    feeStatus: feeData.status,
+                    tvlStatus: tvlData.status,
+                    volumeStatus: volumeData.status
+                });
+            } catch (error) {
+                console.error('Error initializing data:', error);
+            }
+        }
+        
+        // Initialize all data when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initAllData();
+            
+            // Also initialize comparison charts
+            fetchAndRenderComparisonCharts();
+        });
+        
+        // Get data for a specific timeframe
+        function getTimeframeData(data, timeframe) {
+            if (!Array.isArray(data) || data.length === 0) {
+                return { dates: [], values: [] };
+            }
+            
+            let filteredData;
+            const now = new Date();
+            
+            switch(timeframe) {
+                case '7d':
+                    // Last 7 days
+                    filteredData = data.slice(-7);
+                    break;
+                case '30d':
+                    // Last 30 days
+                    filteredData = data.slice(-30);
+                    break;
+                case '90d':
+                    // Last 90 days
+                    filteredData = data.slice(-90);
+                    break;
+                default:
+                    // Default to 7 days
+                    filteredData = data.slice(-7);
+            }
+            
+            return {
+                dates: filteredData.map(item => item.date),
+                values: filteredData.map(item => item.value)
+            };
+        }
+        
+        function updateFeeChart(timeframe) {
+            if (!window.feeChartData || !window.feeChart) {
+                console.error('Fee chart or data not initialized');
+                return;
+            }
+            
+            try {
+                const chartData = getTimeframeData(window.feeChartData, timeframe);
+                
+                // Update the chart with new data
+                window.feeChart.data.labels = chartData.dates;
+                window.feeChart.data.datasets[0].data = chartData.values;
+                window.feeChart.update();
+            } catch (error) {
+                console.error('Error updating fee chart:', error);
+            }
+        }
+        
+        function getLast7DaysData(data) {
+            const last7Days = data.slice(-7);
+            return {
+                dates: last7Days.map(day => formatDate(day.date)),
+                values: last7Days.map(day => day.dailyFees)
+            };
+        }
+        
+        function getLast30DaysData(data) {
+            const last30Days = data.slice(-30);
+            return {
+                dates: last30Days.map(day => formatDate(day.date)),
+                values: last30Days.map(day => day.dailyFees)
+            };
+        }
+        
+        function getLast90DaysData(data) {
+            const last90Days = data.slice(-90);
+            return {
+                dates: last90Days.map(day => formatDate(day.date)),
+                values: last90Days.map(day => day.dailyFees)
+            };
+        }
+        
+        async function fetchTVLData() {
+            try {
+                // Show loading state
+                document.getElementById('current-tvl').innerHTML = '$<span class="loading"></span>';
+                
+                const response = await fetch('data/tvl_data.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch TVL data');
+                }
+                
+                const data = await response.json();
+                
+                // Update UI with the latest data
+                updateTVLUI(data);
+                
+                return data;
+            } catch (error) {
+                console.error('Error fetching TVL data:', error);
+                
+                // Show error state
+                document.getElementById('current-tvl').textContent = 'Không thể tải dữ liệu';
+                
+                return null;
+            }
+        }
+        
+        function updateTVLUI(data) {
+            if (!data || !Array.isArray(data) || data.length === 0) {
+                console.error('Invalid TVL data structure');
+                return;
+            }
+            
+            try {
+                // Get the latest day's TVL
+                const latestDay = data[data.length - 1];
+                
+                // Get the TVL from 7 days ago for comparison
+                const sevenDaysAgo = data.length > 7 ? data[data.length - 8] : data[0];
+                
+                // Calculate change percentage over 7 days
+                const latestTVL = latestDay.totalLiquidityUSD || 0;
+                const sevenDaysAgoTVL = sevenDaysAgo.totalLiquidityUSD || 0;
+                
+                const changePercent = sevenDaysAgoTVL > 0 ? 
+                    ((latestTVL - sevenDaysAgoTVL) / sevenDaysAgoTVL * 100).toFixed(2) : '0.00';
+                const changeClass = parseFloat(changePercent) >= 0 ? 'positive' : 'negative';
+                const changeSign = parseFloat(changePercent) >= 0 ? '+' : '';
+                
+                // Update UI elements
+                document.getElementById('current-tvl').textContent = '$' + formatLargeNumber(latestTVL);
+                
+                document.getElementById('tvl-change').innerHTML = `
+                    <span class="change-value ${changeClass}">${changeSign}${changePercent}%</span>
+                    <span class="change-label">7 ngày qua</span>
+                `;
+            } catch (error) {
+                console.error('Error updating TVL UI:', error);
+                document.getElementById('current-tvl').textContent = 'Lỗi dữ liệu';
+            }
+        }
+        
+        async function fetchVolumeData() {
+            try {
+                // Show loading state
+                document.getElementById('current-volume').innerHTML = '$<span class="loading"></span>';
+                document.getElementById('weekly-volume').innerHTML = '$<span class="loading"></span>';
+                
+                const response = await fetch('data/volume_data.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch volume data');
+                }
+                
+                const data = await response.json();
+                console.log('Successfully loaded volume_data.json');
+                
+                // Update UI with the latest data
+                updateVolumeUI(data);
+                
+                return data;
+            } catch (error) {
+                console.error('Error fetching volume data:', error);
+                
+                // Show error state
+                document.getElementById('current-volume').textContent = 'Không thể tải dữ liệu';
+                document.getElementById('weekly-volume').textContent = 'Không thể tải dữ liệu';
+                
+                return null;
+            }
+        }
+        
+        function updateVolumeUI(data) {
+            if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
+                console.error('Invalid volume data format');
+                return;
+            }
+            
+            try {
+                console.log('Processing volume data:', Object.keys(data).length, 'dates');
+                
+                // Get dates in order to find latest data
+                const dates = Object.keys(data).sort();
+                if (dates.length === 0) {
+                    throw new Error('No dates found in volume data');
+                }
+                
+                // Luôn lấy ngày mới nhất
+                const latestDate = dates[dates.length - 1]; // Latest date
+                console.log('Latest date:', latestDate);
+                
+                // Kiểm tra dữ liệu HYPERLIQUID có tồn tại không
+                if (!data[latestDate] || !data[latestDate].HYPERLIQUID) {
+                    console.error('No HYPERLIQUID data for latest date:', latestDate);
+                    console.log('Available keys:', Object.keys(data[latestDate] || {}));
+                    throw new Error('Missing HYPERLIQUID data for latest date');
+                }
+                
+                // Lấy ngày hôm trước để so sánh
+                const yesterdayDate = dates.length > 1 ? dates[dates.length - 2] : latestDate;
+                
+                // Lấy dữ liệu 7 ngày gần nhất nếu có
+                const weeklyDates = dates.slice(-7);
+                
+                // Lấy giá trị khối lượng giao dịch của HYPERLIQUID
+                const dailyVolume = data[latestDate].HYPERLIQUID || 0;
+                const previousDayVolume = data[yesterdayDate].HYPERLIQUID || 0;
+                
+                // In ra thông tin debug
+                console.log('Latest HYPERLIQUID volume:', dailyVolume);
+                console.log('Previous day HYPERLIQUID volume:', previousDayVolume);
+                
+                // Tính tổng khối lượng giao dịch 7 ngày
+                let weeklyVolume = 0;
+                weeklyDates.forEach(date => {
+                    if (data[date] && data[date].HYPERLIQUID) {
+                        weeklyVolume += data[date].HYPERLIQUID;
+                    }
+                });
+                
+                // Tính tổng khối lượng giao dịch mọi thời điểm
+                let totalVolume = 0;
+                dates.forEach(date => {
+                    if (data[date] && data[date].HYPERLIQUID) {
+                        totalVolume += data[date].HYPERLIQUID;
+                    }
+                });
+                
+                // Tính thị phần so với Binance
+                const binanceVolume = data[latestDate].BINANCE || 0;
+                const marketShare = binanceVolume > 0 ? (dailyVolume / binanceVolume) * 100 : 0;
+                
+                // Tính phần trăm thay đổi
+                const changePercent = previousDayVolume > 0 ? 
+                    ((dailyVolume - previousDayVolume) / previousDayVolume * 100).toFixed(2) : '0.00';
+                const changeClass = parseFloat(changePercent) >= 0 ? 'positive' : 'negative';
+                const changeSign = parseFloat(changePercent) >= 0 ? '+' : '';
+                
+                // Cập nhật giao diện người dùng
+                document.getElementById('current-volume').textContent = '$' + formatLargeNumber(dailyVolume);
+                document.getElementById('weekly-volume').textContent = '$' + formatLargeNumber(weeklyVolume);
+                document.getElementById('total-volume').textContent = '$' + formatLargeNumber(totalVolume);
+                
+                document.getElementById('volume-change').innerHTML = `
+                    <span class="change-value ${changeClass}">${changeSign}${changePercent}%</span>
+                    <span class="change-label">so với hôm qua</span>
+                `;
+                
+                // Cập nhật thị phần
+                document.getElementById('market-share').textContent = marketShare.toFixed(2) + '%';
+                
+                console.log('Volume UI updated successfully with:', {
+                    dailyVolume,
+                    weeklyVolume,
+                    totalVolume,
+                    changePercent,
+                    marketShare: marketShare.toFixed(2) + '%'
+                });
+            } catch (error) {
+                console.error('Error updating volume UI:', error);
+                // Hiển thị thông báo lỗi
+                document.getElementById('current-volume').textContent = 'Không thể tải dữ liệu';
+                document.getElementById('weekly-volume').textContent = 'Không thể tải dữ liệu';
+                document.getElementById('total-volume').textContent = 'Không thể tải dữ liệu';
+            }
+        }
+        
+        // Initialize all data on page load
+        async function initAllData() {
+            await Promise.all([
+                fetchFeeData(),
+                fetchTVLData(),
+                fetchVolumeData()
+            ]);
+            console.log('All data loaded successfully');
+        }
+        
         async function fetchAndRenderComparisonCharts() {
             try {
-                const volumeResponse = await fetch('data/volume_data.json');
-                const volumeData = await volumeResponse.json();
-
-                const openInterestResponse = await fetch('data/open_interest_data.json');
-                const openInterestData = await openInterestResponse.json();
-
+                // Show loading state for comparison charts
+                document.getElementById('volumeComparisonChart').parentNode.classList.add('loading');
+                document.getElementById('openInterestComparisonChart').parentNode.classList.add('loading');
+                
+                // Fetch volume data with error handling
+                let volumeData = null;
+                try {
+                    const volumeResponse = await fetch('data/volume_data.json');
+                    if (!volumeResponse.ok) {
+                        throw new Error(`Failed to fetch volume data: ${volumeResponse.status}`);
+                    }
+                    volumeData = await volumeResponse.json();
+                    console.log('Volume data loaded successfully');
+                } catch (volumeError) {
+                    console.error('Error fetching volume data:', volumeError);
+                }
+                
+                // Fetch open interest data with error handling
+                let openInterestData = null;
+                try {
+                    const openInterestResponse = await fetch('data/open_interest_data.json');
+                    if (!openInterestResponse.ok) {
+                        throw new Error(`Failed to fetch open interest data: ${openInterestResponse.status}`);
+                    }
+                    openInterestData = await openInterestResponse.json();
+                    console.log('Open interest data loaded successfully');
+                } catch (oiError) {
+                    console.error('Error fetching open interest data:', oiError);
+                }
+                
+                // Only proceed if both data sets are available
+                if (!volumeData || !openInterestData) {
+                    throw new Error('One or more data sets failed to load');
+                }
+                
                 // Calculate percentage comparisons
                 const volumePercentages = calculatePercentageComparisons(volumeData);
                 const oiPercentages = calculatePercentageComparisons(openInterestData);
@@ -459,80 +1246,128 @@
         }
 
         function calculatePercentageComparisons(data) {
-            const result = {};
-            const dates = Object.keys(data).sort(); // Sort dates chronologically
-            
-            // Create entries for each date
-            dates.forEach(date => {
-                result[date] = {};
-                const hyperliquidValue = data[date]['HYPERLIQUID'] || 0;
-                
-                // Calculate percentage for each exchange
-                for (const exchange of ['BINANCE', 'BYBIT', 'OKX']) {
-                    const exchangeValue = data[date][exchange] || 0;
-                    if (exchangeValue > 0) {
-                        // Calculate Hyperliquid as percentage of this exchange
-                        result[date][exchange] = (hyperliquidValue / exchangeValue) * 100;
-                    } else {
-                        result[date][exchange] = 0;
-                    }
+            try {
+                if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
+                    console.error('Invalid data format for percentage comparisons');
+                    return {};
                 }
-            });
-            
-            return result;
+                
+                const result = {};
+                const dates = Object.keys(data).sort(); // Sort dates chronologically
+                
+                if (dates.length === 0) {
+                    console.error('No dates found in data');
+                    return {};
+                }
+                
+                // Create entries for each date
+                dates.forEach(date => {
+                    result[date] = {};
+                    
+                    if (!data[date] || typeof data[date] !== 'object') {
+                        console.warn(`Invalid data for date ${date}`);
+                        return;
+                    }
+                    
+                    const hyperliquidValue = data[date]['HYPERLIQUID'] || 0;
+                    
+                    // Calculate percentage for each exchange
+                    for (const exchange of ['BINANCE', 'BYBIT', 'OKX']) {
+                        const exchangeValue = data[date][exchange] || 0;
+                        if (exchangeValue > 0) {
+                            // Calculate Hyperliquid as percentage of this exchange
+                            result[date][exchange] = (hyperliquidValue / exchangeValue) * 100;
+                        } else {
+                            result[date][exchange] = 0;
+                        }
+                    }
+                });
+                
+                return result;
+            } catch (error) {
+                console.error('Error in calculatePercentageComparisons:', error);
+                return {};
+            }
         }
 
         function displayTodayStats(data, containerId, title) {
-            // Get the most recent date
-            const dates = Object.keys(data).sort();
-            const latestDate = dates[dates.length - 1];
-            const latestData = data[latestDate];
-            
-            // Format the date for display
-            const displayDate = formatDate(latestDate);
-            
-            // Create or get container
-            let container = document.getElementById(containerId);
-            if (!container) {
-                container = document.createElement('div');
-                container.id = containerId;
-                container.className = 'today-stats';
-                
-                // Find where to insert it
-                const chartId = title.includes('Open Interest') ? 
-                    'openInterestComparisonChart' : 'volumeComparisonChart';
-                const chartContainer = document.getElementById(chartId).parentNode;
-                chartContainer.parentNode.insertBefore(container, chartContainer);
-            }
-            
-            // Hyperliquid value
-            const hyperliquidValue = latestData['HYPERLIQUID'] || 0;
-            const formattedValue = formatLargeNumber(hyperliquidValue);
-            
-            // Create HTML content
-            let html = `<div class="today-value">${title}: <span>${formattedValue}</span></div>`;
-            html += '<div class="today-comparisons">';
-            
-            // Add comparison percentages with colored dots
-            const exchanges = [
-                { name: 'BINANCE', color: '#3366FF' },
-                { name: 'BYBIT', color: '#FF33A8' },
-                { name: 'OKX', color: '#33FF57' }
-            ];
-            
-            exchanges.forEach(exchange => {
-                if (latestData[exchange.name]) {
-                    const percentage = ((hyperliquidValue / latestData[exchange.name]) * 100).toFixed(1);
-                    html += `<div class="today-comparison-item">`;
-                    html += `<span class="color-dot" style="background-color: ${exchange.color}"></span>`;
-                    html += `<span class="exchange-name">${exchange.name}:</span>`;
-                    html += `<span class="percentage-value">${percentage}%</span>`;
-                    html += `</div>`;
+            try {
+                if (!data || Object.keys(data).length === 0) {
+                    console.error(`No data available for ${title}`);
+                    return;
                 }
-            });
-            
-            html += '</div>';
-            container.innerHTML = html;
+                
+                // Get the most recent date
+                const dates = Object.keys(data).sort();
+                const latestDate = dates[dates.length - 1];
+                if (!latestDate) {
+                    console.error(`No dates found in data for ${title}`);
+                    return;
+                }
+                
+                const latestData = data[latestDate];
+                if (!latestData) {
+                    console.error(`No data found for date ${latestDate} in ${title}`);
+                    return;
+                }
+                
+                // Format the date for display
+                const displayDate = formatDate(latestDate);
+                
+                // Create or get container
+                let container = document.getElementById(containerId);
+                if (!container) {
+                    container = document.createElement('div');
+                    container.id = containerId;
+                    container.className = 'today-stats';
+                    
+                    // Find where to insert it
+                    const chartId = title.includes('Open Interest') ? 
+                        'openInterestComparisonChart' : 'volumeComparisonChart';
+                    const chartContainer = document.getElementById(chartId);
+                    if (!chartContainer) {
+                        console.error(`Chart container ${chartId} not found`);
+                        return;
+                    }
+                    const parentNode = chartContainer.parentNode;
+                    if (!parentNode) {
+                        console.error(`Parent node of ${chartId} not found`);
+                        return;
+                    }
+                    parentNode.parentNode.insertBefore(container, parentNode);
+                }
+                
+                // Hyperliquid value
+                const hyperliquidValue = latestData['HYPERLIQUID'] || 0;
+                const formattedValue = formatLargeNumber(hyperliquidValue);
+                
+                // Create HTML content
+                let html = `<div class="today-value">${title}: <span>${formattedValue}</span></div>`;
+                html += '<div class="today-comparisons">';
+                
+                // Add comparison percentages with colored dots
+                const exchanges = [
+                    { name: 'BINANCE', color: '#3366FF' },
+                    { name: 'BYBIT', color: '#FF33A8' },
+                    { name: 'OKX', color: '#33FF57' }
+                ];
+                
+                exchanges.forEach(exchange => {
+                    if (latestData[exchange.name]) {
+                        const percentage = ((hyperliquidValue / latestData[exchange.name]) * 100).toFixed(1);
+                        html += `<div class="today-comparison-item">`;
+                        html += `<span class="color-dot" style="background-color: ${exchange.color}"></span>`;
+                        html += `<span class="exchange-name">${exchange.name}:</span>`;
+                        html += `<span class="percentage-value">${percentage}%</span>`;
+                        html += `</div>`;
+                    }
+                });
+                
+                html += '</div>';
+                container.innerHTML = html;
+            } catch (error) {
+                console.error(`Error in displayTodayStats for ${title}:`, error);
+            }
         }
 
         function formatDate(dateStr) {
@@ -553,56 +1388,91 @@
         }
 
         function renderPercentageChart(percentageData, chartId, labelPrefix) {
-            const dates = Object.keys(percentageData).sort(); // Sort dates chronologically
-            const exchanges = ['BINANCE', 'BYBIT', 'OKX'];
-            const colors = {
-                'BINANCE': '#3366FF',
-                'BYBIT': '#FF33A8',
-                'OKX': '#33FF57'
-            };
-            
-            const datasets = [];
-            
-            // Create datasets for each exchange comparison
-            exchanges.forEach(exchange => {
-                const values = dates.map(date => percentageData[date][exchange] || 0);
-                
-                // Get the latest value for the legend label
-                const latestValue = values[values.length - 1].toFixed(1);
-                
-                datasets.push({
-                    label: `${exchange}: ${latestValue}%`,
-                    data: values,
-                    borderColor: colors[exchange],
-                    backgroundColor: 'transparent',
-                    fill: false,
-                    tension: 0.4,
-                    borderWidth: 2,
-                    pointRadius: 0,
-                    pointHoverRadius: 5
-                });
-            });
-
-            // Add a watermark to the chart
-            const watermarkPlugin = {
-                id: 'watermark',
-                beforeDraw: function(chart) {
-                    const ctx = chart.ctx;
-                    const width = chart.width;
-                    const height = chart.height;
-                    
-                    ctx.save();
-                    ctx.globalAlpha = 0.1;
-                    ctx.font = '30px Arial';
-                    ctx.fillStyle = '#33FF57';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'middle';
-                    ctx.fillText('HYPEFLOWS', width / 2, height / 2);
-                    ctx.restore();
+            try {
+                // Remove loading state
+                const chartElement = document.getElementById(chartId);
+                if (!chartElement) {
+                    console.error(`Chart element with ID ${chartId} not found`);
+                    return;
                 }
-            };
+                
+                if (chartElement.parentNode) {
+                    chartElement.parentNode.classList.remove('loading');
+                }
+                
+                // Validate data
+                if (!percentageData || typeof percentageData !== 'object' || Object.keys(percentageData).length === 0) {
+                    console.error(`Invalid percentage data for ${chartId}`);
+                    return;
+                }
+                
+                const dates = Object.keys(percentageData).sort(); // Sort dates chronologically
+                if (dates.length === 0) {
+                    console.error(`No dates found in percentage data for ${chartId}`);
+                    return;
+                }
+                
+                const exchanges = ['BINANCE', 'BYBIT', 'OKX'];
+                const colors = {
+                    'BINANCE': '#3366FF',
+                    'BYBIT': '#FF33A8',
+                    'OKX': '#33FF57'
+                };
+                
+                const datasets = [];
+                
+                // Create datasets for each exchange comparison
+                exchanges.forEach(exchange => {
+                    try {
+                        const values = dates.map(date => {
+                            if (!percentageData[date]) return 0;
+                            return percentageData[date][exchange] || 0;
+                        });
+                        
+                        // Get the latest value for the legend label
+                        const latestValue = values.length > 0 ? values[values.length - 1].toFixed(1) : '0.0';
+                        
+                        datasets.push({
+                            label: `${exchange}: ${latestValue}%`,
+                            data: values,
+                            borderColor: colors[exchange],
+                            backgroundColor: 'transparent',
+                            fill: false,
+                            tension: 0.4,
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHoverRadius: 5
+                        });
+                    } catch (exchangeError) {
+                        console.error(`Error processing data for exchange ${exchange}:`, exchangeError);
+                    }
+                });
+                
+                if (datasets.length === 0) {
+                    console.error(`No valid datasets created for ${chartId}`);
+                    return;
+                }
 
-            new Chart(document.getElementById(chartId).getContext('2d'), {
+                // Add a watermark to the chart
+                const watermarkPlugin = {
+                    id: 'watermark',
+                    beforeDraw: function(chart) {
+                        const ctx = chart.ctx;
+                        const width = chart.width;
+                        const height = chart.height;
+                        
+                        ctx.save();
+                        ctx.globalAlpha = 0.1;
+                        ctx.font = '30px Arial';
+                        ctx.fillStyle = '#33FF57';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText('HYPEFLOWS', width / 2, height / 2);
+                        ctx.restore();
+                    }
+                };
+                
+                new Chart(document.getElementById(chartId).getContext('2d'), {
                 type: 'line',
                 data: {
                     labels: dates,
@@ -664,6 +1534,9 @@
                 },
                 plugins: [watermarkPlugin]
             });
+            } catch (error) {
+                console.error(`Error rendering percentage chart ${chartId}:`, error);
+            }
         }
 
         // Add some CSS for the stats display
@@ -690,8 +1563,11 @@
         `;
         document.head.appendChild(style);
 
-        // Call the function to fetch and render charts when the page loads
-        document.addEventListener('DOMContentLoaded', fetchAndRenderComparisonCharts);
+        // Call the functions to fetch and render all charts when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initAllData();
+            fetchAndRenderComparisonCharts();
+        });
     </script>
     <script src="js/animations.js"></script>
 </body>

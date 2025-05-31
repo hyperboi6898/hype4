@@ -1,45 +1,35 @@
-// Stats page functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the stats page
-    initStatsPage();
-    
-    // Add event listeners for timeframe buttons
-    document.querySelectorAll('.btn-timeframe').forEach(button => {
-        button.addEventListener('click', function() {
-            const parent = this.closest('.stats-card-actions');
-            parent.querySelectorAll('.btn-timeframe').forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            const timeframe = this.getAttribute('data-timeframe');
-            const chartType = this.closest('.stats-card').querySelector('canvas').id;
-            
-            if (chartType === 'fee-chart') {
-                updateFeeChart(timeframe);
-            } else if (chartType === 'price-chart') {
-                updatePriceChart(timeframe);
-            }
-        });
-    });
-});
+// Node.js script to fetch Hyperliquid stats data and save to JSON files
+const fetch = require('node-fetch').default;
+const fs = require('fs');
+const path = require('path');
 
-// Initialize the stats page
-function initStatsPage() {
-    // Fetch initial data
-    fetchFeeData();
-    fetchTVLData();
-    fetchVolumeData();
-    
-    // Set up auto-refresh
-    setInterval(fetchFeeData, 30000); // Refresh fee data every 30 seconds
-    setInterval(fetchTVLData, 30000); // Refresh TVL data every 30 seconds
-    setInterval(fetchVolumeData, 30000); // Refresh volume data every 30 seconds
+// Create data directory if it doesn't exist
+const dataDir = path.join(__dirname, '..', 'data');
+if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
 }
 
-// Global variables for charts
-let feeChart = null;
-let priceChart = null;
+// Main function to fetch all data and save to JSON files
+async function fetchAllData() {
+    console.log('Fetching all Hyperliquid stats data...');
+    
+    try {
+        // Fetch all data in parallel
+        const [feeData, tvlData] = await Promise.all([
+            fetchFeeData(),
+            fetchTVLData()
+        ]);
+        
+        console.log('All data fetched successfully!');
+        return { feeData, tvlData };
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        process.exit(1);
+    }
+}
+
+// Global variables for data
 let feeData = null;
-let priceData = null;
 let tvlData = null;
 let volumeData = null;
 let athPrice = 39.8; // Default ATH value, will be updated dynamically
@@ -47,8 +37,7 @@ let athPrice = 39.8; // Default ATH value, will be updated dynamically
 // Fetch fee data from DeFi Llama API
 async function fetchFeeData() {
     try {
-        // Show loading state
-        document.getElementById('today-fee').innerHTML = '$<span class="loading"></span>';
+        console.log('Fetching fee data from DeFi Llama...');
         
         // Fetch data from DeFi Llama API
         const response = await fetch('https://api.llama.fi/summary/fees/hyperliquid?dataType=dailyFees');
@@ -58,26 +47,16 @@ async function fetchFeeData() {
         }
         
         const data = await response.json();
-        feeData = data;
         
-        // Update UI with the latest data
-        updateFeeUI(data);
+        // Save data to JSON file
+        const filePath = path.join(dataDir, 'fee_data.json');
+        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+        console.log(`Fee data saved to ${filePath}`);
         
-        // Initialize or update chart
-        if (!feeChart) {
-            initFeeChart(data);
-        } else {
-            updateFeeChart('7d');
-        }
-        
-        return true;
+        return data;
     } catch (error) {
         console.error('Error fetching fee data:', error);
-        
-        // Show error state
-        document.getElementById('today-fee').textContent = 'Không thể tải dữ liệu';
-        
-        return false;
+        return null;
     }
 }
 
@@ -250,38 +229,40 @@ function formatDate(timestamp) {
 // Fetch TVL data from DeFi Llama API
 async function fetchTVLData() {
     try {
-        // Show loading state
-        document.getElementById('current-tvl').innerHTML = '$<span class="loading"></span>';
+        console.log('Fetching TVL data from DeFi Llama...');
         
-        // Calculate total TVL from stablecoins
-        const usdc = 3550966504;
-        const usdt = 27456929;
-        const feusd = 53701469;
-        const usde = 14565528;
+        // Fetch data from DeFi Llama API - using the protocol endpoint
+        const response = await fetch('https://api.llama.fi/protocol/hyperliquid');
         
-        const totalTVL = usdc + usdt + feusd + usde;
+        if (!response.ok) {
+            throw new Error(`Failed to fetch TVL data: ${response.status} ${response.statusText}`);
+        }
         
-        // Update UI with the latest data
-        document.getElementById('current-tvl').textContent = '$' + formatNumber(totalTVL);
+        const rawData = await response.json();
         
-        // For demonstration purposes, we'll simulate a TVL change
-        const changePercent = 2.15;
-        const changeClass = changePercent >= 0 ? 'positive' : 'negative';
-        const changeSign = changePercent >= 0 ? '+' : '';
+        // Process the data to get TVL history
+        const data = rawData.tvl.map(item => ({
+            date: new Date(item.date * 1000).toISOString().split('T')[0],
+            totalLiquidityUSD: item.totalLiquidityUSD
+        }));
         
-        document.getElementById('tvl-change').innerHTML = `
-            <span class="change-value ${changeClass}">${changeSign}${changePercent}%</span>
-            <span class="change-label">7 ngày qua</span>
-        `;
+        // Save data to JSON file
+        const filePath = path.join(dataDir, 'tvl_data.json');
+        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+        console.log(`TVL data saved to ${filePath}`);
         
-        return true;
+        return data;
     } catch (error) {
-        console.error('Error fetching TVL data:', error);
+        console.error('Error fetching TVL data:', error.message);
         
-        // Show error state
-        document.getElementById('current-tvl').textContent = 'Không thể tải dữ liệu';
+        // If we already have a TVL data file, we'll use that instead of failing
+        const filePath = path.join(dataDir, 'tvl_data.json');
+        if (fs.existsSync(filePath)) {
+            console.log('Using existing TVL data file...');
+            return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        }
         
-        return false;
+        return null;
     }
 }
 
@@ -290,50 +271,7 @@ function formatNumber(num) {
     return new Intl.NumberFormat('en-US').format(num);
 }
 
-// Fetch perpetual trading volume data
-async function fetchVolumeData() {
-    try {
-        // Show loading state
-        document.getElementById('current-volume').innerHTML = '$<span class="loading"></span>';
-        document.getElementById('weekly-volume').innerHTML = '$<span class="loading"></span>';
-        
-        // Using real Hyperliquid Perps data from DeFi Llama
-        const dailyVolume = 11086221730; // $11.09B
-        const weeklyVolume = 65560958107; // $65.56B
-        const totalAllTime = 1610642751323; // $1.61T
-        
-        // Calculate change percentage
-        const previousDayVolume = 10792440150;
-        const changePercent = ((dailyVolume - previousDayVolume) / previousDayVolume * 100).toFixed(2);
-        const changeClass = changePercent >= 0 ? 'positive' : 'negative';
-        const changeSign = changePercent >= 0 ? '+' : '';
-        
-        // Update UI with the latest data
-        document.getElementById('current-volume').textContent = '$' + formatNumber(dailyVolume);
-        document.getElementById('weekly-volume').textContent = '$' + formatNumber(weeklyVolume);
-        document.getElementById('total-volume').textContent = '$' + formatNumber(totalAllTime);
-        
-        document.getElementById('volume-change').innerHTML = `
-            <span class="change-value ${changeClass}">${changeSign}${changePercent}%</span>
-            <span class="change-label">so với hôm qua</span>
-        `;
-        
-        // Calculate market share (estimated)
-        // Total derivatives market volume is approximately $70B daily
-        const marketShare = ((dailyVolume / 70000000000) * 100).toFixed(1);
-        document.getElementById('market-share').textContent = marketShare + '%';
-        
-        return true;
-    } catch (error) {
-        console.error('Error fetching volume data:', error);
-        
-        // Show error state
-        document.getElementById('current-volume').textContent = 'Không thể tải dữ liệu';
-        document.getElementById('weekly-volume').textContent = 'Không thể tải dữ liệu';
-        
-        return false;
-    }
-}
+// Volume data is now handled by fetch_volume_OI.js
 
 // Fetch price data from DeFi Llama API
 async function fetchPriceData() {
@@ -521,46 +459,59 @@ function updatePriceChart(timeframe) {
     } else {
         priceChart.options.scales.x.ticks.maxTicksLimit = 10;
     }
-    
     priceChart.update();
 }
 
 // Generate simulated price data for demonstration
 function generateSimulatedPriceData(currentPrice, hours) {
-    const data = {
-        labels: [],
-        values: []
-    };
-    
+    const data = [];
     const now = new Date();
-    let basePrice = currentPrice * 0.95; // Start a bit lower than current price
     
     for (let i = hours; i >= 0; i--) {
-        const time = new Date(now.getTime() - i * 60 * 60 * 1000);
+        const timestamp = new Date(now);
+        timestamp.setHours(now.getHours() - i);
         
-        // Format time label based on hours
-        let label;
-        if (hours <= 24) {
-            label = time.getHours() + ':00';
-        } else if (hours <= 24 * 7) {
-            label = time.getDate() + '/' + (time.getMonth() + 1) + ' ' + time.getHours() + ':00';
-        } else {
-            label = time.getDate() + '/' + (time.getMonth() + 1);
+        // Generate random price fluctuations
+        // More recent hours have smaller fluctuations to create a realistic curve
+        const volatility = i < 6 ? 0.005 : 0.01;
+        const change = currentPrice * volatility * (Math.random() - 0.5);
+        
+        // Add some trend bias based on hour of day
+        const hourOfDay = timestamp.getHours();
+        let trendBias = 0;
+        
+        // Slight uptrend during US trading hours (14-22 UTC)
+        if (hourOfDay >= 14 && hourOfDay <= 22) {
+            trendBias = 0.001;
+        }
+        // Slight downtrend during Asian trading hours (0-8 UTC)
+        else if (hourOfDay >= 0 && hourOfDay <= 8) {
+            trendBias = -0.0005;
         }
         
-        data.labels.push(label);
+        const priceAtTimestamp = i === 0 ? 
+            currentPrice : // Current price is exact
+            data[data.length - 1].price + change + (data[data.length - 1].price * trendBias);
         
-        // Generate a somewhat realistic price movement
-        const change = (Math.random() - 0.48) * 0.5; // Slight upward bias
-        basePrice = basePrice * (1 + change);
-        
-        // Ensure we end at the current price
-        if (i === 0) {
-            basePrice = currentPrice;
-        }
-        
-        data.values.push(basePrice);
+        data.push({
+            timestamp: timestamp.getTime(),
+            price: priceAtTimestamp
+        });
     }
     
     return data;
+}
+
+// Execute the main function when the script is run directly
+if (require.main === module) {
+    console.log('Starting Hyperliquid stats data fetch...');
+    fetchAllData()
+        .then(() => {
+            console.log('All data fetched and saved successfully!');
+            process.exit(0);
+        })
+        .catch(error => {
+            console.error('Error in main execution:', error);
+            process.exit(1);
+        });
 }
