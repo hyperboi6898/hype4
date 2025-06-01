@@ -1,0 +1,64 @@
+/* Navigation bar alignment fix */
+header {
+    width: 100%;
+}
+
+header nav.container {
+    /* width: 100%; - xóa dòng này vì gây lệch */
+    max-width: 1200px;         /* nav chỉ rộng ≤ 1200px */
+    margin: 0 auto;            /* khi <1200px sẽ ở chính giữa */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.logo {
+    flex: 1;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* Đảm bảo container trong page-wrapper hoạt động đúng */
+.page-wrapper {
+    width: 100%;
+}
+
+.page-wrapper .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(15, 20, 25, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        transition: left 0.3s ease;
+    }
+}
