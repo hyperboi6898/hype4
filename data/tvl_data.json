@@ -729,10 +729,14 @@
   },
   {
     "date": "2025-06-01",
-    "totalLiquidityUSD": 524561659.53424
+    "totalLiquidityUSD": 516048793.94062996
   },
   {
-    "date": "2025-06-01",
-    "totalLiquidityUSD": 524561659.53424
+    "date": "2025-06-02",
+    "totalLiquidityUSD": 525580887.06584
+  },
+  {
+    "date": "2025-06-02",
+    "totalLiquidityUSD": 523617740.50636005
   }
 ]
