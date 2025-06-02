@@ -75,8 +75,8 @@
             margin-bottom: 30px;
         }
         
-        /* Đảm bảo section.container.explanation không bị padding gấp đôi */
-        section.container.explanation {
+        /* Đảm bảo container .explanation không bị padding gấp đôi */
+        .container .explanation {
             padding-left: 0;
             padding-right: 0;
         }
@@ -142,31 +142,33 @@
     </header>
 
     <!-- Explanation Section -->
-    <div class="stats-overview">
-        <div class="stats-card">
-            <div class="stats-card-header">
-                <h2>Tổng Quan Về Quỹ Hỗ Trợ HYPE</h2>
-            </div>
-            <div class="stats-card-body">
-                <div class="explanation">
-                    <p>Quỹ Hỗ Trợ (Assistance Fund) là một quỹ đặc biệt được thiết kế để hỗ trợ hệ sinh thái HYPE. Mục tiêu chính của quỹ là mua token từ thị trường mở, giảm áp lực cung và củng cố giá trị token.</p>
-                    
-                    <h4>Hyperliquid Assistance Fund Dashboard</h4>
-                    <p>Bảng điều khiển này cung cấp thông tin theo dõi thời gian thực về các hoạt động mua lại token thông qua Quỹ Hỗ Trợ. Dưới đây là những thông tin bạn có thể theo dõi:</p>
-                    
-                    <ul>
-                        <li><strong>Tổng Token HYPE Nắm Giữ:</strong> Số lượng token HYPE hiện đang được nắm giữ bởi Quỹ Hỗ Trợ.</li>
-                        <li><strong>Mua HYPE Hàng Ngày:</strong> Số lượng token HYPE được mua trong ngày hiện tại.</li>
-                        <li><strong>USDC Đã Chi:</strong> Số tiền USDC đã được chi cho việc mua lại token HYPE.</li>
-                    </ul>
-                    
-                    <p>Công cụ này đảm bảo tính minh bạch trong hoạt động của quỹ, giúp người dùng hiểu rõ cách Quỹ Hỗ Trợ hỗ trợ sự ổn định thị trường và đóng góp vào sự tăng trưởng dài hạn của hệ sinh thái Hyperliquid.</p>
-                    
-                    <p class="source-reference">Nguồn: <a href="https://assistancefund.top" target="_blank">assistancefund.top</a></p>
+    <section class="container">
+        <div class="stats-overview">
+            <div class="stats-card">
+                <div class="stats-card-header">
+                    <h2>Tổng Quan Về Quỹ Hỗ Trợ HYPE</h2>
+                </div>
+                <div class="stats-card-body">
+                    <div class="explanation">
+                        <p>Quỹ Hỗ Trợ (Assistance Fund) là một quỹ đặc biệt được thiết kế để hỗ trợ hệ sinh thái HYPE. Mục tiêu chính của quỹ là mua token từ thị trường mở, giảm áp lực cung và củng cố giá trị token.</p>
+                        
+                        <h4>Hyperliquid Assistance Fund Dashboard</h4>
+                        <p>Bảng điều khiển này cung cấp thông tin theo dõi thời gian thực về các hoạt động mua lại token thông qua Quỹ Hỗ Trợ. Dưới đây là những thông tin bạn có thể theo dõi:</p>
+                        
+                        <ul>
+                            <li><strong>Tổng Token HYPE Nắm Giữ:</strong> Số lượng token HYPE hiện đang được nắm giữ bởi Quỹ Hỗ Trợ.</li>
+                            <li><strong>Mua HYPE Hàng Ngày:</strong> Số lượng token HYPE được mua trong ngày hiện tại.</li>
+                            <li><strong>USDC Đã Chi:</strong> Số tiền USDC đã được chi cho việc mua lại token HYPE.</li>
+                        </ul>
+                        
+                        <p>Công cụ này đảm bảo tính minh bạch trong hoạt động của quỹ, giúp người dùng hiểu rõ cách Quỹ Hỗ Trợ hỗ trợ sự ổn định thị trường và đóng góp vào sự tăng trưởng dài hạn của hệ sinh thái Hyperliquid.</p>
+                        
+                        <p class="source-reference">Nguồn: <a href="https://assistancefund.top" target="_blank">assistancefund.top</a></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="container stats-dashboard">
         <!-- Daily Purchase Chart Section -->
