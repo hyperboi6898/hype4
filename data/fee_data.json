@@ -14,6 +14,8 @@
   "github": [
     "hyperliquid-dex"
   ],
+  "symbol": "HYPE",
+  "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
   "childProtocols": [
     {}
   ],
@@ -30,7 +32,6 @@
   "methodology": null,
   "forkedFrom": null,
   "audits": null,
-  "address": null,
   "audit_links": null,
   "versionKey": null,
   "governanceID": null,
