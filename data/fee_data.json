@@ -24,7 +24,6 @@
     "Hyperliquid Spot Orderbook"
   ],
   "defillamaId": "parent#hyperliquid",
-  "disabled": null,
   "displayName": "Hyperliquid",
   "module": null,
   "category": null,
@@ -45,7 +44,7 @@
   "total48hto24h": 4404829,
   "total7d": 25957165,
   "total30d": 83595060,
-  "totalAllTime": 526074728,
+  "totalAllTime": 527676337,
   "totalDataChart": [
     [
       1734912000,
@@ -902,6 +901,10 @@
     [
       1753488000,
       1664461
+    ],
+    [
+      1753574400,
+      1601609
     ]
   ],
   "totalDataChartBreakdown": [
@@ -2614,6 +2617,14 @@
       {
         "Hyperliquid L1": {
           "Hyperliquid Spot Orderbook": 1664461
+        }
+      }
+    ],
+    [
+      1753574400,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Spot Orderbook": 1601609
         }
       }
     ]
