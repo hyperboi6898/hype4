@@ -17,7 +17,74 @@
   "symbol": "HYPE",
   "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
   "childProtocols": [
-    {}
+    {
+      "name": "Hyperliquid HLP",
+      "module": "hyperliquid-hlp/index.js",
+      "category": "Derivatives",
+      "logo": "https://icons.llama.fi/hyperliquid.png",
+      "chains": [
+        "Hyperliquid L1"
+      ],
+      "gecko_id": null,
+      "forkedFrom": [],
+      "twitter": "HyperliquidX",
+      "audits": "0",
+      "description": "Hyperliquidity Provider (HLP) is a protocol vault that does market making and liquidations and receives a portion of trading fees",
+      "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
+      "url": "https://hyperliquid.xyz",
+      "cmcId": null,
+      "id": "5448",
+      "parentProtocol": "parent#hyperliquid"
+    },
+    {
+      "name": "Hyperliquid Perps",
+      "module": "dummy.js",
+      "category": "Derivatives",
+      "logo": "https://icons.llama.fi/hyperliquid.png",
+      "chains": [
+        "Hyperliquid L1"
+      ],
+      "gecko_id": null,
+      "forkedFrom": [],
+      "twitter": "HyperliquidX",
+      "audits": "0",
+      "description": "Hyperliquid is a decentralized perpetual exchange with best-in-class speed, liquidity, and price.",
+      "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
+      "url": "https://hyperliquid.xyz",
+      "cmcId": null,
+      "id": "5507",
+      "parentProtocol": "parent#hyperliquid"
+    },
+    {
+      "name": "Hyperliquid Spot Orderbook",
+      "defillamaId": "5761",
+      "displayName": "Hyperliquid",
+      "module": "hyperliquid",
+      "category": "Dexs",
+      "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid.png",
+      "chains": [
+        "hyperliquid"
+      ],
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperliquid.ts",
+      "methodology": {
+        "UserFees": "Swap fees paid by users",
+        "Fees": "Trade fees and Ticker auction proceeds. Note this excludes the HLP vault and HyperEVM fees.",
+        "Revenue": "Percentage of swap fees going to treasury and/or token holders",
+        "ProtocolRevenue": "Percentage of swap fees going to treasury",
+        "HoldersRevenue": "93% of fees go to Assistance Fund for burning tokens, remaining 7% go to HLP Vault",
+        "SupplySideRevenue": "Liquidity providers revenue"
+      },
+      "gecko_id": null,
+      "forkedFrom": [],
+      "twitter": "HyperliquidX",
+      "audits": "0",
+      "description": "The order book works in essentially the same way as all centralized exchanges but is fully on-chain",
+      "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
+      "url": "https://hyperliquid.xyz",
+      "cmcId": null,
+      "id": "5761",
+      "parentProtocol": "parent#hyperliquid"
+    }
   ],
   "linkedProtocols": [
     "Hyperliquid",
@@ -44,7 +111,7 @@
   "total48hto24h": 2122939,
   "total7d": 24063397,
   "total30d": 86971423,
-  "totalAllTime": 531629570,
+  "totalAllTime": 531656346,
   "totalDataChart": [
     [
       1734912000,
@@ -908,7 +975,7 @@
     ],
     [
       1753747200,
-      3435162
+      3461938
     ]
   ],
   "totalDataChartBreakdown": [
@@ -2636,7 +2703,7 @@
       1753747200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3435162
+          "Hyperliquid Spot Orderbook": 3461938
         }
       }
     ]
