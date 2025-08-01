@@ -104,14 +104,14 @@
   "treasury": null,
   "parentProtocol": null,
   "previousNames": null,
-  "latestFetchIsOk": true,
+  "hallmarks": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
   "total24h": 3037872,
   "total48hto24h": 2804583,
   "total7d": 20624084,
   "total30d": 91311060,
-  "totalAllTime": 540629522,
+  "totalAllTime": 544360868,
   "totalDataChart": [
     [
       1734912000,
@@ -988,6 +988,10 @@
     [
       1753920000,
       3037872
+    ],
+    [
+      1754006400,
+      3731346
     ]
   ],
   "totalDataChartBreakdown": [
@@ -2740,6 +2744,14 @@
       {
         "Hyperliquid L1": {
           "Hyperliquid Spot Orderbook": 3037872
+        }
+      }
+    ],
+    [
+      1754006400,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Spot Orderbook": 3731346
         }
       }
     ]
