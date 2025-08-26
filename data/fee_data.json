@@ -112,7 +112,7 @@
   "total48hto24h": 5370555,
   "total7d": 32038513,
   "total30d": 105714354,
-  "totalAllTime": 631789082,
+  "totalAllTime": 637634933,
   "totalDataChart": [
     [
       1734912000,
@@ -1085,6 +1085,10 @@
     [
       1756080000,
       5741136
+    ],
+    [
+      1756166400,
+      5845851
     ]
   ],
   "totalDataChartBreakdown": [
@@ -3029,6 +3033,14 @@
       {
         "Hyperliquid L1": {
           "Hyperliquid Spot Orderbook": 5741136
+        }
+      }
+    ],
+    [
+      1756166400,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Spot Orderbook": 5845851
         }
       }
     ]
