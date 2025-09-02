@@ -69,10 +69,10 @@
       "methodology": {
         "UserFees": "Swap fees paid by users",
         "Fees": "Trade fees and Ticker auction proceeds. Note this excludes the HLP vault and HyperEVM fees.",
-        "Revenue": "Percentage of swap fees going to treasury and/or token holders",
-        "ProtocolRevenue": "Percentage of swap fees going to treasury",
-        "HoldersRevenue": "93% of fees go to Assistance Fund for burning tokens, remaining 7% go to HLP Vault",
-        "SupplySideRevenue": "Liquidity providers revenue"
+        "Revenue": "93% of fees go to Assistance Fund for burning tokens",
+        "ProtocolRevenue": "No protocol revenue",
+        "HoldersRevenue": "93% of fees go to Assistance Fund for burning tokens",
+        "SupplySideRevenue": "7% of fees go to HLP Vault suppliers"
       },
       "gecko_id": null,
       "forkedFrom": [],
@@ -112,7 +112,7 @@
   "total48hto24h": 1724240,
   "total7d": 24219840,
   "total30d": 110263516,
-  "totalAllTime": 660836086,
+  "totalAllTime": 660807000,
   "totalDataChart": [
     [
       1734912000,
@@ -1120,7 +1120,7 @@
     ],
     [
       1756771200,
-      2704225
+      2675139
     ]
   ],
   "totalDataChartBreakdown": [
@@ -3136,7 +3136,7 @@
       1756771200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2704225
+          "Hyperliquid Spot Orderbook": 2675139
         }
       }
     ]
