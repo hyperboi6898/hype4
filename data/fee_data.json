@@ -15,8 +15,30 @@
     "hyperliquid-dex"
   ],
   "symbol": "HYPE",
-  "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
+  "address": "0x0d01dc56dcaaca66ad901c959b4011ec",
   "childProtocols": [
+    {
+      "name": "Hyperliquid Bridge",
+      "module": "hyperliquid/index.js",
+      "category": "Bridge",
+      "logo": "https://icons.llama.fi/hyperliquid.png",
+      "chains": [
+        "Arbitrum"
+      ],
+      "gecko_id": null,
+      "forkedFrom": [],
+      "twitter": "HyperliquidX",
+      "audits": "2",
+      "description": "Hyperliquid is a decentralized perpetual exchange with best-in-class speed, liquidity, and price.",
+      "address": "0x0d01dc56dcaaca66ad901c959b4011ec",
+      "url": "https://hyperliquid.xyz",
+      "audit_links": [
+        "https://hyperliquid.gitbook.io/hyperliquid-docs/audits"
+      ],
+      "cmcId": null,
+      "id": "4481",
+      "parentProtocol": "parent#hyperliquid"
+    },
     {
       "name": "Hyperliquid HLP",
       "module": "hyperliquid-hlp/index.js",
@@ -113,7 +135,7 @@
   "total48hto24h": 2710854,
   "total7d": 18976726,
   "total30d": 94086378,
-  "totalAllTime": 709918328,
+  "totalAllTime": 710001315,
   "totalDataChart": [
     [
       1734912000,
@@ -1197,7 +1219,7 @@
     ],
     [
       1758412800,
-      1687202
+      1770189
     ]
   ],
   "totalDataChartBreakdown": [
@@ -3365,7 +3387,7 @@
       1758412800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1687202
+          "Hyperliquid Spot Orderbook": 1770189
         }
       }
     ]
