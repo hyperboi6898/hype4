@@ -1,1186 +1,3350 @@
 [
   {
+    "date": "2023-06-09",
+    "totalLiquidityUSD": 3578746
+  },
+  {
+    "date": "2023-06-10",
+    "totalLiquidityUSD": 3545393
+  },
+  {
+    "date": "2023-06-11",
+    "totalLiquidityUSD": 3495056
+  },
+  {
+    "date": "2023-06-12",
+    "totalLiquidityUSD": 3468420
+  },
+  {
+    "date": "2023-06-13",
+    "totalLiquidityUSD": 3321824
+  },
+  {
+    "date": "2023-06-14",
+    "totalLiquidityUSD": 3311013
+  },
+  {
+    "date": "2023-06-15",
+    "totalLiquidityUSD": 3312639
+  },
+  {
+    "date": "2023-06-16",
+    "totalLiquidityUSD": 3363218
+  },
+  {
+    "date": "2023-06-17",
+    "totalLiquidityUSD": 3449652
+  },
+  {
+    "date": "2023-06-18",
+    "totalLiquidityUSD": 3456379
+  },
+  {
+    "date": "2023-06-19",
+    "totalLiquidityUSD": 3459557
+  },
+  {
+    "date": "2023-06-20",
+    "totalLiquidityUSD": 3343706
+  },
+  {
+    "date": "2023-06-21",
+    "totalLiquidityUSD": 3231313
+  },
+  {
+    "date": "2023-06-22",
+    "totalLiquidityUSD": 3271606
+  },
+  {
+    "date": "2023-06-23",
+    "totalLiquidityUSD": 3257585
+  },
+  {
+    "date": "2023-06-24",
+    "totalLiquidityUSD": 3277395
+  },
+  {
+    "date": "2023-06-25",
+    "totalLiquidityUSD": 3203137
+  },
+  {
+    "date": "2023-06-26",
+    "totalLiquidityUSD": 3233112
+  },
+  {
+    "date": "2023-06-27",
+    "totalLiquidityUSD": 3304769
+  },
+  {
+    "date": "2023-06-28",
+    "totalLiquidityUSD": 3266184
+  },
+  {
+    "date": "2023-06-29",
+    "totalLiquidityUSD": 3296681
+  },
+  {
+    "date": "2023-06-30",
+    "totalLiquidityUSD": 3308754
+  },
+  {
+    "date": "2023-07-01",
+    "totalLiquidityUSD": 3397471
+  },
+  {
+    "date": "2023-07-02",
+    "totalLiquidityUSD": 3359952
+  },
+  {
+    "date": "2023-07-03",
+    "totalLiquidityUSD": 3384971
+  },
+  {
+    "date": "2023-07-04",
+    "totalLiquidityUSD": 3092030
+  },
+  {
+    "date": "2023-07-05",
+    "totalLiquidityUSD": 3178052
+  },
+  {
+    "date": "2023-07-06",
+    "totalLiquidityUSD": 3152538
+  },
+  {
+    "date": "2023-07-07",
+    "totalLiquidityUSD": 3168164
+  },
+  {
+    "date": "2023-07-08",
+    "totalLiquidityUSD": 3260666
+  },
+  {
+    "date": "2023-07-09",
+    "totalLiquidityUSD": 3204794
+  },
+  {
+    "date": "2023-07-10",
+    "totalLiquidityUSD": 2796077
+  },
+  {
+    "date": "2023-07-11",
+    "totalLiquidityUSD": 2796251
+  },
+  {
+    "date": "2023-07-12",
+    "totalLiquidityUSD": 2818522
+  },
+  {
+    "date": "2023-07-13",
+    "totalLiquidityUSD": 2857999
+  },
+  {
+    "date": "2023-07-14",
+    "totalLiquidityUSD": 3087583
+  },
+  {
+    "date": "2023-07-15",
+    "totalLiquidityUSD": 3217260
+  },
+  {
+    "date": "2023-07-16",
+    "totalLiquidityUSD": 3204251
+  },
+  {
+    "date": "2023-07-17",
+    "totalLiquidityUSD": 3188197
+  },
+  {
+    "date": "2023-07-18",
+    "totalLiquidityUSD": 3126040
+  },
+  {
+    "date": "2023-07-19",
+    "totalLiquidityUSD": 3156723
+  },
+  {
+    "date": "2023-07-20",
+    "totalLiquidityUSD": 3344757
+  },
+  {
+    "date": "2023-07-21",
+    "totalLiquidityUSD": 3362256
+  },
+  {
+    "date": "2023-07-22",
+    "totalLiquidityUSD": 3375671
+  },
+  {
+    "date": "2023-07-23",
+    "totalLiquidityUSD": 3409513
+  },
+  {
+    "date": "2023-07-24",
+    "totalLiquidityUSD": 3305620
+  },
+  {
+    "date": "2023-07-25",
+    "totalLiquidityUSD": 3334362
+  },
+  {
+    "date": "2023-07-26",
+    "totalLiquidityUSD": 3016982
+  },
+  {
+    "date": "2023-07-27",
+    "totalLiquidityUSD": 3039223
+  },
+  {
+    "date": "2023-07-28",
+    "totalLiquidityUSD": 3033549
+  },
+  {
+    "date": "2023-07-29",
+    "totalLiquidityUSD": 3089461
+  },
+  {
+    "date": "2023-07-30",
+    "totalLiquidityUSD": 3163954
+  },
+  {
+    "date": "2023-07-31",
+    "totalLiquidityUSD": 3178095
+  },
+  {
+    "date": "2023-08-01",
+    "totalLiquidityUSD": 3134645
+  },
+  {
+    "date": "2023-08-02",
+    "totalLiquidityUSD": 3142173
+  },
+  {
+    "date": "2023-08-03",
+    "totalLiquidityUSD": 3157057
+  },
+  {
+    "date": "2023-08-04",
+    "totalLiquidityUSD": 3182419
+  },
+  {
+    "date": "2023-08-05",
+    "totalLiquidityUSD": 3225000
+  },
+  {
+    "date": "2023-08-06",
+    "totalLiquidityUSD": 3158003
+  },
+  {
+    "date": "2023-08-07",
+    "totalLiquidityUSD": 3252921
+  },
+  {
+    "date": "2023-08-08",
+    "totalLiquidityUSD": 3622235
+  },
+  {
+    "date": "2023-08-09",
+    "totalLiquidityUSD": 4115304
+  },
+  {
+    "date": "2023-08-10",
+    "totalLiquidityUSD": 4189426
+  },
+  {
+    "date": "2023-08-11",
+    "totalLiquidityUSD": 4160353
+  },
+  {
+    "date": "2023-08-12",
+    "totalLiquidityUSD": 3781962
+  },
+  {
+    "date": "2023-08-13",
+    "totalLiquidityUSD": 3718263
+  },
+  {
+    "date": "2023-08-14",
+    "totalLiquidityUSD": 3713104
+  },
+  {
+    "date": "2023-08-15",
+    "totalLiquidityUSD": 3740719
+  },
+  {
+    "date": "2023-08-16",
+    "totalLiquidityUSD": 3876210
+  },
+  {
+    "date": "2023-08-17",
+    "totalLiquidityUSD": 4535202
+  },
+  {
+    "date": "2023-08-18",
+    "totalLiquidityUSD": 4633720
+  },
+  {
+    "date": "2023-08-19",
+    "totalLiquidityUSD": 5122197
+  },
+  {
+    "date": "2023-08-20",
+    "totalLiquidityUSD": 5291474
+  },
+  {
+    "date": "2023-08-21",
+    "totalLiquidityUSD": 5160640
+  },
+  {
+    "date": "2023-08-22",
+    "totalLiquidityUSD": 7811915
+  },
+  {
+    "date": "2023-08-23",
+    "totalLiquidityUSD": 8366660
+  },
+  {
+    "date": "2023-08-24",
+    "totalLiquidityUSD": 8798754
+  },
+  {
+    "date": "2023-08-25",
+    "totalLiquidityUSD": 8884351
+  },
+  {
+    "date": "2023-08-26",
+    "totalLiquidityUSD": 8977209
+  },
+  {
+    "date": "2023-08-27",
+    "totalLiquidityUSD": 9194699
+  },
+  {
+    "date": "2023-08-28",
+    "totalLiquidityUSD": 9253999
+  },
+  {
+    "date": "2023-08-29",
+    "totalLiquidityUSD": 9263652
+  },
+  {
+    "date": "2023-08-30",
+    "totalLiquidityUSD": 8604902
+  },
+  {
+    "date": "2023-08-31",
+    "totalLiquidityUSD": 8282637
+  },
+  {
+    "date": "2023-09-01",
+    "totalLiquidityUSD": 8393922
+  },
+  {
+    "date": "2023-09-02",
+    "totalLiquidityUSD": 8441250
+  },
+  {
+    "date": "2023-09-03",
+    "totalLiquidityUSD": 8995532
+  },
+  {
+    "date": "2023-09-04",
+    "totalLiquidityUSD": 9819430
+  },
+  {
+    "date": "2023-09-05",
+    "totalLiquidityUSD": 10289266
+  },
+  {
+    "date": "2023-09-06",
+    "totalLiquidityUSD": 10031033
+  },
+  {
+    "date": "2023-09-07",
+    "totalLiquidityUSD": 10568812
+  },
+  {
+    "date": "2023-09-08",
+    "totalLiquidityUSD": 10851289
+  },
+  {
+    "date": "2023-09-09",
+    "totalLiquidityUSD": 11014308
+  },
+  {
+    "date": "2023-09-10",
+    "totalLiquidityUSD": 11200053
+  },
+  {
+    "date": "2023-09-11",
+    "totalLiquidityUSD": 11307735
+  },
+  {
+    "date": "2023-09-12",
+    "totalLiquidityUSD": 11484199
+  },
+  {
+    "date": "2023-09-13",
+    "totalLiquidityUSD": 11319763
+  },
+  {
+    "date": "2023-09-14",
+    "totalLiquidityUSD": 12171111
+  },
+  {
+    "date": "2023-09-15",
+    "totalLiquidityUSD": 12545355
+  },
+  {
+    "date": "2023-09-16",
+    "totalLiquidityUSD": 12696042
+  },
+  {
+    "date": "2023-09-17",
+    "totalLiquidityUSD": 12841197
+  },
+  {
+    "date": "2023-09-18",
+    "totalLiquidityUSD": 12908283
+  },
+  {
+    "date": "2023-09-19",
+    "totalLiquidityUSD": 12780927
+  },
+  {
+    "date": "2023-09-20",
+    "totalLiquidityUSD": 12630312
+  },
+  {
+    "date": "2023-09-21",
+    "totalLiquidityUSD": 12099461
+  },
+  {
+    "date": "2023-09-22",
+    "totalLiquidityUSD": 12213787
+  },
+  {
+    "date": "2023-09-23",
+    "totalLiquidityUSD": 12106080
+  },
+  {
+    "date": "2023-09-24",
+    "totalLiquidityUSD": 12079665
+  },
+  {
+    "date": "2023-09-25",
+    "totalLiquidityUSD": 11902983
+  },
+  {
+    "date": "2023-09-26",
+    "totalLiquidityUSD": 11846669
+  },
+  {
+    "date": "2023-09-27",
+    "totalLiquidityUSD": 11917971
+  },
+  {
+    "date": "2023-09-28",
+    "totalLiquidityUSD": 11381443
+  },
+  {
+    "date": "2023-09-29",
+    "totalLiquidityUSD": 11363484
+  },
+  {
+    "date": "2023-09-30",
+    "totalLiquidityUSD": 11447347
+  },
+  {
+    "date": "2023-10-01",
+    "totalLiquidityUSD": 11458224
+  },
+  {
+    "date": "2023-10-02",
+    "totalLiquidityUSD": 11346943
+  },
+  {
+    "date": "2023-10-03",
+    "totalLiquidityUSD": 11265922
+  },
+  {
+    "date": "2023-10-04",
+    "totalLiquidityUSD": 11322242
+  },
+  {
+    "date": "2023-10-05",
+    "totalLiquidityUSD": 11510648
+  },
+  {
+    "date": "2023-10-06",
+    "totalLiquidityUSD": 11378750
+  },
+  {
+    "date": "2023-10-07",
+    "totalLiquidityUSD": 11369661
+  },
+  {
+    "date": "2023-10-08",
+    "totalLiquidityUSD": 11311227
+  },
+  {
+    "date": "2023-10-09",
+    "totalLiquidityUSD": 11852956
+  },
+  {
+    "date": "2023-10-10",
+    "totalLiquidityUSD": 11842104
+  },
+  {
+    "date": "2023-10-11",
+    "totalLiquidityUSD": 12021577
+  },
+  {
+    "date": "2023-10-12",
+    "totalLiquidityUSD": 12296494
+  },
+  {
+    "date": "2023-10-13",
+    "totalLiquidityUSD": 12289293
+  },
+  {
+    "date": "2023-10-14",
+    "totalLiquidityUSD": 12551439
+  },
+  {
+    "date": "2023-10-15",
+    "totalLiquidityUSD": 12646005
+  },
+  {
+    "date": "2023-10-16",
+    "totalLiquidityUSD": 12777375
+  },
+  {
+    "date": "2023-10-17",
+    "totalLiquidityUSD": 12881665
+  },
+  {
+    "date": "2023-10-18",
+    "totalLiquidityUSD": 13012408
+  },
+  {
+    "date": "2023-10-19",
+    "totalLiquidityUSD": 13418146
+  },
+  {
+    "date": "2023-10-20",
+    "totalLiquidityUSD": 13851810
+  },
+  {
+    "date": "2023-10-21",
+    "totalLiquidityUSD": 13883854
+  },
+  {
+    "date": "2023-10-22",
+    "totalLiquidityUSD": 13946802
+  },
+  {
+    "date": "2023-10-23",
+    "totalLiquidityUSD": 13974715
+  },
+  {
+    "date": "2023-10-24",
+    "totalLiquidityUSD": 13991158
+  },
+  {
+    "date": "2023-10-25",
+    "totalLiquidityUSD": 13806628
+  },
+  {
+    "date": "2023-10-26",
+    "totalLiquidityUSD": 13451172
+  },
+  {
+    "date": "2023-10-27",
+    "totalLiquidityUSD": 13312688
+  },
+  {
+    "date": "2023-10-28",
+    "totalLiquidityUSD": 13385134
+  },
+  {
+    "date": "2023-10-29",
+    "totalLiquidityUSD": 13366241
+  },
+  {
+    "date": "2023-10-30",
+    "totalLiquidityUSD": 13296036
+  },
+  {
+    "date": "2023-10-31",
+    "totalLiquidityUSD": 13367045
+  },
+  {
+    "date": "2023-11-01",
+    "totalLiquidityUSD": 14168175
+  },
+  {
+    "date": "2023-11-02",
+    "totalLiquidityUSD": 14671462
+  },
+  {
+    "date": "2023-11-03",
+    "totalLiquidityUSD": 14609385
+  },
+  {
+    "date": "2023-11-04",
+    "totalLiquidityUSD": 14882790
+  },
+  {
+    "date": "2023-11-05",
+    "totalLiquidityUSD": 14876796
+  },
+  {
+    "date": "2023-11-06",
+    "totalLiquidityUSD": 15138217
+  },
+  {
+    "date": "2023-11-07",
+    "totalLiquidityUSD": 15366500
+  },
+  {
+    "date": "2023-11-08",
+    "totalLiquidityUSD": 15532375
+  },
+  {
+    "date": "2023-11-09",
+    "totalLiquidityUSD": 15684681
+  },
+  {
+    "date": "2023-11-10",
+    "totalLiquidityUSD": 15662718
+  },
+  {
+    "date": "2023-11-11",
+    "totalLiquidityUSD": 15731015
+  },
+  {
+    "date": "2023-11-12",
+    "totalLiquidityUSD": 16425198
+  },
+  {
+    "date": "2023-11-13",
+    "totalLiquidityUSD": 17325766
+  },
+  {
+    "date": "2023-11-14",
+    "totalLiquidityUSD": 17731478
+  },
+  {
+    "date": "2023-11-15",
+    "totalLiquidityUSD": 18511113
+  },
+  {
+    "date": "2023-11-16",
+    "totalLiquidityUSD": 19313760
+  },
+  {
+    "date": "2023-11-17",
+    "totalLiquidityUSD": 19554560
+  },
+  {
+    "date": "2023-11-18",
+    "totalLiquidityUSD": 19433670
+  },
+  {
+    "date": "2023-11-19",
+    "totalLiquidityUSD": 19193626
+  },
+  {
+    "date": "2023-11-20",
+    "totalLiquidityUSD": 19140687
+  },
+  {
+    "date": "2023-11-21",
+    "totalLiquidityUSD": 19690320
+  },
+  {
+    "date": "2023-11-22",
+    "totalLiquidityUSD": 20271220
+  },
+  {
+    "date": "2023-11-23",
+    "totalLiquidityUSD": 22071776
+  },
+  {
+    "date": "2023-11-24",
+    "totalLiquidityUSD": 22653474
+  },
+  {
+    "date": "2023-11-25",
+    "totalLiquidityUSD": 23295174
+  },
+  {
+    "date": "2023-11-26",
+    "totalLiquidityUSD": 23608759
+  },
+  {
+    "date": "2023-11-27",
+    "totalLiquidityUSD": 24704215
+  },
+  {
+    "date": "2023-11-28",
+    "totalLiquidityUSD": 25472677
+  },
+  {
+    "date": "2023-11-29",
+    "totalLiquidityUSD": 26815745
+  },
+  {
+    "date": "2023-11-30",
+    "totalLiquidityUSD": 28201349
+  },
+  {
+    "date": "2023-12-01",
+    "totalLiquidityUSD": 29650772
+  },
+  {
+    "date": "2023-12-02",
+    "totalLiquidityUSD": 30314021
+  },
+  {
+    "date": "2023-12-03",
+    "totalLiquidityUSD": 33095529
+  },
+  {
+    "date": "2023-12-04",
+    "totalLiquidityUSD": 34092704
+  },
+  {
+    "date": "2023-12-05",
+    "totalLiquidityUSD": 36212982
+  },
+  {
+    "date": "2023-12-06",
+    "totalLiquidityUSD": 37075111
+  },
+  {
+    "date": "2023-12-07",
+    "totalLiquidityUSD": 39146337
+  },
+  {
+    "date": "2023-12-08",
+    "totalLiquidityUSD": 39398380
+  },
+  {
+    "date": "2023-12-09",
+    "totalLiquidityUSD": 41467847
+  },
+  {
+    "date": "2023-12-10",
+    "totalLiquidityUSD": 41184560
+  },
+  {
+    "date": "2023-12-11",
+    "totalLiquidityUSD": 41371647
+  },
+  {
+    "date": "2023-12-12",
+    "totalLiquidityUSD": 39916986
+  },
+  {
+    "date": "2023-12-13",
+    "totalLiquidityUSD": 40409341
+  },
+  {
+    "date": "2023-12-14",
+    "totalLiquidityUSD": 40529228
+  },
+  {
+    "date": "2023-12-15",
+    "totalLiquidityUSD": 42317463
+  },
+  {
+    "date": "2023-12-16",
+    "totalLiquidityUSD": 42144824
+  },
+  {
+    "date": "2023-12-17",
+    "totalLiquidityUSD": 43188662
+  },
+  {
+    "date": "2023-12-18",
+    "totalLiquidityUSD": 43669533
+  },
+  {
+    "date": "2023-12-19",
+    "totalLiquidityUSD": 42899407
+  },
+  {
+    "date": "2023-12-20",
+    "totalLiquidityUSD": 44006228
+  },
+  {
+    "date": "2023-12-21",
+    "totalLiquidityUSD": 45531229
+  },
+  {
+    "date": "2023-12-22",
+    "totalLiquidityUSD": 47338240
+  },
+  {
+    "date": "2023-12-23",
+    "totalLiquidityUSD": 48680629
+  },
+  {
+    "date": "2023-12-24",
+    "totalLiquidityUSD": 49783906
+  },
+  {
+    "date": "2023-12-25",
+    "totalLiquidityUSD": 51146109
+  },
+  {
+    "date": "2023-12-26",
+    "totalLiquidityUSD": 53323607
+  },
+  {
+    "date": "2023-12-27",
+    "totalLiquidityUSD": 53281397
+  },
+  {
+    "date": "2023-12-28",
+    "totalLiquidityUSD": 54530682
+  },
+  {
+    "date": "2023-12-29",
+    "totalLiquidityUSD": 54845354
+  },
+  {
+    "date": "2023-12-30",
+    "totalLiquidityUSD": 56580962
+  },
+  {
+    "date": "2023-12-31",
+    "totalLiquidityUSD": 57245175
+  },
+  {
+    "date": "2024-01-01",
+    "totalLiquidityUSD": 57944200
+  },
+  {
+    "date": "2024-01-02",
+    "totalLiquidityUSD": 60782024
+  },
+  {
+    "date": "2024-01-03",
+    "totalLiquidityUSD": 64977192
+  },
+  {
+    "date": "2024-01-04",
+    "totalLiquidityUSD": 61418311
+  },
+  {
+    "date": "2024-01-05",
+    "totalLiquidityUSD": 63958209
+  },
+  {
+    "date": "2024-01-06",
+    "totalLiquidityUSD": 65575033
+  },
+  {
+    "date": "2024-01-07",
+    "totalLiquidityUSD": 65949239
+  },
+  {
+    "date": "2024-01-08",
+    "totalLiquidityUSD": 68545773
+  },
+  {
+    "date": "2024-01-09",
+    "totalLiquidityUSD": 70483180
+  },
+  {
+    "date": "2024-01-10",
+    "totalLiquidityUSD": 71348929
+  },
+  {
+    "date": "2024-01-11",
+    "totalLiquidityUSD": 78224114
+  },
+  {
+    "date": "2024-01-12",
+    "totalLiquidityUSD": 84748796
+  },
+  {
+    "date": "2024-01-13",
+    "totalLiquidityUSD": 88525274
+  },
+  {
+    "date": "2024-01-14",
+    "totalLiquidityUSD": 92462541
+  },
+  {
+    "date": "2024-01-15",
+    "totalLiquidityUSD": 95820723
+  },
+  {
+    "date": "2024-01-16",
+    "totalLiquidityUSD": 98485043
+  },
+  {
+    "date": "2024-01-17",
+    "totalLiquidityUSD": 102209060
+  },
+  {
+    "date": "2024-01-18",
+    "totalLiquidityUSD": 105144156
+  },
+  {
+    "date": "2024-01-19",
+    "totalLiquidityUSD": 106935735
+  },
+  {
+    "date": "2024-01-20",
+    "totalLiquidityUSD": 112133366
+  },
+  {
+    "date": "2024-01-21",
+    "totalLiquidityUSD": 112451703
+  },
+  {
+    "date": "2024-01-22",
+    "totalLiquidityUSD": 113681231
+  },
+  {
+    "date": "2024-01-23",
+    "totalLiquidityUSD": 115560244
+  },
+  {
+    "date": "2024-01-24",
+    "totalLiquidityUSD": 121791666
+  },
+  {
+    "date": "2024-01-25",
+    "totalLiquidityUSD": 124410459
+  },
+  {
+    "date": "2024-01-26",
+    "totalLiquidityUSD": 125143508
+  },
+  {
+    "date": "2024-01-27",
+    "totalLiquidityUSD": 126962757
+  },
+  {
+    "date": "2024-01-28",
+    "totalLiquidityUSD": 125918361
+  },
+  {
+    "date": "2024-01-29",
+    "totalLiquidityUSD": 128013626
+  },
+  {
+    "date": "2024-01-30",
+    "totalLiquidityUSD": 129537425
+  },
+  {
+    "date": "2024-01-31",
+    "totalLiquidityUSD": 132713498
+  },
+  {
+    "date": "2024-02-01",
+    "totalLiquidityUSD": 134525297
+  },
+  {
+    "date": "2024-02-02",
+    "totalLiquidityUSD": 136776169
+  },
+  {
+    "date": "2024-02-03",
+    "totalLiquidityUSD": 142165899
+  },
+  {
+    "date": "2024-02-04",
+    "totalLiquidityUSD": 144995859
+  },
+  {
+    "date": "2024-02-05",
+    "totalLiquidityUSD": 149389422
+  },
+  {
+    "date": "2024-02-06",
+    "totalLiquidityUSD": 153055183
+  },
+  {
+    "date": "2024-02-07",
+    "totalLiquidityUSD": 158157717
+  },
+  {
+    "date": "2024-02-08",
+    "totalLiquidityUSD": 161790312
+  },
+  {
+    "date": "2024-02-09",
+    "totalLiquidityUSD": 160335903
+  },
+  {
+    "date": "2024-02-10",
+    "totalLiquidityUSD": 164417810
+  },
+  {
+    "date": "2024-02-11",
+    "totalLiquidityUSD": 163974475
+  },
+  {
+    "date": "2024-02-12",
+    "totalLiquidityUSD": 161733026
+  },
+  {
+    "date": "2024-02-13",
+    "totalLiquidityUSD": 157325767
+  },
+  {
+    "date": "2024-02-14",
+    "totalLiquidityUSD": 156869601
+  },
+  {
+    "date": "2024-02-15",
+    "totalLiquidityUSD": 159566911
+  },
+  {
+    "date": "2024-02-16",
+    "totalLiquidityUSD": 166222243
+  },
+  {
+    "date": "2024-02-17",
+    "totalLiquidityUSD": 169562693
+  },
+  {
+    "date": "2024-02-18",
+    "totalLiquidityUSD": 171433309
+  },
+  {
+    "date": "2024-02-19",
+    "totalLiquidityUSD": 173635049
+  },
+  {
+    "date": "2024-02-20",
+    "totalLiquidityUSD": 179146832
+  },
+  {
+    "date": "2024-02-21",
+    "totalLiquidityUSD": 179682509
+  },
+  {
+    "date": "2024-02-22",
+    "totalLiquidityUSD": 180789766
+  },
+  {
+    "date": "2024-02-23",
+    "totalLiquidityUSD": 185860152
+  },
+  {
+    "date": "2024-02-24",
+    "totalLiquidityUSD": 192607913
+  },
+  {
+    "date": "2024-02-25",
+    "totalLiquidityUSD": 194849758
+  },
+  {
+    "date": "2024-02-26",
+    "totalLiquidityUSD": 196178668
+  },
+  {
+    "date": "2024-02-27",
+    "totalLiquidityUSD": 197887190
+  },
+  {
+    "date": "2024-02-28",
+    "totalLiquidityUSD": 204789783
+  },
+  {
+    "date": "2024-02-29",
+    "totalLiquidityUSD": 213367150
+  },
+  {
+    "date": "2024-03-01",
+    "totalLiquidityUSD": 215721585
+  },
+  {
+    "date": "2024-03-02",
+    "totalLiquidityUSD": 222262798
+  },
+  {
+    "date": "2024-03-03",
+    "totalLiquidityUSD": 227815078
+  },
+  {
+    "date": "2024-03-04",
+    "totalLiquidityUSD": 230714255
+  },
+  {
+    "date": "2024-03-05",
+    "totalLiquidityUSD": 242218489
+  },
+  {
+    "date": "2024-03-06",
+    "totalLiquidityUSD": 240859399
+  },
+  {
+    "date": "2024-03-07",
+    "totalLiquidityUSD": 249086920
+  },
+  {
+    "date": "2024-03-08",
+    "totalLiquidityUSD": 256039053
+  },
+  {
+    "date": "2024-03-09",
+    "totalLiquidityUSD": 261385371
+  },
+  {
+    "date": "2024-03-10",
+    "totalLiquidityUSD": 266637750
+  },
+  {
+    "date": "2024-03-11",
+    "totalLiquidityUSD": 268308519
+  },
+  {
+    "date": "2024-03-12",
+    "totalLiquidityUSD": 269470169
+  },
+  {
+    "date": "2024-03-13",
+    "totalLiquidityUSD": 270772492
+  },
+  {
+    "date": "2024-03-14",
+    "totalLiquidityUSD": 274610262
+  },
+  {
+    "date": "2024-03-15",
+    "totalLiquidityUSD": 283123708
+  },
+  {
+    "date": "2024-03-16",
+    "totalLiquidityUSD": 287694349
+  },
+  {
+    "date": "2024-03-17",
+    "totalLiquidityUSD": 288444661
+  },
+  {
+    "date": "2024-03-18",
+    "totalLiquidityUSD": 292050067
+  },
+  {
+    "date": "2024-03-19",
+    "totalLiquidityUSD": 296627584
+  },
+  {
+    "date": "2024-03-20",
+    "totalLiquidityUSD": 302081395
+  },
+  {
+    "date": "2024-03-21",
+    "totalLiquidityUSD": 315451379
+  },
+  {
+    "date": "2024-03-22",
+    "totalLiquidityUSD": 320690202
+  },
+  {
+    "date": "2024-03-23",
+    "totalLiquidityUSD": 321353181
+  },
+  {
+    "date": "2024-03-24",
+    "totalLiquidityUSD": 324741760
+  },
+  {
+    "date": "2024-03-25",
+    "totalLiquidityUSD": 334196308
+  },
+  {
+    "date": "2024-03-26",
+    "totalLiquidityUSD": 342997501
+  },
+  {
+    "date": "2024-03-27",
+    "totalLiquidityUSD": 345492001
+  },
+  {
+    "date": "2024-03-28",
+    "totalLiquidityUSD": 343607309
+  },
+  {
+    "date": "2024-03-29",
+    "totalLiquidityUSD": 343058172
+  },
+  {
+    "date": "2024-03-30",
+    "totalLiquidityUSD": 349892919
+  },
+  {
+    "date": "2024-03-31",
+    "totalLiquidityUSD": 350525430
+  },
+  {
+    "date": "2024-04-01",
+    "totalLiquidityUSD": 351273209
+  },
+  {
+    "date": "2024-04-02",
+    "totalLiquidityUSD": 347825730
+  },
+  {
+    "date": "2024-04-03",
+    "totalLiquidityUSD": 340008800
+  },
+  {
+    "date": "2024-04-04",
+    "totalLiquidityUSD": 340013492
+  },
+  {
+    "date": "2024-04-05",
+    "totalLiquidityUSD": 342205018
+  },
+  {
+    "date": "2024-04-06",
+    "totalLiquidityUSD": 342500865
+  },
+  {
+    "date": "2024-04-07",
+    "totalLiquidityUSD": 353529540
+  },
+  {
+    "date": "2024-04-08",
+    "totalLiquidityUSD": 355020080
+  },
+  {
+    "date": "2024-04-09",
+    "totalLiquidityUSD": 359307746
+  },
+  {
+    "date": "2024-04-10",
+    "totalLiquidityUSD": 364414333
+  },
+  {
+    "date": "2024-04-11",
+    "totalLiquidityUSD": 369737425
+  },
+  {
+    "date": "2024-04-12",
+    "totalLiquidityUSD": 377717874
+  },
+  {
+    "date": "2024-04-13",
+    "totalLiquidityUSD": 376489277
+  },
+  {
+    "date": "2024-04-14",
+    "totalLiquidityUSD": 355076094
+  },
+  {
+    "date": "2024-04-15",
+    "totalLiquidityUSD": 351370015
+  },
+  {
+    "date": "2024-04-16",
+    "totalLiquidityUSD": 350353409
+  },
+  {
+    "date": "2024-04-17",
+    "totalLiquidityUSD": 356064782
+  },
+  {
+    "date": "2024-04-18",
+    "totalLiquidityUSD": 351977148
+  },
+  {
+    "date": "2024-04-19",
+    "totalLiquidityUSD": 354474663
+  },
+  {
+    "date": "2024-04-20",
+    "totalLiquidityUSD": 357535035
+  },
+  {
+    "date": "2024-04-21",
+    "totalLiquidityUSD": 360813849
+  },
+  {
+    "date": "2024-04-22",
+    "totalLiquidityUSD": 361016581
+  },
+  {
+    "date": "2024-04-23",
+    "totalLiquidityUSD": 363200344
+  },
+  {
+    "date": "2024-04-24",
+    "totalLiquidityUSD": 362985339
+  },
+  {
+    "date": "2024-04-25",
+    "totalLiquidityUSD": 358995221
+  },
+  {
+    "date": "2024-04-26",
+    "totalLiquidityUSD": 360062816
+  },
+  {
+    "date": "2024-04-27",
+    "totalLiquidityUSD": 360624902
+  },
+  {
+    "date": "2024-04-28",
+    "totalLiquidityUSD": 359855178
+  },
+  {
+    "date": "2024-04-29",
+    "totalLiquidityUSD": 360741534
+  },
+  {
+    "date": "2024-04-30",
+    "totalLiquidityUSD": 361908557
+  },
+  {
+    "date": "2024-05-01",
+    "totalLiquidityUSD": 364870520
+  },
+  {
+    "date": "2024-05-02",
+    "totalLiquidityUSD": 361792440
+  },
+  {
+    "date": "2024-05-03",
+    "totalLiquidityUSD": 359353853
+  },
+  {
+    "date": "2024-05-04",
+    "totalLiquidityUSD": 361551550
+  },
+  {
+    "date": "2024-05-05",
+    "totalLiquidityUSD": 356412084
+  },
+  {
+    "date": "2024-05-06",
+    "totalLiquidityUSD": 354983312
+  },
+  {
+    "date": "2024-05-07",
+    "totalLiquidityUSD": 341384260
+  },
+  {
+    "date": "2024-05-08",
+    "totalLiquidityUSD": 341487622
+  },
+  {
+    "date": "2024-05-09",
+    "totalLiquidityUSD": 341819800
+  },
+  {
+    "date": "2024-05-10",
+    "totalLiquidityUSD": 348461721
+  },
+  {
+    "date": "2024-05-11",
+    "totalLiquidityUSD": 349164547
+  },
+  {
+    "date": "2024-05-12",
+    "totalLiquidityUSD": 348601807
+  },
+  {
+    "date": "2024-05-13",
+    "totalLiquidityUSD": 348675468
+  },
+  {
+    "date": "2024-05-14",
+    "totalLiquidityUSD": 347498900
+  },
+  {
+    "date": "2024-05-15",
+    "totalLiquidityUSD": 353060127
+  },
+  {
+    "date": "2024-05-16",
+    "totalLiquidityUSD": 351460514
+  },
+  {
+    "date": "2024-05-17",
+    "totalLiquidityUSD": 355100410
+  },
+  {
+    "date": "2024-05-18",
+    "totalLiquidityUSD": 354540017
+  },
+  {
+    "date": "2024-05-19",
+    "totalLiquidityUSD": 348050076
+  },
+  {
+    "date": "2024-05-20",
+    "totalLiquidityUSD": 345539849
+  },
+  {
+    "date": "2024-05-21",
+    "totalLiquidityUSD": 337826820
+  },
+  {
+    "date": "2024-05-22",
+    "totalLiquidityUSD": 343199078
+  },
+  {
+    "date": "2024-05-23",
+    "totalLiquidityUSD": 343107414
+  },
+  {
+    "date": "2024-05-24",
+    "totalLiquidityUSD": 353917499
+  },
+  {
+    "date": "2024-05-25",
+    "totalLiquidityUSD": 356730922
+  },
+  {
+    "date": "2024-05-26",
+    "totalLiquidityUSD": 357476913
+  },
+  {
+    "date": "2024-05-27",
+    "totalLiquidityUSD": 359233811
+  },
+  {
+    "date": "2024-05-28",
+    "totalLiquidityUSD": 363951617
+  },
+  {
+    "date": "2024-05-29",
+    "totalLiquidityUSD": 363403077
+  },
+  {
+    "date": "2024-05-30",
+    "totalLiquidityUSD": 366980164
+  },
+  {
+    "date": "2024-05-31",
+    "totalLiquidityUSD": 367095679
+  },
+  {
+    "date": "2024-06-01",
+    "totalLiquidityUSD": 378129750
+  },
+  {
+    "date": "2024-06-02",
+    "totalLiquidityUSD": 377365237
+  },
+  {
+    "date": "2024-06-03",
+    "totalLiquidityUSD": 377668648
+  },
+  {
+    "date": "2024-06-04",
+    "totalLiquidityUSD": 383577639
+  },
+  {
+    "date": "2024-06-05",
+    "totalLiquidityUSD": 382343496
+  },
+  {
+    "date": "2024-06-06",
+    "totalLiquidityUSD": 392497574
+  },
+  {
+    "date": "2024-06-07",
+    "totalLiquidityUSD": 392428855
+  },
+  {
+    "date": "2024-06-08",
+    "totalLiquidityUSD": 399135434
+  },
+  {
+    "date": "2024-06-09",
+    "totalLiquidityUSD": 397927823
+  },
+  {
+    "date": "2024-06-10",
+    "totalLiquidityUSD": 397127856
+  },
+  {
+    "date": "2024-06-11",
+    "totalLiquidityUSD": 394829615
+  },
+  {
+    "date": "2024-06-12",
+    "totalLiquidityUSD": 390708920
+  },
+  {
+    "date": "2024-06-13",
+    "totalLiquidityUSD": 391757103
+  },
+  {
+    "date": "2024-06-14",
+    "totalLiquidityUSD": 387464381
+  },
+  {
+    "date": "2024-06-15",
+    "totalLiquidityUSD": 385013294
+  },
+  {
+    "date": "2024-06-16",
+    "totalLiquidityUSD": 387019521
+  },
+  {
+    "date": "2024-06-17",
+    "totalLiquidityUSD": 390517368
+  },
+  {
+    "date": "2024-06-18",
+    "totalLiquidityUSD": 391235114
+  },
+  {
+    "date": "2024-06-19",
+    "totalLiquidityUSD": 386971874
+  },
+  {
+    "date": "2024-06-20",
+    "totalLiquidityUSD": 387198244
+  },
+  {
+    "date": "2024-06-21",
+    "totalLiquidityUSD": 382865680
+  },
+  {
+    "date": "2024-06-22",
+    "totalLiquidityUSD": 382640560
+  },
+  {
+    "date": "2024-06-23",
+    "totalLiquidityUSD": 382911565
+  },
+  {
+    "date": "2024-06-24",
+    "totalLiquidityUSD": 384958302
+  },
+  {
+    "date": "2024-06-25",
+    "totalLiquidityUSD": 381972124
+  },
+  {
+    "date": "2024-06-26",
+    "totalLiquidityUSD": 386762383
+  },
+  {
+    "date": "2024-06-27",
+    "totalLiquidityUSD": 389607754
+  },
+  {
+    "date": "2024-06-28",
+    "totalLiquidityUSD": 389533744
+  },
+  {
+    "date": "2024-06-29",
+    "totalLiquidityUSD": 384289157
+  },
+  {
+    "date": "2024-06-30",
+    "totalLiquidityUSD": 386102674
+  },
+  {
+    "date": "2024-07-01",
+    "totalLiquidityUSD": 384706837
+  },
+  {
+    "date": "2024-07-02",
+    "totalLiquidityUSD": 388216585
+  },
+  {
+    "date": "2024-07-03",
+    "totalLiquidityUSD": 391124721
+  },
+  {
+    "date": "2024-07-04",
+    "totalLiquidityUSD": 391384400
+  },
+  {
+    "date": "2024-07-05",
+    "totalLiquidityUSD": 387366148
+  },
+  {
+    "date": "2024-07-06",
+    "totalLiquidityUSD": 379962341
+  },
+  {
+    "date": "2024-07-07",
+    "totalLiquidityUSD": 380908298
+  },
+  {
+    "date": "2024-07-08",
+    "totalLiquidityUSD": 382045759
+  },
+  {
+    "date": "2024-07-09",
+    "totalLiquidityUSD": 380031758
+  },
+  {
+    "date": "2024-07-10",
+    "totalLiquidityUSD": 386030251
+  },
+  {
+    "date": "2024-07-11",
+    "totalLiquidityUSD": 392521458
+  },
+  {
+    "date": "2024-07-12",
+    "totalLiquidityUSD": 393274294
+  },
+  {
+    "date": "2024-07-13",
+    "totalLiquidityUSD": 391317116
+  },
+  {
+    "date": "2024-07-14",
+    "totalLiquidityUSD": 398373436
+  },
+  {
+    "date": "2024-07-15",
+    "totalLiquidityUSD": 402028391
+  },
+  {
+    "date": "2024-07-16",
+    "totalLiquidityUSD": 409802705
+  },
+  {
+    "date": "2024-07-17",
+    "totalLiquidityUSD": 411471169
+  },
+  {
+    "date": "2024-07-18",
+    "totalLiquidityUSD": 413869212
+  },
+  {
+    "date": "2024-07-19",
+    "totalLiquidityUSD": 414934239
+  },
+  {
+    "date": "2024-07-20",
+    "totalLiquidityUSD": 421294216
+  },
+  {
+    "date": "2024-07-21",
+    "totalLiquidityUSD": 418551221
+  },
+  {
+    "date": "2024-07-22",
+    "totalLiquidityUSD": 423106159
+  },
+  {
+    "date": "2024-07-23",
+    "totalLiquidityUSD": 422594748
+  },
+  {
+    "date": "2024-07-24",
+    "totalLiquidityUSD": 425558093
+  },
+  {
+    "date": "2024-07-25",
+    "totalLiquidityUSD": 429688306
+  },
+  {
+    "date": "2024-07-26",
+    "totalLiquidityUSD": 432383488
+  },
+  {
+    "date": "2024-07-27",
+    "totalLiquidityUSD": 437787945
+  },
+  {
+    "date": "2024-07-28",
+    "totalLiquidityUSD": 438473653
+  },
+  {
+    "date": "2024-07-29",
+    "totalLiquidityUSD": 443133901
+  },
+  {
+    "date": "2024-07-30",
+    "totalLiquidityUSD": 445436934
+  },
+  {
+    "date": "2024-07-31",
+    "totalLiquidityUSD": 443309995
+  },
+  {
+    "date": "2024-08-01",
+    "totalLiquidityUSD": 448891670
+  },
+  {
+    "date": "2024-08-02",
+    "totalLiquidityUSD": 448471891
+  },
+  {
+    "date": "2024-08-03",
+    "totalLiquidityUSD": 450902983
+  },
+  {
+    "date": "2024-08-04",
+    "totalLiquidityUSD": 459123422
+  },
+  {
+    "date": "2024-08-05",
+    "totalLiquidityUSD": 466971755
+  },
+  {
+    "date": "2024-08-06",
+    "totalLiquidityUSD": 448111998
+  },
+  {
+    "date": "2024-08-07",
+    "totalLiquidityUSD": 469726844
+  },
+  {
+    "date": "2024-08-08",
+    "totalLiquidityUSD": 482820396
+  },
+  {
+    "date": "2024-08-09",
+    "totalLiquidityUSD": 491086912
+  },
+  {
+    "date": "2024-08-10",
+    "totalLiquidityUSD": 495231194
+  },
+  {
+    "date": "2024-08-11",
+    "totalLiquidityUSD": 496251485
+  },
+  {
+    "date": "2024-08-12",
+    "totalLiquidityUSD": 497459874
+  },
+  {
+    "date": "2024-08-13",
+    "totalLiquidityUSD": 502721463
+  },
+  {
+    "date": "2024-08-14",
+    "totalLiquidityUSD": 507939365
+  },
+  {
+    "date": "2024-08-15",
+    "totalLiquidityUSD": 511006609
+  },
+  {
+    "date": "2024-08-16",
+    "totalLiquidityUSD": 525838245
+  },
+  {
+    "date": "2024-08-17",
+    "totalLiquidityUSD": 528782037
+  },
+  {
+    "date": "2024-08-18",
+    "totalLiquidityUSD": 535854194
+  },
+  {
+    "date": "2024-08-19",
+    "totalLiquidityUSD": 539540373
+  },
+  {
+    "date": "2024-08-20",
+    "totalLiquidityUSD": 539980612
+  },
+  {
+    "date": "2024-08-21",
+    "totalLiquidityUSD": 541751964
+  },
+  {
+    "date": "2024-08-22",
+    "totalLiquidityUSD": 545590285
+  },
+  {
+    "date": "2024-08-23",
+    "totalLiquidityUSD": 548018237
+  },
+  {
+    "date": "2024-08-24",
+    "totalLiquidityUSD": 554300490
+  },
+  {
+    "date": "2024-08-25",
+    "totalLiquidityUSD": 555598684
+  },
+  {
+    "date": "2024-08-26",
+    "totalLiquidityUSD": 557221103
+  },
+  {
+    "date": "2024-08-27",
+    "totalLiquidityUSD": 566753877
+  },
+  {
+    "date": "2024-08-28",
+    "totalLiquidityUSD": 569702616
+  },
+  {
+    "date": "2024-08-29",
+    "totalLiquidityUSD": 568478987
+  },
+  {
+    "date": "2024-08-30",
+    "totalLiquidityUSD": 564097157
+  },
+  {
+    "date": "2024-08-31",
+    "totalLiquidityUSD": 565908851
+  },
+  {
+    "date": "2024-09-01",
+    "totalLiquidityUSD": 565037998
+  },
+  {
+    "date": "2024-09-02",
+    "totalLiquidityUSD": 564231059
+  },
+  {
+    "date": "2024-09-03",
+    "totalLiquidityUSD": 561462656
+  },
+  {
+    "date": "2024-09-04",
+    "totalLiquidityUSD": 563261544
+  },
+  {
+    "date": "2024-09-05",
+    "totalLiquidityUSD": 552051624
+  },
+  {
+    "date": "2024-09-06",
+    "totalLiquidityUSD": 552930891
+  },
+  {
+    "date": "2024-09-07",
+    "totalLiquidityUSD": 557621614
+  },
+  {
+    "date": "2024-09-08",
+    "totalLiquidityUSD": 556645210
+  },
+  {
+    "date": "2024-09-09",
+    "totalLiquidityUSD": 558208536
+  },
+  {
+    "date": "2024-09-10",
+    "totalLiquidityUSD": 569158019
+  },
+  {
+    "date": "2024-09-11",
+    "totalLiquidityUSD": 571317732
+  },
+  {
+    "date": "2024-09-12",
+    "totalLiquidityUSD": 569054151
+  },
+  {
+    "date": "2024-09-13",
+    "totalLiquidityUSD": 572729750
+  },
+  {
+    "date": "2024-09-14",
+    "totalLiquidityUSD": 574704516
+  },
+  {
+    "date": "2024-09-15",
+    "totalLiquidityUSD": 574171784
+  },
+  {
+    "date": "2024-09-16",
+    "totalLiquidityUSD": 575864263
+  },
+  {
+    "date": "2024-09-17",
+    "totalLiquidityUSD": 572084554
+  },
+  {
+    "date": "2024-09-18",
+    "totalLiquidityUSD": 575076705
+  },
+  {
+    "date": "2024-09-19",
+    "totalLiquidityUSD": 581062588
+  },
+  {
+    "date": "2024-09-20",
+    "totalLiquidityUSD": 589561600
+  },
+  {
+    "date": "2024-09-21",
+    "totalLiquidityUSD": 580817995
+  },
+  {
+    "date": "2024-09-22",
+    "totalLiquidityUSD": 580369533
+  },
+  {
+    "date": "2024-09-23",
+    "totalLiquidityUSD": 577955159
+  },
+  {
+    "date": "2024-09-24",
+    "totalLiquidityUSD": 578564180
+  },
+  {
+    "date": "2024-09-25",
+    "totalLiquidityUSD": 582056933
+  },
+  {
+    "date": "2024-09-26",
+    "totalLiquidityUSD": 574088495
+  },
+  {
+    "date": "2024-09-27",
+    "totalLiquidityUSD": 584993728
+  },
+  {
+    "date": "2024-09-28",
+    "totalLiquidityUSD": 594364195
+  },
+  {
+    "date": "2024-09-29",
+    "totalLiquidityUSD": 597937970
+  },
+  {
+    "date": "2024-09-30",
+    "totalLiquidityUSD": 601399099
+  },
+  {
+    "date": "2024-10-01",
+    "totalLiquidityUSD": 561170489
+  },
+  {
+    "date": "2024-10-02",
+    "totalLiquidityUSD": 601369011
+  },
+  {
+    "date": "2024-10-03",
+    "totalLiquidityUSD": 597178261
+  },
+  {
+    "date": "2024-10-04",
+    "totalLiquidityUSD": 603238871
+  },
+  {
+    "date": "2024-10-05",
+    "totalLiquidityUSD": 609049140
+  },
+  {
+    "date": "2024-10-06",
+    "totalLiquidityUSD": 608516884
+  },
+  {
+    "date": "2024-10-07",
+    "totalLiquidityUSD": 611437497
+  },
+  {
+    "date": "2024-10-08",
+    "totalLiquidityUSD": 600932706
+  },
+  {
+    "date": "2024-10-09",
+    "totalLiquidityUSD": 599847885
+  },
+  {
+    "date": "2024-10-10",
+    "totalLiquidityUSD": 597503423
+  },
+  {
+    "date": "2024-10-11",
+    "totalLiquidityUSD": 602242799
+  },
+  {
+    "date": "2024-10-12",
+    "totalLiquidityUSD": 606975078
+  },
+  {
+    "date": "2024-10-13",
+    "totalLiquidityUSD": 614530911
+  },
+  {
+    "date": "2024-10-14",
+    "totalLiquidityUSD": 614213216
+  },
+  {
+    "date": "2024-10-15",
+    "totalLiquidityUSD": 622939808
+  },
+  {
+    "date": "2024-10-16",
+    "totalLiquidityUSD": 627101059
+  },
+  {
+    "date": "2024-10-17",
+    "totalLiquidityUSD": 623296772
+  },
+  {
+    "date": "2024-10-18",
+    "totalLiquidityUSD": 623805884
+  },
+  {
+    "date": "2024-10-19",
+    "totalLiquidityUSD": 626924360
+  },
+  {
+    "date": "2024-10-20",
+    "totalLiquidityUSD": 628977903
+  },
+  {
+    "date": "2024-10-21",
+    "totalLiquidityUSD": 632152819
+  },
+  {
+    "date": "2024-10-22",
+    "totalLiquidityUSD": 628288788
+  },
+  {
+    "date": "2024-10-23",
+    "totalLiquidityUSD": 629777407
+  },
+  {
+    "date": "2024-10-24",
+    "totalLiquidityUSD": 637438784
+  },
+  {
+    "date": "2024-10-25",
+    "totalLiquidityUSD": 643602548
+  },
+  {
+    "date": "2024-10-26",
+    "totalLiquidityUSD": 636933531
+  },
+  {
+    "date": "2024-10-27",
+    "totalLiquidityUSD": 635435887
+  },
+  {
+    "date": "2024-10-28",
+    "totalLiquidityUSD": 639388548
+  },
+  {
+    "date": "2024-10-29",
+    "totalLiquidityUSD": 649489044
+  },
+  {
+    "date": "2024-10-30",
+    "totalLiquidityUSD": 668323300
+  },
+  {
+    "date": "2024-10-31",
+    "totalLiquidityUSD": 665074159
+  },
+  {
+    "date": "2024-11-01",
+    "totalLiquidityUSD": 658047832
+  },
+  {
+    "date": "2024-11-02",
+    "totalLiquidityUSD": 658561866
+  },
+  {
+    "date": "2024-11-03",
+    "totalLiquidityUSD": 659366101
+  },
+  {
+    "date": "2024-11-04",
+    "totalLiquidityUSD": 658086804
+  },
+  {
+    "date": "2024-11-05",
+    "totalLiquidityUSD": 652606039
+  },
+  {
+    "date": "2024-11-06",
+    "totalLiquidityUSD": 660197460
+  },
+  {
+    "date": "2024-11-07",
+    "totalLiquidityUSD": 717429828
+  },
+  {
+    "date": "2024-11-08",
+    "totalLiquidityUSD": 723888914
+  },
+  {
+    "date": "2024-11-09",
+    "totalLiquidityUSD": 733709637
+  },
+  {
+    "date": "2024-11-10",
+    "totalLiquidityUSD": 747649417
+  },
+  {
+    "date": "2024-11-11",
+    "totalLiquidityUSD": 786512412
+  },
+  {
+    "date": "2024-11-12",
+    "totalLiquidityUSD": 844628843
+  },
+  {
+    "date": "2024-11-13",
+    "totalLiquidityUSD": 909842937
+  },
+  {
+    "date": "2024-11-14",
+    "totalLiquidityUSD": 956377946
+  },
+  {
+    "date": "2024-11-15",
+    "totalLiquidityUSD": 962015417
+  },
+  {
+    "date": "2024-11-16",
+    "totalLiquidityUSD": 979066662
+  },
+  {
+    "date": "2024-11-17",
+    "totalLiquidityUSD": 1005969391
+  },
+  {
+    "date": "2024-11-18",
+    "totalLiquidityUSD": 1003340862
+  },
+  {
+    "date": "2024-11-19",
+    "totalLiquidityUSD": 1014256464
+  },
+  {
+    "date": "2024-11-20",
+    "totalLiquidityUSD": 1023439387
+  },
+  {
+    "date": "2024-11-21",
+    "totalLiquidityUSD": 1018069704
+  },
+  {
+    "date": "2024-11-22",
+    "totalLiquidityUSD": 1033597418
+  },
+  {
+    "date": "2024-11-23",
+    "totalLiquidityUSD": 1048406207
+  },
+  {
+    "date": "2024-11-24",
+    "totalLiquidityUSD": 1066054129
+  },
+  {
+    "date": "2024-11-25",
+    "totalLiquidityUSD": 1053432102
+  },
+  {
+    "date": "2024-11-26",
+    "totalLiquidityUSD": 1040533363
+  },
+  {
+    "date": "2024-11-27",
+    "totalLiquidityUSD": 1022900791
+  },
+  {
+    "date": "2024-11-28",
+    "totalLiquidityUSD": 1049908540
+  },
+  {
+    "date": "2024-11-29",
+    "totalLiquidityUSD": 1097225201
+  },
+  {
+    "date": "2024-11-30",
+    "totalLiquidityUSD": 1279759542
+  },
+  {
     "date": "2024-12-01",
-    "totalLiquidityUSD": 158295217
+    "totalLiquidityUSD": 1473968747
   },
   {
     "date": "2024-12-02",
-    "totalLiquidityUSD": 158514283
+    "totalLiquidityUSD": 1520870678
   },
   {
     "date": "2024-12-03",
-    "totalLiquidityUSD": 164132183
+    "totalLiquidityUSD": 1513986326
   },
   {
     "date": "2024-12-04",
-    "totalLiquidityUSD": 168195793
+    "totalLiquidityUSD": 1533671193
   },
   {
     "date": "2024-12-05",
-    "totalLiquidityUSD": 180650762
+    "totalLiquidityUSD": 1587031501
   },
   {
     "date": "2024-12-06",
-    "totalLiquidityUSD": 188388254
+    "totalLiquidityUSD": 1656260711
   },
   {
     "date": "2024-12-07",
-    "totalLiquidityUSD": 192953481
+    "totalLiquidityUSD": 1691734370
   },
   {
     "date": "2024-12-08",
-    "totalLiquidityUSD": 207653742
+    "totalLiquidityUSD": 1773732313
   },
   {
     "date": "2024-12-09",
-    "totalLiquidityUSD": 210547130
+    "totalLiquidityUSD": 1792155556
   },
   {
     "date": "2024-12-10",
-    "totalLiquidityUSD": 218604558
+    "totalLiquidityUSD": 1764296974
   },
   {
     "date": "2024-12-11",
-    "totalLiquidityUSD": 247786313
+    "totalLiquidityUSD": 1804807991
   },
   {
     "date": "2024-12-12",
-    "totalLiquidityUSD": 263823557
+    "totalLiquidityUSD": 1893129628
   },
   {
     "date": "2024-12-13",
-    "totalLiquidityUSD": 278383390
+    "totalLiquidityUSD": 2012623351
   },
   {
     "date": "2024-12-14",
-    "totalLiquidityUSD": 288584680
+    "totalLiquidityUSD": 2111842512
   },
   {
     "date": "2024-12-15",
-    "totalLiquidityUSD": 307549409
+    "totalLiquidityUSD": 2242373462
   },
   {
     "date": "2024-12-16",
-    "totalLiquidityUSD": 321653347
+    "totalLiquidityUSD": 2352841312
   },
   {
     "date": "2024-12-17",
-    "totalLiquidityUSD": 327256527
+    "totalLiquidityUSD": 2497861380
   },
   {
     "date": "2024-12-18",
-    "totalLiquidityUSD": 340515972
+    "totalLiquidityUSD": 2542001133
   },
   {
     "date": "2024-12-19",
-    "totalLiquidityUSD": 354822945
+    "totalLiquidityUSD": 2536665962
   },
   {
     "date": "2024-12-20",
-    "totalLiquidityUSD": 392807285
+    "totalLiquidityUSD": 2548055570
   },
   {
     "date": "2024-12-21",
-    "totalLiquidityUSD": 420018967
+    "totalLiquidityUSD": 2628503118
   },
   {
     "date": "2024-12-22",
-    "totalLiquidityUSD": 440993835
+    "totalLiquidityUSD": 2734178382
   },
   {
     "date": "2024-12-23",
-    "totalLiquidityUSD": 460122085
+    "totalLiquidityUSD": 2801073308
   },
   {
     "date": "2024-12-24",
-    "totalLiquidityUSD": 428177641
+    "totalLiquidityUSD": 2513836424
   },
   {
     "date": "2024-12-25",
-    "totalLiquidityUSD": 406468758
+    "totalLiquidityUSD": 2482248404
   },
   {
     "date": "2024-12-26",
-    "totalLiquidityUSD": 400802270
+    "totalLiquidityUSD": 2476093457
   },
   {
     "date": "2024-12-27",
-    "totalLiquidityUSD": 391800341
+    "totalLiquidityUSD": 2449891507
   },
   {
     "date": "2024-12-28",
-    "totalLiquidityUSD": 390287252
+    "totalLiquidityUSD": 2449552501
   },
   {
     "date": "2024-12-29",
-    "totalLiquidityUSD": 402540281
+    "totalLiquidityUSD": 2445267682
   },
   {
     "date": "2024-12-30",
-    "totalLiquidityUSD": 398218490
+    "totalLiquidityUSD": 2425814428
   },
   {
     "date": "2024-12-31",
-    "totalLiquidityUSD": 398649759
+    "totalLiquidityUSD": 2434840376
   },
   {
     "date": "2025-01-01",
-    "totalLiquidityUSD": 403383322
+    "totalLiquidityUSD": 2433923651
   },
   {
     "date": "2025-01-02",
-    "totalLiquidityUSD": 405745736
+    "totalLiquidityUSD": 2448881185
   },
   {
     "date": "2025-01-03",
-    "totalLiquidityUSD": 392519879
+    "totalLiquidityUSD": 2462034667
   },
   {
     "date": "2025-01-04",
-    "totalLiquidityUSD": 377940093
+    "totalLiquidityUSD": 2478034920
   },
   {
     "date": "2025-01-05",
-    "totalLiquidityUSD": 359930028
+    "totalLiquidityUSD": 2449671667
   },
   {
     "date": "2025-01-06",
-    "totalLiquidityUSD": 352621512
+    "totalLiquidityUSD": 2437037418
   },
   {
     "date": "2025-01-07",
-    "totalLiquidityUSD": 339369901
+    "totalLiquidityUSD": 2439838892
   },
   {
     "date": "2025-01-08",
-    "totalLiquidityUSD": 338680223
+    "totalLiquidityUSD": 2376018215
   },
   {
     "date": "2025-01-09",
-    "totalLiquidityUSD": 341774240
+    "totalLiquidityUSD": 2360102109
   },
   {
     "date": "2025-01-10",
-    "totalLiquidityUSD": 337316902
+    "totalLiquidityUSD": 2351235403
   },
   {
     "date": "2025-01-11",
-    "totalLiquidityUSD": 332055924
+    "totalLiquidityUSD": 2319031489
   },
   {
     "date": "2025-01-12",
-    "totalLiquidityUSD": 331091636
+    "totalLiquidityUSD": 2280410893
   },
   {
     "date": "2025-01-13",
-    "totalLiquidityUSD": 328929361
+    "totalLiquidityUSD": 2265519470
   },
   {
     "date": "2025-01-14",
-    "totalLiquidityUSD": 324799760
+    "totalLiquidityUSD": 2254209277
   },
   {
     "date": "2025-01-15",
-    "totalLiquidityUSD": 315742381
+    "totalLiquidityUSD": 2271391260
   },
   {
     "date": "2025-01-16",
-    "totalLiquidityUSD": 309416197
+    "totalLiquidityUSD": 2307048884
   },
   {
     "date": "2025-01-17",
-    "totalLiquidityUSD": 303581243
+    "totalLiquidityUSD": 2312325032
   },
   {
     "date": "2025-01-18",
-    "totalLiquidityUSD": 284944552
+    "totalLiquidityUSD": 2350538128
   },
   {
     "date": "2025-01-19",
-    "totalLiquidityUSD": 275171288
+    "totalLiquidityUSD": 2425615466
   },
   {
     "date": "2025-01-20",
-    "totalLiquidityUSD": 267970629
+    "totalLiquidityUSD": 2531068660
   },
   {
     "date": "2025-01-21",
-    "totalLiquidityUSD": 285373767
+    "totalLiquidityUSD": 2584202479
   },
   {
     "date": "2025-01-22",
-    "totalLiquidityUSD": 296386469
+    "totalLiquidityUSD": 2641353967
   },
   {
     "date": "2025-01-23",
-    "totalLiquidityUSD": 319825277
+    "totalLiquidityUSD": 2696770746
   },
   {
     "date": "2025-01-24",
-    "totalLiquidityUSD": 339285980
+    "totalLiquidityUSD": 2703376176
   },
   {
     "date": "2025-01-25",
-    "totalLiquidityUSD": 347043836
+    "totalLiquidityUSD": 2723077415
   },
   {
     "date": "2025-01-26",
-    "totalLiquidityUSD": 353548404
+    "totalLiquidityUSD": 2718879482
   },
   {
     "date": "2025-01-27",
-    "totalLiquidityUSD": 363419275
+    "totalLiquidityUSD": 2740191584
   },
   {
     "date": "2025-01-28",
-    "totalLiquidityUSD": 370112165
+    "totalLiquidityUSD": 2674962368
   },
   {
     "date": "2025-01-29",
-    "totalLiquidityUSD": 385116040
+    "totalLiquidityUSD": 2698563239
   },
   {
     "date": "2025-01-30",
-    "totalLiquidityUSD": 388845888
+    "totalLiquidityUSD": 2708599900
   },
   {
     "date": "2025-01-31",
-    "totalLiquidityUSD": 401610836
+    "totalLiquidityUSD": 2818777955
   },
   {
     "date": "2025-02-01",
-    "totalLiquidityUSD": 405242826
+    "totalLiquidityUSD": 2849478638
   },
   {
     "date": "2025-02-02",
-    "totalLiquidityUSD": 413424400
+    "totalLiquidityUSD": 2829013223
   },
   {
     "date": "2025-02-03",
-    "totalLiquidityUSD": 414872954
+    "totalLiquidityUSD": 2810492279
   },
   {
     "date": "2025-02-04",
-    "totalLiquidityUSD": 419768804
+    "totalLiquidityUSD": 2855506012
   },
   {
     "date": "2025-02-05",
-    "totalLiquidityUSD": 461262656
+    "totalLiquidityUSD": 2922128346
   },
   {
     "date": "2025-02-06",
-    "totalLiquidityUSD": 500281457
+    "totalLiquidityUSD": 2993853960
   },
   {
     "date": "2025-02-07",
-    "totalLiquidityUSD": 651848104
+    "totalLiquidityUSD": 3129235316
   },
   {
     "date": "2025-02-08",
-    "totalLiquidityUSD": 665753578
+    "totalLiquidityUSD": 3136330372
   },
   {
     "date": "2025-02-09",
-    "totalLiquidityUSD": 685878693
+    "totalLiquidityUSD": 3162610687
   },
   {
     "date": "2025-02-10",
-    "totalLiquidityUSD": 690213029
+    "totalLiquidityUSD": 3164901481
   },
   {
     "date": "2025-02-11",
-    "totalLiquidityUSD": 668465996
+    "totalLiquidityUSD": 3130215101
   },
   {
     "date": "2025-02-12",
-    "totalLiquidityUSD": 657837510
+    "totalLiquidityUSD": 3111869408
   },
   {
     "date": "2025-02-13",
-    "totalLiquidityUSD": 649761977
+    "totalLiquidityUSD": 3126386051
   },
   {
     "date": "2025-02-14",
-    "totalLiquidityUSD": 653041790
+    "totalLiquidityUSD": 3139182290
   },
   {
     "date": "2025-02-15",
-    "totalLiquidityUSD": 664091532
+    "totalLiquidityUSD": 3199013626
   },
   {
     "date": "2025-02-16",
-    "totalLiquidityUSD": 675748853
+    "totalLiquidityUSD": 3207588669
   },
   {
     "date": "2025-02-17",
-    "totalLiquidityUSD": 679034146
+    "totalLiquidityUSD": 3207566102
   },
   {
     "date": "2025-02-18",
-    "totalLiquidityUSD": 677394214
+    "totalLiquidityUSD": 3199192110
   },
   {
     "date": "2025-02-19",
-    "totalLiquidityUSD": 664580202
+    "totalLiquidityUSD": 3192969150
   },
   {
     "date": "2025-02-20",
-    "totalLiquidityUSD": 659700687
+    "totalLiquidityUSD": 3169565837
   },
   {
     "date": "2025-02-21",
-    "totalLiquidityUSD": 649389823
+    "totalLiquidityUSD": 3180115703
   },
   {
     "date": "2025-02-22",
-    "totalLiquidityUSD": 649166082
+    "totalLiquidityUSD": 3176507873
   },
   {
     "date": "2025-02-23",
-    "totalLiquidityUSD": 652583684
+    "totalLiquidityUSD": 3188804978
   },
   {
     "date": "2025-02-24",
-    "totalLiquidityUSD": 625182795
+    "totalLiquidityUSD": 3143831062
   },
   {
     "date": "2025-02-25",
-    "totalLiquidityUSD": 595990925
+    "totalLiquidityUSD": 3110045903
   },
   {
     "date": "2025-02-26",
-    "totalLiquidityUSD": 618020161
+    "totalLiquidityUSD": 3149327439
   },
   {
     "date": "2025-02-27",
-    "totalLiquidityUSD": 630320111
+    "totalLiquidityUSD": 3158562439
   },
   {
     "date": "2025-02-28",
-    "totalLiquidityUSD": 639205689
+    "totalLiquidityUSD": 3142188101
   },
   {
     "date": "2025-03-01",
-    "totalLiquidityUSD": 654084093
+    "totalLiquidityUSD": 3169769754
   },
   {
     "date": "2025-03-02",
-    "totalLiquidityUSD": 652756475
+    "totalLiquidityUSD": 3168691214
   },
   {
     "date": "2025-03-03",
-    "totalLiquidityUSD": 638281793
+    "totalLiquidityUSD": 3218701698
   },
   {
     "date": "2025-03-04",
-    "totalLiquidityUSD": 640007402
+    "totalLiquidityUSD": 3170844924
   },
   {
     "date": "2025-03-05",
-    "totalLiquidityUSD": 631778192
+    "totalLiquidityUSD": 3143494202
   },
   {
     "date": "2025-03-06",
-    "totalLiquidityUSD": 631745968
+    "totalLiquidityUSD": 3144029736
   },
   {
     "date": "2025-03-07",
-    "totalLiquidityUSD": 632682900
+    "totalLiquidityUSD": 3138903266
   },
   {
     "date": "2025-03-08",
-    "totalLiquidityUSD": 639730658
+    "totalLiquidityUSD": 3149707908
   },
   {
     "date": "2025-03-09",
-    "totalLiquidityUSD": 636008601
+    "totalLiquidityUSD": 3138934937
   },
   {
     "date": "2025-03-10",
-    "totalLiquidityUSD": 620780075
+    "totalLiquidityUSD": 3113842407
   },
   {
     "date": "2025-03-11",
-    "totalLiquidityUSD": 589988765
+    "totalLiquidityUSD": 3056235691
   },
   {
     "date": "2025-03-12",
-    "totalLiquidityUSD": 586761931
+    "totalLiquidityUSD": 3019458247
   },
   {
     "date": "2025-03-13",
-    "totalLiquidityUSD": 445907330
+    "totalLiquidityUSD": 2712964749
   },
   {
     "date": "2025-03-14",
-    "totalLiquidityUSD": 426275498
+    "totalLiquidityUSD": 2658848847
   },
   {
     "date": "2025-03-15",
-    "totalLiquidityUSD": 435327350
+    "totalLiquidityUSD": 2697984170
   },
   {
     "date": "2025-03-16",
-    "totalLiquidityUSD": 436019106
+    "totalLiquidityUSD": 2694820101
   },
   {
     "date": "2025-03-17",
-    "totalLiquidityUSD": 412450716
+    "totalLiquidityUSD": 2659368531
   },
   {
     "date": "2025-03-18",
-    "totalLiquidityUSD": 407372541
+    "totalLiquidityUSD": 2657553629
   },
   {
     "date": "2025-03-19",
-    "totalLiquidityUSD": 386135716
+    "totalLiquidityUSD": 2609408589
   },
   {
     "date": "2025-03-20",
-    "totalLiquidityUSD": 385422763
+    "totalLiquidityUSD": 2625829717
   },
   {
     "date": "2025-03-21",
-    "totalLiquidityUSD": 389515120
+    "totalLiquidityUSD": 2616264022
   },
   {
     "date": "2025-03-22",
-    "totalLiquidityUSD": 394506466
+    "totalLiquidityUSD": 2607795698
   },
   {
     "date": "2025-03-23",
-    "totalLiquidityUSD": 392397016
+    "totalLiquidityUSD": 2606624059
   },
   {
     "date": "2025-03-24",
-    "totalLiquidityUSD": 400296341
+    "totalLiquidityUSD": 2611498665
   },
   {
     "date": "2025-03-25",
-    "totalLiquidityUSD": 398279307
+    "totalLiquidityUSD": 2615253719
   },
   {
     "date": "2025-03-26",
-    "totalLiquidityUSD": 382827034
+    "totalLiquidityUSD": 2592393233
   },
   {
     "date": "2025-03-27",
-    "totalLiquidityUSD": 273969263
+    "totalLiquidityUSD": 2299501062
   },
   {
     "date": "2025-03-28",
-    "totalLiquidityUSD": 271888204
+    "totalLiquidityUSD": 2289215492
   },
   {
     "date": "2025-03-29",
-    "totalLiquidityUSD": 260426171
+    "totalLiquidityUSD": 2243724098
   },
   {
     "date": "2025-03-30",
-    "totalLiquidityUSD": 263622822
+    "totalLiquidityUSD": 2254714980
   },
   {
     "date": "2025-03-31",
-    "totalLiquidityUSD": 264542520
+    "totalLiquidityUSD": 2256535146
   },
   {
     "date": "2025-04-01",
-    "totalLiquidityUSD": 268895992
+    "totalLiquidityUSD": 2266925477
   },
   {
     "date": "2025-04-02",
-    "totalLiquidityUSD": 272102841
+    "totalLiquidityUSD": 2275290715
   },
   {
     "date": "2025-04-03",
-    "totalLiquidityUSD": 259174566
+    "totalLiquidityUSD": 2252993459
   },
   {
     "date": "2025-04-04",
-    "totalLiquidityUSD": 257971781
+    "totalLiquidityUSD": 2255538842
   },
   {
     "date": "2025-04-05",
-    "totalLiquidityUSD": 256482562
+    "totalLiquidityUSD": 2245870177
   },
   {
     "date": "2025-04-06",
-    "totalLiquidityUSD": 253137650
+    "totalLiquidityUSD": 2235377052
   },
   {
     "date": "2025-04-07",
-    "totalLiquidityUSD": 230478790
+    "totalLiquidityUSD": 2214613428
   },
   {
     "date": "2025-04-08",
-    "totalLiquidityUSD": 239438022
+    "totalLiquidityUSD": 2213182989
   },
   {
     "date": "2025-04-09",
-    "totalLiquidityUSD": 236900442
+    "totalLiquidityUSD": 2203939440
   },
   {
     "date": "2025-04-10",
-    "totalLiquidityUSD": 243586209
+    "totalLiquidityUSD": 2254727907
   },
   {
     "date": "2025-04-11",
-    "totalLiquidityUSD": 257447335
+    "totalLiquidityUSD": 2272257811
   },
   {
     "date": "2025-04-12",
-    "totalLiquidityUSD": 269005429
+    "totalLiquidityUSD": 2305748212
   },
   {
     "date": "2025-04-13",
-    "totalLiquidityUSD": 261288616
+    "totalLiquidityUSD": 2314563804
   },
   {
     "date": "2025-04-14",
-    "totalLiquidityUSD": 261998463
+    "totalLiquidityUSD": 2315260827
   },
   {
     "date": "2025-04-15",
-    "totalLiquidityUSD": 263399691
+    "totalLiquidityUSD": 2315928522
   },
   {
     "date": "2025-04-16",
-    "totalLiquidityUSD": 263189424
+    "totalLiquidityUSD": 2321576711
   },
   {
     "date": "2025-04-17",
-    "totalLiquidityUSD": 275808604
+    "totalLiquidityUSD": 2334670619
   },
   {
     "date": "2025-04-18",
-    "totalLiquidityUSD": 279818804
+    "totalLiquidityUSD": 2349014508
   },
   {
     "date": "2025-04-19",
-    "totalLiquidityUSD": 295105428
+    "totalLiquidityUSD": 2372132200
   },
   {
     "date": "2025-04-20",
-    "totalLiquidityUSD": 296199622
+    "totalLiquidityUSD": 2384669857
   },
   {
     "date": "2025-04-21",
-    "totalLiquidityUSD": 303450186
+    "totalLiquidityUSD": 2391772389
   },
   {
     "date": "2025-04-22",
-    "totalLiquidityUSD": 303376578
+    "totalLiquidityUSD": 2394083156
   },
   {
     "date": "2025-04-23",
-    "totalLiquidityUSD": 300622014
+    "totalLiquidityUSD": 2450327623
   },
   {
     "date": "2025-04-24",
-    "totalLiquidityUSD": 298432994
+    "totalLiquidityUSD": 2474759376
   },
   {
     "date": "2025-04-25",
-    "totalLiquidityUSD": 304322352
+    "totalLiquidityUSD": 2467306611
   },
   {
     "date": "2025-04-26",
-    "totalLiquidityUSD": 305936614
+    "totalLiquidityUSD": 2496425265
   },
   {
     "date": "2025-04-27",
-    "totalLiquidityUSD": 295148715
+    "totalLiquidityUSD": 2483253428
   },
   {
     "date": "2025-04-28",
-    "totalLiquidityUSD": 297331723
+    "totalLiquidityUSD": 2490435724
   },
   {
     "date": "2025-04-29",
-    "totalLiquidityUSD": 297088620
+    "totalLiquidityUSD": 2494406136
   },
   {
     "date": "2025-04-30",
-    "totalLiquidityUSD": 298346533
+    "totalLiquidityUSD": 2507847757
   },
   {
     "date": "2025-05-01",
-    "totalLiquidityUSD": 289462463
+    "totalLiquidityUSD": 2505196968
   },
   {
     "date": "2025-05-02",
-    "totalLiquidityUSD": 303004157
+    "totalLiquidityUSD": 2548802700
   },
   {
     "date": "2025-05-03",
-    "totalLiquidityUSD": 309721871
+    "totalLiquidityUSD": 2572455179
   },
   {
     "date": "2025-05-04",
-    "totalLiquidityUSD": 310435054
+    "totalLiquidityUSD": 2563082083
   },
   {
     "date": "2025-05-05",
-    "totalLiquidityUSD": 311715617
+    "totalLiquidityUSD": 2551960926
   },
   {
     "date": "2025-05-06",
-    "totalLiquidityUSD": 319152274
+    "totalLiquidityUSD": 2561192806
   },
   {
     "date": "2025-05-07",
-    "totalLiquidityUSD": 324387861
+    "totalLiquidityUSD": 2585338206
   },
   {
     "date": "2025-05-08",
-    "totalLiquidityUSD": 320448137
+    "totalLiquidityUSD": 2586335800
   },
   {
     "date": "2025-05-09",
-    "totalLiquidityUSD": 319694290
+    "totalLiquidityUSD": 2789620599
   },
   {
     "date": "2025-05-10",
-    "totalLiquidityUSD": 344312968
+    "totalLiquidityUSD": 2983620720
   },
   {
     "date": "2025-05-11",
-    "totalLiquidityUSD": 355656413
+    "totalLiquidityUSD": 3090259708
   },
   {
     "date": "2025-05-12",
-    "totalLiquidityUSD": 368135923
+    "totalLiquidityUSD": 3156905484
   },
   {
     "date": "2025-05-13",
-    "totalLiquidityUSD": 374400310
+    "totalLiquidityUSD": 3303526934
   },
   {
     "date": "2025-05-14",
-    "totalLiquidityUSD": 388663508
+    "totalLiquidityUSD": 3356068918
   },
   {
     "date": "2025-05-15",
-    "totalLiquidityUSD": 393220839
+    "totalLiquidityUSD": 3372649980
   },
   {
     "date": "2025-05-16",
-    "totalLiquidityUSD": 405647705
+    "totalLiquidityUSD": 3360054776
   },
   {
     "date": "2025-05-17",
-    "totalLiquidityUSD": 411757828
+    "totalLiquidityUSD": 3382717965
   },
   {
     "date": "2025-05-18",
-    "totalLiquidityUSD": 424044675
+    "totalLiquidityUSD": 3385973667
   },
   {
     "date": "2025-05-19",
-    "totalLiquidityUSD": 423856901
+    "totalLiquidityUSD": 3409470572
   },
   {
     "date": "2025-05-20",
-    "totalLiquidityUSD": 437881824
+    "totalLiquidityUSD": 3451813012
   },
   {
     "date": "2025-05-21",
-    "totalLiquidityUSD": 449425062
+    "totalLiquidityUSD": 3475130573
   },
   {
     "date": "2025-05-22",
-    "totalLiquidityUSD": 439345959
+    "totalLiquidityUSD": 3636348539
   },
   {
     "date": "2025-05-23",
-    "totalLiquidityUSD": 449389939
+    "totalLiquidityUSD": 3888895317
   },
   {
     "date": "2025-05-24",
-    "totalLiquidityUSD": 452775367
+    "totalLiquidityUSD": 4050277635
   },
   {
     "date": "2025-05-25",
-    "totalLiquidityUSD": 452614650
+    "totalLiquidityUSD": 4041267666
   },
   {
     "date": "2025-05-26",
-    "totalLiquidityUSD": 493955852
+    "totalLiquidityUSD": 4025398091
   },
   {
     "date": "2025-05-27",
-    "totalLiquidityUSD": 486593066
+    "totalLiquidityUSD": 4023586443
   },
   {
     "date": "2025-05-28",
-    "totalLiquidityUSD": 500307850
+    "totalLiquidityUSD": 4049047916
   },
   {
     "date": "2025-05-29",
-    "totalLiquidityUSD": 513306822
+    "totalLiquidityUSD": 4064450934
   },
   {
     "date": "2025-05-30",
-    "totalLiquidityUSD": 503536400
+    "totalLiquidityUSD": 4054482831
   },
   {
     "date": "2025-05-31",
-    "totalLiquidityUSD": 512992666
+    "totalLiquidityUSD": 3929779818
   },
   {
     "date": "2025-06-01",
-    "totalLiquidityUSD": 516048793
+    "totalLiquidityUSD": 3903285988
   },
   {
     "date": "2025-06-02",
-    "totalLiquidityUSD": 525580886
+    "totalLiquidityUSD": 3910995559
   },
   {
     "date": "2025-06-03",
-    "totalLiquidityUSD": 533723366
+    "totalLiquidityUSD": 3933528717
   },
   {
     "date": "2025-06-04",
-    "totalLiquidityUSD": 555824338
+    "totalLiquidityUSD": 3996356350
   },
   {
     "date": "2025-06-05",
-    "totalLiquidityUSD": 558663228
+    "totalLiquidityUSD": 3996736593
   },
   {
     "date": "2025-06-06",
-    "totalLiquidityUSD": 565614588
+    "totalLiquidityUSD": 3988933826
   },
   {
     "date": "2025-06-07",
-    "totalLiquidityUSD": 564923805
+    "totalLiquidityUSD": 3964360396
   },
   {
     "date": "2025-06-08",
-    "totalLiquidityUSD": 574017470
+    "totalLiquidityUSD": 3950478302
   },
   {
     "date": "2025-06-09",
-    "totalLiquidityUSD": 578738848
+    "totalLiquidityUSD": 3943301014
   },
   {
     "date": "2025-06-10",
-    "totalLiquidityUSD": 558046875
+    "totalLiquidityUSD": 3991857064
   },
   {
     "date": "2025-06-11",
-    "totalLiquidityUSD": 552034111
+    "totalLiquidityUSD": 4183750641
   },
   {
     "date": "2025-06-12",
-    "totalLiquidityUSD": 550432379
+    "totalLiquidityUSD": 4297688666
   },
   {
     "date": "2025-06-13",
-    "totalLiquidityUSD": 541157799
+    "totalLiquidityUSD": 4260655974
   },
   {
     "date": "2025-06-14",
-    "totalLiquidityUSD": 539801716
+    "totalLiquidityUSD": 4188735578
   },
   {
     "date": "2025-06-15",
-    "totalLiquidityUSD": 534379953
+    "totalLiquidityUSD": 4135060624
   },
   {
     "date": "2025-06-16",
-    "totalLiquidityUSD": 537242923
+    "totalLiquidityUSD": 4151151496
   },
   {
     "date": "2025-06-17",
-    "totalLiquidityUSD": 533156246
+    "totalLiquidityUSD": 4226270807
   },
   {
     "date": "2025-06-18",
-    "totalLiquidityUSD": 543190453
+    "totalLiquidityUSD": 4236161163
   },
   {
     "date": "2025-06-19",
-    "totalLiquidityUSD": 542607392
+    "totalLiquidityUSD": 4216326555
   },
   {
     "date": "2025-06-20",
-    "totalLiquidityUSD": 549919836
+    "totalLiquidityUSD": 4232928206
   },
   {
     "date": "2025-06-21",
-    "totalLiquidityUSD": 539311364
+    "totalLiquidityUSD": 4229248247
   },
   {
     "date": "2025-06-22",
-    "totalLiquidityUSD": 530027836
+    "totalLiquidityUSD": 4207199233
   },
   {
     "date": "2025-06-23",
-    "totalLiquidityUSD": 535714037
+    "totalLiquidityUSD": 4183109442
   },
   {
     "date": "2025-06-24",
-    "totalLiquidityUSD": 541272356
+    "totalLiquidityUSD": 4118579733
   },
   {
     "date": "2025-06-25",
-    "totalLiquidityUSD": 543792598
+    "totalLiquidityUSD": 4103128475
   },
   {
     "date": "2025-06-26",
-    "totalLiquidityUSD": 551479426
+    "totalLiquidityUSD": 4127789229
   },
   {
     "date": "2025-06-27",
-    "totalLiquidityUSD": 533631976
+    "totalLiquidityUSD": 4128141093
   },
   {
     "date": "2025-06-28",
-    "totalLiquidityUSD": 532837128
+    "totalLiquidityUSD": 4089868513
   },
   {
     "date": "2025-06-29",
-    "totalLiquidityUSD": 533027988
+    "totalLiquidityUSD": 4071472086
   },
   {
     "date": "2025-06-30",
-    "totalLiquidityUSD": 534352715
+    "totalLiquidityUSD": 4094644883
   },
   {
     "date": "2025-07-01",
-    "totalLiquidityUSD": 514518218
+    "totalLiquidityUSD": 4092395911
   },
   {
     "date": "2025-07-02",
-    "totalLiquidityUSD": 505199940
+    "totalLiquidityUSD": 4056956121
   },
   {
     "date": "2025-07-03",
-    "totalLiquidityUSD": 514063678
+    "totalLiquidityUSD": 4056947784
   },
   {
     "date": "2025-07-04",
-    "totalLiquidityUSD": 509967683
+    "totalLiquidityUSD": 4047514222
   },
   {
     "date": "2025-07-05",
-    "totalLiquidityUSD": 502964000
+    "totalLiquidityUSD": 4029523291
   },
   {
     "date": "2025-07-06",
-    "totalLiquidityUSD": 504285135
+    "totalLiquidityUSD": 4017276125
   },
   {
     "date": "2025-07-07",
-    "totalLiquidityUSD": 507379774
+    "totalLiquidityUSD": 4022318083
   },
   {
     "date": "2025-07-08",
-    "totalLiquidityUSD": 504951813
+    "totalLiquidityUSD": 4034240009
   },
   {
     "date": "2025-07-09",
-    "totalLiquidityUSD": 503653170
+    "totalLiquidityUSD": 4061852092
   },
   {
     "date": "2025-07-10",
-    "totalLiquidityUSD": 501677973
+    "totalLiquidityUSD": 4132237953
   },
   {
     "date": "2025-07-11",
-    "totalLiquidityUSD": 473589057
+    "totalLiquidityUSD": 4369889597
   },
   {
     "date": "2025-07-12",
-    "totalLiquidityUSD": 466377472
+    "totalLiquidityUSD": 4587708964
   },
   {
     "date": "2025-07-13",
-    "totalLiquidityUSD": 458261748
+    "totalLiquidityUSD": 4836357238
   },
   {
     "date": "2025-07-14",
-    "totalLiquidityUSD": 459448144
+    "totalLiquidityUSD": 4949860075
   },
   {
     "date": "2025-07-15",
-    "totalLiquidityUSD": 470883187
+    "totalLiquidityUSD": 5122117148
   },
   {
     "date": "2025-07-16",
-    "totalLiquidityUSD": 477958449
+    "totalLiquidityUSD": 5044765188
   },
   {
     "date": "2025-07-17",
-    "totalLiquidityUSD": 480988131
+    "totalLiquidityUSD": 5244838857
   },
   {
     "date": "2025-07-18",
-    "totalLiquidityUSD": 476421886
+    "totalLiquidityUSD": 5339055060
   },
   {
     "date": "2025-07-19",
-    "totalLiquidityUSD": 485797545
+    "totalLiquidityUSD": 5388751712
   },
   {
     "date": "2025-07-20",
-    "totalLiquidityUSD": 490881765
+    "totalLiquidityUSD": 5385308857
   },
   {
     "date": "2025-07-21",
-    "totalLiquidityUSD": 514274374
+    "totalLiquidityUSD": 5478844162
   },
   {
     "date": "2025-07-22",
-    "totalLiquidityUSD": 517425394
+    "totalLiquidityUSD": 5596763378
   },
   {
     "date": "2025-07-23",
-    "totalLiquidityUSD": 540997698
+    "totalLiquidityUSD": 5639859230
   },
   {
     "date": "2025-07-24",
-    "totalLiquidityUSD": 529543351
+    "totalLiquidityUSD": 5516377906
   },
   {
     "date": "2025-07-25",
-    "totalLiquidityUSD": 525158403
+    "totalLiquidityUSD": 5424320479
   },
   {
     "date": "2025-07-26",
-    "totalLiquidityUSD": 534251408
+    "totalLiquidityUSD": 5403210774
   },
   {
     "date": "2025-07-27",
-    "totalLiquidityUSD": 543156292
+    "totalLiquidityUSD": 5428857358
   },
   {
     "date": "2025-07-28",
-    "totalLiquidityUSD": 538500136
+    "totalLiquidityUSD": 5558334801
   },
   {
     "date": "2025-07-29",
-    "totalLiquidityUSD": 538251799
+    "totalLiquidityUSD": 5541283021
   },
   {
     "date": "2025-07-30",
-    "totalLiquidityUSD": 545503051
+    "totalLiquidityUSD": 5401777421
   },
   {
     "date": "2025-07-31",
-    "totalLiquidityUSD": 549475674
+    "totalLiquidityUSD": 5295671170
   },
   {
     "date": "2025-08-01",
-    "totalLiquidityUSD": 548499573
+    "totalLiquidityUSD": 5285171209
   },
   {
     "date": "2025-08-02",
-    "totalLiquidityUSD": 558197933
+    "totalLiquidityUSD": 5091889326
   },
   {
     "date": "2025-08-03",
-    "totalLiquidityUSD": 564119530
+    "totalLiquidityUSD": 5016358536
   },
   {
     "date": "2025-08-04",
-    "totalLiquidityUSD": 588040857
+    "totalLiquidityUSD": 5049362950
   },
   {
     "date": "2025-08-05",
-    "totalLiquidityUSD": 597387219
+    "totalLiquidityUSD": 5039927188
   },
   {
     "date": "2025-08-06",
-    "totalLiquidityUSD": 601680874
+    "totalLiquidityUSD": 4993938925
   },
   {
     "date": "2025-08-07",
-    "totalLiquidityUSD": 608536600
+    "totalLiquidityUSD": 4963336226
   },
   {
     "date": "2025-08-08",
-    "totalLiquidityUSD": 608420596
+    "totalLiquidityUSD": 5091672334
   },
   {
     "date": "2025-08-09",
-    "totalLiquidityUSD": 619450180
+    "totalLiquidityUSD": 5178234713
   },
   {
     "date": "2025-08-10",
-    "totalLiquidityUSD": 618225375
+    "totalLiquidityUSD": 5300237371
   },
   {
     "date": "2025-08-11",
-    "totalLiquidityUSD": 606511158
+    "totalLiquidityUSD": 5320598778
   },
   {
     "date": "2025-08-12",
-    "totalLiquidityUSD": 597765633
+    "totalLiquidityUSD": 5392862865
   },
   {
     "date": "2025-08-13",
-    "totalLiquidityUSD": 599250830
+    "totalLiquidityUSD": 5576040422
   },
   {
     "date": "2025-08-14",
-    "totalLiquidityUSD": 597084071
+    "totalLiquidityUSD": 5869346067
   },
   {
     "date": "2025-08-15",
-    "totalLiquidityUSD": 610023970
+    "totalLiquidityUSD": 5790359912
   },
   {
     "date": "2025-08-16",
-    "totalLiquidityUSD": 619900281
+    "totalLiquidityUSD": 5727105362
   },
   {
     "date": "2025-08-17",
-    "totalLiquidityUSD": 637525462
+    "totalLiquidityUSD": 5736798871
   },
   {
     "date": "2025-08-18",
-    "totalLiquidityUSD": 637080827
+    "totalLiquidityUSD": 5713245769
   },
   {
     "date": "2025-08-19",
-    "totalLiquidityUSD": 635942134
+    "totalLiquidityUSD": 5599496066
   },
   {
     "date": "2025-08-20",
-    "totalLiquidityUSD": 657307648
+    "totalLiquidityUSD": 5510658320
   },
   {
     "date": "2025-08-21",
-    "totalLiquidityUSD": 651314295
+    "totalLiquidityUSD": 5562605246
   },
   {
     "date": "2025-08-22",
-    "totalLiquidityUSD": 663140047
+    "totalLiquidityUSD": 5591257101
   },
   {
     "date": "2025-08-23",
-    "totalLiquidityUSD": 683696351
+    "totalLiquidityUSD": 6075849378
   },
   {
     "date": "2025-08-24",
-    "totalLiquidityUSD": 684418873
+    "totalLiquidityUSD": 6105813485
   },
   {
     "date": "2025-08-25",
-    "totalLiquidityUSD": 685769050
+    "totalLiquidityUSD": 6187669892
   },
   {
     "date": "2025-08-26",
-    "totalLiquidityUSD": 685784266
+    "totalLiquidityUSD": 5902246009
   },
   {
     "date": "2025-08-27",
-    "totalLiquidityUSD": 721119426
+    "totalLiquidityUSD": 6020000015
   },
   {
     "date": "2025-08-28",
-    "totalLiquidityUSD": 747413678
+    "totalLiquidityUSD": 6234676918
   },
   {
     "date": "2025-08-29",
-    "totalLiquidityUSD": 748886705
+    "totalLiquidityUSD": 6252796178
   },
   {
     "date": "2025-08-30",
-    "totalLiquidityUSD": 761914689
+    "totalLiquidityUSD": 6285049646
   },
   {
     "date": "2025-08-31",
-    "totalLiquidityUSD": 767352557
+    "totalLiquidityUSD": 6373726562
   },
   {
     "date": "2025-09-01",
-    "totalLiquidityUSD": 768614039
+    "totalLiquidityUSD": 6351709487
   },
   {
     "date": "2025-09-02",
-    "totalLiquidityUSD": 762566753
+    "totalLiquidityUSD": 6348800704
   },
   {
     "date": "2025-09-03",
-    "totalLiquidityUSD": 763119348
+    "totalLiquidityUSD": 6214424126
   },
   {
     "date": "2025-09-04",
-    "totalLiquidityUSD": 764115853
+    "totalLiquidityUSD": 6217865793
   },
   {
     "date": "2025-09-05",
-    "totalLiquidityUSD": 757314166
+    "totalLiquidityUSD": 6147756472
   },
   {
     "date": "2025-09-06",
-    "totalLiquidityUSD": 761114410
+    "totalLiquidityUSD": 6197771514
   },
   {
     "date": "2025-09-07",
-    "totalLiquidityUSD": 740355405
+    "totalLiquidityUSD": 6184380928
   },
   {
     "date": "2025-09-08",
-    "totalLiquidityUSD": 736791311
+    "totalLiquidityUSD": 6151591794
   },
   {
     "date": "2025-09-09",
-    "totalLiquidityUSD": 711453490
+    "totalLiquidityUSD": 6188391376
   },
   {
     "date": "2025-09-10",
-    "totalLiquidityUSD": 713260289
+    "totalLiquidityUSD": 6251402829
   },
   {
     "date": "2025-09-11",
-    "totalLiquidityUSD": 719439289
+    "totalLiquidityUSD": 6366828689
   },
   {
     "date": "2025-09-12",
-    "totalLiquidityUSD": 722249484
+    "totalLiquidityUSD": 6455158762
   },
   {
     "date": "2025-09-13",
-    "totalLiquidityUSD": 730377220
+    "totalLiquidityUSD": 6587557112
   },
   {
     "date": "2025-09-14",
-    "totalLiquidityUSD": 729749032
+    "totalLiquidityUSD": 6696475903
   },
   {
     "date": "2025-09-15",
-    "totalLiquidityUSD": 681863140
+    "totalLiquidityUSD": 6663157625
   },
   {
     "date": "2025-09-16",
-    "totalLiquidityUSD": 683686566
+    "totalLiquidityUSD": 6626960061
   },
   {
     "date": "2025-09-17",
-    "totalLiquidityUSD": 671165684
+    "totalLiquidityUSD": 6573939858
   },
   {
     "date": "2025-09-18",
-    "totalLiquidityUSD": 664998887
+    "totalLiquidityUSD": 6597593958
   },
   {
     "date": "2025-09-19",
-    "totalLiquidityUSD": 675953068
+    "totalLiquidityUSD": 6669950893
   },
   {
     "date": "2025-09-20",
-    "totalLiquidityUSD": 685086947
+    "totalLiquidityUSD": 6634217664
   },
   {
     "date": "2025-09-21",
-    "totalLiquidityUSD": 670077198
+    "totalLiquidityUSD": 6660437795
   },
   {
     "date": "2025-09-21",
-    "totalLiquidityUSD": 656394314
+    "totalLiquidityUSD": 6683120929
   }
 ]
