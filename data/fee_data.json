@@ -60,12 +60,23 @@
     },
     {
       "name": "Hyperliquid Perps",
-      "module": "dummy.js",
+      "defillamaId": "5507",
+      "displayName": "Hyperliquid Perps",
+      "module": "hyperliquid-perp",
       "category": "Derivatives",
-      "logo": "https://icons.llama.fi/hyperliquid.png",
+      "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid.png",
       "chains": [
-        "Hyperliquid L1"
+        "hyperliquid"
       ],
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-perp",
+      "methodology": {
+        "UserFees": "Fees paid by users",
+        "Fees": "Include perps trading fees and builders fees, excluding spot fees.",
+        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
+        "ProtocolRevenue": "Protocol doesn't keep any fees.",
+        "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
+        "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for builders."
+      },
       "gecko_id": null,
       "forkedFrom": [],
       "twitter": "HyperliquidX",
@@ -75,7 +86,8 @@
       "url": "https://hyperliquid.xyz",
       "cmcId": null,
       "id": "5507",
-      "parentProtocol": "parent#hyperliquid"
+      "parentProtocol": "parent#hyperliquid",
+      "doublecounted": false
     },
     {
       "name": "Hyperliquid Spot Orderbook",
@@ -90,11 +102,11 @@
       "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperliquid.ts",
       "methodology": {
         "UserFees": "Swap fees paid by users",
-        "Fees": "Trade fees and Ticker auction proceeds. Note this excludes the HLP vault and HyperEVM fees.",
-        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, before 30 Aug 2025 it was 97% of fees",
+        "Fees": "Include spot trading fees and unit protocol fees, excluding perps fees.",
+        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees.",
         "ProtocolRevenue": "Protocol doesn't keep any fees.",
-        "HoldersRevenue": "99% of fees go to Assistance Fund for bbuying HYPE tokens, before 30 Aug 2025 it was 97% of fees",
-        "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3%"
+        "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees.",
+        "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for unit protocol."
       },
       "gecko_id": null,
       "forkedFrom": [],
@@ -111,6 +123,7 @@
   ],
   "linkedProtocols": [
     "Hyperliquid",
+    "Hyperliquid Perps",
     "Hyperliquid Spot Orderbook"
   ],
   "defillamaId": "parent#hyperliquid",
@@ -133,9 +146,9 @@
   "protocolType": "protocol",
   "total24h": 1433180,
   "total48hto24h": 3076049,
-  "total7d": 21699099,
-  "total30d": 83367183,
-  "totalAllTime": 731136318,
+  "total7d": 32303827,
+  "total30d": 93971911,
+  "totalAllTime": 741741046,
   "totalDataChart": [
     [
       1734912000,
@@ -1227,15 +1240,15 @@
     ],
     [
       1758585600,
-      2824771
+      5695463
     ],
     [
       1758672000,
-      2718703
+      5405473
     ],
     [
       1758758400,
-      5052228
+      10099494
     ],
     [
       1758844800,
@@ -3431,6 +3444,7 @@
       1758585600,
       {
         "Hyperliquid L1": {
+          "Hyperliquid Perps": 2870692,
           "Hyperliquid Spot Orderbook": 2824771
         }
       }
@@ -3439,6 +3453,7 @@
       1758672000,
       {
         "Hyperliquid L1": {
+          "Hyperliquid Perps": 2686770,
           "Hyperliquid Spot Orderbook": 2718703
         }
       }
@@ -3447,6 +3462,7 @@
       1758758400,
       {
         "Hyperliquid L1": {
+          "Hyperliquid Perps": 5047266,
           "Hyperliquid Spot Orderbook": 5052228
         }
       }
