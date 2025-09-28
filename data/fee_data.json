@@ -41,12 +41,23 @@
     },
     {
       "name": "Hyperliquid HLP",
-      "module": "hyperliquid-hlp/index.js",
+      "defillamaId": "5448",
+      "displayName": "Hyperliquid HLP",
+      "module": "hyperliquid-hlp",
       "category": "Derivatives",
-      "logo": "https://icons.llama.fi/hyperliquid.png",
+      "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid.png",
       "chains": [
-        "Hyperliquid L1"
+        "hyperliquid"
       ],
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperliquid-hlp.ts",
+      "methodology": {
+        "UserFees": "Fees paid by users",
+        "Fees": "1% of perp and spot trading revenue (excluding builders and unit revenue) share for HLP.",
+        "Revenue": "No revenue.",
+        "ProtocolRevenue": "Fees going to treasury",
+        "HoldersRevenue": "Fees going to governance token holders",
+        "SupplySideRevenue": "All fees share of HLP are distributed to vaults suppliers."
+      },
       "gecko_id": null,
       "forkedFrom": [],
       "twitter": "HyperliquidX",
@@ -56,7 +67,8 @@
       "url": "https://hyperliquid.xyz",
       "cmcId": null,
       "id": "5448",
-      "parentProtocol": "parent#hyperliquid"
+      "parentProtocol": "parent#hyperliquid",
+      "doublecounted": true
     },
     {
       "name": "Hyperliquid Perps",
@@ -123,6 +135,7 @@
   ],
   "linkedProtocols": [
     "Hyperliquid",
+    "Hyperliquid HLP",
     "Hyperliquid Perps",
     "Hyperliquid Spot Orderbook"
   ],
@@ -144,11 +157,11 @@
   "doublecounted": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 1775150,
+  "total24h": 1802607,
   "total48hto24h": 3637225,
-  "total7d": 24393474,
-  "total30d": 86061558,
-  "totalAllTime": 729558205,
+  "total7d": 24420931,
+  "total30d": 86089015,
+  "totalAllTime": 729585662,
   "totalDataChart": [
     [
       1734912000,
@@ -1252,7 +1265,7 @@
     ],
     [
       1758931200,
-      1775150
+      1802607
     ],
     [
       1759017600,
@@ -3468,6 +3481,7 @@
       1758931200,
       {
         "Hyperliquid L1": {
+          "Hyperliquid HLP": 27457,
           "Hyperliquid Perps": 1493246,
           "Hyperliquid Spot Orderbook": 281904
         }
@@ -3482,5 +3496,5 @@
       }
     ]
   ],
-  "change_1d": -51.19
+  "change_1d": -50.44
 }
