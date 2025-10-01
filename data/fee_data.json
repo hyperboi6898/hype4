@@ -160,88 +160,88 @@
   "total24h": 3060869,
   "total48hto24h": 2953583,
   "total7d": 22924686,
-  "total30d": 86139009,
-  "totalAllTime": 733728504,
+  "total30d": 86148373,
+  "totalAllTime": 617060381,
   "totalDataChart": [
     [
       1734912000,
-      1472923
+      1468518
     ],
     [
       1734998400,
-      1360510
+      1343985
     ],
     [
       1735084800,
-      1047305
+      1045895
     ],
     [
       1735171200,
-      1274776
+      1313296
     ],
     [
       1735257600,
-      837060
+      1297444
     ],
     [
       1735344000,
-      491777
+      978676
     ],
     [
       1735430400,
-      962448
+      485740
     ],
     [
       1735516800,
-      1536713
+      1532777
     ],
     [
       1735603200,
-      1359495
+      1369049
     ],
     [
       1735689600,
-      533479
+      513440
     ],
     [
       1735776000,
-      1313648
+      1309505
     ],
     [
       1735862400,
-      1410369
+      1411855
     ],
     [
       1735948800,
-      1078270
+      1075229
     ],
     [
       1736035200,
-      1011149
+      1015657
     ],
     [
       1736121600,
-      1069280
+      1068824
     ],
     [
       1736208000,
-      2174514
+      2179525
     ],
     [
       1736294400,
-      1818035
+      1813216
     ],
     [
       1736380800,
-      1967421
+      1980659
     ],
     [
       1736467200,
-      1251164
+      1520652
     ],
     [
       1736553600,
-      803471
+      472579
     ],
     [
       1736640000,
@@ -249,19 +249,19 @@
     ],
     [
       1736812800,
-      1276865
+      1268203
     ],
     [
       1736899200,
-      1224530
+      1269584
     ],
     [
       1736985600,
-      1691541
+      1695868
     ],
     [
       1737072000,
-      1713590
+      1698287
     ],
     [
       1737158400,
@@ -269,7 +269,7 @@
     ],
     [
       1737244800,
-      4311893
+      4311894
     ],
     [
       1737331200,
@@ -281,7 +281,7 @@
     ],
     [
       1737504000,
-      1435423
+      1435424
     ],
     [
       1737590400,
@@ -293,7 +293,7 @@
     ],
     [
       1737763200,
-      1075360
+      1075359
     ],
     [
       1737849600,
@@ -305,7 +305,7 @@
     ],
     [
       1738022400,
-      1528860
+      1528859
     ],
     [
       1738108800,
@@ -313,7 +313,7 @@
     ],
     [
       1738195200,
-      1449422
+      1449421
     ],
     [
       1738281600,
@@ -329,11 +329,11 @@
     ],
     [
       1738540800,
-      4261467
+      4261468
     ],
     [
       1738627200,
-      2511919
+      2511920
     ],
     [
       1738713600,
@@ -357,7 +357,7 @@
     ],
     [
       1739145600,
-      1135136
+      1135137
     ],
     [
       1739232000,
@@ -393,7 +393,7 @@
     ],
     [
       1739923200,
-      1009696
+      1009695
     ],
     [
       1740009600,
@@ -409,7 +409,7 @@
     ],
     [
       1740268800,
-      753569
+      753568
     ],
     [
       1740355200,
@@ -425,7 +425,7 @@
     ],
     [
       1740614400,
-      1559050
+      1559049
     ],
     [
       1740700800,
@@ -477,15 +477,15 @@
     ],
     [
       1741737600,
-      1566528
+      1566529
     ],
     [
       1741824000,
-      1135827
+      1135828
     ],
     [
       1741910400,
-      961513
+      961514
     ],
     [
       1741996800,
@@ -493,11 +493,11 @@
     ],
     [
       1742083200,
-      843387
+      843388
     ],
     [
       1742169600,
-      809739
+      809740
     ],
     [
       1742256000,
@@ -509,7 +509,7 @@
     ],
     [
       1742428800,
-      1162000
+      1162001
     ],
     [
       1742515200,
@@ -517,11 +517,11 @@
     ],
     [
       1742601600,
-      529317
+      529316
     ],
     [
       1742688000,
-      571914
+      571913
     ],
     [
       1742774400,
@@ -533,7 +533,7 @@
     ],
     [
       1742947200,
-      1131424
+      1131423
     ],
     [
       1743033600,
@@ -541,7 +541,7 @@
     ],
     [
       1743120000,
-      1101031
+      1101032
     ],
     [
       1743206400,
@@ -557,7 +557,7 @@
     ],
     [
       1743465600,
-      1181712
+      1181713
     ],
     [
       1743552000,
@@ -577,7 +577,11 @@
     ],
     [
       1743897600,
-      1773021
+      1773020
+    ],
+    [
+      1743984000,
+      3117174
     ],
     [
       1744070400,
@@ -593,7 +597,7 @@
     ],
     [
       1744329600,
-      1327534
+      1327533
     ],
     [
       1744416000,
@@ -613,7 +617,7 @@
     ],
     [
       1744761600,
-      1505612
+      1505611
     ],
     [
       1744848000,
@@ -621,7 +625,7 @@
     ],
     [
       1744934400,
-      512152
+      512153
     ],
     [
       1745020800,
@@ -637,7 +641,7 @@
     ],
     [
       1745280000,
-      2211983
+      2211984
     ],
     [
       1745366400,
@@ -677,7 +681,7 @@
     ],
     [
       1746144000,
-      968696
+      968697
     ],
     [
       1746230400,
@@ -693,11 +697,11 @@
     ],
     [
       1746489600,
-      1492562
+      1492561
     ],
     [
       1746576000,
-      1600180
+      1600179
     ],
     [
       1746662400,
@@ -733,19 +737,19 @@
     ],
     [
       1747353600,
-      1765403
+      1765404
     ],
     [
       1747440000,
-      1214330
+      1214329
     ],
     [
       1747526400,
-      2135897
+      2135898
     ],
     [
       1747612800,
-      2668367
+      2668366
     ],
     [
       1747699200,
@@ -773,23 +777,23 @@
     ],
     [
       1748217600,
-      2008977
+      2008978
     ],
     [
       1748304000,
-      3108221
+      3108220
     ],
     [
       1748390400,
-      2528675
+      2528674
     ],
     [
       1748476800,
-      3134661
+      3134662
     ],
     [
       1748563200,
-      3090869
+      3090870
     ],
     [
       1748649600,
@@ -813,11 +817,11 @@
     ],
     [
       1749081600,
-      3100655
+      3100654
     ],
     [
       1749168000,
-      1869944
+      1869943
     ],
     [
       1749254400,
@@ -833,7 +837,7 @@
     ],
     [
       1749600000,
-      2759525
+      2759524
     ],
     [
       1749686400,
@@ -853,7 +857,7 @@
     ],
     [
       1750032000,
-      2942714
+      2942715
     ],
     [
       1750118400,
@@ -889,7 +893,7 @@
     ],
     [
       1750809600,
-      2108412
+      2108413
     ],
     [
       1750896000,
@@ -897,7 +901,7 @@
     ],
     [
       1750982400,
-      1531310
+      1531311
     ],
     [
       1751068800,
@@ -925,7 +929,7 @@
     ],
     [
       1751587200,
-      1656215
+      1656216
     ],
     [
       1751673600,
@@ -933,7 +937,7 @@
     ],
     [
       1751760000,
-      1254056
+      1254055
     ],
     [
       1751846400,
@@ -945,7 +949,7 @@
     ],
     [
       1752019200,
-      2715934
+      2715933
     ],
     [
       1752105600,
@@ -957,7 +961,7 @@
     ],
     [
       1752278400,
-      1770548
+      1770547
     ],
     [
       1752364800,
@@ -969,7 +973,7 @@
     ],
     [
       1752537600,
-      5058476
+      5058475
     ],
     [
       1752624000,
@@ -981,7 +985,7 @@
     ],
     [
       1752796800,
-      5177984
+      5177985
     ],
     [
       1752883200,
@@ -992,8 +996,12 @@
       3222971
     ],
     [
+      1753056000,
+      4272489
+    ],
+    [
       1753142400,
-      4810837
+      4810838
     ],
     [
       1753228800,
@@ -1017,11 +1025,11 @@
     ],
     [
       1753660800,
-      3470188
+      3470189
     ],
     [
       1753747200,
-      3184474
+      3184475
     ],
     [
       1753833600,
@@ -1029,7 +1037,7 @@
     ],
     [
       1753920000,
-      3207610
+      3207609
     ],
     [
       1754006400,
@@ -1057,7 +1065,7 @@
     ],
     [
       1754524800,
-      2937100
+      2937099
     ],
     [
       1754611200,
@@ -1073,7 +1081,7 @@
     ],
     [
       1754870400,
-      4638693
+      4638692
     ],
     [
       1754956800,
@@ -1085,7 +1093,7 @@
     ],
     [
       1755129600,
-      7484013
+      7484012
     ],
     [
       1755216000,
@@ -1137,7 +1145,7 @@
     ],
     [
       1756252800,
-      3766930
+      3766929
     ],
     [
       1756339200,
@@ -1145,7 +1153,7 @@
     ],
     [
       1756425600,
-      4658230
+      4658231
     ],
     [
       1756512000,
@@ -1165,15 +1173,15 @@
     ],
     [
       1756857600,
-      2233945
+      2248703
     ],
     [
       1756944000,
-      2480416
+      2540674
     ],
     [
       1757030400,
-      3555370
+      3463952
     ],
     [
       1757116800,
@@ -1181,23 +1189,23 @@
     ],
     [
       1757203200,
-      970880
+      1059748
     ],
     [
       1757289600,
-      2757206
+      2691935
     ],
     [
       1757376000,
-      2921835
+      2920158
     ],
     [
       1757462400,
-      3090392
+      3119469
     ],
     [
       1757548800,
-      3141077
+      3181203
     ],
     [
       1757635200,
@@ -1205,7 +1213,7 @@
     ],
     [
       1757721600,
-      2401892
+      2343629
     ],
     [
       1757808000,
@@ -1213,7 +1221,7 @@
     ],
     [
       1757894400,
-      3226509
+      3187991
     ],
     [
       1757980800,
@@ -1221,27 +1229,27 @@
     ],
     [
       1758067200,
-      3465874
+      3622054
     ],
     [
       1758153600,
-      3063411
+      2950609
     ],
     [
       1758240000,
-      2710854
+      2710855
     ],
     [
       1758326400,
-      1488716
+      1446062
     ],
     [
       1758412800,
-      1719888
+      1750586
     ],
     [
       1758499200,
-      4874280
+      4874281
     ],
     [
       1758585600,
@@ -1281,7 +1289,8 @@
       1734912000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1472923
+          "Hyperliquid Perps": 1372264,
+          "Hyperliquid Spot Orderbook": 96254
         }
       }
     ],
@@ -1289,7 +1298,8 @@
       1734998400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1360510
+          "Hyperliquid Perps": 1296670,
+          "Hyperliquid Spot Orderbook": 47315
         }
       }
     ],
@@ -1297,7 +1307,8 @@
       1735084800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1047305
+          "Hyperliquid Perps": 1002334,
+          "Hyperliquid Spot Orderbook": 43561
         }
       }
     ],
@@ -1305,7 +1316,8 @@
       1735171200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1274776
+          "Hyperliquid Perps": 1269042,
+          "Hyperliquid Spot Orderbook": 44254
         }
       }
     ],
@@ -1313,7 +1325,8 @@
       1735257600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 837060
+          "Hyperliquid Perps": 1268921,
+          "Hyperliquid Spot Orderbook": 28523
         }
       }
     ],
@@ -1321,7 +1334,8 @@
       1735344000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 491777
+          "Hyperliquid Perps": 950246,
+          "Hyperliquid Spot Orderbook": 28430
         }
       }
     ],
@@ -1329,7 +1343,8 @@
       1735430400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 962448
+          "Hyperliquid Perps": 454244,
+          "Hyperliquid Spot Orderbook": 31496
         }
       }
     ],
@@ -1337,7 +1352,8 @@
       1735516800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1536713
+          "Hyperliquid Perps": 1483664,
+          "Hyperliquid Spot Orderbook": 49113
         }
       }
     ],
@@ -1345,7 +1361,8 @@
       1735603200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1359495
+          "Hyperliquid Perps": 1326087,
+          "Hyperliquid Spot Orderbook": 42962
         }
       }
     ],
@@ -1353,7 +1370,8 @@
       1735689600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 533479
+          "Hyperliquid Perps": 483299,
+          "Hyperliquid Spot Orderbook": 30141
         }
       }
     ],
@@ -1361,7 +1379,8 @@
       1735776000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1313648
+          "Hyperliquid Perps": 1267839,
+          "Hyperliquid Spot Orderbook": 41666
         }
       }
     ],
@@ -1369,7 +1388,8 @@
       1735862400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1410369
+          "Hyperliquid Perps": 1374850,
+          "Hyperliquid Spot Orderbook": 37005
         }
       }
     ],
@@ -1377,7 +1397,8 @@
       1735948800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1078270
+          "Hyperliquid Perps": 1049852,
+          "Hyperliquid Spot Orderbook": 25377
         }
       }
     ],
@@ -1385,7 +1406,8 @@
       1736035200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1011149
+          "Hyperliquid Perps": 996395,
+          "Hyperliquid Spot Orderbook": 19262
         }
       }
     ],
@@ -1393,7 +1415,8 @@
       1736121600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1069280
+          "Hyperliquid Perps": 1045371,
+          "Hyperliquid Spot Orderbook": 23453
         }
       }
     ],
@@ -1401,7 +1424,8 @@
       1736208000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2174514
+          "Hyperliquid Perps": 2149311,
+          "Hyperliquid Spot Orderbook": 30214
         }
       }
     ],
@@ -1409,7 +1433,8 @@
       1736294400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1818035
+          "Hyperliquid Perps": 1767943,
+          "Hyperliquid Spot Orderbook": 45273
         }
       }
     ],
@@ -1417,7 +1442,8 @@
       1736380800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1967421
+          "Hyperliquid Perps": 1933268,
+          "Hyperliquid Spot Orderbook": 47391
         }
       }
     ],
@@ -1425,7 +1451,8 @@
       1736467200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1251164
+          "Hyperliquid Perps": 1492881,
+          "Hyperliquid Spot Orderbook": 27771
         }
       }
     ],
@@ -1433,7 +1460,8 @@
       1736553600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 803471
+          "Hyperliquid Perps": 457618,
+          "Hyperliquid Spot Orderbook": 14961
         }
       }
     ],
@@ -1449,7 +1477,8 @@
       1736812800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1276865
+          "Hyperliquid Perps": 1243879,
+          "Hyperliquid Spot Orderbook": 24324
         }
       }
     ],
@@ -1457,7 +1486,8 @@
       1736899200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1224530
+          "Hyperliquid Perps": 1245669,
+          "Hyperliquid Spot Orderbook": 23915
         }
       }
     ],
@@ -1465,7 +1495,8 @@
       1736985600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1691541
+          "Hyperliquid Perps": 1677266,
+          "Hyperliquid Spot Orderbook": 18602
         }
       }
     ],
@@ -1473,7 +1504,8 @@
       1737072000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1713590
+          "Hyperliquid Perps": 1677802,
+          "Hyperliquid Spot Orderbook": 20485
         }
       }
     ],
@@ -1481,7 +1513,8 @@
       1737158400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2839855
+          "Hyperliquid Perps": 2787442,
+          "Hyperliquid Spot Orderbook": 52413
         }
       }
     ],
@@ -1489,7 +1522,8 @@
       1737244800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4311893
+          "Hyperliquid Perps": 4250373,
+          "Hyperliquid Spot Orderbook": 61521
         }
       }
     ],
@@ -1497,7 +1531,8 @@
       1737331200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4078804
+          "Hyperliquid Perps": 4044525,
+          "Hyperliquid Spot Orderbook": 34279
         }
       }
     ],
@@ -1505,7 +1540,8 @@
       1737417600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2065945
+          "Hyperliquid Perps": 2031876,
+          "Hyperliquid Spot Orderbook": 34069
         }
       }
     ],
@@ -1513,7 +1549,8 @@
       1737504000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1435423
+          "Hyperliquid Perps": 1405006,
+          "Hyperliquid Spot Orderbook": 30418
         }
       }
     ],
@@ -1521,7 +1558,8 @@
       1737590400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2821437
+          "Hyperliquid Perps": 2783278,
+          "Hyperliquid Spot Orderbook": 38159
         }
       }
     ],
@@ -1529,7 +1567,8 @@
       1737676800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1308163
+          "Hyperliquid Perps": 1284164,
+          "Hyperliquid Spot Orderbook": 23999
         }
       }
     ],
@@ -1537,7 +1576,8 @@
       1737763200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1075360
+          "Hyperliquid Perps": 1061042,
+          "Hyperliquid Spot Orderbook": 14317
         }
       }
     ],
@@ -1545,7 +1585,8 @@
       1737849600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1082963
+          "Hyperliquid Perps": 1066098,
+          "Hyperliquid Spot Orderbook": 16865
         }
       }
     ],
@@ -1553,7 +1594,8 @@
       1737936000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2699187
+          "Hyperliquid Perps": 2661614,
+          "Hyperliquid Spot Orderbook": 37573
         }
       }
     ],
@@ -1561,7 +1603,8 @@
       1738022400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1528860
+          "Hyperliquid Perps": 1502080,
+          "Hyperliquid Spot Orderbook": 26779
         }
       }
     ],
@@ -1569,7 +1612,8 @@
       1738108800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1878980
+          "Hyperliquid Perps": 1858964,
+          "Hyperliquid Spot Orderbook": 20016
         }
       }
     ],
@@ -1577,7 +1621,8 @@
       1738195200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1449422
+          "Hyperliquid Perps": 1410913,
+          "Hyperliquid Spot Orderbook": 38508
         }
       }
     ],
@@ -1585,7 +1630,8 @@
       1738281600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1776542
+          "Hyperliquid Perps": 1745764,
+          "Hyperliquid Spot Orderbook": 30778
         }
       }
     ],
@@ -1593,7 +1639,8 @@
       1738368000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1433862
+          "Hyperliquid Perps": 1393440,
+          "Hyperliquid Spot Orderbook": 40422
         }
       }
     ],
@@ -1601,7 +1648,8 @@
       1738454400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2064161
+          "Hyperliquid Perps": 2019665,
+          "Hyperliquid Spot Orderbook": 44496
         }
       }
     ],
@@ -1609,7 +1657,8 @@
       1738540800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4261467
+          "Hyperliquid Perps": 4197988,
+          "Hyperliquid Spot Orderbook": 63480
         }
       }
     ],
@@ -1617,7 +1666,8 @@
       1738627200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2511919
+          "Hyperliquid Perps": 2474308,
+          "Hyperliquid Spot Orderbook": 37612
         }
       }
     ],
@@ -1625,7 +1675,8 @@
       1738713600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1443376
+          "Hyperliquid Perps": 1415160,
+          "Hyperliquid Spot Orderbook": 28216
         }
       }
     ],
@@ -1633,7 +1684,8 @@
       1738800000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1340959
+          "Hyperliquid Perps": 1316367,
+          "Hyperliquid Spot Orderbook": 24592
         }
       }
     ],
@@ -1641,7 +1693,8 @@
       1738886400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1557437
+          "Hyperliquid Perps": 1531085,
+          "Hyperliquid Spot Orderbook": 26352
         }
       }
     ],
@@ -1649,7 +1702,8 @@
       1738972800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 794480
+          "Hyperliquid Perps": 782416,
+          "Hyperliquid Spot Orderbook": 12064
         }
       }
     ],
@@ -1657,7 +1711,8 @@
       1739059200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 994482
+          "Hyperliquid Perps": 983799,
+          "Hyperliquid Spot Orderbook": 10683
         }
       }
     ],
@@ -1665,7 +1720,8 @@
       1739145600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1135136
+          "Hyperliquid Perps": 1123138,
+          "Hyperliquid Spot Orderbook": 11999
         }
       }
     ],
@@ -1673,7 +1729,8 @@
       1739232000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1554560
+          "Hyperliquid Perps": 1538904,
+          "Hyperliquid Spot Orderbook": 15656
         }
       }
     ],
@@ -1681,7 +1738,8 @@
       1739318400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1809430
+          "Hyperliquid Perps": 1791221,
+          "Hyperliquid Spot Orderbook": 18209
         }
       }
     ],
@@ -1713,7 +1771,8 @@
       1739664000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 608265
+          "Hyperliquid Perps": 599409,
+          "Hyperliquid Spot Orderbook": 8856
         }
       }
     ],
@@ -1721,7 +1780,8 @@
       1739750400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1324637
+          "Hyperliquid Perps": 1305683,
+          "Hyperliquid Spot Orderbook": 18954
         }
       }
     ],
@@ -1729,7 +1789,8 @@
       1739836800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1650198
+          "Hyperliquid Perps": 1594393,
+          "Hyperliquid Spot Orderbook": 55805
         }
       }
     ],
@@ -1737,7 +1798,8 @@
       1739923200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1009696
+          "Hyperliquid Perps": 987639,
+          "Hyperliquid Spot Orderbook": 22056
         }
       }
     ],
@@ -1745,7 +1807,8 @@
       1740009600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1195016
+          "Hyperliquid Perps": 1174903,
+          "Hyperliquid Spot Orderbook": 20113
         }
       }
     ],
@@ -1769,7 +1832,8 @@
       1740268800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 753569
+          "Hyperliquid Perps": 739684,
+          "Hyperliquid Spot Orderbook": 13884
         }
       }
     ],
@@ -1793,7 +1857,8 @@
       1740528000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2216007
+          "Hyperliquid Perps": 2179082,
+          "Hyperliquid Spot Orderbook": 36925
         }
       }
     ],
@@ -1801,7 +1866,8 @@
       1740614400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1559050
+          "Hyperliquid Perps": 1537557,
+          "Hyperliquid Spot Orderbook": 21492
         }
       }
     ],
@@ -1809,7 +1875,8 @@
       1740700800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2507622
+          "Hyperliquid Perps": 2474574,
+          "Hyperliquid Spot Orderbook": 33048
         }
       }
     ],
@@ -1817,7 +1884,8 @@
       1740787200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1016552
+          "Hyperliquid Perps": 1004215,
+          "Hyperliquid Spot Orderbook": 12337
         }
       }
     ],
@@ -1825,7 +1893,8 @@
       1740873600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2622201
+          "Hyperliquid Perps": 2590972,
+          "Hyperliquid Spot Orderbook": 31229
         }
       }
     ],
@@ -1849,7 +1918,8 @@
       1741132800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1470721
+          "Hyperliquid Perps": 1450674,
+          "Hyperliquid Spot Orderbook": 20047
         }
       }
     ],
@@ -1857,7 +1927,8 @@
       1741219200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1590493
+          "Hyperliquid Perps": 1566336,
+          "Hyperliquid Spot Orderbook": 24157
         }
       }
     ],
@@ -1865,7 +1936,8 @@
       1741305600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2355898
+          "Hyperliquid Perps": 2332222,
+          "Hyperliquid Spot Orderbook": 23676
         }
       }
     ],
@@ -1873,7 +1945,8 @@
       1741392000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 645293
+          "Hyperliquid Perps": 634401,
+          "Hyperliquid Spot Orderbook": 10892
         }
       }
     ],
@@ -1881,7 +1954,8 @@
       1741478400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1228956
+          "Hyperliquid Perps": 1210965,
+          "Hyperliquid Spot Orderbook": 17991
         }
       }
     ],
@@ -1889,7 +1963,8 @@
       1741564800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2197526
+          "Hyperliquid Perps": 2172589,
+          "Hyperliquid Spot Orderbook": 24937
         }
       }
     ],
@@ -1897,7 +1972,8 @@
       1741651200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1887590
+          "Hyperliquid Perps": 1863002,
+          "Hyperliquid Spot Orderbook": 24588
         }
       }
     ],
@@ -1905,7 +1981,8 @@
       1741737600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1566528
+          "Hyperliquid Perps": 1540013,
+          "Hyperliquid Spot Orderbook": 26516
         }
       }
     ],
@@ -1913,7 +1990,8 @@
       1741824000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1135827
+          "Hyperliquid Perps": 1114147,
+          "Hyperliquid Spot Orderbook": 21681
         }
       }
     ],
@@ -1921,7 +1999,8 @@
       1741910400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 961513
+          "Hyperliquid Perps": 944786,
+          "Hyperliquid Spot Orderbook": 16728
         }
       }
     ],
@@ -1929,7 +2008,8 @@
       1741996800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 622580
+          "Hyperliquid Perps": 614685,
+          "Hyperliquid Spot Orderbook": 7895
         }
       }
     ],
@@ -1937,7 +2017,8 @@
       1742083200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 843387
+          "Hyperliquid Perps": 832729,
+          "Hyperliquid Spot Orderbook": 10659
         }
       }
     ],
@@ -1945,7 +2026,8 @@
       1742169600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 809739
+          "Hyperliquid Perps": 801532,
+          "Hyperliquid Spot Orderbook": 8208
         }
       }
     ],
@@ -1953,7 +2035,8 @@
       1742256000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1125643
+          "Hyperliquid Perps": 1117474,
+          "Hyperliquid Spot Orderbook": 8169
         }
       }
     ],
@@ -1961,7 +2044,8 @@
       1742342400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1410275
+          "Hyperliquid Perps": 1391797,
+          "Hyperliquid Spot Orderbook": 18478
         }
       }
     ],
@@ -1969,7 +2053,8 @@
       1742428800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1162000
+          "Hyperliquid Perps": 1147968,
+          "Hyperliquid Spot Orderbook": 14033
         }
       }
     ],
@@ -1977,7 +2062,8 @@
       1742515200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 858538
+          "Hyperliquid Perps": 846172,
+          "Hyperliquid Spot Orderbook": 12366
         }
       }
     ],
@@ -1985,7 +2071,8 @@
       1742601600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 529317
+          "Hyperliquid Perps": 520879,
+          "Hyperliquid Spot Orderbook": 8437
         }
       }
     ],
@@ -1993,7 +2080,8 @@
       1742688000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 571914
+          "Hyperliquid Perps": 565355,
+          "Hyperliquid Spot Orderbook": 6558
         }
       }
     ],
@@ -2001,7 +2089,8 @@
       1742774400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1238896
+          "Hyperliquid Perps": 1219711,
+          "Hyperliquid Spot Orderbook": 19185
         }
       }
     ],
@@ -2009,7 +2098,8 @@
       1742860800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 982668
+          "Hyperliquid Perps": 971143,
+          "Hyperliquid Spot Orderbook": 11525
         }
       }
     ],
@@ -2017,7 +2107,8 @@
       1742947200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1131424
+          "Hyperliquid Perps": 1069362,
+          "Hyperliquid Spot Orderbook": 62061
         }
       }
     ],
@@ -2025,7 +2116,8 @@
       1743033600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 826804
+          "Hyperliquid Perps": 814575,
+          "Hyperliquid Spot Orderbook": 12229
         }
       }
     ],
@@ -2033,7 +2125,8 @@
       1743120000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1101031
+          "Hyperliquid Perps": 1082851,
+          "Hyperliquid Spot Orderbook": 18181
         }
       }
     ],
@@ -2041,7 +2134,8 @@
       1743206400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 793983
+          "Hyperliquid Perps": 781379,
+          "Hyperliquid Spot Orderbook": 12604
         }
       }
     ],
@@ -2049,7 +2143,8 @@
       1743292800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 674390
+          "Hyperliquid Perps": 666965,
+          "Hyperliquid Spot Orderbook": 7425
         }
       }
     ],
@@ -2057,7 +2152,8 @@
       1743379200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1303538
+          "Hyperliquid Perps": 1290890,
+          "Hyperliquid Spot Orderbook": 12648
         }
       }
     ],
@@ -2065,7 +2161,8 @@
       1743465600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1181712
+          "Hyperliquid Perps": 1172507,
+          "Hyperliquid Spot Orderbook": 9206
         }
       }
     ],
@@ -2073,7 +2170,8 @@
       1743552000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1895282
+          "Hyperliquid Perps": 1872963,
+          "Hyperliquid Spot Orderbook": 22319
         }
       }
     ],
@@ -2081,7 +2179,8 @@
       1743638400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1383530
+          "Hyperliquid Perps": 1365034,
+          "Hyperliquid Spot Orderbook": 18496
         }
       }
     ],
@@ -2089,7 +2188,8 @@
       1743724800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1810900
+          "Hyperliquid Perps": 1793407,
+          "Hyperliquid Spot Orderbook": 17493
         }
       }
     ],
@@ -2097,7 +2197,8 @@
       1743811200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 545179
+          "Hyperliquid Perps": 539008,
+          "Hyperliquid Spot Orderbook": 6171
         }
       }
     ],
@@ -2105,7 +2206,17 @@
       1743897600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1773021
+          "Hyperliquid Perps": 1754691,
+          "Hyperliquid Spot Orderbook": 18329
+        }
+      }
+    ],
+    [
+      1743984000,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Perps": 3081123,
+          "Hyperliquid Spot Orderbook": 36051
         }
       }
     ],
@@ -2113,7 +2224,8 @@
       1744070400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1746578
+          "Hyperliquid Perps": 1725681,
+          "Hyperliquid Spot Orderbook": 20897
         }
       }
     ],
@@ -2121,7 +2233,8 @@
       1744156800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2844405
+          "Hyperliquid Perps": 2807531,
+          "Hyperliquid Spot Orderbook": 36874
         }
       }
     ],
@@ -2129,7 +2242,8 @@
       1744243200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1672625
+          "Hyperliquid Perps": 1649920,
+          "Hyperliquid Spot Orderbook": 22705
         }
       }
     ],
@@ -2137,7 +2251,8 @@
       1744329600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1327534
+          "Hyperliquid Perps": 1303083,
+          "Hyperliquid Spot Orderbook": 24450
         }
       }
     ],
@@ -2145,7 +2260,8 @@
       1744416000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1148060
+          "Hyperliquid Perps": 1132359,
+          "Hyperliquid Spot Orderbook": 15701
         }
       }
     ],
@@ -2153,7 +2269,8 @@
       1744502400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1365105
+          "Hyperliquid Perps": 1346423,
+          "Hyperliquid Spot Orderbook": 18682
         }
       }
     ],
@@ -2161,7 +2278,8 @@
       1744588800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1363450
+          "Hyperliquid Perps": 1345964,
+          "Hyperliquid Spot Orderbook": 17486
         }
       }
     ],
@@ -2169,7 +2287,8 @@
       1744675200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1236194
+          "Hyperliquid Perps": 1220166,
+          "Hyperliquid Spot Orderbook": 16028
         }
       }
     ],
@@ -2177,7 +2296,8 @@
       1744761600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1505612
+          "Hyperliquid Perps": 1484523,
+          "Hyperliquid Spot Orderbook": 21088
         }
       }
     ],
@@ -2185,7 +2305,8 @@
       1744848000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1070171
+          "Hyperliquid Perps": 1049568,
+          "Hyperliquid Spot Orderbook": 20603
         }
       }
     ],
@@ -2193,7 +2314,8 @@
       1744934400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 512152
+          "Hyperliquid Perps": 499725,
+          "Hyperliquid Spot Orderbook": 12428
         }
       }
     ],
@@ -2201,7 +2323,8 @@
       1745020800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 579530
+          "Hyperliquid Perps": 566871,
+          "Hyperliquid Spot Orderbook": 12659
         }
       }
     ],
@@ -2209,7 +2332,8 @@
       1745107200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 662713
+          "Hyperliquid Perps": 651793,
+          "Hyperliquid Spot Orderbook": 10920
         }
       }
     ],
@@ -2217,7 +2341,8 @@
       1745193600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1467988
+          "Hyperliquid Perps": 1447172,
+          "Hyperliquid Spot Orderbook": 20816
         }
       }
     ],
@@ -2225,7 +2350,8 @@
       1745280000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2211983
+          "Hyperliquid Perps": 2191340,
+          "Hyperliquid Spot Orderbook": 20644
         }
       }
     ],
@@ -2233,7 +2359,8 @@
       1745366400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1969040
+          "Hyperliquid Perps": 1944575,
+          "Hyperliquid Spot Orderbook": 24465
         }
       }
     ],
@@ -2241,7 +2368,8 @@
       1745452800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1329006
+          "Hyperliquid Perps": 1313444,
+          "Hyperliquid Spot Orderbook": 15562
         }
       }
     ],
@@ -2249,7 +2377,8 @@
       1745539200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1620726
+          "Hyperliquid Perps": 1604602,
+          "Hyperliquid Spot Orderbook": 16124
         }
       }
     ],
@@ -2257,7 +2386,8 @@
       1745625600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 848734
+          "Hyperliquid Perps": 836905,
+          "Hyperliquid Spot Orderbook": 11829
         }
       }
     ],
@@ -2265,7 +2395,8 @@
       1745712000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 783246
+          "Hyperliquid Perps": 773066,
+          "Hyperliquid Spot Orderbook": 10180
         }
       }
     ],
@@ -2273,7 +2404,8 @@
       1745798400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1515113
+          "Hyperliquid Perps": 1495368,
+          "Hyperliquid Spot Orderbook": 19745
         }
       }
     ],
@@ -2281,7 +2413,8 @@
       1745884800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1133344
+          "Hyperliquid Perps": 1115354,
+          "Hyperliquid Spot Orderbook": 17990
         }
       }
     ],
@@ -2289,7 +2422,8 @@
       1745971200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1328532
+          "Hyperliquid Perps": 1309702,
+          "Hyperliquid Spot Orderbook": 18830
         }
       }
     ],
@@ -2297,7 +2431,8 @@
       1746057600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1379414
+          "Hyperliquid Perps": 1352114,
+          "Hyperliquid Spot Orderbook": 27300
         }
       }
     ],
@@ -2305,7 +2440,8 @@
       1746144000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 968696
+          "Hyperliquid Perps": 952374,
+          "Hyperliquid Spot Orderbook": 16323
         }
       }
     ],
@@ -2313,7 +2449,8 @@
       1746230400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 611227
+          "Hyperliquid Perps": 599536,
+          "Hyperliquid Spot Orderbook": 11691
         }
       }
     ],
@@ -2321,7 +2458,8 @@
       1746316800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 817533
+          "Hyperliquid Perps": 805192,
+          "Hyperliquid Spot Orderbook": 12341
         }
       }
     ],
@@ -2329,7 +2467,8 @@
       1746403200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1321348
+          "Hyperliquid Perps": 1294225,
+          "Hyperliquid Spot Orderbook": 27123
         }
       }
     ],
@@ -2337,7 +2476,8 @@
       1746489600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1492562
+          "Hyperliquid Perps": 1459620,
+          "Hyperliquid Spot Orderbook": 32941
         }
       }
     ],
@@ -2345,7 +2485,8 @@
       1746576000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1600180
+          "Hyperliquid Perps": 1570917,
+          "Hyperliquid Spot Orderbook": 29262
         }
       }
     ],
@@ -2353,7 +2494,8 @@
       1746662400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3279282
+          "Hyperliquid Perps": 3225869,
+          "Hyperliquid Spot Orderbook": 53413
         }
       }
     ],
@@ -2361,7 +2503,8 @@
       1746748800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2850455
+          "Hyperliquid Perps": 2787302,
+          "Hyperliquid Spot Orderbook": 63153
         }
       }
     ],
@@ -2369,7 +2512,8 @@
       1746835200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1714303
+          "Hyperliquid Perps": 1677142,
+          "Hyperliquid Spot Orderbook": 37161
         }
       }
     ],
@@ -2377,7 +2521,8 @@
       1746921600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2059291
+          "Hyperliquid Perps": 2012374,
+          "Hyperliquid Spot Orderbook": 46917
         }
       }
     ],
@@ -2385,7 +2530,8 @@
       1747008000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3369702
+          "Hyperliquid Perps": 3322653,
+          "Hyperliquid Spot Orderbook": 47049
         }
       }
     ],
@@ -2393,7 +2539,8 @@
       1747094400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2477583
+          "Hyperliquid Perps": 2435583,
+          "Hyperliquid Spot Orderbook": 42000
         }
       }
     ],
@@ -2401,7 +2548,8 @@
       1747180800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2015624
+          "Hyperliquid Perps": 1980037,
+          "Hyperliquid Spot Orderbook": 35587
         }
       }
     ],
@@ -2409,7 +2557,8 @@
       1747267200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2191440
+          "Hyperliquid Perps": 2154451,
+          "Hyperliquid Spot Orderbook": 36989
         }
       }
     ],
@@ -2417,7 +2566,8 @@
       1747353600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1765403
+          "Hyperliquid Perps": 1713351,
+          "Hyperliquid Spot Orderbook": 52053
         }
       }
     ],
@@ -2425,7 +2575,8 @@
       1747440000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1214330
+          "Hyperliquid Perps": 1169696,
+          "Hyperliquid Spot Orderbook": 44633
         }
       }
     ],
@@ -2433,7 +2584,8 @@
       1747526400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2135897
+          "Hyperliquid Perps": 2095160,
+          "Hyperliquid Spot Orderbook": 40738
         }
       }
     ],
@@ -2441,7 +2593,8 @@
       1747612800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2668367
+          "Hyperliquid Perps": 2617038,
+          "Hyperliquid Spot Orderbook": 51328
         }
       }
     ],
@@ -2449,7 +2602,8 @@
       1747699200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3151597
+          "Hyperliquid Perps": 3107938,
+          "Hyperliquid Spot Orderbook": 43659
         }
       }
     ],
@@ -2457,7 +2611,8 @@
       1747785600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4923209
+          "Hyperliquid Perps": 4852801,
+          "Hyperliquid Spot Orderbook": 70408
         }
       }
     ],
@@ -2465,7 +2620,8 @@
       1747872000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3382600
+          "Hyperliquid Perps": 3268952,
+          "Hyperliquid Spot Orderbook": 113648
         }
       }
     ],
@@ -2473,7 +2629,8 @@
       1747958400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3872920
+          "Hyperliquid Perps": 3732017,
+          "Hyperliquid Spot Orderbook": 140903
         }
       }
     ],
@@ -2481,7 +2638,8 @@
       1748044800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1942006
+          "Hyperliquid Perps": 1878354,
+          "Hyperliquid Spot Orderbook": 63652
         }
       }
     ],
@@ -2489,7 +2647,8 @@
       1748131200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2509957
+          "Hyperliquid Perps": 2416707,
+          "Hyperliquid Spot Orderbook": 93250
         }
       }
     ],
@@ -2497,7 +2656,8 @@
       1748217600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2008977
+          "Hyperliquid Perps": 1908799,
+          "Hyperliquid Spot Orderbook": 100179
         }
       }
     ],
@@ -2505,7 +2665,8 @@
       1748304000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3108221
+          "Hyperliquid Perps": 3020950,
+          "Hyperliquid Spot Orderbook": 87270
         }
       }
     ],
@@ -2513,7 +2674,8 @@
       1748390400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2528675
+          "Hyperliquid Perps": 2445785,
+          "Hyperliquid Spot Orderbook": 82889
         }
       }
     ],
@@ -2521,7 +2683,8 @@
       1748476800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3134661
+          "Hyperliquid Perps": 3046557,
+          "Hyperliquid Spot Orderbook": 88105
         }
       }
     ],
@@ -2529,7 +2692,8 @@
       1748563200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3090869
+          "Hyperliquid Perps": 3003244,
+          "Hyperliquid Spot Orderbook": 87626
         }
       }
     ],
@@ -2537,7 +2701,8 @@
       1748649600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1266413
+          "Hyperliquid Perps": 1217614,
+          "Hyperliquid Spot Orderbook": 48799
         }
       }
     ],
@@ -2545,7 +2710,8 @@
       1748736000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1101895
+          "Hyperliquid Perps": 1062700,
+          "Hyperliquid Spot Orderbook": 39195
         }
       }
     ],
@@ -2553,7 +2719,8 @@
       1748822400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1832281
+          "Hyperliquid Perps": 1768525,
+          "Hyperliquid Spot Orderbook": 63756
         }
       }
     ],
@@ -2561,7 +2728,8 @@
       1748908800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2166524
+          "Hyperliquid Perps": 2091008,
+          "Hyperliquid Spot Orderbook": 75516
         }
       }
     ],
@@ -2569,7 +2737,8 @@
       1748995200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1694588
+          "Hyperliquid Perps": 1629084,
+          "Hyperliquid Spot Orderbook": 65504
         }
       }
     ],
@@ -2577,7 +2746,8 @@
       1749081600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3100655
+          "Hyperliquid Perps": 3006762,
+          "Hyperliquid Spot Orderbook": 93892
         }
       }
     ],
@@ -2585,7 +2755,8 @@
       1749168000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1869944
+          "Hyperliquid Perps": 1810563,
+          "Hyperliquid Spot Orderbook": 59380
         }
       }
     ],
@@ -2593,7 +2764,8 @@
       1749254400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 919037
+          "Hyperliquid Perps": 888062,
+          "Hyperliquid Spot Orderbook": 30975
         }
       }
     ],
@@ -2609,7 +2781,8 @@
       1749513600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2769790
+          "Hyperliquid Perps": 2654323,
+          "Hyperliquid Spot Orderbook": 115467
         }
       }
     ],
@@ -2617,7 +2790,8 @@
       1749600000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2759525
+          "Hyperliquid Perps": 2653604,
+          "Hyperliquid Spot Orderbook": 105920
         }
       }
     ],
@@ -2625,7 +2799,8 @@
       1749686400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3005127
+          "Hyperliquid Perps": 2909648,
+          "Hyperliquid Spot Orderbook": 95479
         }
       }
     ],
@@ -2633,7 +2808,8 @@
       1749772800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4036150
+          "Hyperliquid Perps": 3887429,
+          "Hyperliquid Spot Orderbook": 148721
         }
       }
     ],
@@ -2641,7 +2817,8 @@
       1749859200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1314673
+          "Hyperliquid Perps": 1261527,
+          "Hyperliquid Spot Orderbook": 53146
         }
       }
     ],
@@ -2649,7 +2826,8 @@
       1749945600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1198444
+          "Hyperliquid Perps": 1158797,
+          "Hyperliquid Spot Orderbook": 39647
         }
       }
     ],
@@ -2657,7 +2835,8 @@
       1750032000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2942714
+          "Hyperliquid Perps": 2838831,
+          "Hyperliquid Spot Orderbook": 103884
         }
       }
     ],
@@ -2665,7 +2844,8 @@
       1750118400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3387868
+          "Hyperliquid Perps": 3268752,
+          "Hyperliquid Spot Orderbook": 119116
         }
       }
     ],
@@ -2673,7 +2853,8 @@
       1750204800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2377011
+          "Hyperliquid Perps": 2288124,
+          "Hyperliquid Spot Orderbook": 88887
         }
       }
     ],
@@ -2681,7 +2862,8 @@
       1750291200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1543353
+          "Hyperliquid Perps": 1469442,
+          "Hyperliquid Spot Orderbook": 73911
         }
       }
     ],
@@ -2689,7 +2871,8 @@
       1750377600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2637981
+          "Hyperliquid Perps": 2544445,
+          "Hyperliquid Spot Orderbook": 93536
         }
       }
     ],
@@ -2697,7 +2880,8 @@
       1750464000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1683771
+          "Hyperliquid Perps": 1614659,
+          "Hyperliquid Spot Orderbook": 69112
         }
       }
     ],
@@ -2705,7 +2889,8 @@
       1750550400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3679886
+          "Hyperliquid Perps": 3587131,
+          "Hyperliquid Spot Orderbook": 92755
         }
       }
     ],
@@ -2713,7 +2898,8 @@
       1750636800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4088953
+          "Hyperliquid Perps": 3981981,
+          "Hyperliquid Spot Orderbook": 106972
         }
       }
     ],
@@ -2721,7 +2907,8 @@
       1750723200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2231421
+          "Hyperliquid Perps": 2155847,
+          "Hyperliquid Spot Orderbook": 75574
         }
       }
     ],
@@ -2729,7 +2916,8 @@
       1750809600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2108412
+          "Hyperliquid Perps": 2042066,
+          "Hyperliquid Spot Orderbook": 66347
         }
       }
     ],
@@ -2737,7 +2925,8 @@
       1750896000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1742514
+          "Hyperliquid Perps": 1688508,
+          "Hyperliquid Spot Orderbook": 54006
         }
       }
     ],
@@ -2745,7 +2934,8 @@
       1750982400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1531310
+          "Hyperliquid Perps": 1493863,
+          "Hyperliquid Spot Orderbook": 37448
         }
       }
     ],
@@ -2753,7 +2943,8 @@
       1751068800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 621046
+          "Hyperliquid Perps": 592089,
+          "Hyperliquid Spot Orderbook": 28957
         }
       }
     ],
@@ -2761,7 +2952,8 @@
       1751155200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1134860
+          "Hyperliquid Perps": 1087636,
+          "Hyperliquid Spot Orderbook": 47224
         }
       }
     ],
@@ -2769,7 +2961,8 @@
       1751241600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1819419
+          "Hyperliquid Perps": 1758684,
+          "Hyperliquid Spot Orderbook": 60735
         }
       }
     ],
@@ -2777,7 +2970,8 @@
       1751328000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1816523
+          "Hyperliquid Perps": 1759654,
+          "Hyperliquid Spot Orderbook": 56869
         }
       }
     ],
@@ -2785,7 +2979,8 @@
       1751414400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2615550
+          "Hyperliquid Perps": 2555402,
+          "Hyperliquid Spot Orderbook": 60148
         }
       }
     ],
@@ -2793,7 +2988,8 @@
       1751500800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1911363
+          "Hyperliquid Perps": 1860095,
+          "Hyperliquid Spot Orderbook": 51268
         }
       }
     ],
@@ -2801,7 +2997,8 @@
       1751587200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1656215
+          "Hyperliquid Perps": 1606429,
+          "Hyperliquid Spot Orderbook": 49787
         }
       }
     ],
@@ -2809,7 +3006,8 @@
       1751673600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 738189
+          "Hyperliquid Perps": 708810,
+          "Hyperliquid Spot Orderbook": 29379
         }
       }
     ],
@@ -2817,7 +3015,8 @@
       1751760000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1254056
+          "Hyperliquid Perps": 1227214,
+          "Hyperliquid Spot Orderbook": 26841
         }
       }
     ],
@@ -2825,7 +3024,8 @@
       1751846400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1609727
+          "Hyperliquid Perps": 1561368,
+          "Hyperliquid Spot Orderbook": 48359
         }
       }
     ],
@@ -2833,7 +3033,8 @@
       1751932800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1645261
+          "Hyperliquid Perps": 1586779,
+          "Hyperliquid Spot Orderbook": 58482
         }
       }
     ],
@@ -2841,7 +3042,8 @@
       1752019200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2715934
+          "Hyperliquid Perps": 2647959,
+          "Hyperliquid Spot Orderbook": 67974
         }
       }
     ],
@@ -2849,7 +3051,8 @@
       1752105600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3477760
+          "Hyperliquid Perps": 3383736,
+          "Hyperliquid Spot Orderbook": 94024
         }
       }
     ],
@@ -2857,7 +3060,8 @@
       1752192000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3826698
+          "Hyperliquid Perps": 3718240,
+          "Hyperliquid Spot Orderbook": 108458
         }
       }
     ],
@@ -2865,7 +3069,8 @@
       1752278400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1770548
+          "Hyperliquid Perps": 1694005,
+          "Hyperliquid Spot Orderbook": 76542
         }
       }
     ],
@@ -2873,7 +3078,8 @@
       1752364800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2011036
+          "Hyperliquid Perps": 1940257,
+          "Hyperliquid Spot Orderbook": 70779
         }
       }
     ],
@@ -2881,7 +3087,8 @@
       1752451200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4078667
+          "Hyperliquid Perps": 3956704,
+          "Hyperliquid Spot Orderbook": 121963
         }
       }
     ],
@@ -2889,7 +3096,8 @@
       1752537600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 5058476
+          "Hyperliquid Perps": 4932050,
+          "Hyperliquid Spot Orderbook": 126425
         }
       }
     ],
@@ -2897,7 +3105,8 @@
       1752624000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4485647
+          "Hyperliquid Perps": 4375611,
+          "Hyperliquid Spot Orderbook": 110036
         }
       }
     ],
@@ -2905,7 +3114,8 @@
       1752710400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4999269
+          "Hyperliquid Perps": 4857677,
+          "Hyperliquid Spot Orderbook": 141592
         }
       }
     ],
@@ -2913,7 +3123,8 @@
       1752796800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 5177984
+          "Hyperliquid Perps": 5054755,
+          "Hyperliquid Spot Orderbook": 123230
         }
       }
     ],
@@ -2921,7 +3132,8 @@
       1752883200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1734361
+          "Hyperliquid Perps": 1678516,
+          "Hyperliquid Spot Orderbook": 55845
         }
       }
     ],
@@ -2929,7 +3141,17 @@
       1752969600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3222971
+          "Hyperliquid Perps": 3155348,
+          "Hyperliquid Spot Orderbook": 67623
+        }
+      }
+    ],
+    [
+      1753056000,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Perps": 4174849,
+          "Hyperliquid Spot Orderbook": 97640
         }
       }
     ],
@@ -2937,7 +3159,8 @@
       1753142400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4810837
+          "Hyperliquid Perps": 4704879,
+          "Hyperliquid Spot Orderbook": 105959
         }
       }
     ],
@@ -2945,7 +3168,8 @@
       1753228800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3993753
+          "Hyperliquid Perps": 3893810,
+          "Hyperliquid Spot Orderbook": 99943
         }
       }
     ],
@@ -2953,7 +3177,8 @@
       1753315200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3775659
+          "Hyperliquid Perps": 3684454,
+          "Hyperliquid Spot Orderbook": 91205
         }
       }
     ],
@@ -2961,7 +3186,8 @@
       1753401600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4405393
+          "Hyperliquid Perps": 4314986,
+          "Hyperliquid Spot Orderbook": 90407
         }
       }
     ],
@@ -2969,7 +3195,8 @@
       1753488000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1664952
+          "Hyperliquid Perps": 1613474,
+          "Hyperliquid Spot Orderbook": 51478
         }
       }
     ],
@@ -2977,7 +3204,8 @@
       1753574400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2179578
+          "Hyperliquid Perps": 2116150,
+          "Hyperliquid Spot Orderbook": 63428
         }
       }
     ],
@@ -2985,7 +3213,8 @@
       1753660800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3470188
+          "Hyperliquid Perps": 3374355,
+          "Hyperliquid Spot Orderbook": 95834
         }
       }
     ],
@@ -2993,7 +3222,8 @@
       1753747200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3184474
+          "Hyperliquid Perps": 3095010,
+          "Hyperliquid Spot Orderbook": 89465
         }
       }
     ],
@@ -3001,7 +3231,8 @@
       1753833600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2836145
+          "Hyperliquid Perps": 2740744,
+          "Hyperliquid Spot Orderbook": 95401
         }
       }
     ],
@@ -3009,7 +3240,8 @@
       1753920000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3207610
+          "Hyperliquid Perps": 3091571,
+          "Hyperliquid Spot Orderbook": 116038
         }
       }
     ],
@@ -3017,7 +3249,8 @@
       1754006400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4948245
+          "Hyperliquid Perps": 4816213,
+          "Hyperliquid Spot Orderbook": 132032
         }
       }
     ],
@@ -3025,7 +3258,8 @@
       1754092800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2292581
+          "Hyperliquid Perps": 2230033,
+          "Hyperliquid Spot Orderbook": 62548
         }
       }
     ],
@@ -3033,7 +3267,8 @@
       1754179200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1628842
+          "Hyperliquid Perps": 1583698,
+          "Hyperliquid Spot Orderbook": 45144
         }
       }
     ],
@@ -3041,7 +3276,8 @@
       1754265600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2518824
+          "Hyperliquid Perps": 2463244,
+          "Hyperliquid Spot Orderbook": 55580
         }
       }
     ],
@@ -3049,7 +3285,8 @@
       1754352000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2717509
+          "Hyperliquid Perps": 2655547,
+          "Hyperliquid Spot Orderbook": 61962
         }
       }
     ],
@@ -3057,7 +3294,8 @@
       1754438400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2080705
+          "Hyperliquid Perps": 2026236,
+          "Hyperliquid Spot Orderbook": 54469
         }
       }
     ],
@@ -3065,7 +3303,8 @@
       1754524800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2937100
+          "Hyperliquid Perps": 2873615,
+          "Hyperliquid Spot Orderbook": 63484
         }
       }
     ],
@@ -3089,7 +3328,8 @@
       1754784000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2755931
+          "Hyperliquid Perps": 2701171,
+          "Hyperliquid Spot Orderbook": 54760
         }
       }
     ],
@@ -3097,7 +3337,8 @@
       1754870400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4638693
+          "Hyperliquid Perps": 4537373,
+          "Hyperliquid Spot Orderbook": 101319
         }
       }
     ],
@@ -3105,7 +3346,8 @@
       1754956800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4566178
+          "Hyperliquid Perps": 4463177,
+          "Hyperliquid Spot Orderbook": 103001
         }
       }
     ],
@@ -3113,7 +3355,8 @@
       1755043200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 5555384
+          "Hyperliquid Perps": 5408199,
+          "Hyperliquid Spot Orderbook": 147185
         }
       }
     ],
@@ -3121,7 +3364,8 @@
       1755129600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 7484013
+          "Hyperliquid Perps": 7323465,
+          "Hyperliquid Spot Orderbook": 160547
         }
       }
     ],
@@ -3129,7 +3373,8 @@
       1755216000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3807398
+          "Hyperliquid Perps": 3679797,
+          "Hyperliquid Spot Orderbook": 127601
         }
       }
     ],
@@ -3137,7 +3382,8 @@
       1755302400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1402820
+          "Hyperliquid Perps": 1351964,
+          "Hyperliquid Spot Orderbook": 50856
         }
       }
     ],
@@ -3145,7 +3391,8 @@
       1755388800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1762017
+          "Hyperliquid Perps": 1700417,
+          "Hyperliquid Spot Orderbook": 61600
         }
       }
     ],
@@ -3153,7 +3400,8 @@
       1755475200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4203899
+          "Hyperliquid Perps": 4113185,
+          "Hyperliquid Spot Orderbook": 90714
         }
       }
     ],
@@ -3161,7 +3409,8 @@
       1755561600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4323312
+          "Hyperliquid Perps": 4217675,
+          "Hyperliquid Spot Orderbook": 105637
         }
       }
     ],
@@ -3169,7 +3418,8 @@
       1755648000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3999287
+          "Hyperliquid Perps": 3859607,
+          "Hyperliquid Spot Orderbook": 139680
         }
       }
     ],
@@ -3177,7 +3427,8 @@
       1755734400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3283917
+          "Hyperliquid Perps": 3091915,
+          "Hyperliquid Spot Orderbook": 192002
         }
       }
     ],
@@ -3185,7 +3436,8 @@
       1755820800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 5950696
+          "Hyperliquid Perps": 5562777,
+          "Hyperliquid Spot Orderbook": 387919
         }
       }
     ],
@@ -3193,7 +3445,8 @@
       1755907200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2555053
+          "Hyperliquid Perps": 2275411,
+          "Hyperliquid Spot Orderbook": 279642
         }
       }
     ],
@@ -3201,7 +3454,8 @@
       1755993600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 5438103
+          "Hyperliquid Perps": 4499279,
+          "Hyperliquid Spot Orderbook": 938824
         }
       }
     ],
@@ -3209,7 +3463,8 @@
       1756080000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 5767967
+          "Hyperliquid Perps": 5485713,
+          "Hyperliquid Spot Orderbook": 282254
         }
       }
     ],
@@ -3217,7 +3472,8 @@
       1756166400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 6007646
+          "Hyperliquid Perps": 5619246,
+          "Hyperliquid Spot Orderbook": 388400
         }
       }
     ],
@@ -3225,7 +3481,8 @@
       1756252800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3766930
+          "Hyperliquid Perps": 3630407,
+          "Hyperliquid Spot Orderbook": 136522
         }
       }
     ],
@@ -3233,7 +3490,8 @@
       1756339200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2931899
+          "Hyperliquid Perps": 2829923,
+          "Hyperliquid Spot Orderbook": 101976
         }
       }
     ],
@@ -3241,7 +3499,8 @@
       1756425600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4658230
+          "Hyperliquid Perps": 4343404,
+          "Hyperliquid Spot Orderbook": 314827
         }
       }
     ],
@@ -3249,7 +3508,8 @@
       1756512000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1970191
+          "Hyperliquid Perps": 1793276,
+          "Hyperliquid Spot Orderbook": 176915
         }
       }
     ],
@@ -3257,7 +3517,8 @@
       1756598400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1787694
+          "Hyperliquid Perps": 1567979,
+          "Hyperliquid Spot Orderbook": 219715
         }
       }
     ],
@@ -3265,7 +3526,8 @@
       1756684800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3108508
+          "Hyperliquid Perps": 2954252,
+          "Hyperliquid Spot Orderbook": 154256
         }
       }
     ],
@@ -3273,7 +3535,8 @@
       1756771200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3038016
+          "Hyperliquid Perps": 2957088,
+          "Hyperliquid Spot Orderbook": 80928
         }
       }
     ],
@@ -3281,7 +3544,8 @@
       1756857600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2233945
+          "Hyperliquid Perps": 2172819,
+          "Hyperliquid Spot Orderbook": 75884
         }
       }
     ],
@@ -3289,7 +3553,8 @@
       1756944000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2480416
+          "Hyperliquid Perps": 2463870,
+          "Hyperliquid Spot Orderbook": 76804
         }
       }
     ],
@@ -3297,7 +3562,8 @@
       1757030400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3555370
+          "Hyperliquid Perps": 3363324,
+          "Hyperliquid Spot Orderbook": 100628
         }
       }
     ],
@@ -3305,7 +3571,8 @@
       1757116800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1003857
+          "Hyperliquid Perps": 950930,
+          "Hyperliquid Spot Orderbook": 52927
         }
       }
     ],
@@ -3313,7 +3580,8 @@
       1757203200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 970880
+          "Hyperliquid Perps": 1003562,
+          "Hyperliquid Spot Orderbook": 56186
         }
       }
     ],
@@ -3321,7 +3589,8 @@
       1757289600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2757206
+          "Hyperliquid Perps": 2560447,
+          "Hyperliquid Spot Orderbook": 131488
         }
       }
     ],
@@ -3329,7 +3598,8 @@
       1757376000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2921835
+          "Hyperliquid Perps": 2762997,
+          "Hyperliquid Spot Orderbook": 157161
         }
       }
     ],
@@ -3337,7 +3607,8 @@
       1757462400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3090392
+          "Hyperliquid Perps": 2944547,
+          "Hyperliquid Spot Orderbook": 174922
         }
       }
     ],
@@ -3345,7 +3616,8 @@
       1757548800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3141077
+          "Hyperliquid Perps": 2905806,
+          "Hyperliquid Spot Orderbook": 275397
         }
       }
     ],
@@ -3353,7 +3625,8 @@
       1757635200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3571849
+          "Hyperliquid Perps": 3276107,
+          "Hyperliquid Spot Orderbook": 295742
         }
       }
     ],
@@ -3361,7 +3634,8 @@
       1757721600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2401892
+          "Hyperliquid Perps": 2084148,
+          "Hyperliquid Spot Orderbook": 259481
         }
       }
     ],
@@ -3369,7 +3643,8 @@
       1757808000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2457368
+          "Hyperliquid Perps": 2083722,
+          "Hyperliquid Spot Orderbook": 373646
         }
       }
     ],
@@ -3377,7 +3652,8 @@
       1757894400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3226509
+          "Hyperliquid Perps": 2992725,
+          "Hyperliquid Spot Orderbook": 195266
         }
       }
     ],
@@ -3385,7 +3661,8 @@
       1757980800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2563994
+          "Hyperliquid Perps": 2381406,
+          "Hyperliquid Spot Orderbook": 182588
         }
       }
     ],
@@ -3393,7 +3670,8 @@
       1758067200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3465874
+          "Hyperliquid Perps": 3390871,
+          "Hyperliquid Spot Orderbook": 231183
         }
       }
     ],
@@ -3401,7 +3679,8 @@
       1758153600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 3063411
+          "Hyperliquid Perps": 2735937,
+          "Hyperliquid Spot Orderbook": 214672
         }
       }
     ],
@@ -3409,7 +3688,8 @@
       1758240000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 2710854
+          "Hyperliquid Perps": 2557610,
+          "Hyperliquid Spot Orderbook": 153245
         }
       }
     ],
@@ -3417,7 +3697,8 @@
       1758326400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1488716
+          "Hyperliquid Perps": 1328284,
+          "Hyperliquid Spot Orderbook": 117778
         }
       }
     ],
@@ -3425,7 +3706,8 @@
       1758412800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 1719888
+          "Hyperliquid Perps": 1621432,
+          "Hyperliquid Spot Orderbook": 129154
         }
       }
     ],
@@ -3433,7 +3715,8 @@
       1758499200,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Spot Orderbook": 4874280
+          "Hyperliquid Perps": 4680567,
+          "Hyperliquid Spot Orderbook": 193714
         }
       }
     ],
