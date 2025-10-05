@@ -16,123 +16,6 @@
   ],
   "symbol": "HYPE",
   "address": "0x0d01dc56dcaaca66ad901c959b4011ec",
-  "childProtocols": [
-    {
-      "name": "Hyperliquid Bridge",
-      "module": "hyperliquid/index.js",
-      "category": "Bridge",
-      "logo": "https://icons.llama.fi/hyperliquid.png",
-      "chains": [
-        "Arbitrum"
-      ],
-      "gecko_id": null,
-      "forkedFrom": [],
-      "twitter": "HyperliquidX",
-      "audits": "2",
-      "description": "Hyperliquid is a decentralized perpetual exchange with best-in-class speed, liquidity, and price.",
-      "address": "0x0d01dc56dcaaca66ad901c959b4011ec",
-      "url": "https://hyperliquid.xyz",
-      "audit_links": [
-        "https://hyperliquid.gitbook.io/hyperliquid-docs/audits"
-      ],
-      "cmcId": null,
-      "id": "4481",
-      "parentProtocol": "parent#hyperliquid"
-    },
-    {
-      "name": "Hyperliquid HLP",
-      "defillamaId": "5448",
-      "displayName": "Hyperliquid HLP",
-      "module": "hyperliquid-hlp",
-      "category": "Derivatives",
-      "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid.png",
-      "chains": [
-        "hyperliquid"
-      ],
-      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperliquid-hlp.ts",
-      "methodology": {
-        "UserFees": "Fees paid by users",
-        "Fees": "1% of perp and spot trading revenue (excluding builders and unit revenue) share for HLP.",
-        "Revenue": "No revenue.",
-        "ProtocolRevenue": "Fees going to treasury",
-        "HoldersRevenue": "Fees going to governance token holders",
-        "SupplySideRevenue": "All fees share of HLP are distributed to vaults suppliers."
-      },
-      "gecko_id": null,
-      "forkedFrom": [],
-      "twitter": "HyperliquidX",
-      "audits": "0",
-      "description": "Hyperliquidity Provider (HLP) is a protocol vault that does market making and liquidations and receives a portion of trading fees",
-      "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
-      "url": "https://hyperliquid.xyz",
-      "cmcId": null,
-      "id": "5448",
-      "parentProtocol": "parent#hyperliquid",
-      "doublecounted": true
-    },
-    {
-      "name": "Hyperliquid Perps",
-      "defillamaId": "5507",
-      "displayName": "Hyperliquid Perps",
-      "module": "hyperliquid-perp",
-      "category": "Derivatives",
-      "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid.png",
-      "chains": [
-        "hyperliquid"
-      ],
-      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-perp",
-      "methodology": {
-        "UserFees": "Fees paid by users",
-        "Fees": "Include perps trading fees and builders fees, excluding spot fees.",
-        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
-        "ProtocolRevenue": "Protocol doesn't keep any fees.",
-        "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
-        "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for builders."
-      },
-      "gecko_id": null,
-      "forkedFrom": [],
-      "twitter": "HyperliquidX",
-      "audits": "0",
-      "description": "Hyperliquid is a decentralized perpetual exchange with best-in-class speed, liquidity, and price.",
-      "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
-      "url": "https://hyperliquid.xyz",
-      "cmcId": null,
-      "id": "5507",
-      "parentProtocol": "parent#hyperliquid",
-      "doublecounted": false
-    },
-    {
-      "name": "Hyperliquid Spot Orderbook",
-      "defillamaId": "5761",
-      "displayName": "Hyperliquid Spot Orderbook",
-      "module": "hyperliquid",
-      "category": "Dexs",
-      "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid.png",
-      "chains": [
-        "hyperliquid"
-      ],
-      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperliquid.ts",
-      "methodology": {
-        "UserFees": "Swap fees paid by users",
-        "Fees": "Include spot trading fees and unit protocol fees, excluding perps fees.",
-        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees.",
-        "ProtocolRevenue": "Protocol doesn't keep any fees.",
-        "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees.",
-        "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for unit protocol."
-      },
-      "gecko_id": null,
-      "forkedFrom": [],
-      "twitter": "HyperliquidX",
-      "audits": "0",
-      "description": "The order book works in essentially the same way as all centralized exchanges but is fully on-chain",
-      "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
-      "url": "https://hyperliquid.xyz",
-      "cmcId": null,
-      "id": "5761",
-      "parentProtocol": "parent#hyperliquid",
-      "doublecounted": false
-    }
-  ],
   "linkedProtocols": [
     "Hyperliquid",
     "Hyperliquid HLP",
@@ -159,9 +42,9 @@
   "protocolType": "protocol",
   "total24h": 1925647,
   "total48hto24h": 3705019,
-  "total7d": 20971317,
-  "total30d": 88477112,
-  "totalAllTime": 644040213,
+  "total7d": 21206088,
+  "total30d": 88711883,
+  "totalAllTime": 644274984,
   "totalDataChart": [
     [
       1734912000,
@@ -1281,7 +1164,7 @@
     ],
     [
       1759363200,
-      3639978
+      3874749
     ],
     [
       1759449600,
@@ -4076,7 +3959,8 @@
       {
         "Hyperliquid L1": {
           "Hyperliquid HLP": 66217,
-          "Hyperliquid Perps": 3573761
+          "Hyperliquid Perps": 3573761,
+          "Hyperliquid Spot Orderbook": 234771
         }
       }
     ],
