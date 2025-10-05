@@ -157,11 +157,11 @@
   "doublecounted": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 1722628,
+  "total24h": 1925647,
   "total48hto24h": 3705019,
-  "total7d": 20768298,
-  "total30d": 88274093,
-  "totalAllTime": 643837194,
+  "total7d": 20971317,
+  "total30d": 88477112,
+  "totalAllTime": 644040213,
   "totalDataChart": [
     [
       1734912000,
@@ -1289,7 +1289,7 @@
     ],
     [
       1759536000,
-      1722628
+      1925647
     ]
   ],
   "totalDataChartBreakdown": [
@@ -4094,10 +4094,12 @@
       1759536000,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Perps": 1722628
+          "Hyperliquid HLP": 30224,
+          "Hyperliquid Perps": 1722628,
+          "Hyperliquid Spot Orderbook": 172795
         }
       }
     ]
   ],
-  "change_1d": -53.51
+  "change_1d": -48.03
 }
