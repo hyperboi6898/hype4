@@ -43,8 +43,8 @@
   "total24h": 3904785,
   "total48hto24h": 3099390,
   "total7d": 28109510,
-  "total30d": 104618102,
-  "totalAllTime": 692062008,
+  "total30d": 101478672,
+  "totalAllTime": 688837405,
   "totalDataChart": [
     [
       1734912000,
@@ -948,7 +948,7 @@
     ],
     [
       1754697600,
-      3054337
+      2969164
     ],
     [
       1754784000,
@@ -1140,7 +1140,7 @@
     ],
     [
       1758844800,
-      3695365
+      555935
     ],
     [
       1758931200,
@@ -3467,8 +3467,7 @@
       1754697600,
       {
         "Hyperliquid L1": {
-          "Hyperliquid Perps": 2969164,
-          "Hyperliquid Spot Orderbook": 85173
+          "Hyperliquid Perps": 2969164
         }
       }
     ],
@@ -3947,7 +3946,6 @@
       {
         "Hyperliquid L1": {
           "Hyperliquid HLP": 58140,
-          "Hyperliquid Perps": 3139430,
           "Hyperliquid Spot Orderbook": 497795
         }
       }
