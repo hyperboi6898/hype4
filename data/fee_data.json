@@ -43,8 +43,8 @@
   "total24h": 3229106,
   "total48hto24h": 2158812,
   "total7d": 23188220,
-  "total30d": 110758194,
-  "totalAllTime": 707901963,
+  "total30d": 105294877,
+  "totalAllTime": 702639601,
   "totalDataChart": [
     [
       1734912000,
@@ -944,7 +944,7 @@
     ],
     [
       1754611200,
-      3070575
+      163022
     ],
     [
       1754697600,
@@ -1037,6 +1037,10 @@
     [
       1756598400,
       1805571
+    ],
+    [
+      1756684800,
+      3108508
     ],
     [
       1756771200,
@@ -1132,7 +1136,7 @@
     ],
     [
       1758758400,
-      6070216
+      606899
     ],
     [
       1758844800,
@@ -3471,7 +3475,6 @@
       {
         "Hyperliquid L1": {
           "Hyperliquid HLP": 104673,
-          "Hyperliquid Perps": 2907553,
           "Hyperliquid Spot Orderbook": 58349
         }
       }
@@ -3703,6 +3706,15 @@
           "Hyperliquid HLP": 17877,
           "Hyperliquid Perps": 1567979,
           "Hyperliquid Spot Orderbook": 219715
+        }
+      }
+    ],
+    [
+      1756684800,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Perps": 2954252,
+          "Hyperliquid Spot Orderbook": 154256
         }
       }
     ],
@@ -3940,8 +3952,6 @@
       1758758400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid HLP": 100945,
-          "Hyperliquid Perps": 5362372,
           "Hyperliquid Spot Orderbook": 606899
         }
       }
