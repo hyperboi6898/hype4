@@ -132,9 +132,9 @@
   "slug": "hyperliquid",
   "protocolType": "protocol",
   "total24h": 3735743,
-  "total48hto24h": 7013640,
-  "total7d": 26732757,
-  "total30d": 115788164,
+  "total48hto24h": 3735743,
+  "total7d": 21766508,
+  "total30d": 110797872,
   "totalAllTime": 769441797,
   "totalDataChart": [
     [
@@ -4526,5 +4526,5 @@
       }
     ]
   ],
-  "change_1d": -46.74
+  "change_1d": 0
 }
