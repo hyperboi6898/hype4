@@ -52,32 +52,17 @@
       "name": "Hyperliquid Perps",
       "defillamaId": "5507",
       "displayName": "Hyperliquid Perps",
-      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-perp",
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/open-interest/hyperliquid-perp.ts",
       "methodology": {
         "UserFees": "Fees paid by users",
-        "Fees": "Include perps trading fees and builders fees, excluding spot fees.",
-        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
-        "ProtocolRevenue": "Protocol doesn't keep any fees.",
-        "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
-        "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for builders."
+        "Fees": "Fees paid by users",
+        "Revenue": "Treasury and token holders revenue",
+        "ProtocolRevenue": "Fees going to treasury",
+        "HoldersRevenue": "Fees going to governance token holders",
+        "SupplySideRevenue": "LPs revenue"
       },
       "defaultChartView": null,
-      "breakdownMethodology": {
-        "Fees": {
-          "Perp Fees": "Perp trade fees collected as revenue, excluding spot fees.",
-          "Builders Revenue": "Perp trade fees share for builders fees, excluding spot fees."
-        },
-        "Revenue": {
-          "Perp Fees": "99% of perp trade fees, excluding spot fees and builders fees."
-        },
-        "SupplySideRevenue": {
-          "Builders Revenue": "Perp trade rees share for builders.",
-          "HLP": "1% of the perp trade fees go to HLP vault (used to be 3% before 30 Aug 2025)"
-        },
-        "HoldersRevenue": {
-          "Token Buy Back": "99% of perp trade fees (excluding spot fees and builders fees) for buy back HYPE tokens."
-        }
-      }
+      "breakdownMethodology": null
     },
     {
       "name": "Hyperliquid Spot Orderbook",
