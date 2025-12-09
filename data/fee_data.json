@@ -52,17 +52,32 @@
       "name": "Hyperliquid Perps",
       "defillamaId": "5507",
       "displayName": "Hyperliquid Perps",
-      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/open-interest/hyperliquid-perp.ts",
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-perp",
       "methodology": {
         "UserFees": "Fees paid by users",
-        "Fees": "Fees paid by users",
-        "Revenue": "Treasury and token holders revenue",
-        "ProtocolRevenue": "Fees going to treasury",
-        "HoldersRevenue": "Fees going to governance token holders",
-        "SupplySideRevenue": "LPs revenue"
+        "Fees": "Include perps trading fees and builders fees, excluding spot fees.",
+        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
+        "ProtocolRevenue": "Protocol doesn't keep any fees.",
+        "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
+        "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for builders."
       },
       "defaultChartView": null,
-      "breakdownMethodology": null
+      "breakdownMethodology": {
+        "Fees": {
+          "Perp Fees": "Perp trade fees collected as revenue, excluding spot fees.",
+          "Builders Revenue": "Perp trade fees share for builders fees, excluding spot fees."
+        },
+        "Revenue": {
+          "Perp Fees": "99% of perp trade fees, excluding spot fees and builders fees."
+        },
+        "SupplySideRevenue": {
+          "Builders Revenue": "Perp trade rees share for builders.",
+          "HLP": "1% of the perp trade fees go to HLP vault (used to be 3% before 30 Aug 2025)"
+        },
+        "HoldersRevenue": {
+          "Token Buy Back": "99% of perp trade fees (excluding spot fees and builders fees) for buy back HYPE tokens."
+        }
+      }
     },
     {
       "name": "Hyperliquid Spot Orderbook",
@@ -116,11 +131,11 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 102219,
+  "total24h": 2532738,
   "total48hto24h": 2504446,
-  "total7d": 15397380,
-  "total30d": 90865301,
-  "totalAllTime": 870957099,
+  "total7d": 17827899,
+  "total30d": 93295820,
+  "totalAllTime": 873387618,
   "totalDataChart": [
     [
       1734912000,
@@ -1508,7 +1523,7 @@
     ],
     [
       1765152000,
-      102219
+      2532738
     ]
   ],
   "totalDataChartBreakdown": [
@@ -4967,10 +4982,11 @@
       {
         "Hyperliquid L1": {
           "Hyperliquid HLP": 22537,
+          "Hyperliquid Perps": 2430519,
           "Hyperliquid Spot Orderbook": 79682
         }
       }
     ]
   ],
-  "change_1d": -95.92
+  "change_1d": 1.13
 }
