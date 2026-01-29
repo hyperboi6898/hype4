@@ -41,7 +41,7 @@
       "buybacks": "ACTIVE",
       "dividends": "NONE",
       "burns": "NONE",
-      "primaryValueAccrual": "Buybacks - Most protocol fees go to the assistance fund which buys back HYPE tokens"
+      "primaryValueAccrual": "Most protocol fees go to the assistance fund which buys back & burns HYPE tokens"
     },
     "tokenAlignment": {
       "fundraising": "NONE",
