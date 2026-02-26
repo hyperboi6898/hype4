@@ -14,58 +14,6 @@
   "github": [
     "hyperliquid-dex"
   ],
-  "tokenRights": {
-    "rights": [
-      {
-        "label": "Governance",
-        "hasRight": true,
-        "details": "HYPE"
-      },
-      {
-        "label": "Treasury",
-        "hasRight": true,
-        "details": "HYPE"
-      },
-      {
-        "label": "Revenue",
-        "hasRight": true,
-        "details": "sHYPE"
-      }
-    ],
-    "governanceData": {
-      "rights": "LIMITED",
-      "details": "Can vote on HIPs (includes upgrades, treasury decisions, other network parameters)",
-      "feeSwitchStatus": "ON"
-    },
-    "holdersRevenueAndValueAccrual": {
-      "buybacks": "ACTIVE",
-      "dividends": "NONE",
-      "burns": "ACTIVE",
-      "primaryValueAccrual": "Most protocol fees go to the assistance fund which buys back & burns HYPE tokens. HYPE in the Assistance Fund is formally recognized as burned"
-    },
-    "tokenAlignment": {
-      "fundraising": "NONE",
-      "raiseDetailsLink": {
-        "label": "Raise Details",
-        "url": ""
-      },
-      "associatedEntities": [
-        "Foundation"
-      ],
-      "equityRevenueCapture": "INACTIVE",
-      "equityStatement": "N/A"
-    },
-    "resources": [
-      {
-        "label": "Foundation Multisig / Address",
-        "address": "0xfefefefefefefefefefefefefefefefefefefe"
-      },
-      {
-        "label": "Latest Treasury / Token Report",
-        "url": "https://hyperscreener.asxn.xyz/home"
-      }
-    ]
-  },
   "symbol": "HYPE",
   "address": "0x0d01dc56dcaaca66ad901c959b4011ec",
   "linkedProtocols": [
