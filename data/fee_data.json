@@ -83,7 +83,7 @@
       "name": "Hyperliquid Spot Orderbook",
       "defillamaId": "5761",
       "displayName": "Hyperliquid Spot Orderbook",
-      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperliquid.ts",
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-spot",
       "methodology": {
         "UserFees": "Swap fees paid by users",
         "Fees": "Include spot trading fees and unit protocol fees, excluding perps fees.",
