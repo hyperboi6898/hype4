@@ -8,6 +8,7 @@
   "gecko_id": "hyperliquid",
   "cmcId": "32196",
   "chains": [
+    "Hyperliquid L1",
     "Hyperliquid L1"
   ],
   "twitter": "HyperliquidX",
@@ -131,11 +132,11 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 1445901,
-  "total48hto24h": 949859,
-  "total7d": 14961757,
-  "total30d": 60079464,
-  "totalAllTime": 1152706073,
+  "total24h": 2864970,
+  "total48hto24h": 1445901,
+  "total7d": 14781489,
+  "total30d": 61881955,
+  "totalAllTime": 1155571043,
   "totalDataChart": [
     [
       1734912000,
@@ -1912,6 +1913,10 @@
     [
       1773532800,
       1445901
+    ],
+    [
+      1773619200,
+      2864970
     ]
   ],
   "totalDataChartBreakdown": [
@@ -6344,7 +6349,15 @@
           "Hyperliquid Spot Orderbook": 31407
         }
       }
+    ],
+    [
+      1773619200,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Perps": 2864970
+        }
+      }
     ]
   ],
-  "change_1d": 52.22
+  "change_1d": 98.14
 }
