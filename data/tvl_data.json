@@ -4133,10 +4133,14 @@
   },
   {
     "date": "2026-04-07",
-    "totalLiquidityUSD": 4981149395
+    "totalLiquidityUSD": 4981512500
   },
   {
-    "date": "2026-04-07",
-    "totalLiquidityUSD": 5055212092
+    "date": "2026-04-08",
+    "totalLiquidityUSD": 4981512500
+  },
+  {
+    "date": "2026-04-08",
+    "totalLiquidityUSD": 5065137422
   }
 ]
