@@ -6683,5 +6683,26 @@
       }
     ]
   ],
-  "change_1d": -17.73
+  "change_1d": -17.73,
+  "chainBreakdown": {
+    "Hyperliquid L1": {
+      "total24h": 2686030,
+      "total48hto24h": 3264984,
+      "total7d": 13785973,
+      "total14dto7d": 13353915,
+      "total30d": 62974993,
+      "total60dto30d": 60446438,
+      "total1y": 1039117267,
+      "total7DaysAgo": 2390768,
+      "total30DaysAgo": 3045238,
+      "totalAllTime": 1203764547,
+      "average1y": 2862582.002754821,
+      "monthlyAverage1y": 87136996.16385676,
+      "change_1d": -17.73,
+      "change_7d": 12.35,
+      "change_1m": -11.8,
+      "change_7dover7d": 3.24,
+      "change_30dover30d": 4.18
+    }
+  }
 }
