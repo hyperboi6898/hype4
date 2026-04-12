@@ -132,11 +132,11 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 1896612,
-  "total48hto24h": 2547456,
-  "total7d": 14387579,
-  "total30d": 62714994,
-  "totalAllTime": 1208208615,
+  "total24h": 1134215,
+  "total48hto24h": 1896612,
+  "total7d": 14903417,
+  "total30d": 61792685,
+  "totalAllTime": 1209342830,
   "totalDataChart": [
     [
       1734912000,
@@ -2017,6 +2017,10 @@
     [
       1775779200,
       1896612
+    ],
+    [
+      1775865600,
+      1134215
     ]
   ],
   "totalDataChartBreakdown": [
@@ -6709,28 +6713,38 @@
           "Hyperliquid Spot Orderbook": 69574
         }
       }
+    ],
+    [
+      1775865600,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid HLP": 9902,
+          "Hyperliquid Perps": 1075268,
+          "Hyperliquid Spot Orderbook": 49045
+        }
+      }
     ]
   ],
-  "change_1d": -25.55,
+  "change_1d": -40.2,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 1896612,
-      "total48hto24h": 2547456,
-      "total7d": 14387579,
-      "total14dto7d": 12943992,
-      "total30d": 62714994,
-      "total60dto30d": 61266965,
-      "total1y": 1038908794,
-      "total7DaysAgo": 1075429,
-      "total30DaysAgo": 2044750,
-      "totalAllTime": 1208208615,
-      "average1y": 2862007.696969697,
-      "monthlyAverage1y": 87119514.29575758,
-      "change_1d": -25.55,
-      "change_7d": 76.36,
-      "change_1m": -7.24,
-      "change_7dover7d": 11.15,
-      "change_30dover30d": 2.36
+      "total24h": 1134215,
+      "total48hto24h": 1896612,
+      "total7d": 14903417,
+      "total14dto7d": 12627643,
+      "total30d": 61792685,
+      "total60dto30d": 61319991,
+      "total1y": 1038675650,
+      "total7DaysAgo": 618377,
+      "total30DaysAgo": 2056524,
+      "totalAllTime": 1209342830,
+      "average1y": 2861365.4269972453,
+      "monthlyAverage1y": 87099963.59779616,
+      "change_1d": -40.2,
+      "change_7d": 83.42,
+      "change_1m": -44.85,
+      "change_7dover7d": 18.02,
+      "change_30dover30d": 0.77
     }
   }
 }
