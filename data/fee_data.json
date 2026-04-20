@@ -135,11 +135,11 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 1303499,
-  "total48hto24h": 2899313,
-  "total7d": 15277138,
-  "total30d": 60754416,
-  "totalAllTime": 1224620433,
+  "total24h": 1845637,
+  "total48hto24h": 1303499,
+  "total7d": 15336985,
+  "total30d": 60484133,
+  "totalAllTime": 1226466070,
   "totalDataChart": [
     [
       1734912000,
@@ -2052,6 +2052,10 @@
     [
       1776470400,
       1303499
+    ],
+    [
+      1776556800,
+      1845637
     ]
   ],
   "totalDataChartBreakdown": [
@@ -6824,28 +6828,37 @@
           "Hyperliquid Spot Orderbook": 38508
         }
       }
+    ],
+    [
+      1776556800,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Perps": 1785294,
+          "Hyperliquid Spot Orderbook": 60343
+        }
+      }
     ]
   ],
-  "change_1d": -55.04,
+  "change_1d": 41.59,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 1303499,
-      "total48hto24h": 2899313,
-      "total7d": 15277138,
-      "total14dto7d": 14903720,
-      "total30d": 60754416,
-      "total60dto30d": 65702806,
-      "total1y": 1045506487,
-      "total7DaysAgo": 1134114,
-      "total30DaysAgo": 2820347,
-      "totalAllTime": 1224620433,
-      "average1y": 2880183.1597796143,
-      "monthlyAverage1y": 87672775.38369146,
-      "change_1d": -55.04,
-      "change_7d": 14.94,
-      "change_1m": -53.78,
-      "change_7dover7d": 2.51,
-      "change_30dover30d": -7.53
+      "total24h": 1845637,
+      "total48hto24h": 1303499,
+      "total7d": 15336985,
+      "total14dto7d": 15492455,
+      "total30d": 60484133,
+      "total60dto30d": 66176887,
+      "total1y": 1046755208,
+      "total7DaysAgo": 1785790,
+      "total30DaysAgo": 2115920,
+      "totalAllTime": 1226466070,
+      "average1y": 2883623.1625344353,
+      "monthlyAverage1y": 87777489.06754822,
+      "change_1d": 41.59,
+      "change_7d": 3.35,
+      "change_1m": -12.77,
+      "change_7dover7d": -1,
+      "change_30dover30d": -8.6
     }
   }
 }
