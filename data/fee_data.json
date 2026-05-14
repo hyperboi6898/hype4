@@ -135,11 +135,11 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 1958511,
+  "total24h": 1976308,
   "total48hto24h": 1924072,
-  "total7d": 13000091,
-  "total30d": 57569142,
-  "totalAllTime": 1271025239,
+  "total7d": 13017888,
+  "total30d": 57586939,
+  "totalAllTime": 1271043036,
   "totalDataChart": [
     [
       1734912000,
@@ -2151,7 +2151,7 @@
     ],
     [
       1778630400,
-      1958511
+      1976308
     ]
   ],
   "totalDataChartBreakdown": [
@@ -7169,32 +7169,33 @@
       1778630400,
       {
         "Hyperliquid L1": {
+          "Hyperliquid HLP": 17797,
           "Hyperliquid Perps": 1905818,
           "Hyperliquid Spot Orderbook": 52693
         }
       }
     ]
   ],
-  "change_1d": 1.79,
+  "change_1d": 2.71,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 1958511,
+      "total24h": 1976308,
       "total48hto24h": 1924072,
-      "total7d": 13000091,
+      "total7d": 13017888,
       "total14dto7d": 13551251,
-      "total30d": 57569142,
+      "total30d": 57586939,
       "total60dto30d": 62195925,
-      "total1y": 1051338016,
+      "total1y": 1051355813,
       "total7DaysAgo": 2818775,
       "total30DaysAgo": 2327012,
-      "totalAllTime": 1271025239,
-      "average1y": 2896247.9779614327,
-      "monthlyAverage1y": 88161788.44914602,
-      "change_1d": 1.79,
-      "change_7d": -30.52,
-      "change_1m": -15.84,
-      "change_7dover7d": -4.07,
-      "change_30dover30d": -7.44
+      "totalAllTime": 1271043036,
+      "average1y": 2896297.005509642,
+      "monthlyAverage1y": 88163280.8477135,
+      "change_1d": 2.71,
+      "change_7d": -29.89,
+      "change_1m": -15.07,
+      "change_7dover7d": -3.94,
+      "change_30dover30d": -7.41
     }
   }
 }
