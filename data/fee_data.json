@@ -135,11 +135,11 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 1924072,
-  "total48hto24h": 2018130,
-  "total7d": 13860355,
-  "total30d": 57937643,
-  "totalAllTime": 1269066728,
+  "total24h": 1958511,
+  "total48hto24h": 1924072,
+  "total7d": 13000091,
+  "total30d": 57569142,
+  "totalAllTime": 1271025239,
   "totalDataChart": [
     [
       1734912000,
@@ -2148,6 +2148,10 @@
     [
       1778544000,
       1924072
+    ],
+    [
+      1778630400,
+      1958511
     ]
   ],
   "totalDataChartBreakdown": [
@@ -7160,28 +7164,37 @@
           "Hyperliquid Spot Orderbook": 47865
         }
       }
+    ],
+    [
+      1778630400,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid Perps": 1905818,
+          "Hyperliquid Spot Orderbook": 52693
+        }
+      }
     ]
   ],
-  "change_1d": -4.66,
+  "change_1d": 1.79,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 1924072,
-      "total48hto24h": 2018130,
-      "total7d": 13860355,
-      "total14dto7d": 13051702,
-      "total30d": 57937643,
-      "total60dto30d": 60818772,
-      "total1y": 1051931739,
-      "total7DaysAgo": 2348144,
-      "total30DaysAgo": 1785790,
-      "totalAllTime": 1269066728,
-      "average1y": 2897883.5785123967,
-      "monthlyAverage1y": 88211576.12991735,
-      "change_1d": -4.66,
-      "change_7d": -18.06,
-      "change_1m": 7.74,
-      "change_7dover7d": 6.2,
-      "change_30dover30d": -4.74
+      "total24h": 1958511,
+      "total48hto24h": 1924072,
+      "total7d": 13000091,
+      "total14dto7d": 13551251,
+      "total30d": 57569142,
+      "total60dto30d": 62195925,
+      "total1y": 1051338016,
+      "total7DaysAgo": 2818775,
+      "total30DaysAgo": 2327012,
+      "totalAllTime": 1271025239,
+      "average1y": 2896247.9779614327,
+      "monthlyAverage1y": 88161788.44914602,
+      "change_1d": 1.79,
+      "change_7d": -30.52,
+      "change_1m": -15.84,
+      "change_7dover7d": -4.07,
+      "change_30dover30d": -7.44
     }
   }
 }
