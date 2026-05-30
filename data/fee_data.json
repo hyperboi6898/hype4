@@ -135,11 +135,11 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 206931,
-  "total48hto24h": 2536427,
-  "total7d": 13436873,
-  "total30d": 59197040,
-  "totalAllTime": 1303670937,
+  "total24h": 2318603,
+  "total48hto24h": 2536305,
+  "total7d": 15548423,
+  "total30d": 61308590,
+  "totalAllTime": 1305782487,
   "totalDataChart": [
     [
       1734912000,
@@ -2211,11 +2211,11 @@
     ],
     [
       1779926400,
-      2536427
+      2536305
     ],
     [
       1780012800,
-      206931
+      2318603
     ]
   ],
   "totalDataChartBreakdown": [
@@ -7383,9 +7383,9 @@
       1779926400,
       {
         "Hyperliquid L1": {
-          "Hyperliquid HLP": 23111,
-          "Hyperliquid Perps": 2433705,
-          "Hyperliquid Spot Orderbook": 79611
+          "Hyperliquid HLP": 23110,
+          "Hyperliquid Perps": 2433867,
+          "Hyperliquid Spot Orderbook": 79328
         }
       }
     ],
@@ -7393,33 +7393,33 @@
       1780012800,
       {
         "Hyperliquid L1": {
-          "Hyperliquid HLP": 1912,
-          "Hyperliquid Perps": 196011,
-          "Hyperliquid Spot Orderbook": 9008
+          "Hyperliquid HLP": 21366,
+          "Hyperliquid Perps": 2188433,
+          "Hyperliquid Spot Orderbook": 108804
         }
       }
     ]
   ],
-  "change_1d": -91.84,
+  "change_1d": -8.58,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 206931,
-      "total48hto24h": 2536427,
-      "total7d": 13436873,
+      "total24h": 2318603,
+      "total48hto24h": 2536305,
+      "total7d": 15548423,
       "total14dto7d": 14162019,
-      "total30d": 59197040,
+      "total30d": 61308590,
       "total60dto30d": 59691626,
-      "total1y": 1040154529,
+      "total1y": 1042266079,
       "total7DaysAgo": 2435144,
       "total30DaysAgo": 2319226,
-      "totalAllTime": 1303670937,
-      "average1y": 2865439.473829201,
-      "monthlyAverage1y": 87223977.58336088,
-      "change_1d": -91.84,
-      "change_7d": -91.5,
-      "change_1m": -91.08,
-      "change_7dover7d": -5.12,
-      "change_30dover30d": -0.83
+      "totalAllTime": 1305782487,
+      "average1y": 2871256.4159779614,
+      "monthlyAverage1y": 87401045.30236915,
+      "change_1d": -8.58,
+      "change_7d": -4.79,
+      "change_1m": -0.03,
+      "change_7dover7d": 9.79,
+      "change_30dover30d": 2.71
     }
   }
 }
