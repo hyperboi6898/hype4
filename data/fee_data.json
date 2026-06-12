@@ -136,13 +136,13 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 2809748,
-  "total48hto24h": 2833325,
-  "total7d": 25149833,
-  "total30d": 79355403,
-  "total1y": 1065839934,
-  "annualized1y": 1065839934,
-  "totalAllTime": 1349770308,
+  "total24h": 2442913,
+  "total48hto24h": 2809748,
+  "total7d": 22139294,
+  "total30d": 79876928,
+  "total1y": 1065456988,
+  "annualized1y": 1065456988,
+  "totalAllTime": 1352213221,
   "totalDataChart": [
     [
       1734912000,
@@ -2267,6 +2267,10 @@
     [
       1781049600,
       2809748
+    ],
+    [
+      1781136000,
+      2442913
     ]
   ],
   "totalDataChartBreakdown": [
@@ -7569,28 +7573,38 @@
           "Hyperliquid Spot Orderbook": 79637
         }
       }
+    ],
+    [
+      1781136000,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid HLP": 19251,
+          "Hyperliquid Perps": 2361902,
+          "Hyperliquid Spot Orderbook": 61760
+        }
+      }
     ]
   ],
-  "change_1d": -0.83,
+  "change_1d": -13.06,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 2809748,
-      "total48hto24h": 2833325,
-      "total7d": 25149833,
-      "total14dto7d": 20457954,
-      "total30d": 79355403,
-      "total60dto30d": 57804482,
-      "total1y": 1065839934,
-      "total7DaysAgo": 4284474,
-      "total30DaysAgo": 2015697,
-      "totalAllTime": 1349770308,
-      "average1y": 2920109.408219178,
-      "monthlyAverage1y": 88888130.38619179,
-      "change_1d": -0.83,
-      "change_7d": -34.42,
-      "change_1m": 39.39,
-      "change_7dover7d": 22.93,
-      "change_30dover30d": 37.28
+      "total24h": 2442913,
+      "total48hto24h": 2809748,
+      "total7d": 22139294,
+      "total14dto7d": 23377986,
+      "total30d": 79876928,
+      "total60dto30d": 57910714,
+      "total1y": 1065456988,
+      "total7DaysAgo": 5453452,
+      "total30DaysAgo": 1921388,
+      "totalAllTime": 1352213221,
+      "average1y": 2919060.2410958903,
+      "monthlyAverage1y": 88856193.73895891,
+      "change_1d": -13.06,
+      "change_7d": -55.2,
+      "change_1m": 27.14,
+      "change_7dover7d": -5.3,
+      "change_30dover30d": 37.93
     }
   }
 }
