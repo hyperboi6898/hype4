@@ -4,7 +4,7 @@
   "url": "https://app.hyperliquid.xyz",
   "referralUrl": "https://app.hyperliquid.xyz/join/DEFILLAMAS",
   "description": "Hyperliquid is a Layer 1 blockchain best known for perpetual futures and spot trading. Beyond its flagship decentralized exchange (DEX), the ecosystem supports borrowing, lending, RWAs, and a full-fledged EVM.",
-  "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid.png",
+  "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid",
   "gecko_id": "hyperliquid",
   "cmcId": "32196",
   "chains": [
