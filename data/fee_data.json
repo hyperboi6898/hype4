@@ -137,13 +137,13 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 641079,
-  "total48hto24h": 2014478,
-  "total7d": 12016492,
-  "total30d": 50153647,
-  "total1y": 1024171968,
-  "annualized1y": 1024171968,
-  "totalAllTime": 1457864433,
+  "total24h": 1021732,
+  "total48hto24h": 641079,
+  "total7d": 12110525,
+  "total30d": 49423726,
+  "total1y": 1022347967,
+  "annualized1y": 1022347967,
+  "totalAllTime": 1458886165,
   "totalDataChart": [
     [
       1734912000,
@@ -2476,6 +2476,10 @@
     [
       1785542400,
       641079
+    ],
+    [
+      1785628800,
+      1021732
     ]
   ],
   "totalDataChartBreakdown": [
@@ -8298,28 +8302,38 @@
           "Hyperliquid Spot Orderbook": 24144
         }
       }
+    ],
+    [
+      1785628800,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid HLP": 7851,
+          "Hyperliquid Perps": 983912,
+          "Hyperliquid Spot Orderbook": 29969
+        }
+      }
     ]
   ],
-  "change_1d": -68.18,
+  "change_1d": 59.38,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 641079,
-      "total48hto24h": 2014478,
-      "total7d": 12016492,
-      "total14dto7d": 10575898,
-      "total30d": 50153647,
-      "total60dto30d": 78133798,
-      "total1y": 1024171968,
-      "total7DaysAgo": 651366,
-      "total30DaysAgo": 2719082,
-      "totalAllTime": 1457864433,
-      "average1y": 2805950.597260274,
-      "monthlyAverage1y": 85413136.18060274,
-      "change_1d": -68.18,
-      "change_7d": -1.58,
-      "change_1m": -76.42,
-      "change_7dover7d": 13.62,
-      "change_30dover30d": -35.81
+      "total24h": 1021732,
+      "total48hto24h": 641079,
+      "total7d": 12110525,
+      "total14dto7d": 10652901,
+      "total30d": 49423726,
+      "total60dto30d": 75602593,
+      "total1y": 1022347967,
+      "total7DaysAgo": 927699,
+      "total30DaysAgo": 1751653,
+      "totalAllTime": 1458886165,
+      "average1y": 2800953.3342465754,
+      "monthlyAverage1y": 85261019.49446575,
+      "change_1d": 59.38,
+      "change_7d": 10.14,
+      "change_1m": -41.67,
+      "change_7dover7d": 13.68,
+      "change_30dover30d": -34.63
     }
   }
 }
