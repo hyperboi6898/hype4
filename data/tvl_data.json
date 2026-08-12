@@ -4637,10 +4637,14 @@
   },
   {
     "date": "2026-08-11",
-    "totalLiquidityUSD": 6059252211
+    "totalLiquidityUSD": 6062287121
   },
   {
-    "date": "2026-08-11",
-    "totalLiquidityUSD": 6026965167
+    "date": "2026-08-12",
+    "totalLiquidityUSD": 6062287121
+  },
+  {
+    "date": "2026-08-12",
+    "totalLiquidityUSD": 6032765163
   }
 ]
