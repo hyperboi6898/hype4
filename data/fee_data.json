@@ -15,7 +15,7 @@
     "hyperliquid-dex"
   ],
   "symbol": "HYPE",
-  "address": "0x0d01dc56dcaaca66ad901c959b4011ec",
+  "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
   "linkedProtocols": [
     "Hyperliquid",
     "Hyperliquid HLP",
