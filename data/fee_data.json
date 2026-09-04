@@ -140,13 +140,13 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 2213365,
-  "total48hto24h": 2625756,
-  "total7d": 17101842,
-  "total30d": 68907681,
-  "total1y": 949033573,
-  "annualized1y": 949033573,
-  "totalAllTime": 1529389855,
+  "total24h": 3474897,
+  "total48hto24h": 2213365,
+  "total7d": 17016812,
+  "total30d": 70760571,
+  "total1y": 949686547,
+  "annualized1y": 949686547,
+  "totalAllTime": 1532864752,
   "totalDataChart": [
     [
       1734912000,
@@ -2607,6 +2607,10 @@
     [
       1788307200,
       2213365
+    ],
+    [
+      1788393600,
+      3474897
     ]
   ],
   "totalDataChartBreakdown": [
@@ -8749,28 +8753,38 @@
           "Hyperliquid Spot Orderbook": 74669
         }
       }
+    ],
+    [
+      1788393600,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid HLP": 26821,
+          "Hyperliquid Perps": 3315855,
+          "Hyperliquid Spot Orderbook": 132221
+        }
+      }
     ]
   ],
-  "change_1d": -15.71,
+  "change_1d": 57,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 2213365,
-      "total48hto24h": 2625756,
-      "total7d": 17101842,
-      "total14dto7d": 27939614,
-      "total30d": 68907681,
-      "total60dto30d": 49731291,
-      "total1y": 949033573,
-      "total7DaysAgo": 2928332,
-      "total30DaysAgo": 1596009,
-      "totalAllTime": 1529389855,
-      "average1y": 2600091.9808219178,
-      "monthlyAverage1y": 79146799.89621918,
-      "change_1d": -15.71,
-      "change_7d": -24.42,
-      "change_1m": 38.68,
-      "change_7dover7d": -38.79,
-      "change_30dover30d": 38.56
+      "total24h": 3474897,
+      "total48hto24h": 2213365,
+      "total7d": 17016812,
+      "total14dto7d": 27246599,
+      "total30d": 70760571,
+      "total60dto30d": 50293251,
+      "total1y": 949686547,
+      "total7DaysAgo": 3559927,
+      "total30DaysAgo": 1622007,
+      "totalAllTime": 1532864752,
+      "average1y": 2601880.9506849316,
+      "monthlyAverage1y": 79201256.13884932,
+      "change_1d": 57,
+      "change_7d": -2.39,
+      "change_1m": 114.23,
+      "change_7dover7d": -37.55,
+      "change_30dover30d": 40.7
     }
   }
 }
