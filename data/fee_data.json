@@ -67,11 +67,13 @@
         "Fees": {
           "Perp Fees": "Perp trade fees collected as revenue, excluding spot fee.",
           "Builder Code Fees": "Fees added on top by other platforms building on top of Hyperliquid.",
-          "Priority Fees": "Fees from priority orders paid."
+          "Priority Fees": "Fees from priority orders paid.",
+          "AQAv2 - USDC Yields": "Hyperliquid gets 90% of cost-adjusted reserve yield revenue from stablecoin deployers"
         },
         "Revenue": {
           "Perp Fees": "99% of perp trade fees, excluding spot fees and builders fees.",
-          "Priority Fees": "Fees from priority orders paid."
+          "Priority Fees": "Fees from priority orders paid.",
+          "AQAv2 - USDC Yields": "Hyperliquid gets 90% of cost-adjusted reserve yield revenue from stablecoin deployers"
         },
         "SupplySideRevenue": {
           "Builder Code Distribution": "All extra fees added on top by builders are fully passed down to these platforms.",
@@ -81,7 +83,8 @@
         },
         "HoldersRevenue": {
           "Token Buy Back": "99% of perp trade fees (excluding spot fees and builders fees) for buy back HYPE tokens.",
-          "HYPE Burn From Priority Fees": "All prioroty fees will be used to buy and burn HYPE."
+          "HYPE Burn From Priority Fees": "All prioroty fees will be used to buy and burn HYPE.",
+          "AQAv2 - USDC Yields": "Hyperliquid gets 90% of cost-adjusted reserve yield revenue from stablecoin deployers"
         }
       }
     },
@@ -140,13 +143,13 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 865801,
+  "total24h": 1224205,
   "total48hto24h": 865801,
-  "total7d": 12843162,
-  "total30d": 67230456,
-  "total1y": 901060598,
-  "annualized1y": 903536039.2032967,
-  "totalAllTime": 1603017919,
+  "total7d": 14067367,
+  "total30d": 68454661,
+  "total1y": 902284803,
+  "annualized1y": 902284803,
+  "totalAllTime": 1604242124,
   "totalDataChart": [
     [
       1734912000,
@@ -2731,6 +2734,10 @@
     [
       1790985600,
       865801
+    ],
+    [
+      1791072000,
+      1224205
     ]
   ],
   "totalDataChartBreakdown": [
@@ -9183,28 +9190,38 @@
           "Hyperliquid Spot Orderbook": 29177
         }
       }
+    ],
+    [
+      1791072000,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid HLP": 9649,
+          "Hyperliquid Perps": 1170508,
+          "Hyperliquid Spot Orderbook": 44048
+        }
+      }
     ]
   ],
-  "change_1d": 0,
+  "change_1d": 41.4,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 865801,
+      "total24h": 1224205,
       "total48hto24h": 865801,
-      "total7d": 12843162,
+      "total7d": 14067367,
       "total14dto7d": 19460171,
-      "total30d": 67230456,
+      "total30d": 68454661,
       "total60dto30d": 72032590,
-      "total1y": 901060598,
+      "total1y": 902284803,
       "total7DaysAgo": 1754599,
       "total30DaysAgo": 2922711,
-      "totalAllTime": 1603017919,
-      "average1y": 2475441.2032967033,
-      "monthlyAverage1y": 75352430.22835165,
-      "change_1d": 0,
-      "change_7d": -50.66,
-      "change_1m": -70.38,
-      "change_7dover7d": -34,
-      "change_30dover30d": -6.67
+      "totalAllTime": 1604242124,
+      "average1y": 2472013.1589041096,
+      "monthlyAverage1y": 75248080.5570411,
+      "change_1d": 41.4,
+      "change_7d": -30.23,
+      "change_1m": -58.11,
+      "change_7dover7d": -27.71,
+      "change_30dover30d": -4.97
     }
   }
 }
