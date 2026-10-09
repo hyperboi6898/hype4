@@ -20,7 +20,8 @@
     "Hyperliquid",
     "Hyperliquid HLP",
     "Hyperliquid Perps",
-    "Hyperliquid Spot Orderbook"
+    "Hyperliquid Spot Orderbook",
+    "Hyperliquid Outcomes"
   ],
   "childProtocols": [
     {
@@ -124,6 +125,38 @@
           "Spot Deployment Auction Burns": "HYPE permanently removed from supply through successful HIP-1 token-deployment auctions."
         }
       }
+    },
+    {
+      "name": "Hyperliquid Outcomes",
+      "defillamaId": "8941",
+      "displayName": "Hyperliquid Outcomes",
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-outcome",
+      "methodology": {
+        "Volume": "USD value of HIP-4 outcome-market trades on Hyperliquid: price times shares over every buy and sell fill, halved so each trade is counted once. Merges, splits and settlements are not trades and are excluded.",
+        "NotionalVolume": "Shares traded on HIP-4 outcome markets, each share valued at its $1 payout, halved so each trade is counted once.",
+        "Fees": "Fees users pay when closing or settling HIP-4 outcome positions, including builder-code fees added by front-ends. Hyperliquid charged no outcome fee of its own before 15 Aug 2026.",
+        "Revenue": "99% of outcome fees net of builder-code fees, sent to the Assistance Fund to buy HYPE.",
+        "ProtocolRevenue": "Hyperliquid's protocol keeps no outcome fees; they go to the Assistance Fund and the HLP vault.",
+        "HoldersRevenue": "99% of outcome fees net of builder-code fees, used by the Assistance Fund to buy back HYPE.",
+        "SupplySideRevenue": "Builder-code fees paid to the front-ends that routed the trades, plus 1% of the remaining outcome fees to HLP vault depositors."
+      },
+      "defaultChartView": null,
+      "breakdownMethodology": {
+        "Fees": {
+          "Outcome Fees": "Fees on HIP-4 outcome positions closed or settled, excluding builder-code fees.",
+          "Builder Code Fees": "Fees added on top by front-ends building on Hyperliquid, charged on outcome sells."
+        },
+        "Revenue": {
+          "Outcome Fees": "99% of outcome fees net of builder-code fees."
+        },
+        "SupplySideRevenue": {
+          "Builder Code Distribution": "Builder-code fees passed in full to the front-ends that routed the trades.",
+          "HLP": "1% of outcome fees net of builder-code fees go to the HLP vault."
+        },
+        "HoldersRevenue": {
+          "Token Buy Back": "99% of outcome fees net of builder-code fees, used to buy back HYPE."
+        }
+      }
     }
   ],
   "hasLabelBreakdown": true,
@@ -146,13 +179,13 @@
   "breakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
-  "total24h": 3531755,
-  "total48hto24h": 2470722,
-  "total7d": 18696194,
-  "total30d": 90550220,
-  "total1y": 929051797,
-  "annualized1y": 929051797,
-  "totalAllTime": 1644943776,
+  "total24h": 3120448,
+  "total48hto24h": 3532464,
+  "total7d": 19383663,
+  "total30d": 90843041,
+  "total1y": 928437723,
+  "annualized1y": 928437723,
+  "totalAllTime": 1648064933,
   "totalDataChart": [
     [
       1734912000,
@@ -2752,7 +2785,11 @@
     ],
     [
       1791331200,
-      3531755
+      3532464
+    ],
+    [
+      1791417600,
+      3120448
     ]
   ],
   "totalDataChartBreakdown": [
@@ -9242,31 +9279,43 @@
         "Hyperliquid L1": {
           "Hyperliquid HLP": 22496,
           "Hyperliquid Perps": 3428042,
-          "Hyperliquid Spot Orderbook": 81217
+          "Hyperliquid Spot Orderbook": 81217,
+          "Hyperliquid Outcomes": 709
+        }
+      }
+    ],
+    [
+      1791417600,
+      {
+        "Hyperliquid L1": {
+          "Hyperliquid HLP": 19333,
+          "Hyperliquid Perps": 3023627,
+          "Hyperliquid Spot Orderbook": 76910,
+          "Hyperliquid Outcomes": 578
         }
       }
     ]
   ],
-  "change_1d": 42.94,
+  "change_1d": -11.66,
   "chainBreakdown": {
     "Hyperliquid L1": {
-      "total24h": 3531755,
-      "total48hto24h": 2470722,
-      "total7d": 18696194,
-      "total14dto7d": 19363967,
-      "total30d": 90550220,
-      "total60dto30d": 86980855,
-      "total1y": 929051797,
-      "total7DaysAgo": 2190573,
-      "total30DaysAgo": 2316128,
-      "totalAllTime": 1644943776,
-      "average1y": 2545347.389041096,
-      "monthlyAverage1y": 77480374.52241096,
-      "change_1d": 42.94,
-      "change_7d": 61.23,
-      "change_1m": 52.49,
-      "change_7dover7d": -3.45,
-      "change_30dover30d": 4.1
+      "total24h": 3120448,
+      "total48hto24h": 3532464,
+      "total7d": 19383663,
+      "total14dto7d": 17675883,
+      "total30d": 90843041,
+      "total60dto30d": 88966471,
+      "total1y": 928437723,
+      "total7DaysAgo": 2433688,
+      "total30DaysAgo": 2828336,
+      "totalAllTime": 1648064933,
+      "average1y": 2543664.994520548,
+      "monthlyAverage1y": 77429162.43320549,
+      "change_1d": -11.66,
+      "change_7d": 28.22,
+      "change_1m": 10.33,
+      "change_7dover7d": 9.66,
+      "change_30dover30d": 2.11
     }
   }
 }
