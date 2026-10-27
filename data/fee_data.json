@@ -47,7 +47,8 @@
           "Perp Fees": "Share of 1% perp trading revenue.",
           "Spot Fees": "Share of 1% spot trading revenue"
         }
-      }
+      },
+      "unknownBreakdownMethodology": null
     },
     {
       "name": "Hyperliquid Perps",
@@ -87,7 +88,8 @@
           "HYPE Burn From Priority Fees": "All prioroty fees will be used to buy and burn HYPE.",
           "AQAv2 - USDC Yields": "Hyperliquid gets 90% of cost-adjusted reserve yield revenue from stablecoin deployers"
         }
-      }
+      },
+      "unknownBreakdownMethodology": null
     },
     {
       "name": "Hyperliquid Spot Orderbook",
@@ -124,7 +126,8 @@
           "Token Buy Back": "97% of spot trade fees before 30 Aug 2025 and 99% thereafter, after builder code fees and maker rebates, excluding perp fees and unit protocol fees, for buying back HYPE tokens.",
           "Spot Deployment Auction Burns": "HYPE permanently removed from supply through successful HIP-1 token-deployment auctions."
         }
-      }
+      },
+      "unknownBreakdownMethodology": null
     },
     {
       "name": "Hyperliquid Outcomes",
@@ -156,7 +159,8 @@
         "HoldersRevenue": {
           "Token Buy Back": "99% of outcome fees net of builder-code fees, used to buy back HYPE."
         }
-      }
+      },
+      "unknownBreakdownMethodology": null
     }
   ],
   "hasLabelBreakdown": true,
@@ -177,6 +181,7 @@
   "defaultChartView": null,
   "doublecounted": null,
   "breakdownMethodology": null,
+  "unknownBreakdownMethodology": null,
   "slug": "hyperliquid",
   "protocolType": "protocol",
   "total24h": 2809426,
