@@ -9884,6 +9884,7 @@
     "Hyperliquid L1": {
       "total24h": 3709003,
       "total48hto24h": 4918902,
+      "totalLastFullDay": 3709003,
       "total7d": 22375599,
       "total14dto7d": 21044633,
       "total30d": 88823370,
