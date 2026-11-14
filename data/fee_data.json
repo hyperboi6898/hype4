@@ -185,11 +185,11 @@
   "slug": "hyperliquid",
   "protocolType": "protocol",
   "total24h": 2783362,
-  "total48hto24h": 2928200,
-  "total7d": 18843512,
-  "total30d": 89608788,
-  "total1y": 894082368.6899998,
-  "annualized1y": 894082368.6899998,
+  "total48hto24h": 2783362,
+  "total7d": 15974629,
+  "total30d": 86143350,
+  "total1y": 889030960.6899998,
+  "annualized1y": 891473353.4391482,
   "totalAllTime": 1749163316.6900005,
   "totalDataChart": [
     [
@@ -9984,27 +9984,26 @@
       }
     ]
   ],
-  "change_1d": -4.95,
+  "change_1d": 0,
   "chainBreakdown": {
     "Hyperliquid L1": {
       "total24h": 2783362,
-      "total48hto24h": 2928200,
-      "totalLastFullDay": 2783362,
-      "total7d": 18843512,
-      "total14dto7d": 22375599,
-      "total30d": 89608788,
-      "total60dto30d": 88447937,
-      "total1y": 894082368.6899998,
-      "total7DaysAgo": 3709003,
-      "total30DaysAgo": 2756165,
+      "total48hto24h": 2783362,
+      "total7d": 15974629,
+      "total14dto7d": 20381582,
+      "total30d": 86143350,
+      "total60dto30d": 88522239,
+      "total1y": 889030960.6899998,
+      "total7DaysAgo": 2868883,
+      "total30DaysAgo": 3465438,
       "totalAllTime": 1749163316.6900005,
-      "average1y": 2449540.736136986,
-      "monthlyAverage1y": 74564020.00800985,
-      "change_1d": -4.95,
-      "change_7d": -24.96,
-      "change_1m": 0.99,
-      "change_7dover7d": -15.79,
-      "change_30dover30d": 1.31
+      "average1y": 2442392.749148351,
+      "monthlyAverage1y": 74346435.28407581,
+      "change_1d": 0,
+      "change_7d": -2.98,
+      "change_1m": -19.68,
+      "change_7dover7d": -21.62,
+      "change_30dover30d": -2.69
     }
   }
 }
