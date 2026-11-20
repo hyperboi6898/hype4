@@ -57,10 +57,10 @@
       "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-perp",
       "methodology": {
         "UserFees": "Fees paid by users",
-        "Fees": "Include perps trading fees on crypto and HIP-3 deployed markets + builders fees, plus Hyperliquid's 90% share of cost-adjusted reserve yield from AQAv2 stablecoin deployers since 27 Aug 2026, excluding all spot fees.",
-        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees, plus Hyperliquid's 90% share of AQAv2 stablecoin reserve yield since 27 Aug 2026.",
+        "Fees": "Include perps trading fees on crypto and HIP-3 deployed markets + builders fees, plus Hyperliquid's 90% share of cost-adjusted reserve yield from AQAv2 stablecoin deployers since 27 Aug 2026, plus HYPE order priority fees since 13 Apr 2026 and gossip priority fees since 20 Apr 2026 (network-level, not specific to perps), excluding all spot fees.",
+        "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees, plus Hyperliquid's 90% share of AQAv2 stablecoin reserve yield since 27 Aug 2026, plus all priority fees, which are burned.",
         "ProtocolRevenue": "Protocol doesn't keep any fees.",
-        "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees, plus Hyperliquid's 90% share of AQAv2 stablecoin reserve yield since 27 Aug 2026.",
+        "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees, plus Hyperliquid's 90% share of AQAv2 stablecoin reserve yield since 27 Aug 2026, plus all priority fees, which are burned.",
         "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for builders.",
         "Volume": "Track trading volume on all perps markets (including HIP-3 markets), excluding all spot markets volume."
       },
@@ -69,12 +69,14 @@
         "Fees": {
           "Perp Fees": "Perp trade fees collected as revenue, excluding spot fee.",
           "Builder Code Fees": "Fees added on top by other platforms building on top of Hyperliquid.",
-          "Priority Fees": "Fees from priority orders paid.",
+          "Order Priority Fees": "HYPE paid by IOC orders for write priority, almost all on perps (HIP-3 included).",
+          "Gossip Priority Fees": "HYPE paid in auctions for node data read priority. Network-level, not tied to perps or any market.",
           "AQAv2 - USDC Yields": "Hyperliquid gets 90% of cost-adjusted reserve yield revenue from stablecoin deployers"
         },
         "Revenue": {
           "Perp Fees": "99% of perp trade fees, excluding spot fees and builders fees.",
-          "Priority Fees": "Fees from priority orders paid.",
+          "Order Priority Fees": "All order priority fees, burned.",
+          "Gossip Priority Fees": "All gossip priority fees, burned.",
           "AQAv2 - USDC Yields": "Hyperliquid gets 90% of cost-adjusted reserve yield revenue from stablecoin deployers"
         },
         "SupplySideRevenue": {
@@ -85,7 +87,8 @@
         },
         "HoldersRevenue": {
           "Token Buy Back": "99% of perp trade fees (excluding spot fees and builders fees) for buy back HYPE tokens.",
-          "HYPE Burn From Priority Fees": "All prioroty fees will be used to buy and burn HYPE.",
+          "HYPE Burn From Order Priority Fees": "All order priority fees are paid in HYPE and burned.",
+          "HYPE Burn From Gossip Priority Fees": "All gossip priority fees are paid in HYPE and burned.",
           "AQAv2 - USDC Yields": "Hyperliquid gets 90% of cost-adjusted reserve yield revenue from stablecoin deployers"
         }
       },
@@ -185,11 +188,11 @@
   "slug": "hyperliquid",
   "protocolType": "protocol",
   "total24h": 3213247,
-  "total48hto24h": 3480444,
-  "total7d": 26111010,
-  "total30d": 95324430,
-  "total1y": 894263668.6899998,
-  "annualized1y": 894263668.6899998,
+  "total48hto24h": 3213247,
+  "total7d": 23327648,
+  "total30d": 92212838,
+  "total1y": 890074651.6899998,
+  "annualized1y": 892519911.7221152,
   "totalAllTime": 1772490964.6900005,
   "totalDataChart": [
     [
@@ -10074,27 +10077,26 @@
       }
     ]
   ],
-  "change_1d": -7.68,
+  "change_1d": 0,
   "chainBreakdown": {
     "Hyperliquid L1": {
       "total24h": 3213247,
-      "total48hto24h": 3480444,
-      "totalLastFullDay": 3213247,
-      "total7d": 26111010,
-      "total14dto7d": 19769153,
-      "total30d": 95324430,
-      "total60dto30d": 84960934,
-      "total1y": 894263668.6899998,
-      "total7DaysAgo": 2928200,
-      "total30DaysAgo": 2485468,
+      "total48hto24h": 3213247,
+      "total7d": 23327648,
+      "total14dto7d": 18843512,
+      "total30d": 92212838,
+      "total60dto30d": 85364436,
+      "total1y": 890074651.6899998,
+      "total7DaysAgo": 2783362,
+      "total30DaysAgo": 3111592,
       "totalAllTime": 1772490964.6900005,
-      "average1y": 2450037.448465753,
-      "monthlyAverage1y": 74579139.93129753,
-      "change_1d": -7.68,
-      "change_7d": 9.73,
-      "change_1m": 29.28,
-      "change_7dover7d": 32.08,
-      "change_30dover30d": 12.2
+      "average1y": 2445260.032115384,
+      "monthlyAverage1y": 74433715.3775923,
+      "change_1d": 0,
+      "change_7d": 15.44,
+      "change_1m": 3.27,
+      "change_7dover7d": 23.8,
+      "change_30dover30d": 8.02
     }
   }
 }
